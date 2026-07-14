@@ -1,0 +1,763 @@
+<title>Kit Tela: Como Desligar Sem Guerra</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --ink:#2b2440;
+    --ink-soft:#5b5470;
+    --night:#3b2f66;
+    --night-2:#4b3b86;
+    --lav:#efe9fb;
+    --lav-2:#e3daf7;
+    --peach:#ff9d7a;
+    --peach-soft:#ffe6dc;
+    --gold:#f4c04f;
+    --teal:#2fb3a3;         /* acento identidade do Kit Tela */
+    --teal-2:#1f8f83;
+    --teal-soft:#dcf3ef;
+    --mint:#8fd6c2;
+    --mint-soft:#e2f5ef;
+    --rose:#f2a5b8;
+    --rose-soft:#fde6ec;
+    --cream:#fbf8f3;
+    --line:#e7e0f2;
+    --white:#ffffff;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:#d9d2ea;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+    line-height:1.5;
+  }
+
+  .page{
+    width:210mm;
+    min-height:297mm;
+    padding:16mm 15mm 14mm;
+    margin:10mm auto;
+    background:var(--cream);
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 6px 30px rgba(43,36,64,.18);
+    display:flex;
+    flex-direction:column;
+  }
+  .page::after{
+    content:attr(data-pg);
+    position:absolute;
+    bottom:7mm; right:15mm;
+    font-size:9px; letter-spacing:.18em;
+    color:var(--ink-soft); opacity:.7;
+    font-weight:600;
+  }
+  .brandfoot{
+    position:absolute;
+    bottom:7mm; left:15mm;
+    font-size:9px; letter-spacing:.16em;
+    color:var(--ink-soft); opacity:.7;
+    text-transform:uppercase; font-weight:700;
+  }
+
+  @media print{
+    html,body{margin:0;padding:0;background:#fff;width:210mm}
+    .page{
+      margin:0; box-shadow:none;
+      width:210mm; height:297mm; min-height:297mm;
+      overflow:hidden;
+      page-break-after:always;
+      break-after:page;
+      break-inside:avoid;
+    }
+    .page:last-child{page-break-after:auto;break-after:auto;height:297mm}
+  }
+  @page{ size:210mm 297mm; margin:0; }
+
+  h1,h2,h3{font-family:var(--serif);margin:0;color:var(--night)}
+  .eyebrow{
+    font-family:var(--sans);
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    font-size:11px;
+    font-weight:800;
+    color:var(--teal-2);
+    margin:0 0 10px;
+  }
+  h2.title{font-size:30px;line-height:1.12;margin:0 0 6px;font-weight:700}
+  .lead{font-size:13.5px;color:var(--ink-soft);max-width:60ch;margin:0 0 18px}
+  p{margin:0 0 10px}
+  strong{color:var(--night)}
+  .small{font-size:11.5px;color:var(--ink-soft)}
+
+  .hr{height:2px;background:linear-gradient(90deg,var(--teal),transparent);border-radius:2px;margin:2px 0 18px;width:70px}
+
+  .card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:16px 18px;
+  }
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+
+  .tag{
+    display:inline-block;
+    font-size:10.5px;font-weight:800;letter-spacing:.05em;
+    padding:3px 10px;border-radius:999px;
+    background:var(--lav-2);color:var(--night-2);
+  }
+
+  ul.clean{list-style:none;margin:0;padding:0}
+  ul.clean li{position:relative;padding-left:22px;margin-bottom:8px;font-size:12.5px}
+  ul.clean li::before{content:"";position:absolute;left:0;top:6px;width:9px;height:9px;border-radius:50%;background:var(--teal)}
+</style>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 1 — CAPA                                                -->
+<!-- ============================================================= -->
+<section class="page" data-pg="" style="background:linear-gradient(165deg,#134e4a 0%,#173a4d 45%,#241d3a 100%);color:#fff;padding:0;justify-content:center;align-items:center;text-align:center">
+  <!-- brilho / partículas de estímulo -->
+  <svg style="position:absolute;inset:0;width:100%;height:100%" aria-hidden="true">
+    <g fill="#2fb3a3" opacity="0.5">
+      <circle cx="70" cy="120" r="2"/><circle cx="150" cy="200" r="1.4"/>
+      <circle cx="650" cy="90" r="1.8"/><circle cx="710" cy="160" r="1.2"/>
+      <circle cx="100" cy="720" r="1.6"/><circle cx="700" cy="780" r="1.8"/>
+      <circle cx="60" cy="440" r="1.3"/><circle cx="760" cy="450" r="1.4"/>
+    </g>
+    <g fill="#f4c04f" opacity="0.55">
+      <circle cx="300" cy="100" r="1.3"/><circle cx="500" cy="70" r="1.5"/>
+      <circle cx="190" cy="900" r="1.3"/><circle cx="600" cy="940" r="1.4"/>
+    </g>
+  </svg>
+
+  <!-- tablet com botão de power -->
+  <div style="position:absolute;top:66px;right:78px;width:96px;height:130px;border-radius:16px;
+       background:#1d2a33;border:3px solid #2fb3a3;box-shadow:0 0 50px rgba(47,179,163,.45);display:flex;align-items:center;justify-content:center">
+    <div style="width:44px;height:44px;border-radius:50%;border:3px solid #2fb3a3;display:flex;align-items:center;justify-content:center">
+      <div style="width:3px;height:16px;background:#2fb3a3;border-radius:2px;margin-top:-4px"></div>
+    </div>
+  </div>
+
+  <div style="position:relative;padding:0 40px;max-width:150mm">
+    <div style="font-size:13px;letter-spacing:.4em;text-transform:uppercase;color:var(--teal);font-weight:800;margin-bottom:26px">Ginástica Cerebral · Guia Complementar</div>
+
+    <div style="font-size:52px;margin-bottom:18px;line-height:1">📵</div>
+
+    <h1 style="font-family:var(--serif);color:#fff;font-size:50px;line-height:1.05;font-weight:700;margin-bottom:18px">
+      Kit&nbsp;Tela
+    </h1>
+    <div style="width:90px;height:3px;background:var(--teal);margin:0 auto 20px;border-radius:3px"></div>
+    <h2 style="font-family:var(--serif);color:#a7e8de;font-size:23px;font-weight:600;margin-bottom:30px;font-style:italic">
+      Como Desligar Sem Guerra
+    </h2>
+
+    <p style="font-size:15px;line-height:1.65;color:#e2efee;max-width:52ch;margin:0 auto">
+      A briga da tela acontece <strong style="color:#fff">hoje</strong>. Não precisa esperar 30 dias para resolver isso.
+      Um roteiro simples para transformar o "desliga esse tablet" — o momento mais tenso do dia — em uma transição sem grito, sem choro e sem culpa.
+    </p>
+
+    <div style="margin-top:44px;display:inline-flex;gap:10px;align-items:center;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#8fd6c2">
+      <span>Para mães de crianças de 3 a 10 anos</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 2 — POR QUE A TELA É DIFERENTE                          -->
+<!-- ============================================================= -->
+<section class="page" data-pg="02">
+  <span class="brandfoot">Kit Tela</span>
+  <p class="eyebrow">Entendendo antes de agir</p>
+  <h2 class="title">Por que a tela é diferente<br>de qualquer outra birra</h2>
+  <div class="hr"></div>
+  <p class="lead">Se desligar a tela vira uma guerra que nenhum outro "não" provoca, não é porque sua filha é mal-educada — e não é falha sua. A tela mexe com o cérebro dela de um jeito único. Entender isso muda a forma de agir.</p>
+
+  <div class="grid2" style="gap:16px;margin-bottom:16px">
+    <div class="card" style="background:var(--teal-soft)">
+      <div style="font-size:26px;margin-bottom:8px">🍭</div>
+      <h3 style="font-size:16px;margin-bottom:8px">Um prazer forte demais</h3>
+      <p class="small" style="margin:0">A tela entrega ao cérebro da criança uma dose de prazer <strong>muito mais forte e rápida</strong> que qualquer outra coisa do dia: cores, sons, recompensas a cada segundo. Brincar, comer, passear — nada compete com isso. O cérebro dela aprende a querer aquela "dose" o tempo todo.</p>
+    </div>
+    <div class="card" style="background:var(--peach-soft)">
+      <div style="font-size:26px;margin-bottom:8px">🔁</div>
+      <h3 style="font-size:16px;margin-bottom:8px">O corpo pede mais</h3>
+      <p class="small" style="margin:0">Quando você desliga, o cérebro não pensa "acabou a diversão" — ele sente uma <strong>falta</strong>, como quem tira algo que já virou hábito. Não é birra por birra: é o cérebro pedindo mais do estímulo a que se acostumou. Por isso a reação é tão maior que a de guardar um brinquedo.</p>
+    </div>
+  </div>
+
+  <div class="card" style="background:var(--white);border-left:5px solid var(--teal);margin-bottom:16px">
+    <h3 style="font-size:17px;margin-bottom:8px">Desligar a tela dói mais que qualquer outro "não"</h3>
+    <p class="small" style="margin-bottom:0">Recusar um doce ou um brinquedo é uma frustração pequena. Desligar a tela é interromper a fonte de prazer mais intensa do dia, bem no meio dela. O cérebro estava "no pico" e caiu de uma vez — e é essa queda brusca, não a sua ordem, que explode em choro e grito. <strong>A criança não está te desafiando: ela está lidando com uma perda que sente como enorme.</strong></p>
+  </div>
+
+  <div class="card" style="background:linear-gradient(135deg,var(--teal-2),#16645c);color:#fff;border:none">
+    <div style="display:flex;gap:16px;align-items:flex-start">
+      <div style="font-size:30px;line-height:1">⚡</div>
+      <div>
+        <h3 style="color:#fff;font-size:17px;margin-bottom:8px">Por que gritar ou arrancar de repente piora tudo</h3>
+        <p class="small" style="color:#d7efec;margin-bottom:6px">Tirar a tela de surpresa é como puxar a comida da boca no meio da mordida: o cérebro reage com raiva pura. E gritar acrescenta um segundo estímulo forte — o seu descontrole — em cima de um cérebro que já está no limite. Resultado: mais reação, não menos.</p>
+        <p class="small" style="color:#d7efec;margin:0">O roteiro deste kit faz o oposto: desliga a tela <strong style="color:#fff">com aviso e em etapas</strong>, dando ao cérebro tempo de descer do pico — e redireciona a energia para outro lugar, em vez de deixá-la explodir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 3 — OS 4 ERROS                                          -->
+<!-- ============================================================= -->
+<section class="page" data-pg="03">
+  <span class="brandfoot">Kit Tela</span>
+  <p class="eyebrow">Sem culpa, só consciência</p>
+  <h2 class="title">Os 4 erros que quase toda mãe<br>comete ao desligar a tela</h2>
+  <div class="hr"></div>
+  <p class="lead">Todos esses erros vêm de cansaço e pressa — não de falta de amor. E cada um tem uma troca simples que muda o desligamento inteiro.</p>
+
+  <div class="card" style="margin-bottom:12px;display:flex;gap:16px;align-items:flex-start">
+    <div style="flex:0 0 46px;height:46px;border-radius:12px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;font-size:22px">⚡</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+        <span class="tag" style="background:var(--rose-soft);color:#c04a68">ERRO 1</span>
+        <h3 style="font-size:16px">Tirar de surpresa, sem aviso</h3>
+      </div>
+      <p class="small" style="margin-bottom:6px">Arrancar a tela do nada tira a criança do pico de estímulo de uma vez. O cérebro reage com raiva, não com obediência — porque não teve tempo de se preparar para a perda.</p>
+      <p class="small" style="margin:0;color:var(--teal-2)"><strong>No lugar:</strong> avise com antecedência e com contagem regressiva, para o cérebro ir descendo aos poucos (roteiro na p. 5).</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:12px;display:flex;gap:16px;align-items:flex-start">
+    <div style="flex:0 0 46px;height:46px;border-radius:12px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;font-size:22px">🚫</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+        <span class="tag" style="background:var(--rose-soft);color:#c04a68">ERRO 2</span>
+        <h3 style="font-size:16px">Ameaçar e não cumprir</h3>
+      </div>
+      <p class="small" style="margin-bottom:6px">"Se não desligar, fica uma semana sem tablet!" — e no dia seguinte ela usa igual. Cada ameaça vazia ensina que a sua palavra não vale, e a criança testa mais na próxima.</p>
+      <p class="small" style="margin:0;color:var(--teal-2)"><strong>No lugar:</strong> prometa só o que você vai cumprir, e cumpra com calma. Consequência pequena e real vale mais que ameaça grande e falsa.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:12px;display:flex;gap:16px;align-items:flex-start">
+    <div style="flex:0 0 46px;height:46px;border-radius:12px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;font-size:22px">💬</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+        <span class="tag" style="background:var(--rose-soft);color:#c04a68">ERRO 3</span>
+        <h3 style="font-size:16px">Discutir ou justificar demais no calor da hora</h3>
+      </div>
+      <p class="small" style="margin-bottom:6px">Em plena crise, o cérebro da criança não processa argumento — só sente. Explicar "por que faz mal", negociar e debater vira mais barulho e prolonga a birra.</p>
+      <p class="small" style="margin:0;color:var(--teal-2)"><strong>No lugar:</strong> poucas palavras, regra clara, tom firme e calmo. As conversas sobre limite de tela ficam para outro momento, com ela tranquila.</p>
+    </div>
+  </div>
+
+  <div class="card" style="display:flex;gap:16px;align-items:flex-start">
+    <div style="flex:0 0 46px;height:46px;border-radius:12px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;font-size:22px">🔀</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+        <span class="tag" style="background:var(--rose-soft);color:#c04a68">ERRO 4</span>
+        <h3 style="font-size:16px">Trocar a regra dependendo do dia</h3>
+      </div>
+      <p class="small" style="margin-bottom:6px">Um dia é meia hora, outro dia "hoje pode mais", outro é "só até você parar de chorar". A regra que muda vira um convite: se ontem insistir funcionou, hoje vale a pena testar de novo.</p>
+      <p class="small" style="margin:0;color:var(--teal-2)"><strong>No lugar:</strong> mesma regra, todos os dias, dita antes de ligar a tela. Previsível acalma; negociável agita.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 4 — LINHA DO TEMPO DO DESLIGAMENTO                      -->
+<!-- ============================================================= -->
+<section class="page" data-pg="04">
+  <span class="brandfoot">Kit Tela</span>
+  <p class="eyebrow">Desligar é um processo, não um evento</p>
+  <h2 class="title">A Linha do Tempo<br>do Desligamento</h2>
+  <div class="hr"></div>
+  <p class="lead">Desligar a tela não é apertar um botão — é uma descida de 10 minutos, do pico de estímulo até a energia redirecionada. Cada bloco liga a uma ação do roteiro. Ajuste os minutos ao seu ritmo; o que não muda é a ordem.</p>
+
+  <div style="display:flex;flex-direction:column;gap:0;margin-top:6px">
+    <div style="display:grid;grid-template-columns:78px 34px 1fr;align-items:stretch">
+      <div style="text-align:right;padding-right:14px;padding-top:14px"><div style="font-weight:800;color:var(--night);font-size:15px">–10 min</div><div class="small" style="font-size:10px">tela ligada</div></div>
+      <div style="position:relative"><div style="position:absolute;left:50%;top:0;bottom:0;width:3px;background:var(--lav-2);transform:translateX(-50%)"></div><div style="position:absolute;left:50%;top:16px;width:16px;height:16px;border-radius:50%;background:var(--teal);transform:translateX(-50%);border:3px solid var(--cream)"></div></div>
+      <div style="padding:8px 0 16px 6px"><div class="card" style="padding:12px 14px;background:var(--teal-soft);border:none"><strong style="font-size:13px">Passo 1 · Aviso prévio</strong><p class="small" style="margin:2px 0 0">"Faltam 10 minutinhos de tablet." O cérebro começa a se preparar para o fim.</p></div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:78px 34px 1fr;align-items:stretch">
+      <div style="text-align:right;padding-right:14px;padding-top:14px"><div style="font-weight:800;color:var(--night);font-size:15px">–3 min</div><div class="small" style="font-size:10px">penúltimo aviso</div></div>
+      <div style="position:relative"><div style="position:absolute;left:50%;top:0;bottom:0;width:3px;background:var(--lav-2);transform:translateX(-50%)"></div><div style="position:absolute;left:50%;top:16px;width:16px;height:16px;border-radius:50%;background:var(--gold);transform:translateX(-50%);border:3px solid var(--cream)"></div></div>
+      <div style="padding:8px 0 16px 6px"><div class="card" style="padding:12px 14px;background:#fdf3d9;border:none"><strong style="font-size:13px">Passo 2 · Contagem regressiva</strong><p class="small" style="margin:2px 0 0">"Mais um vídeo e acabou." O penúltimo aviso torna o fim concreto e esperado.</p></div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:78px 34px 1fr;align-items:stretch">
+      <div style="text-align:right;padding-right:14px;padding-top:14px"><div style="font-weight:800;color:var(--night);font-size:15px">–1 min</div><div class="small" style="font-size:10px">escolha</div></div>
+      <div style="position:relative"><div style="position:absolute;left:50%;top:0;bottom:0;width:3px;background:var(--lav-2);transform:translateX(-50%)"></div><div style="position:absolute;left:50%;top:16px;width:16px;height:16px;border-radius:50%;background:var(--night-2);transform:translateX(-50%);border:3px solid var(--cream)"></div></div>
+      <div style="padding:8px 0 16px 6px"><div class="card" style="padding:12px 14px;background:var(--lav);border:none"><strong style="font-size:13px">Passo 3 · Escolha controlada</strong><p class="small" style="margin:2px 0 0">"Você desliga ou eu desligo?" Devolve à criança uma sensação de controle.</p></div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:78px 34px 1fr;align-items:stretch">
+      <div style="text-align:right;padding-right:14px;padding-top:14px"><div style="font-weight:800;color:var(--night);font-size:15px">0 min</div><div class="small" style="font-size:10px">tela desliga</div></div>
+      <div style="position:relative"><div style="position:absolute;left:50%;top:0;bottom:0;width:3px;background:var(--lav-2);transform:translateX(-50%)"></div><div style="position:absolute;left:50%;top:16px;width:16px;height:16px;border-radius:50%;background:var(--peach);transform:translateX(-50%);border:3px solid var(--cream)"></div></div>
+      <div style="padding:8px 0 16px 6px"><div class="card" style="padding:12px 14px;background:var(--peach-soft);border:none"><strong style="font-size:13px">Passo 4 · Desligamento efetivo</strong><p class="small" style="margin:2px 0 0">A tela desliga. Regra fixa, sem negociar neste momento — o combinado se cumpre.</p></div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:78px 34px 1fr;align-items:stretch">
+      <div style="text-align:right;padding-right:14px;padding-top:14px"><div style="font-weight:800;color:var(--night);font-size:15px">+2 min</div><div class="small" style="font-size:10px">redireciona</div></div>
+      <div style="position:relative"><div style="position:absolute;left:50%;top:0;bottom:0;width:3px;background:var(--lav-2);transform:translateX(-50%)"></div><div style="position:absolute;left:50%;top:16px;width:16px;height:16px;border-radius:50%;background:var(--mint);transform:translateX(-50%);border:3px solid var(--cream)"></div></div>
+      <div style="padding:8px 0 16px 6px"><div class="card" style="padding:12px 14px;background:var(--mint-soft);border:none"><strong style="font-size:13px">Passo 5 · Distração ativa</strong><p class="small" style="margin:2px 0 0">Redireciona o pico de energia para outra atividade (as 3 técnicas na p. 7).</p></div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:78px 34px 1fr;align-items:stretch">
+      <div style="text-align:right;padding-right:14px;padding-top:14px"><div style="font-weight:800;color:var(--night);font-size:15px">+5 min</div><div class="small" style="font-size:10px">assunto encerrado</div></div>
+      <div style="position:relative"><div style="position:absolute;left:50%;top:0;height:16px;width:3px;background:var(--lav-2);transform:translateX(-50%)"></div><div style="position:absolute;left:50%;top:16px;width:18px;height:18px;border-radius:50%;background:var(--night);transform:translateX(-50%);border:3px solid var(--cream)"></div></div>
+      <div style="padding:8px 0 6px 6px"><div class="card" style="padding:12px 14px;background:var(--night);border:none;color:#fff"><strong style="font-size:13px;color:#fff">Passo 6 · Frase de fechamento</strong><p class="small" style="margin:2px 0 0;color:#e9e3f7">A mesma frase sempre. Sinaliza que o assunto acabou, sem reabrir negociação.</p></div></div>
+    </div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:14px">
+    <p class="small" style="text-align:center;font-style:italic;color:var(--ink-soft)">💡 Desligar não é um evento único: é essa sequência de etapas que evita a explosão.</p>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 5 — ROTEIRO (parte 1: passos 1–3)                       -->
+<!-- ============================================================= -->
+<section class="page" data-pg="05">
+  <span class="brandfoot">Kit Tela</span>
+  <p class="eyebrow">O coração do kit</p>
+  <h2 class="title">O Roteiro de Transição</h2>
+  <div class="hr"></div>
+  <p class="lead">Seis passos que levam a criança do pico da tela até a energia redirecionada, sem guerra. Aqui os passos 1 a 3 — os outros na próxima página.</p>
+
+  <div class="card" style="margin-bottom:14px">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--night);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">1</div>
+      <h3 style="font-size:18px">Aviso prévio &nbsp;<span style="font-size:20px">⏳</span></h3>
+      <div style="flex:1"></div>
+      <div style="width:52px;height:52px;border:2px dashed var(--lav-2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ink-soft);text-align:center">ícone</div>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--teal-2)">✓ O que fazer:</strong> avise 10 min antes, em tom leve e concreto: "Faltam 10 minutinhos de tablet." Sem cara de bronca, sem pergunta.</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--night-2)">Por que funciona:</strong> o cérebro odeia surpresa. Avisado, ele começa a se despedir do estímulo antes de perdê-lo.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> avisar com voz de ameaça ("já vou desligar essa porcaria, hein").</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--teal)">Se não funcionar:</strong> use um timer visível na frente dela. Quando apita, não é você "mandando" — é o combinado que acabou.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--night);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">2</div>
+      <h3 style="font-size:18px">Contagem regressiva &nbsp;<span style="font-size:20px">3️⃣</span></h3>
+      <div style="flex:1"></div>
+      <div style="width:52px;height:52px;border:2px dashed var(--lav-2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ink-soft);text-align:center">ícone</div>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--teal-2)">✓ O que fazer:</strong> o penúltimo aviso, bem perto do fim: "Mais um vídeo / mais essa fase e a gente desliga." Concreto, uma unidade só.</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--night-2)">Por que funciona:</strong> transforma "daqui a pouco" em algo que a criança consegue ver acabar — e aceitar.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> dar "mais um" que vira mais três, mais cinco... a contagem perde o sentido.</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--teal)">Se não funcionar:</strong> combine a unidade <em>antes</em> de ligar ("hoje são 2 episódios") — assim o penúltimo já era esperado.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--night);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">3</div>
+      <h3 style="font-size:18px">Escolha controlada &nbsp;<span style="font-size:20px">🔀</span></h3>
+      <div style="flex:1"></div>
+      <div style="width:52px;height:52px;border:2px dashed var(--lav-2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ink-soft);text-align:center">ícone</div>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--teal-2)">✓ O que fazer:</strong> ofereça duas opções que levam ao mesmo fim: "Prefere desligar você ou eu desligo?" A tela vai desligar de qualquer jeito.</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--night-2)">Por que funciona:</strong> a criança sente que tem controle sobre <em>como</em>, e larga a briga sobre <em>se</em>.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> oferecer escolha falsa que reabre a negociação ("quer desligar agora ou mais tarde?").</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--teal)">Se não funcionar:</strong> se ela não escolhe em 5 segundos, escolha por ela com calma: "Tudo bem, então eu desligo." E siga para o passo 4.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 6 — ROTEIRO (parte 2: passos 4–6)                       -->
+<!-- ============================================================= -->
+<section class="page" data-pg="06">
+  <span class="brandfoot">Kit Tela</span>
+  <p class="eyebrow">O coração do kit · continuação</p>
+  <h2 class="title">O Roteiro de Transição</h2>
+  <div class="hr"></div>
+
+  <div class="card" style="margin-bottom:14px">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--night);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">4</div>
+      <h3 style="font-size:18px">Desligamento efetivo &nbsp;<span style="font-size:20px">📴</span></h3>
+      <div style="flex:1"></div>
+      <div style="width:52px;height:52px;border:2px dashed var(--lav-2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ink-soft);text-align:center">ícone</div>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--teal-2)">✓ O que fazer:</strong> a tela desliga, ponto. Regra fixa, sem negociar neste momento. Voz calma, gesto firme, sem sermão.</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--night-2)">Por que funciona:</strong> a firmeza tranquila é o que ensina que o limite é real — e limite real acalma mais que discussão.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> ceder ao primeiro choro e religar "só mais um pouquinho" — o que ensina que chorar funciona.</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--teal)">Se não funcionar:</strong> se a birra vier, acolha o sentimento sem religar: "Eu sei que é chato. A tela já foi, e eu estou aqui." Depois, passo 5.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--night);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">5</div>
+      <h3 style="font-size:18px">Distração ativa &nbsp;<span style="font-size:20px">🚀</span></h3>
+      <div style="flex:1"></div>
+      <div style="width:52px;height:52px;border:2px dashed var(--lav-2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ink-soft);text-align:center">ícone</div>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--teal-2)">✓ O que fazer:</strong> imediatamente após desligar, ofereça o próximo estímulo — uma das 3 técnicas da p. 7. Não deixe o vazio.</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--night-2)">Por que funciona:</strong> o cérebro está cheio de energia sem a tela. Dá pra descarregá-la numa brincadeira em vez de num escândalo.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> desligar e sair da sala, deixando a criança sozinha com a frustração fresca.</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--teal)">Se não funcionar:</strong> tenha a técnica <em>já pronta</em> antes de desligar (massinha na mesa, bola na mão) — a transição precisa ser instantânea.</p>
+    </div>
+  </div>
+
+  <div class="card" style="background:linear-gradient(135deg,var(--night),var(--night-2));border:none;color:#fff">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:#fff;color:var(--night);font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">6</div>
+      <h3 style="font-size:18px;color:#fff">Frase de fechamento &nbsp;<span style="font-size:20px">✅</span></h3>
+      <div style="flex:1"></div>
+      <div style="width:52px;height:52px;border:2px dashed rgba(255,255,255,.4);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:9px;color:#c9bff0;text-align:center">ícone</div>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0;color:#e9e3f7"><strong style="color:#fff">✓ O que fazer:</strong> a MESMA frase toda vez: "A tela acabou por hoje. Amanhã tem de novo. Agora é hora de brincar."</p></div>
+      <div><p class="small" style="margin:0;color:#e9e3f7"><strong style="color:#fff">Por que funciona:</strong> é o ponto final combinado. Fecha o assunto e mostra que não há mais o que negociar.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1;color:#e9e3f7"><strong style="color:#ffd9c9">Erro comum:</strong> reabrir a conversa ("mas por que não pode?...") e destravar tudo de novo.</p>
+      <p class="small" style="margin:0;flex:1;color:#e9e3f7"><strong style="color:#ffd9c9">Se não funcionar:</strong> repita a mesma frase, igual, sem variar, e siga com a brincadeira. A repetição tranquila é a mensagem.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 7 — 3 TÉCNICAS DE DISTRAÇÃO ATIVA                       -->
+<!-- ============================================================= -->
+<section class="page" data-pg="07">
+  <span class="brandfoot">Kit Tela</span>
+  <p class="eyebrow">O passo que evita a explosão</p>
+  <h2 class="title">As 3 Técnicas<br>de Distração Ativa</h2>
+  <div class="hr"></div>
+  <p class="lead">Depois de desligar, o cérebro fica cheio de energia sem destino. Estas 3 técnicas redirecionam esse pico para o corpo e os sentidos — escolha a que combina com o momento. Tenha a técnica pronta <em>antes</em> de desligar.</p>
+
+  <!-- técnica 1 -->
+  <div class="card" style="margin-bottom:12px;background:var(--teal-soft);border:none">
+    <div style="display:flex;gap:14px;align-items:flex-start">
+      <div style="flex:0 0 46px;height:46px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:24px">🚀</div>
+      <div style="flex:1">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><h3 style="font-size:16px">1. Foguete de Descarga</h3><span class="tag" style="background:#fff">⏱️ 2 min</span><span class="tag" style="background:#fff">energia física</span></div>
+        <p class="small" style="margin:6px 0 0"><strong>Para que serve:</strong> queimar de uma vez o excesso de energia do pico da tela, com movimento intenso e curto.</p>
+        <p class="small" style="margin:4px 0 0"><strong>Como fazer:</strong> "Vira foguete!" → 10 pulos contando alto → 5 segundos agachada "carregando" → "decola" correndo até a parede e volta. Termina com os braços pro alto e uma respiração funda.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- técnica 2 -->
+  <div class="card" style="margin-bottom:12px;background:var(--mint-soft);border:none">
+    <div style="display:flex;gap:14px;align-items:flex-start">
+      <div style="flex:0 0 46px;height:46px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:24px">✋</div>
+      <div style="flex:1">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><h3 style="font-size:16px">2. Caixa das Texturas</h3><span class="tag" style="background:#fff">⏱️ 3 min</span><span class="tag" style="background:#fff">sensorial / calmante</span></div>
+        <p class="small" style="margin:6px 0 0"><strong>Para que serve:</strong> trocar o estímulo rápido da tela por um estímulo lento e tátil, que acalma em vez de acelerar.</p>
+        <p class="small" style="margin:4px 0 0"><strong>Como fazer:</strong> tenha uma caixinha com massinha, areia cinética, água ou tecidos. "Vem sentir o que tem na caixa hoje." Deixe ela mexer, apertar, descrever o que sente. As mãos ocupadas desligam a mente da tela.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- técnica 3 -->
+  <div class="card" style="margin-bottom:14px;background:#fdf3d9;border:none">
+    <div style="display:flex;gap:14px;align-items:flex-start">
+      <div style="flex:0 0 46px;height:46px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:24px">🎯</div>
+      <div style="flex:1">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><h3 style="font-size:16px">3. Missão Relâmpago</h3><span class="tag" style="background:#fff">⏱️ 5 min</span><span class="tag" style="background:#fff">foco / propósito</span></div>
+        <p class="small" style="margin:6px 0 0"><strong>Para que serve:</strong> dar ao cérebro um novo objetivo divertido e concreto, para ele "esquecer" o objetivo anterior (a tela).</p>
+        <p class="small" style="margin:4px 0 0"><strong>Como fazer:</strong> proponha uma missão com começo, meio e fim: "Missão: achar 3 coisas azuis pela casa!" / "montar a torre mais alta em 5 min" / "me ajudar a pôr a mesa". Comemore a conclusão — a vitória substitui a recompensa da tela.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="border:2px dashed var(--lav-2);border-radius:14px;padding:14px;display:flex;gap:12px;background:rgba(255,255,255,.5)">
+    <div style="flex:1;text-align:center"><div style="font-size:28px">🚀</div><div class="small" style="font-weight:700">Foguete</div><div class="small" style="font-size:10px">descarrega</div></div>
+    <div style="flex:1;text-align:center"><div style="font-size:28px">✋</div><div class="small" style="font-weight:700">Texturas</div><div class="small" style="font-size:10px">acalma</div></div>
+    <div style="flex:1;text-align:center"><div style="font-size:28px">🎯</div><div class="small" style="font-weight:700">Missão</div><div class="small" style="font-size:10px">redireciona o foco</div></div>
+  </div>
+  <p class="small" style="text-align:center;margin-top:8px;font-style:italic;color:var(--ink-soft)">📷 Espaço reservado para ilustração/fotos numeradas de cada técnica (PDF impresso) ou animação (app).</p>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 8 — SCRIPT DE FRASES                                    -->
+<!-- ============================================================= -->
+<section class="page" data-pg="08">
+  <span class="brandfoot">Kit Tela</span>
+  <p class="eyebrow">Nunca mais travar na hora H</p>
+  <h2 class="title">Script de Frases Prontas</h2>
+  <div class="hr"></div>
+  <p class="lead">No calor da hora, a gente fala no automático — e o automático costuma ser o gatilho. Aqui, situação por situação: o que <em>não</em> falar e o que dizer no lugar.</p>
+
+  <div style="display:grid;grid-template-columns:1fr;gap:12px">
+    <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:0;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)">
+      <div style="padding:0 12px">Situação</div>
+      <div style="padding:0 12px;color:#c04a68">❌ Não fale</div>
+      <div style="padding:0 12px;color:var(--teal-2)">✓ Fale no lugar</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:0;border-radius:12px;overflow:hidden;border:1px solid var(--line)">
+      <div style="background:var(--lav);padding:12px;font-weight:700;font-size:12.5px">Grita que quer mais tempo</div>
+      <div style="background:var(--rose-soft);padding:12px" class="small">"Para de gritar ou você fica sem tablet amanhã!"</div>
+      <div style="background:var(--teal-soft);padding:12px" class="small">"Eu sei que você queria mais. É difícil parar mesmo. Amanhã tem de novo — agora vem comigo."</div>
+
+      <div style="background:var(--lav);padding:12px;font-weight:700;font-size:12.5px">Esconde o tablet</div>
+      <div style="background:var(--rose-soft);padding:12px" class="small">"Me dá isso já! Você tá de castigo!"</div>
+      <div style="background:var(--teal-soft);padding:12px" class="small">"O tablet dorme aqui na caixinha. Você me entrega ou a gente guarda junto?"</div>
+
+      <div style="background:var(--lav);padding:12px;font-weight:700;font-size:12.5px">Promete que é a última vez</div>
+      <div style="background:var(--rose-soft);padding:12px" class="small">"Tá, mas é a última mesmo, hein!" (e cede)</div>
+      <div style="background:var(--teal-soft);padding:12px" class="small">"Nosso combinado de hoje já acabou. Amanhã você usa de novo. Agora é a Missão Relâmpago!"</div>
+
+      <div style="background:var(--lav);padding:12px;font-weight:700;font-size:12.5px">Chora que os amigos usam mais</div>
+      <div style="background:var(--rose-soft);padding:12px" class="small">"Não me importa o que os outros fazem!"</div>
+      <div style="background:var(--teal-soft);padding:12px" class="small">"Cada casa tem sua regra. A nossa é essa, e é porque eu te amo. Vem, vou te mostrar uma coisa."</div>
+
+      <div style="background:var(--lav);padding:12px;font-weight:700;font-size:12.5px">Diz "você é a pior mãe"</div>
+      <div style="background:var(--rose-soft);padding:12px" class="small">"Que falta de educação! Fala assim de novo pra ver."</div>
+      <div style="background:var(--teal-soft);padding:12px" class="small">"Você tá com muita raiva agora. Pode ficar bravo. Eu continuo aqui do seu lado."</div>
+
+      <div style="background:var(--lav);padding:12px;font-weight:700;font-size:12.5px">Joga no chão / bate</div>
+      <div style="background:var(--rose-soft);padding:12px" class="small">"Se bater, apanha!"</div>
+      <div style="background:var(--teal-soft);padding:12px" class="small">(firme e calma) "Bater não pode. Sua raiva pode. Vem descarregar aqui: bora ser foguete."</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px;background:#fff;border-left:5px solid var(--teal)">
+    <p class="small" style="margin:0"><strong>💡 O segredo de todas elas:</strong> validar o sentimento sem ceder no limite. "Eu entendo o que você sente" + "e o combinado continua". As duas coisas juntas — nunca uma sem a outra.</p>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 9 — GUIA DE TEMPO DE TELA POR IDADE                     -->
+<!-- ============================================================= -->
+<section class="page" data-pg="09">
+  <span class="brandfoot">Kit Tela</span>
+  <p class="eyebrow">Quanto é saudável</p>
+  <h2 class="title">Guia de Tempo de Tela<br>por Idade</h2>
+  <div class="hr"></div>
+  <p class="lead">Referências para ajustar o limite diário à idade da sua filha. Não é regra rígida — é um ponto de partida saudável. E o <em>tipo</em> de tela importa tanto quanto o tempo.</p>
+
+  <div class="grid3" style="margin-bottom:22px">
+    <div class="card" style="background:var(--teal-soft);text-align:center">
+      <div style="font-size:26px">🧒</div>
+      <span class="tag" style="background:#fff">3 a 5 anos</span>
+      <div style="font-family:var(--serif);font-size:30px;color:var(--night);font-weight:700;margin:8px 0 2px">até 1h</div>
+      <p class="small" style="margin:0">por dia, de preferência acompanhada. Priorize tela passiva e calma; evite vídeos rápidos.</p>
+    </div>
+    <div class="card" style="background:var(--peach-soft);text-align:center">
+      <div style="font-size:26px">🧑</div>
+      <span class="tag" style="background:#fff">6 a 8 anos</span>
+      <div style="font-family:var(--serif);font-size:30px;color:var(--night);font-weight:700;margin:8px 0 2px">1 a 1h30</div>
+      <p class="small" style="margin:0">por dia, com combinados claros. Comece a equilibrar tela ativa com pausas obrigatórias.</p>
+    </div>
+    <div class="card" style="background:var(--lav);text-align:center">
+      <div style="font-size:26px">🧑‍🦱</div>
+      <span class="tag" style="background:#fff">9 a 10 anos</span>
+      <div style="font-family:var(--serif);font-size:30px;color:var(--night);font-weight:700;margin:8px 0 2px">até 2h</div>
+      <p class="small" style="margin:0">por dia, com autonomia supervisionada. Mais importante que o tempo é o tipo e a companhia.</p>
+    </div>
+  </div>
+
+  <h3 style="font-size:17px;margin-bottom:10px">Nem toda tela é igual: passiva × ativa</h3>
+  <div class="grid2" style="gap:14px">
+    <div class="card" style="background:var(--mint-soft);border:none">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><div style="font-size:24px">📺</div><h3 style="font-size:15px">Tela passiva</h3></div>
+      <p class="small" style="margin:0 0 8px">Desenho, filme, história — ritmo mais lento, começo-meio-fim. A criança <strong>assiste</strong>. Estimula menos o pico de dopamina e é mais fácil de desligar.</p>
+      <p class="small" style="margin:0"><strong style="color:var(--teal-2)">Como usar:</strong> é a opção preferida, principalmente para os menores. Ainda assim, com limite de tempo.</p>
+    </div>
+    <div class="card" style="background:var(--rose-soft);border:none">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><div style="font-size:24px">📱</div><h3 style="font-size:15px">Tela ativa / estimulante</h3></div>
+      <p class="small" style="margin:0 0 8px">Jogos, vídeos curtos tipo Shorts/TikTok — recompensa a cada segundos, sem fim natural. A criança <strong>interage</strong> e recebe o pico de estímulo mais forte. É a mais difícil de desligar.</p>
+      <p class="small" style="margin:0"><strong style="color:#c04a68">Como usar:</strong> dose menor, sempre com tempo combinado antes e o roteiro de desligamento à mão.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px;background:var(--night);border:none;color:#fff">
+    <p class="small" style="margin:0;color:#e9e3f7"><strong style="color:#fff">Regra de bolso:</strong> quanto mais rápida e "sem fim" for a tela, menor o tempo e mais firme o roteiro. Vídeo curto que rola sozinho é o que mais vicia — e o que mais exige limite.</p>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 10 — ADAPTANDO POR PERFIL                               -->
+<!-- ============================================================= -->
+<section class="page" data-pg="10">
+  <span class="brandfoot">Kit Tela</span>
+  <p class="eyebrow">Personalização</p>
+  <h2 class="title">Adaptando o Kit por<br>Perfil da Criança</h2>
+  <div class="hr"></div>
+  <p class="lead">A resistência à tela aparece de um jeito diferente em cada perfil. O roteiro é o mesmo; o que muda é onde você reforça. Use a mesma lógica de personalização do <strong>Perfil da Criança</strong> do app.</p>
+
+  <div class="grid2" style="gap:14px">
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px"><div style="font-size:26px">🎯</div><h3 style="font-size:16px">Perfil Foco</h3></div>
+      <p class="small" style="margin:0 0 6px"><strong>Como se manifesta:</strong> "gruda" tanto no conteúdo que parece nem te ouvir; a transição é difícil porque ela está profundamente absorvida.</p>
+      <p class="small" style="margin:0;color:var(--teal-2)"><strong>O que ajustar:</strong> capriche no aviso prévio e na contagem regressiva. Toque nela ou entre no campo de visão ao avisar — ela precisa <em>registrar</em> o aviso.</p>
+    </div>
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px"><div style="font-size:26px">😤</div><h3 style="font-size:16px">Perfil Birra</h3></div>
+      <p class="small" style="margin:0 0 6px"><strong>Como se manifesta:</strong> testa o limite a cada desligamento, negocia, promete, insiste — buscando a brecha do dia.</p>
+      <p class="small" style="margin:0;color:var(--teal-2)"><strong>O que ajustar:</strong> invista na regra fixa e na frase de fechamento. Nunca reabra a negociação. A consistência dia após dia é o que apaga o teste.</p>
+    </div>
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px"><div style="font-size:26px">💥</div><h3 style="font-size:16px">Perfil Agressividade</h3></div>
+      <p class="small" style="margin:0 0 6px"><strong>Como se manifesta:</strong> a frustração vira corpo — joga o tablet, bate, grita. A queda do pico explode em ação física.</p>
+      <p class="small" style="margin:0;color:var(--teal-2)"><strong>O que ajustar:</strong> priorize a distração ativa física (o Foguete de Descarga) já pronta. Valide a raiva e ofereça a descarga <em>antes</em> que ela transborde.</p>
+    </div>
+    <div class="card">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px"><div style="font-size:26px">🌀</div><h3 style="font-size:16px">Perfil Agitação sensorial</h3></div>
+      <p class="small" style="margin:0 0 6px"><strong>Como se manifesta:</strong> sai da tela superexcitada, elétrica, sem conseguir "parar o corpo"; o estímulo forte a deixou a mil.</p>
+      <p class="small" style="margin:0;color:var(--teal-2)"><strong>O que ajustar:</strong> prefira a distração sensorial calmante (Caixa das Texturas) e reduza a tela ativa. Ela precisa de estímulo lento para "descer".</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px;background:var(--teal-soft);border:none">
+    <p class="small" style="margin:0"><strong>💡 Dica:</strong> não sabe o perfil predominante? Observe <em>como</em> a birra da tela aparece por 3 dias — grito, negociação, corpo ou agitação. O jeito da resistência já te diz onde reforçar.</p>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 11 — TROUBLESHOOTING                                    -->
+<!-- ============================================================= -->
+<section class="page" data-pg="11">
+  <span class="brandfoot">Kit Tela</span>
+  <p class="eyebrow">Quando a vida real complica</p>
+  <h2 class="title">Quando o Roteiro<br>Não Funciona</h2>
+  <div class="hr"></div>
+  <p class="lead">Nenhum roteiro funciona 100% dos dias — e tudo bem. Aqui estão os cenários mais comuns e o ajuste certo para cada um. Consistência ao longo dos dias vale mais que um desligamento perfeito.</p>
+
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <div class="card" style="display:flex;gap:16px;align-items:flex-start">
+      <div style="flex:0 0 48px;height:48px;border-radius:12px;background:var(--teal-soft);display:flex;align-items:center;justify-content:center;font-size:24px">📵</div>
+      <div>
+        <h3 style="font-size:15px;margin-bottom:5px">"Ela já usa tela sem limite há meses"</h3>
+        <p class="small" style="margin:0">O cérebro dela está acostumado com acesso livre — cortar tudo de uma vez vira guerra total. <strong>Reduza aos poucos</strong>: comece aplicando o roteiro em UM horário do dia, e vá encurtando 10 minutos a cada poucos dias. Combine a nova regra num momento calmo, não na hora da briga.</p>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;gap:16px;align-items:flex-start">
+      <div style="flex:0 0 48px;height:48px;border-radius:12px;background:var(--lav);display:flex;align-items:center;justify-content:center;font-size:24px">👦</div>
+      <div>
+        <h3 style="font-size:15px;margin-bottom:5px">"Ela usa a tela dos irmãos maiores"</h3>
+        <p class="small" style="margin:0">Regras diferentes por idade confundem a menor. Explique que "cada idade tem seu tempo", como o número do sapato. <strong>Peça a parceria do mais velho</strong> para usar a tela longe dela ou em horários separados, e dê à menor uma atividade especial "de gente grande" no lugar.</p>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;gap:16px;align-items:flex-start">
+      <div style="flex:0 0 48px;height:48px;border-radius:12px;background:var(--peach-soft);display:flex;align-items:center;justify-content:center;font-size:24px">👵</div>
+      <div>
+        <h3 style="font-size:15px;margin-bottom:5px">"A avó / babá não segue a regra"</h3>
+        <p class="small" style="margin:0">A criança aprende rápido com quem pode "mais". Não brigue na frente dela. <strong>Alinhe a regra em particular</strong>, por escrito e simples ("tela só até tal hora, depois guarda"). Foque no essencial — o horário de desligar — e deixe o resto flexível. Consistência entre os adultos é o que segura o limite.</p>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;gap:16px;align-items:flex-start">
+      <div style="flex:0 0 48px;height:48px;border-radius:12px;background:#fdf3d9;display:flex;align-items:center;justify-content:center;font-size:24px">📉</div>
+      <div>
+        <h3 style="font-size:15px;margin-bottom:5px">"Funcionou por dias e de repente regrediu"</h3>
+        <p class="small" style="margin:0">Recaídas são normais — vêm com cansaço, doença, mudança ou uma exceção que virou hábito (a viagem, o fim de semana na casa da vó). Não recomece do zero: <strong>volte ao roteiro exatamente como era</strong>. Em 2 a 3 dias o cérebro relembra o combinado.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px;background:var(--night);border:none;color:#fff">
+    <p class="small" style="margin:0;color:#e9e3f7"><strong style="color:#fff">Regra de ouro do troubleshooting:</strong> quando algo dá errado, não mude o roteiro — ajuste a dose. Trocar o método toda vez que falha é o que mais atrapalha. Firmeza tranquila, dia após dia.</p>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 12 — SEMANA DE ACOMPANHAMENTO                           -->
+<!-- ============================================================= -->
+<section class="page" data-pg="12">
+  <span class="brandfoot">Kit Tela</span>
+  <p class="eyebrow">Sua prova de resultado</p>
+  <h2 class="title">Semana de Acompanhamento</h2>
+  <div class="hr"></div>
+  <p class="lead">Por 7 dias, marque como foi o desligamento. Não é cobrança — é para você <em>ver</em> o progresso acontecer. Escolha o emoji que representa o dia e, se quiser, anote uma palavrinha.</p>
+
+  <div class="card" style="background:#fff;margin-bottom:14px">
+    <div style="display:flex;justify-content:space-around;text-align:center;gap:10px">
+      <div><div style="font-size:30px">😌</div><div class="small" style="font-weight:700;margin-top:2px">Desligou tranquilo</div><div class="small" style="font-size:10px">Sem guerra</div></div>
+      <div style="width:1px;background:var(--line)"></div>
+      <div><div style="font-size:30px">😐</div><div class="small" style="font-weight:700;margin-top:2px">Mais ou menos</div><div class="small" style="font-size:10px">Resistiu, mas cedeu</div></div>
+      <div style="width:1px;background:var(--line)"></div>
+      <div><div style="font-size:30px">😣</div><div class="small" style="font-weight:700;margin-top:2px">Foi difícil</div><div class="small" style="font-size:10px">Deu briga</div></div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:9px">
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding:0 6px">
+      <div>Dia</div><div>Como foi</div><div>Uma palavra sobre hoje</div>
+    </div>
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--lav);text-align:center;font-weight:700;font-size:12px">Dia 1</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😌 😐 😣</div><div style="border-bottom:2px dotted var(--lav-2);height:22px"></div></div>
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--lav);text-align:center;font-weight:700;font-size:12px">Dia 2</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😌 😐 😣</div><div style="border-bottom:2px dotted var(--lav-2);height:22px"></div></div>
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--lav);text-align:center;font-weight:700;font-size:12px">Dia 3</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😌 😐 😣</div><div style="border-bottom:2px dotted var(--lav-2);height:22px"></div></div>
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--lav);text-align:center;font-weight:700;font-size:12px">Dia 4</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😌 😐 😣</div><div style="border-bottom:2px dotted var(--lav-2);height:22px"></div></div>
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--lav);text-align:center;font-weight:700;font-size:12px">Dia 5</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😌 😐 😣</div><div style="border-bottom:2px dotted var(--lav-2);height:22px"></div></div>
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--lav);text-align:center;font-weight:700;font-size:12px">Dia 6</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😌 😐 😣</div><div style="border-bottom:2px dotted var(--lav-2);height:22px"></div></div>
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--teal-soft);text-align:center;font-weight:700;font-size:12px">Dia 7 🎉</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😌 😐 😣</div><div style="border-bottom:2px dotted var(--lav-2);height:22px"></div></div>
+  </div>
+
+  <div class="card" style="margin-top:14px;background:var(--mint-soft);border:none">
+    <p class="small" style="margin:0"><strong>No fim da semana, olhe para trás.</strong> Quantos 😌 a mais que no primeiro dia? Esse é o seu resultado — construído por você, um desligamento de cada vez.</p>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 13 — FECHAMENTO                                         -->
+<!-- ============================================================= -->
+<section class="page" data-pg="" style="background:linear-gradient(165deg,#134e4a 0%,#173a4d 50%,#241d3a 100%);color:#fff;justify-content:center;align-items:center;text-align:center">
+  <svg style="position:absolute;inset:0;width:100%;height:100%" aria-hidden="true">
+    <g fill="#2fb3a3" opacity="0.55">
+      <circle cx="80" cy="120" r="1.8"/><circle cx="660" cy="90" r="1.5"/>
+      <circle cx="120" cy="880" r="1.6"/><circle cx="700" cy="820" r="1.8"/>
+      <circle cx="720" cy="220" r="1.2"/><circle cx="60" cy="520" r="1.3"/>
+    </g>
+  </svg>
+  <div style="position:relative;max-width:135mm;padding:0 30px">
+    <div style="font-size:44px;margin-bottom:20px">📵✨</div>
+    <p class="eyebrow" style="color:var(--teal);justify-content:center">Você chegou até aqui</p>
+    <h2 style="font-family:var(--serif);color:#fff;font-size:34px;line-height:1.15;font-weight:700;margin-bottom:20px">
+      Desligar a tela não<br>precisa ser uma guerra
+    </h2>
+    <div style="width:70px;height:3px;background:var(--teal);margin:0 auto 24px;border-radius:3px"></div>
+    <p style="font-size:15px;line-height:1.7;color:#e2efee;margin-bottom:16px">
+      Você não vai acertar todos os dias — e não precisa. O que transforma a relação com a tela
+      não é o desligamento perfeito, é a <strong style="color:#fff">repetição tranquila</strong> do roteiro.
+      Cada vez que você segue os passos, mesmo cansada, ensina o cérebro da sua filha a lidar com
+      a frustração — e isso vale para muito além da tela.
+    </p>
+    <p style="font-size:15px;line-height:1.7;color:#e2efee;margin-bottom:30px">
+      Comece hoje, no próximo desligamento. Escolha um passo para fazer diferente.
+      Amanhã, some mais um. Em uma semana, a briga da tela já vai parecer outra casa.
+    </p>
+
+    <div style="display:inline-block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:18px 26px">
+      <p style="font-family:var(--serif);font-style:italic;font-size:17px;color:#a7e8de;margin:0">
+        "Quem põe o limite com calma<br>não está tirando algo da criança —<br>está ensinando ela a se controlar."
+      </p>
+    </div>
+
+    <div style="margin-top:36px;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:#8fd6c2;font-weight:700">
+      Ginástica Cerebral · Continue com a gente 💙
+    </div>
+  </div>
+</section>
