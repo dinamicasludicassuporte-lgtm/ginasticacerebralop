@@ -1,0 +1,700 @@
+<title>Roteiro da Reunião Escolar: Como Conversar com a Professora</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --ink:#22314a;
+    --ink-soft:#4f5a70;
+    --navy:#243a5e;          /* azul-marinho profundo */
+    --navy-2:#33507e;
+    --blue:#3f7cc4;          /* acento identidade — parceria */
+    --blue-2:#2f5f9c;
+    --blue-soft:#e5eef9;
+    --lav:#eef2fb;
+    --lav-2:#dbe6f6;
+    --peach:#ff9d7a;
+    --peach-soft:#ffe6dc;
+    --gold:#f4c04f;
+    --mint:#8fd6c2;
+    --mint-soft:#e2f5ef;
+    --rose:#f2a5b8;
+    --rose-soft:#fde6ec;
+    --cream:#fbf9f4;
+    --line:#e2e8f2;
+    --white:#ffffff;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:#cfd9ea;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+    line-height:1.5;
+  }
+
+  .page{
+    width:210mm;
+    min-height:297mm;
+    padding:16mm 15mm 14mm;
+    margin:10mm auto;
+    background:var(--cream);
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 6px 30px rgba(36,58,94,.18);
+    display:flex;
+    flex-direction:column;
+  }
+  .page::after{
+    content:attr(data-pg);
+    position:absolute;
+    bottom:7mm; right:15mm;
+    font-size:9px; letter-spacing:.18em;
+    color:var(--ink-soft); opacity:.7;
+    font-weight:600;
+  }
+  .brandfoot{
+    position:absolute;
+    bottom:7mm; left:15mm;
+    font-size:9px; letter-spacing:.16em;
+    color:var(--ink-soft); opacity:.7;
+    text-transform:uppercase; font-weight:700;
+  }
+
+  @media print{
+    html,body{margin:0;padding:0;background:#fff;width:210mm}
+    .page{
+      margin:0; box-shadow:none;
+      width:210mm; height:297mm; min-height:297mm;
+      overflow:hidden;
+      page-break-after:always;
+      break-after:page;
+      break-inside:avoid;
+    }
+    .page:last-child{page-break-after:auto;break-after:auto;height:297mm}
+  }
+  @page{ size:210mm 297mm; margin:0; }
+
+  h1,h2,h3{font-family:var(--serif);margin:0;color:var(--navy)}
+  .eyebrow{
+    font-family:var(--sans);
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    font-size:11px;
+    font-weight:800;
+    color:var(--blue-2);
+    margin:0 0 10px;
+  }
+  h2.title{font-size:29px;line-height:1.14;margin:0 0 6px;font-weight:700}
+  .lead{font-size:13.5px;color:var(--ink-soft);max-width:62ch;margin:0 0 18px}
+  p{margin:0 0 10px}
+  strong{color:var(--navy)}
+  .small{font-size:11.5px;color:var(--ink-soft)}
+
+  .hr{height:2px;background:linear-gradient(90deg,var(--blue),transparent);border-radius:2px;margin:2px 0 18px;width:70px}
+
+  .card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:16px 18px;
+  }
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+
+  .tag{
+    display:inline-block;
+    font-size:10.5px;font-weight:800;letter-spacing:.05em;
+    padding:3px 10px;border-radius:999px;
+    background:var(--lav-2);color:var(--navy-2);
+  }
+
+  ul.clean{list-style:none;margin:0;padding:0}
+  ul.clean li{position:relative;padding-left:22px;margin-bottom:8px;font-size:12.5px}
+  ul.clean li::before{content:"";position:absolute;left:0;top:6px;width:9px;height:9px;border-radius:50%;background:var(--blue)}
+  ul.check li::before{content:"✓";background:none;color:var(--blue);font-weight:900;top:0;font-size:13px}
+</style>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 1 — CAPA                                                -->
+<!-- ============================================================= -->
+<section class="page" data-pg="" style="background:linear-gradient(165deg,#2f5f9c 0%,#243a5e 55%,#1c2b45 100%);color:#fff;padding:0;justify-content:center;align-items:center;text-align:center">
+  <svg style="position:absolute;inset:0;width:100%;height:100%" aria-hidden="true">
+    <g fill="#3f7cc4" opacity="0.45">
+      <circle cx="70" cy="120" r="2"/><circle cx="150" cy="200" r="1.4"/>
+      <circle cx="650" cy="90" r="1.8"/><circle cx="710" cy="170" r="1.2"/>
+      <circle cx="100" cy="720" r="1.6"/><circle cx="700" cy="790" r="1.8"/>
+      <circle cx="60" cy="440" r="1.3"/><circle cx="760" cy="460" r="1.4"/>
+    </g>
+    <g fill="#f4c04f" opacity="0.5">
+      <circle cx="300" cy="100" r="1.3"/><circle cx="500" cy="70" r="1.5"/>
+      <circle cx="190" cy="900" r="1.3"/><circle cx="600" cy="940" r="1.4"/>
+    </g>
+  </svg>
+
+  <!-- balões de conversa: mãe + professora -->
+  <div style="position:absolute;top:66px;right:70px;width:150px;height:110px">
+    <div style="position:absolute;top:0;left:0;width:88px;height:60px;background:#3f7cc4;border-radius:16px 16px 16px 4px;box-shadow:0 0 40px rgba(63,124,196,.4)"></div>
+    <div style="position:absolute;top:42px;right:0;width:88px;height:60px;background:#f4c04f;border-radius:16px 16px 4px 16px"></div>
+  </div>
+
+  <div style="position:relative;padding:0 42px;max-width:155mm">
+    <div style="font-size:13px;letter-spacing:.4em;text-transform:uppercase;color:var(--blue);font-weight:800;margin-bottom:26px">Ginástica Cerebral · Guia Complementar</div>
+
+    <div style="font-size:50px;margin-bottom:18px;line-height:1">🏫</div>
+
+    <h1 style="font-family:var(--serif);color:#fff;font-size:40px;line-height:1.08;font-weight:700;margin-bottom:16px">
+      Roteiro da Reunião Escolar
+    </h1>
+    <div style="width:90px;height:3px;background:var(--blue);margin:0 auto 20px;border-radius:3px"></div>
+    <h2 style="font-family:var(--serif);color:#bcd6f2;font-size:22px;font-weight:600;margin-bottom:30px;font-style:italic">
+      Como Conversar com a Professora
+    </h2>
+
+    <p style="font-size:15px;line-height:1.65;color:#dde8f5;max-width:52ch;margin:0 auto">
+      Seu filho melhorou em casa. Agora vamos <strong style="color:#fff">alinhar com a escola</strong>.
+      Um roteiro passo a passo para você chegar à reunião segura, ser ouvida com respeito e sair de lá
+      com um combinado real — sem defesa, sem rótulo, sem sair com aquele nó na garganta.
+    </p>
+
+    <div style="margin-top:44px;display:inline-flex;gap:10px;align-items:center;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#8fd6c2">
+      <span>Para mães na educação infantil e fundamental 1</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 2 — POR QUE A REUNIÃO É DIFERENTE                       -->
+<!-- ============================================================= -->
+<section class="page" data-pg="02">
+  <span class="brandfoot">Roteiro da Reunião Escolar</span>
+  <p class="eyebrow">Entendendo antes de agir</p>
+  <h2 class="title">Por que a reunião escolar é diferente<br>de qualquer outra conversa</h2>
+  <div class="hr"></div>
+  <p class="lead">Se você sente um aperto só de pensar na reunião, não é frescura — e não é falta de preparo. A conversa com a escola mexe com algo profundo. Entender isso te coloca no controle antes mesmo de sentar.</p>
+
+  <div class="card" style="background:var(--blue-soft);border:none;margin-bottom:16px">
+    <div style="display:flex;gap:16px;align-items:flex-start">
+      <div style="font-size:28px;line-height:1">🛡️</div>
+      <div>
+        <h3 style="font-size:17px;margin-bottom:8px">Você entra em posição de defesa antes de sentar</h3>
+        <p class="small" style="margin:0">Muitas mães chegam à reunião já com o coração acelerado — não porque fizeram algo errado, mas por <strong>medo de julgamento</strong> ("vão achar que eu não sei educar") e <strong>medo de ouvir mais um rótulo</strong> sobre o filho. Esse estado de defesa faz a gente interromper, justificar ou negar antes mesmo de entender o que a professora quer dizer. Reconhecer o medo é o primeiro passo para ele não conduzir a conversa.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid2" style="gap:16px;margin-bottom:16px">
+    <div class="card" style="background:var(--white)">
+      <div style="font-size:24px;margin-bottom:8px">👩‍🏫</div>
+      <h3 style="font-size:16px;margin-bottom:8px">O que a professora vê</h3>
+      <p class="small" style="margin:0">Ela vê seu filho <strong>em grupo</strong>: dividindo atenção com 20 crianças, seguindo regras coletivas, comparado (mesmo sem querer) com a média da turma. O que para ela é "ele se dispersa" pode ser o comportamento dele num ambiente de muito estímulo e pouca atenção individual.</p>
+    </div>
+    <div class="card" style="background:var(--white)">
+      <div style="font-size:24px;margin-bottom:8px">🏠</div>
+      <h3 style="font-size:16px;margin-bottom:8px">O que você vê em casa</h3>
+      <p class="small" style="margin:0">Você vê seu filho <strong>individualmente</strong>: com sua atenção, no ritmo dele, num ambiente conhecido e seguro. O mesmo comportamento que "explode" na escola pode nem aparecer em casa — e é por isso que "em casa ele não é assim" é verdade, mas soa como negação para a professora.</p>
+    </div>
+  </div>
+
+  <div class="card" style="background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;border:none">
+    <div style="display:flex;gap:16px;align-items:flex-start">
+      <div style="font-size:30px;line-height:1">🔀</div>
+      <div>
+        <h3 style="color:#fff;font-size:17px;margin-bottom:8px">O descompasso que gera mal-entendido dos dois lados</h3>
+        <p class="small" style="margin:0;color:#dde8f5">Vocês duas estão certas — só estão vendo lados diferentes da mesma criança. Quando cada uma defende só a sua visão, viram adversárias. Quando <strong style="color:#fff">juntam as duas visões</strong>, montam o retrato completo dele. O objetivo da reunião não é provar quem está certa: é somar o que você vê em casa com o que a professora vê na escola. Este roteiro te ajuda a fazer exatamente essa ponte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 3 — OS 4 ERROS                                          -->
+<!-- ============================================================= -->
+<section class="page" data-pg="03">
+  <span class="brandfoot">Roteiro da Reunião Escolar</span>
+  <p class="eyebrow">Sem culpa, só consciência</p>
+  <h2 class="title">Os 4 erros que quase toda mãe<br>comete na reunião escolar</h2>
+  <div class="hr"></div>
+  <p class="lead">Todos vêm do nervosismo e do amor de mãe — não de despreparo. E cada um tem uma troca simples que muda o tom da reunião inteira.</p>
+
+  <div class="card" style="margin-bottom:12px;display:flex;gap:16px;align-items:flex-start">
+    <div style="flex:0 0 46px;height:46px;border-radius:12px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;font-size:22px">🙇‍♀️</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+        <span class="tag" style="background:var(--rose-soft);color:#c04a68">ERRO 1</span>
+        <h3 style="font-size:16px">Entrar já se desculpando ou justificando</h3>
+      </div>
+      <p class="small" style="margin-bottom:6px">Começar com "desculpa, eu sei que ele dá trabalho…" te coloca na posição de ré antes de a conversa começar — e faz a professora liderar do lugar de quem cobra.</p>
+      <p class="small" style="margin:0;color:var(--blue-2)"><strong>No lugar:</strong> abra com parceria: "Vim entender como ele está e como a gente pode se ajudar." Você chega como aliada, não como culpada.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:12px;display:flex;gap:16px;align-items:flex-start">
+    <div style="flex:0 0 46px;height:46px;border-radius:12px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;font-size:22px">🙅‍♀️</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+        <span class="tag" style="background:var(--rose-soft);color:#c04a68">ERRO 2</span>
+        <h3 style="font-size:16px">Negar o problema apontado ("em casa ele não é assim")</h3>
+      </div>
+      <p class="small" style="margin-bottom:6px">Mesmo sendo verdade, negar soa como "você está exagerando" e fecha a professora. Ela sente que não foi ouvida e para de compartilhar.</p>
+      <p class="small" style="margin:0;color:var(--blue-2)"><strong>No lugar:</strong> valide e conecte: "Interessante, em casa ele reage diferente — me conta em que momentos isso acontece na sala?" Você mantém a porta aberta.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:12px;display:flex;gap:16px;align-items:flex-start">
+    <div style="flex:0 0 46px;height:46px;border-radius:12px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;font-size:22px">🌫️</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+        <span class="tag" style="background:var(--rose-soft);color:#c04a68">ERRO 3</span>
+        <h3 style="font-size:16px">Pedir adaptação de forma vaga, sem exemplo</h3>
+      </div>
+      <p class="small" style="margin-bottom:6px">"Será que dá pra ter mais paciência com ele?" não diz o que fazer — e coloca a professora na defensiva, como se ela fosse impaciente.</p>
+      <p class="small" style="margin:0;color:var(--blue-2)"><strong>No lugar:</strong> peça algo concreto e pequeno: "Em casa funciona avisar 5 min antes de mudar de atividade. Será que dá pra tentar na sala?" Fácil de aceitar e testar.</p>
+    </div>
+  </div>
+
+  <div class="card" style="display:flex;gap:16px;align-items:flex-start">
+    <div style="flex:0 0 46px;height:46px;border-radius:12px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;font-size:22px">🚪</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+        <span class="tag" style="background:var(--rose-soft);color:#c04a68">ERRO 4</span>
+        <h3 style="font-size:16px">Sair sem combinar um próximo passo</h3>
+      </div>
+      <p class="small" style="margin-bottom:6px">Reunião boa sem combinado vira conversa esquecida na semana seguinte. Sem um sinal de acompanhamento, cada uma volta para o seu canto e nada muda.</p>
+      <p class="small" style="margin:0;color:var(--blue-2)"><strong>No lugar:</strong> feche com um acordo simples: "Podemos usar a agenda para eu saber como foi a semana?" Um canal combinado mantém vocês no mesmo time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 4 — ANTES DA REUNIÃO: PREPARAÇÃO                        -->
+<!-- ============================================================= -->
+<section class="page" data-pg="04">
+  <span class="brandfoot">Roteiro da Reunião Escolar</span>
+  <p class="eyebrow">Metade da conversa se ganha antes</p>
+  <h2 class="title">Antes da Reunião: Preparação</h2>
+  <div class="hr"></div>
+  <p class="lead">Quem chega com dado concreto conversa de igual para igual. Chegar com "sensação" te deixa insegura; chegar com exemplos anotados te deixa firme e clara. Prepare-se nos dias anteriores.</p>
+
+  <div class="grid2" style="gap:16px;align-items:start;margin-bottom:16px">
+    <div class="card" style="background:var(--blue-soft);border:none">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><div style="font-size:24px">🎒</div><h3 style="font-size:16px">Checklist do que levar</h3></div>
+      <ul class="clean check">
+        <li><strong>Anotações de casa</strong>: o que melhorou, quando, com qual estratégia.</li>
+        <li><strong>2 ou 3 exemplos específicos</strong> (data + situação), não frases genéricas.</li>
+        <li><strong>Suas dúvidas escritas</strong>, em ordem de prioridade, para não esquecer no nervoso.</li>
+        <li><strong>O Guia dos Sinais</strong> (p. 7) impresso ou no celular, para mostrar.</li>
+        <li><strong>Caneta e a agenda</strong> do aluno, para anotar o combinado na hora.</li>
+      </ul>
+    </div>
+
+    <div class="card" style="background:var(--white)">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><div style="font-size:24px">📝</div><h3 style="font-size:16px">Como registrar os sinais de casa</h3></div>
+      <p class="small" style="margin:0 0 10px">Nos 5 a 7 dias antes da reunião, anote rapidinho o que observar. Assim você chega com <strong>fatos</strong>, não só impressão. Uma linha por dia já basta:</p>
+      <ul class="clean">
+        <li style="font-size:12px"><strong>O quê:</strong> o comportamento que apareceu (ex.: "ficou frustrado ao errar a lição").</li>
+        <li style="font-size:12px"><strong>Quando:</strong> horário e contexto (cansado? com fome? depois da tela?).</li>
+        <li style="font-size:12px"><strong>O que ajudou:</strong> a estratégia que funcionou em casa.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="background:var(--white);border:none;padding:0;overflow:hidden">
+    <div style="background:var(--navy);color:#fff;padding:10px 16px;font-weight:700;font-size:13px">📋 Modelo de registro — leve preenchido</div>
+    <div style="padding:6px 16px 14px">
+      <div style="display:grid;grid-template-columns:70px 1.4fr 1fr 1.2fr;gap:0;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);padding:8px 0;border-bottom:1px solid var(--line)">
+        <div>Dia</div><div>O que aconteceu</div><div>Quando / contexto</div><div>O que ajudou</div>
+      </div>
+      <div style="display:grid;grid-template-columns:70px 1.4fr 1fr 1.2fr;gap:0;font-size:11px;padding:9px 0;border-bottom:1px dotted var(--lav-2)"><div style="font-weight:700">Seg</div><div>Frustrou ao perder no jogo</div><div>Fim da tarde, cansado</div><div>Respirar + tentar de novo</div></div>
+      <div style="display:grid;grid-template-columns:70px 1.4fr 1fr 1.2fr;gap:0;font-size:11px;padding:9px 0;border-bottom:1px dotted var(--lav-2)"><div style="font-weight:700">Qua</div><div>Focou 20 min na lição</div><div>Manhã, sem tela antes</div><div>Ambiente calmo, sem barulho</div></div>
+      <div style="display:grid;grid-template-columns:70px 1.4fr 1fr 1.2fr;gap:0;font-size:11px;padding:9px 0"><div style="color:var(--ink-soft)">___</div><div style="color:var(--ink-soft)">________________________</div><div style="color:var(--ink-soft)">__________________</div><div style="color:var(--ink-soft)">____________________</div></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px;background:var(--mint-soft);border:none">
+    <p class="small" style="margin:0"><strong>💡 Por que isso muda tudo:</strong> quando você diz "na quarta ele focou 20 minutos num ambiente calmo", a professora ouve uma parceira observadora — não uma mãe defensiva. Dado concreto constrói respeito.</p>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 5 — ROTEIRO DA CONVERSA (parte 1: passos 1–3)           -->
+<!-- ============================================================= -->
+<section class="page" data-pg="05">
+  <span class="brandfoot">Roteiro da Reunião Escolar</span>
+  <p class="eyebrow">O coração do guia</p>
+  <h2 class="title">O Roteiro da Conversa</h2>
+  <div class="hr"></div>
+  <p class="lead">Cinco passos que conduzem a reunião da abertura ao combinado final, mantendo você e a professora do mesmo lado. Aqui os passos 1 a 3 — os outros na próxima página.</p>
+
+  <div class="card" style="margin-bottom:14px">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">1</div>
+      <h3 style="font-size:18px">Abertura &nbsp;<span style="font-size:20px">🤝</span></h3>
+      <div style="flex:1"></div>
+      <div style="width:52px;height:52px;border:2px dashed var(--lav-2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ink-soft);text-align:center">ícone</div>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--blue-2)">✓ O que fazer:</strong> comece pela parceria: "Obrigada pelo tempo. Vim entender como ele está e ver como a gente pode caminhar junto."</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--navy-2)">Por que funciona:</strong> define o tom de time desde a primeira frase. A professora relaxa e compartilha mais.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> abrir se desculpando ou já perguntando "o que ele fez agora?".</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--blue)">Se a professora reage mal:</strong> se ela já começar dura, respire e ancore: "Entendo. Estou aqui justamente para ajudar — me conta tudo."</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">2</div>
+      <h3 style="font-size:18px">Escuta ativa &nbsp;<span style="font-size:20px">👂</span></h3>
+      <div style="flex:1"></div>
+      <div style="width:52px;height:52px;border:2px dashed var(--lav-2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ink-soft);text-align:center">ícone</div>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--blue-2)">✓ O que fazer:</strong> deixe a professora falar primeiro, até o fim, sem interromper. Anote. Só depois responda, começando por "entendi que…".</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--navy-2)">Por que funciona:</strong> quem é ouvido ouve de volta. Ao deixá-la esvaziar, você ganha o direito de ser escutada depois.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> cortar no meio para defender o filho a cada frase — isso trava a professora.</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--blue)">Se a professora reage mal:</strong> se ela despejar críticas, resista ao impulso de rebater. Anote e devolva: "São vários pontos, obrigada. Posso te contar o que vejo em casa?"</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">3</div>
+      <h3 style="font-size:18px">Compartilhar o que muda em casa &nbsp;<span style="font-size:20px">🏠</span></h3>
+      <div style="flex:1"></div>
+      <div style="width:52px;height:52px;border:2px dashed var(--lav-2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ink-soft);text-align:center">ícone</div>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--blue-2)">✓ O que fazer:</strong> conecte com o que ela relatou: "Isso que você viu também aparecia em casa. O que ajudou foi [estratégia]. Talvez sirva de ponte."</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--navy-2)">Por que funciona:</strong> você não nega o que ela vê — soma. Traz solução testada, não desculpa.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> usar o "em casa ele não é assim" como escudo, em vez de ponte.</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--blue)">Se a professora reage mal:</strong> se ela duvidar, mostre o registro concreto (p. 4): "Anotei alguns dias — olha aqui o que observei."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 6 — ROTEIRO DA CONVERSA (parte 2: passos 4–5)           -->
+<!-- ============================================================= -->
+<section class="page" data-pg="06">
+  <span class="brandfoot">Roteiro da Reunião Escolar</span>
+  <p class="eyebrow">O coração do guia · continuação</p>
+  <h2 class="title">O Roteiro da Conversa</h2>
+  <div class="hr"></div>
+
+  <div class="card" style="margin-bottom:14px">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">4</div>
+      <h3 style="font-size:18px">Pedido de adaptação &nbsp;<span style="font-size:20px">🧩</span></h3>
+      <div style="flex:1"></div>
+      <div style="width:52px;height:52px;border:2px dashed var(--lav-2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ink-soft);text-align:center">ícone</div>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--blue-2)">✓ O que fazer:</strong> peça UMA adaptação concreta e pequena, no formato de teste: "Será que dá pra tentar [X] por duas semanas e a gente vê?"</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--navy-2)">Por que funciona:</strong> pedido pequeno, específico e temporário é fácil de aceitar — e não soa como exigência ou crítica ao trabalho dela.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> pedir muitas coisas de uma vez, ou algo vago como "ter mais paciência".</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--blue)">Se a professora reage mal:</strong> se ela disser que não é possível, pergunte aberta: "O que <em>seria</em> viável na rotina da turma?" Deixe-a coautora da solução.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">5</div>
+      <h3 style="font-size:18px">Fechamento com próximo passo &nbsp;<span style="font-size:20px">📅</span></h3>
+      <div style="flex:1"></div>
+      <div style="width:52px;height:52px;border:2px dashed var(--lav-2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ink-soft);text-align:center">ícone</div>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--blue-2)">✓ O que fazer:</strong> combine um sinal de acompanhamento antes de sair: "Podemos usar a agenda / um bilhete semanal para acompanhar como foi?" Anote na hora.</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--navy-2)">Por que funciona:</strong> transforma a reunião em processo. Um canal combinado evita que tudo se perca na semana seguinte.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> sair com um "vamos ver como ele vai" no ar, sem canal nem data.</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--blue)">Se a professora reage mal:</strong> se ela resistir ao contato frequente, proponha o mínimo: "Um bilhete só sexta-feira já me ajuda muito. Pode ser?"</p>
+    </div>
+  </div>
+
+  <div class="card" style="background:linear-gradient(135deg,var(--navy),var(--navy-2));border:none;color:#fff">
+    <h3 style="color:#fff;font-size:16px;margin-bottom:10px">🧭 O roteiro em uma frase para cada passo</h3>
+    <div class="grid2" style="gap:8px 18px">
+      <p class="small" style="margin:0;color:#dde8f5"><strong style="color:#fff">1. Abertura:</strong> "Vim para caminhar junto."</p>
+      <p class="small" style="margin:0;color:#dde8f5"><strong style="color:#fff">2. Escuta:</strong> "Me conta tudo, eu anoto."</p>
+      <p class="small" style="margin:0;color:#dde8f5"><strong style="color:#fff">3. Casa:</strong> "Aqui em casa, o que ajudou foi…"</p>
+      <p class="small" style="margin:0;color:#dde8f5"><strong style="color:#fff">4. Adaptação:</strong> "Dá pra testar isso por 2 semanas?"</p>
+      <p class="small" style="margin:0;color:#dde8f5;grid-column:1 / -1"><strong style="color:#fff">5. Fechamento:</strong> "Como a gente acompanha daqui pra frente?"</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 7 — VOCABULÁRIO CERTO                                   -->
+<!-- ============================================================= -->
+<section class="page" data-pg="07">
+  <span class="brandfoot">Roteiro da Reunião Escolar</span>
+  <p class="eyebrow">As palavras abrem ou fecham portas</p>
+  <h2 class="title">Vocabulário Certo</h2>
+  <div class="hr"></div>
+  <p class="lead">Na reunião, a palavra certa constrói parceria e a errada levanta muro. Este glossário rápido mostra o que usar, o que evitar e por quê.</p>
+
+  <div class="grid2" style="gap:16px;margin-bottom:16px">
+    <div class="card" style="background:var(--mint-soft);border:none">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><div style="font-size:22px">✅</div><h3 style="font-size:16px">Termos seguros para usar</h3></div>
+      <ul class="clean" style="margin:0">
+        <li style="font-size:12px"><strong>"Ele está trabalhando a autorregulação."</strong><br><span class="small">Foca no processo, não em rótulo. Mostra que há um trabalho em andamento.</span></li>
+        <li style="font-size:12px"><strong>"Notei que ele responde bem a [rotina/aviso]."</strong><br><span class="small">Traz solução observada, convida a professora a testar.</span></li>
+        <li style="font-size:12px"><strong>"Como ele está em relação a ele mesmo há um mês?"</strong><br><span class="small">Pede progresso individual, não comparação com a turma.</span></li>
+        <li style="font-size:12px"><strong>"O que você percebe que funciona com ele na sala?"</strong><br><span class="small">Valoriza a professora como especialista e parceira.</span></li>
+      </ul>
+    </div>
+
+    <div class="card" style="background:var(--rose-soft);border:none">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><div style="font-size:22px">🚫</div><h3 style="font-size:16px">Termos a evitar</h3></div>
+      <ul class="clean" style="margin:0">
+        <li style="font-size:12px"><strong>"Ele é hiperativo / tem TDAH / é do espectro."</strong><br><span class="small">Autodiagnóstico sem laudo gera insegurança e pode rotular a criança cedo demais.</span></li>
+        <li style="font-size:12px"><strong>"Por que o fulaninho pode e ele não?"</strong><br><span class="small">Comparação com outros alunos coloca a professora na defensiva.</span></li>
+        <li style="font-size:12px"><strong>"Ele é preguiçoso / bagunceiro / difícil."</strong><br><span class="small">Rótulo negativo cola na criança e vira profecia.</span></li>
+        <li style="font-size:12px"><strong>"Vocês não sabem lidar com ele."</strong><br><span class="small">Acusação fecha qualquer parceria — vira disputa, não solução.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="background:var(--blue-soft);border:none">
+    <p class="small" style="margin:0"><strong>💡 A regra por trás do glossário:</strong> fale do <strong>comportamento</strong> e do <strong>progresso</strong>, nunca do "defeito" da criança nem do "erro" da escola. Palavra que descreve constrói; palavra que julga destrói. Na dúvida, troque o rótulo por uma observação concreta.</p>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 8 — GUIA DOS SINAIS: CASA VS ESCOLA                     -->
+<!-- ============================================================= -->
+<section class="page" data-pg="08">
+  <span class="brandfoot">Roteiro da Reunião Escolar</span>
+  <p class="eyebrow">Material para levar impresso ou no celular</p>
+  <h2 class="title">Guia dos Sinais: Casa × Escola</h2>
+  <div class="hr"></div>
+  <p class="lead">O mesmo comportamento aparece diferente em casa e na sala. Esta tabela ajuda você e a professora a perceberem que estão falando da mesma criança — só em contextos distintos. Mostre-a na reunião para virar a chave do "eu contra você" para "nós dois".</p>
+
+  <div class="card" style="padding:0;overflow:hidden;border:none">
+    <div style="display:grid;grid-template-columns:1fr 1.25fr 1.25fr;background:var(--navy);color:#fff;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em">
+      <div style="padding:11px 14px">Comportamento</div>
+      <div style="padding:11px 14px;border-left:1px solid rgba(255,255,255,.15)">🏠 Como aparece em casa</div>
+      <div style="padding:11px 14px;border-left:1px solid rgba(255,255,255,.15)">🏫 Como aparece na escola</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1.25fr 1.25fr;font-size:11.5px;border-bottom:1px solid var(--line)">
+      <div style="padding:12px 14px;font-weight:700;background:var(--lav)">Dificuldade de foco</div>
+      <div style="padding:12px 14px">Faz a lição em partes, dispersa mas retoma com um lembrete individual.</div>
+      <div style="padding:12px 14px;background:#fafbfe">Parece "no mundo da lua", perde a instrução no meio do barulho da turma.</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1.25fr 1.25fr;font-size:11.5px;border-bottom:1px solid var(--line)">
+      <div style="padding:12px 14px;font-weight:700;background:var(--lav)">Agitação / energia</div>
+      <div style="padding:12px 14px">Corre, mas você redireciona para uma brincadeira e ele descarrega.</div>
+      <div style="padding:12px 14px;background:#fafbfe">Levanta da cadeira, mexe no material — num espaço onde precisa ficar sentado.</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1.25fr 1.25fr;font-size:11.5px;border-bottom:1px solid var(--line)">
+      <div style="padding:12px 14px;font-weight:700;background:var(--lav)">Frustração ao errar</div>
+      <div style="padding:12px 14px">Reclama, mas com apoio tenta de novo em poucos minutos.</div>
+      <div style="padding:12px 14px;background:#fafbfe">Trava, chora ou desiste na frente dos colegas, com medo de exposição.</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1.25fr 1.25fr;font-size:11.5px;border-bottom:1px solid var(--line)">
+      <div style="padding:12px 14px;font-weight:700;background:var(--lav)">Timidez / retraimento</div>
+      <div style="padding:12px 14px">Fala pelos cotovelos, seguro no ambiente conhecido.</div>
+      <div style="padding:12px 14px;background:#fafbfe">Fica quieto, não pede ajuda, passa despercebido na turma grande.</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1.25fr 1.25fr;font-size:11.5px">
+      <div style="padding:12px 14px;font-weight:700;background:var(--lav)">Conflito com regras</div>
+      <div style="padding:12px 14px">Negocia limites um a um, com atenção individual.</div>
+      <div style="padding:12px 14px;background:#fafbfe">Testa a regra coletiva, "esquece" combinados quando ninguém olha só para ele.</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px;background:var(--mint-soft);border:none">
+    <p class="small" style="margin:0"><strong>💡 Como usar na reunião:</strong> aponte para a linha do comportamento em questão e diga: "Olha, em casa aparece assim, e você descreveu assim na escola — é a mesma coisa, em ambientes diferentes. Como a gente ajusta os dois lados?" Isso transforma a conversa em cooperação.</p>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 9 — SCRIPT DE FRASES POR CENÁRIO                        -->
+<!-- ============================================================= -->
+<section class="page" data-pg="09">
+  <span class="brandfoot">Roteiro da Reunião Escolar</span>
+  <p class="eyebrow">Nunca mais travar na hora H</p>
+  <h2 class="title">Script de Frases por Cenário</h2>
+  <div class="hr"></div>
+  <p class="lead">No nervosismo, a gente responde no automático — e o automático costuma fechar a porta. Aqui, cenário por cenário: o que <em>não</em> falar e o que dizer no lugar.</p>
+
+  <div style="display:grid;grid-template-columns:1fr;gap:12px">
+    <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:0;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)">
+      <div style="padding:0 12px">Cenário</div>
+      <div style="padding:0 12px;color:#c04a68">❌ Não fale</div>
+      <div style="padding:0 12px;color:var(--blue-2)">✓ Fale no lugar</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:0;border-radius:12px;overflow:hidden;border:1px solid var(--line)">
+      <div style="background:var(--lav);padding:12px;font-weight:700;font-size:12.5px">Ela sugere avaliação psicológica</div>
+      <div style="background:var(--rose-soft);padding:12px" class="small">"Meu filho não tem nada, você está exagerando."</div>
+      <div style="background:var(--blue-soft);padding:12px" class="small">"Obrigada por olhar com cuidado. O que exatamente te fez pensar nisso? Quero entender antes de decidir."</div>
+
+      <div style="background:var(--lav);padding:12px;font-weight:700;font-size:12.5px">Diz que ele atrapalha a turma</div>
+      <div style="background:var(--rose-soft);padding:12px" class="small">"Ele é criança, criança é assim mesmo."</div>
+      <div style="background:var(--blue-soft);padding:12px" class="small">"Entendo que atrapalha o grupo. Em que momentos isso acontece mais? Assim a gente ataca o gatilho certo."</div>
+
+      <div style="background:var(--lav);padding:12px;font-weight:700;font-size:12.5px">Ela minimiza o problema</div>
+      <div style="background:var(--rose-soft);padding:12px" class="small">"Ah, então tá, deve ser só fase." (e engole a preocupação)</div>
+      <div style="background:var(--blue-soft);padding:12px" class="small">"Que bom que por aqui está tranquilo. Em casa notei [X] — podemos ficar de olho juntas nas próximas semanas?"</div>
+
+      <div style="background:var(--lav);padding:12px;font-weight:700;font-size:12.5px">Ela é receptiva — aproveite o momento</div>
+      <div style="background:var(--rose-soft);padding:12px" class="small">(fica só agradecendo e não combina nada concreto)</div>
+      <div style="background:var(--blue-soft);padding:12px" class="small">"Adorei essa abertura! Já que estamos alinhadas, podemos testar [adaptação] e combinar um bilhete semanal?"</div>
+
+      <div style="background:var(--lav);padding:12px;font-weight:700;font-size:12.5px">Ela fala vários pontos de uma vez</div>
+      <div style="background:var(--rose-soft);padding:12px" class="small">(tenta responder tudo ao mesmo tempo e se perde)</div>
+      <div style="background:var(--blue-soft);padding:12px" class="small">"São vários pontos importantes. Vamos por um: qual é o que mais atrapalha o dia dele hoje?"</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px;background:var(--white);border-left:5px solid var(--blue)">
+    <p class="small" style="margin:0"><strong>💡 O segredo de todas elas:</strong> reconhecer o ponto da professora + trazer um dado ou combinado concreto. Nunca negue seco nem prometa vago. "Entendo o que você vê" + "vamos testar isso" abre qualquer porta.</p>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 10 — ADAPTANDO POR IDADE E FASE ESCOLAR                 -->
+<!-- ============================================================= -->
+<section class="page" data-pg="10">
+  <span class="brandfoot">Roteiro da Reunião Escolar</span>
+  <p class="eyebrow">Personalização</p>
+  <h2 class="title">Adaptando por Idade<br>e Fase Escolar</h2>
+  <div class="hr"></div>
+  <p class="lead">O roteiro é o mesmo, mas a linguagem e o tipo de adaptação que você pede mudam conforme a fase. Ajuste o pedido ao que faz sentido na rotina daquela sala.</p>
+
+  <div class="grid2" style="gap:16px;margin-bottom:16px;align-items:start">
+    <div class="card" style="background:var(--blue-soft);border:none">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><div style="font-size:26px">🧸</div><div><h3 style="font-size:16px">Educação Infantil</h3><span class="small" style="font-weight:700">3 a 5 anos</span></div></div>
+      <p class="small" style="margin:0 0 8px"><strong>Linguagem:</strong> foco no lúdico e no socioemocional — "brincar", "dividir", "esperar a vez", "lidar com a frustração". Evite falar em "desempenho".</p>
+      <p class="small" style="margin:0 0 8px"><strong>Adaptações típicas de pedir:</strong> aviso antes de trocar de atividade, um canto calmo para se recompor, rotina visual com figuras, apoio na hora da transição (entrada, sono, saída).</p>
+      <p class="small" style="margin:0"><strong>Foco da reunião:</strong> como ele se relaciona e se autorregula no grupo — não notas.</p>
+    </div>
+
+    <div class="card" style="background:var(--lav);border:none">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><div style="font-size:26px">🎒</div><div><h3 style="font-size:16px">Fundamental 1</h3><span class="small" style="font-weight:700">6 a 10 anos</span></div></div>
+      <p class="small" style="margin:0 0 8px"><strong>Linguagem:</strong> aqui já entra "foco", "organização", "autonomia", "acompanhar o conteúdo" — mas sempre ligado ao esforço e ao progresso, não a rótulo.</p>
+      <p class="small" style="margin:0 0 8px"><strong>Adaptações típicas de pedir:</strong> sentar mais à frente, instruções divididas em passos, tempo extra em provas, combinar sinais discretos com a professora, pausas curtas de movimento.</p>
+      <p class="small" style="margin:0"><strong>Foco da reunião:</strong> equilibrar o pedagógico com o emocional — como ajudá-lo a acompanhar sem se sentir "o problema" da turma.</p>
+    </div>
+  </div>
+
+  <div class="card" style="background:var(--white)">
+    <h3 style="font-size:15px;margin-bottom:8px">O que muda na prática, da infantil para o fundamental</h3>
+    <div class="grid3" style="gap:12px">
+      <div style="background:var(--mint-soft);border-radius:10px;padding:10px 12px"><strong style="font-size:12px">Da brincadeira à tarefa</strong><p class="small" style="margin:3px 0 0">O foco de casa/escola migra do "conviver" para o "dar conta do conteúdo".</p></div>
+      <div style="background:var(--peach-soft);border-radius:10px;padding:10px 12px"><strong style="font-size:12px">Mais autonomia esperada</strong><p class="small" style="margin:3px 0 0">Peça adaptações que aumentem a independência, não que infantilizem.</p></div>
+      <div style="background:var(--blue-soft);border-radius:10px;padding:10px 12px"><strong style="font-size:12px">A criança já se compara</strong><p class="small" style="margin:3px 0 0">Cuide para adaptações serem discretas e não expô-lo diante da turma.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 11 — DEPOIS DA REUNIÃO: ACOMPANHAMENTO                  -->
+<!-- ============================================================= -->
+<section class="page" data-pg="11">
+  <span class="brandfoot">Roteiro da Reunião Escolar</span>
+  <p class="eyebrow">A reunião é o começo, não o fim</p>
+  <h2 class="title">Depois da Reunião:<br>Acompanhamento</h2>
+  <div class="hr"></div>
+  <p class="lead">O combinado só vira resultado se for acompanhado — sem virar cobrança. O segredo é um contato leve, previsível e curto, que mantenha vocês no mesmo time sem sobrecarregar a professora.</p>
+
+  <h3 style="font-size:16px;margin-bottom:10px">Como manter contato sem virar cobrança</h3>
+  <div class="grid3" style="margin-bottom:20px">
+    <div class="card" style="background:var(--blue-soft);border:none">
+      <div style="font-size:24px;margin-bottom:4px">📓</div>
+      <h3 style="font-size:14px;margin-bottom:4px">Bilhete semanal</h3>
+      <p class="small" style="margin:0">Uma vez por semana (ex.: sexta), uma linha: "Como foi a semana dele?" Curto e previsível — a professora sabe quando esperar.</p>
+    </div>
+    <div class="card" style="background:var(--lav);border:none">
+      <div style="font-size:24px;margin-bottom:4px">🗓️</div>
+      <h3 style="font-size:14px;margin-bottom:4px">Agenda do aluno</h3>
+      <p class="small" style="margin:0">Use o canal que a escola já tem. Registre o combinado ali e retome nele — evita mensagens fora de hora.</p>
+    </div>
+    <div class="card" style="background:var(--peach-soft);border:none">
+      <div style="font-size:24px;margin-bottom:4px">💬</div>
+      <h3 style="font-size:14px;margin-bottom:4px">Mensagem pontual</h3>
+      <p class="small" style="margin:0">Só para o essencial e nos horários combinados. Agradeça sempre o retorno — reforço positivo mantém a parceria viva.</p>
+    </div>
+  </div>
+
+  <h3 style="font-size:16px;margin-bottom:10px">Mini registro — a adaptação está sendo aplicada?</h3>
+  <div class="card" style="background:var(--white);margin-bottom:12px">
+    <div style="display:flex;justify-content:space-around;text-align:center;gap:10px">
+      <div><div style="font-size:26px">😊</div><div class="small" style="font-weight:700;margin-top:2px">Aplicada e ajudando</div></div>
+      <div style="width:1px;background:var(--line)"></div>
+      <div><div style="font-size:26px">😐</div><div class="small" style="font-weight:700;margin-top:2px">Aplicada em parte</div></div>
+      <div style="width:1px;background:var(--line)"></div>
+      <div><div style="font-size:26px">😕</div><div class="small" style="font-weight:700;margin-top:2px">Ainda não rolou</div></div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:8px">
+    <div style="display:grid;grid-template-columns:90px 150px 1fr;gap:10px;align-items:center;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding:0 6px">
+      <div>Semana</div><div>Como está</div><div>Observação / próximo passo</div>
+    </div>
+    <div style="display:grid;grid-template-columns:90px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:9px 12px;background:var(--lav);text-align:center;font-weight:700;font-size:12px">Semana 1</div><div style="display:flex;gap:14px;justify-content:center;font-size:22px">😊 😐 😕</div><div style="border-bottom:2px dotted var(--lav-2);height:20px"></div></div>
+    <div style="display:grid;grid-template-columns:90px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:9px 12px;background:var(--lav);text-align:center;font-weight:700;font-size:12px">Semana 2</div><div style="display:flex;gap:14px;justify-content:center;font-size:22px">😊 😐 😕</div><div style="border-bottom:2px dotted var(--lav-2);height:20px"></div></div>
+    <div style="display:grid;grid-template-columns:90px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:9px 12px;background:var(--lav);text-align:center;font-weight:700;font-size:12px">Semana 3</div><div style="display:flex;gap:14px;justify-content:center;font-size:22px">😊 😐 😕</div><div style="border-bottom:2px dotted var(--lav-2);height:20px"></div></div>
+    <div style="display:grid;grid-template-columns:90px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:9px 12px;background:var(--blue-soft);text-align:center;font-weight:700;font-size:12px">Semana 4 🎯</div><div style="display:flex;gap:14px;justify-content:center;font-size:22px">😊 😐 😕</div><div style="border-bottom:2px dotted var(--lav-2);height:20px"></div></div>
+  </div>
+
+  <div class="card" style="margin-top:12px;background:var(--mint-soft);border:none">
+    <p class="small" style="margin:0"><strong>No fim do mês, retome com a professora.</strong> Se está funcionando, agradeça e mantenha. Se não, marque uma conversa curta para ajustar — sem recomeçar do zero. Acompanhar com leveza é o que sustenta o combinado.</p>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 12 — FECHAMENTO                                         -->
+<!-- ============================================================= -->
+<section class="page" data-pg="" style="background:linear-gradient(165deg,#2f5f9c 0%,#243a5e 55%,#1c2b45 100%);color:#fff;justify-content:center;align-items:center;text-align:center">
+  <svg style="position:absolute;inset:0;width:100%;height:100%" aria-hidden="true">
+    <g fill="#3f7cc4" opacity="0.5">
+      <circle cx="80" cy="120" r="1.8"/><circle cx="660" cy="90" r="1.5"/>
+      <circle cx="120" cy="880" r="1.6"/><circle cx="700" cy="820" r="1.8"/>
+      <circle cx="720" cy="220" r="1.2"/><circle cx="60" cy="520" r="1.3"/>
+    </g>
+  </svg>
+  <div style="position:relative;max-width:135mm;padding:0 30px">
+    <div style="font-size:44px;margin-bottom:20px">🤝✨</div>
+    <p class="eyebrow" style="color:var(--blue);justify-content:center">Você chegou até aqui</p>
+    <h2 style="font-family:var(--serif);color:#fff;font-size:33px;line-height:1.16;font-weight:700;margin-bottom:20px">
+      Casa e escola são<br>o mesmo time
+    </h2>
+    <div style="width:70px;height:3px;background:var(--blue);margin:0 auto 24px;border-radius:3px"></div>
+    <p style="font-size:15px;line-height:1.7;color:#dde8f5;margin-bottom:16px">
+      Você não precisa entrar na reunião para se defender — e nem para vencer uma discussão. Você entra
+      para <strong style="color:#fff">somar</strong>. A professora vê um lado do seu filho; você vê o outro.
+      Juntas, vocês enxergam a criança inteira — e é assim que ele melhora nos dois ambientes.
+    </p>
+    <p style="font-size:15px;line-height:1.7;color:#dde8f5;margin-bottom:30px">
+      Leve o roteiro, respire fundo e lembre: você conhece seu filho, e chegou preparada.
+      Continue aplicando em casa o que já funciona — e vá construindo essa ponte com a escola, uma conversa de cada vez.
+    </p>
+
+    <div style="display:inline-block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:18px 26px">
+      <p style="font-family:var(--serif);font-style:italic;font-size:17px;color:#bcd6f2;margin:0">
+        "Quando a mãe e a escola remam juntas,<br>a criança para de remar contra a corrente<br>— e começa a avançar."
+      </p>
+    </div>
+
+    <div style="margin-top:36px;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:#8fd6c2;font-weight:700">
+      Ginástica Cerebral · Continue com a gente 💙
+    </div>
+  </div>
+</section>
