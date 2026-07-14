@@ -1,0 +1,774 @@
+<title>Checklist Noturno: Rotina de Dormir Sem Drama</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --ink:#2b2440;          /* texto principal — roxo-noite profundo */
+    --ink-soft:#5b5470;     /* texto secundário */
+    --night:#3b2f66;        /* roxo noite */
+    --night-2:#4b3b86;      /* roxo médio */
+    --lav:#efe9fb;          /* lavanda muito clara (fundos de bloco) */
+    --lav-2:#e3daf7;        /* lavanda média */
+    --peach:#ff9d7a;        /* coral quente (acento) */
+    --peach-soft:#ffe6dc;   /* coral claro fundo */
+    --gold:#f4c04f;         /* dourado estrela */
+    --mint:#8fd6c2;         /* verde suave (certo/fazer) */
+    --mint-soft:#e2f5ef;
+    --rose:#f2a5b8;         /* rosa (erro/não fazer) */
+    --rose-soft:#fde6ec;
+    --cream:#fbf8f3;        /* fundo creme */
+    --line:#e7e0f2;
+    --white:#ffffff;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:#d9d2ea;      /* fundo da tela (fora das páginas) */
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+    line-height:1.5;
+  }
+
+  /* ---------- Página A4 ---------- */
+  .page{
+    width:210mm;
+    min-height:297mm;
+    padding:16mm 15mm 14mm;
+    margin:10mm auto;
+    background:var(--cream);
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 6px 30px rgba(43,36,64,.18);
+    display:flex;
+    flex-direction:column;
+  }
+  .page::after{
+    content:attr(data-pg);
+    position:absolute;
+    bottom:7mm; right:15mm;
+    font-size:9px; letter-spacing:.18em;
+    color:var(--ink-soft); opacity:.7;
+    font-weight:600;
+  }
+  .brandfoot{
+    position:absolute;
+    bottom:7mm; left:15mm;
+    font-size:9px; letter-spacing:.16em;
+    color:var(--ink-soft); opacity:.7;
+    text-transform:uppercase; font-weight:700;
+  }
+
+  @media print{
+    body{background:none}
+    .page{
+      margin:0; box-shadow:none;
+      width:auto; min-height:auto;
+      page-break-after:always;
+      break-after:page;
+    }
+    .page:last-child{page-break-after:auto;break-after:auto}
+  }
+  @page{ size:A4; margin:0; }
+
+  /* ---------- Tipografia ---------- */
+  h1,h2,h3{font-family:var(--serif);margin:0;color:var(--night)}
+  .eyebrow{
+    font-family:var(--sans);
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    font-size:11px;
+    font-weight:800;
+    color:var(--peach);
+    margin:0 0 10px;
+  }
+  h2.title{font-size:30px;line-height:1.12;margin:0 0 6px;font-weight:700}
+  .lead{font-size:13.5px;color:var(--ink-soft);max-width:60ch;margin:0 0 18px}
+  p{margin:0 0 10px}
+  strong{color:var(--night)}
+  .small{font-size:11.5px;color:var(--ink-soft)}
+
+  .hr{height:2px;background:linear-gradient(90deg,var(--peach),transparent);border-radius:2px;margin:2px 0 18px;width:70px}
+
+  /* ---------- Componentes ---------- */
+  .card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:16px 18px;
+  }
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+
+  .tag{
+    display:inline-block;
+    font-size:10.5px;font-weight:800;letter-spacing:.05em;
+    padding:3px 10px;border-radius:999px;
+    background:var(--lav-2);color:var(--night-2);
+  }
+
+  ul.clean{list-style:none;margin:0;padding:0}
+  ul.clean li{position:relative;padding-left:22px;margin-bottom:8px;font-size:12.5px}
+  ul.clean li::before{content:"";position:absolute;left:0;top:6px;width:9px;height:9px;border-radius:50%;background:var(--peach)}
+
+  .stars{position:absolute;color:var(--gold);opacity:.5}
+</style>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 1 — CAPA                                                -->
+<!-- ============================================================= -->
+<section class="page" data-pg="" style="background:linear-gradient(165deg,#3b2f66 0%,#2b2440 55%,#241d3a 100%);color:#fff;padding:0;justify-content:center;align-items:center;text-align:center">
+  <!-- céu estrelado -->
+  <svg style="position:absolute;inset:0;width:100%;height:100%" aria-hidden="true">
+    <g fill="#f4c04f" opacity="0.85">
+      <circle cx="60" cy="90" r="1.6"/><circle cx="140" cy="150" r="1.1"/>
+      <circle cx="640" cy="70" r="1.6"/><circle cx="700" cy="140" r="1"/>
+      <circle cx="90" cy="700" r="1.3"/><circle cx="710" cy="760" r="1.5"/>
+      <circle cx="200" cy="60" r="1"/><circle cx="560" cy="120" r="1.2"/>
+      <circle cx="120" cy="980" r="1.2"/><circle cx="680" cy="1000" r="1.3"/>
+      <circle cx="40" cy="420" r="1"/><circle cx="760" cy="430" r="1.2"/>
+    </g>
+    <g fill="#ffffff" opacity="0.55">
+      <circle cx="300" cy="90" r="1"/><circle cx="480" cy="70" r="1.1"/>
+      <circle cx="180" cy="900" r="1"/><circle cx="600" cy="930" r="1.1"/>
+    </g>
+  </svg>
+
+  <!-- lua -->
+  <div style="position:absolute;top:60px;right:70px;width:120px;height:120px;border-radius:50%;
+       background:radial-gradient(circle at 35% 30%,#fff7e6,#f4c04f);box-shadow:0 0 60px rgba(244,192,79,.45)">
+    <div style="position:absolute;top:22px;right:20px;width:80px;height:80px;border-radius:50%;background:#332a56"></div>
+  </div>
+
+  <div style="position:relative;padding:0 40px;max-width:150mm">
+    <div style="font-size:13px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);font-weight:800;margin-bottom:26px">Ginástica Cerebral · Guia Complementar</div>
+
+    <div style="font-size:56px;margin-bottom:18px;line-height:1">🌙</div>
+
+    <h1 style="font-family:var(--serif);color:#fff;font-size:52px;line-height:1.05;font-weight:700;margin-bottom:18px">
+      Checklist&nbsp;Noturno
+    </h1>
+    <div style="width:90px;height:3px;background:var(--peach);margin:0 auto 20px;border-radius:3px"></div>
+    <h2 style="font-family:var(--serif);color:#ffd9c9;font-size:23px;font-weight:600;margin-bottom:30px;font-style:italic">
+      A Rotina de Dormir Sem Drama
+    </h2>
+
+    <p style="font-size:15px;line-height:1.65;color:#e9e3f7;max-width:52ch;margin:0 auto">
+      Não é sobre <em>mandar</em> a criança dormir. É sobre <strong style="color:#fff">desligá-la aos poucos</strong> —
+      do jeitinho que o corpo e o cérebro dela pedem no fim do dia.
+      Seis passos simples para transformar a hora mais tensa da casa na mais tranquila.
+    </p>
+
+    <div style="margin-top:44px;display:inline-flex;gap:10px;align-items:center;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#c9bff0">
+      <span>Para mães de crianças de 3 a 10 anos</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 2 — POR QUE A NOITE É DIFERENTE DA MANHÃ                -->
+<!-- ============================================================= -->
+<section class="page" data-pg="02">
+  <span class="brandfoot">Checklist Noturno</span>
+  <p class="eyebrow">Entendendo antes de agir</p>
+  <h2 class="title">Por que a noite é diferente<br>da manhã</h2>
+  <div class="hr"></div>
+  <p class="lead">Se a mesma criança que acorda tranquila vira outra pessoa na hora de dormir, não é frescura — e não é falha sua. É o corpinho dela reagindo ao fim do dia. Entender isso muda tudo.</p>
+
+  <div class="grid2" style="gap:16px;margin-bottom:16px">
+    <div class="card" style="background:var(--lav)">
+      <div style="font-size:26px;margin-bottom:8px">🔋</div>
+      <h3 style="font-size:16px;margin-bottom:8px">O tanque de energia acabou</h3>
+      <p class="small" style="margin:0">Durante o dia, a criança gasta uma reserva enorme só para se segurar: esperar a vez, obedecer, aguentar frustração, prestar atenção. Ao anoitecer, essa reserva está no fundo. Sem ela, qualquer contrariedade vira uma tempestade — porque não sobrou "freio" para segurar a emoção.</p>
+    </div>
+    <div class="card" style="background:var(--peach-soft)">
+      <div style="font-size:26px;margin-bottom:8px">⚡</div>
+      <h3 style="font-size:16px;margin-bottom:8px">O corpo ainda está a mil</h3>
+      <p class="small" style="margin:0">O sistema de "alerta" da criança — o mesmo que a deixa animada, agitada e cheia de energia — não desliga sozinho quando a luz apaga. De manhã, esse alerta é bem-vindo. À noite, ele vira o inimigo do sono: o corpo está ligado no 220 e a cama pede 110.</p>
+    </div>
+  </div>
+
+  <div class="card" style="background:var(--white);border-left:5px solid var(--peach);margin-bottom:16px">
+    <h3 style="font-size:17px;margin-bottom:8px">A mesma birra que some de manhã, explode de noite</h3>
+    <p class="small" style="margin-bottom:0">De manhã existe folga: energia cheia, tempo, novidade, luz do sol. Um "não" é absorvido sem drama. À noite é o oposto — cansaço acumulado, fome de colo, tédio da rotina e o cérebro sem bateria para lidar com frustração. O gatilho pode ser bobo (a meia errada, o copo trocado), mas a reação é gigante porque <strong>o que estourou não foi o motivo — foi o dia inteiro segurado.</strong></p>
+  </div>
+
+  <div class="card" style="background:linear-gradient(135deg,var(--night),var(--night-2));color:#fff;border:none">
+    <div style="display:flex;gap:16px;align-items:flex-start">
+      <div style="font-size:30px;line-height:1">🚂</div>
+      <div>
+        <h3 style="color:#fff;font-size:17px;margin-bottom:8px">Por que "só mandar dormir" não funciona</h3>
+        <p class="small" style="color:#e9e3f7;margin-bottom:6px">Uma criança não é um interruptor. Ela não <em>apaga</em> — ela precisa ser <strong style="color:#ffd9c9">desligada aos poucos</strong>, como um trem que vai freando estação por estação. Mandar dormir do nada é puxar o freio de mão a 80 km/h: o corpo resiste, e o resultado é choro, mais energia e mais tempo acordada.</p>
+        <p class="small" style="color:#e9e3f7;margin:0">O checklist deste guia é exatamente essa desaceleração em etapas. Cada passo tira um pouco de estímulo, até o sono chegar naturalmente — sem luta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 3 — OS 4 ERROS                                          -->
+<!-- ============================================================= -->
+<section class="page" data-pg="03">
+  <span class="brandfoot">Checklist Noturno</span>
+  <p class="eyebrow">Sem culpa, só consciência</p>
+  <h2 class="title">Os 4 erros que quase toda mãe<br>comete na hora de dormir</h2>
+  <div class="hr"></div>
+  <p class="lead">Ninguém te ensinou isso — e todos esses erros vêm de amor e cansaço. A boa notícia: cada um tem uma troca simples que muda a noite inteira.</p>
+
+  <!-- erro 1 -->
+  <div class="card" style="margin-bottom:12px;display:flex;gap:16px;align-items:flex-start">
+    <div style="flex:0 0 46px;height:46px;border-radius:12px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;font-size:22px">📺</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+        <span class="tag" style="background:var(--rose-soft);color:#c04a68">ERRO 1</span>
+        <h3 style="font-size:16px">Cortar a tela de repente, sem aviso</h3>
+      </div>
+      <p class="small" style="margin-bottom:6px">A tela prende o cérebro num pico de estímulo. Arrancar de uma vez é como puxar o tapete: o corpo reage com raiva pura, não com sono.</p>
+      <p class="small" style="margin:0;color:var(--night-2)"><strong>No lugar:</strong> avise com antecedência ("mais dois desenhos e a gente desliga") para o cérebro ter tempo de se preparar para a perda.</p>
+    </div>
+  </div>
+
+  <!-- erro 2 -->
+  <div class="card" style="margin-bottom:12px;display:flex;gap:16px;align-items:flex-start">
+    <div style="flex:0 0 46px;height:46px;border-radius:12px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;font-size:22px">⏱️</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+        <span class="tag" style="background:var(--rose-soft);color:#c04a68">ERRO 2</span>
+        <h3 style="font-size:16px">Negociar "mais 5 minutinhos" (e ceder)</h3>
+      </div>
+      <p class="small" style="margin-bottom:6px">Cada vez que você cede, ensina que insistir funciona. Amanhã a negociação começa mais cedo e mais forte — porque deu certo.</p>
+      <p class="small" style="margin:0;color:var(--night-2)"><strong>No lugar:</strong> combine o tempo <em>antes</em> e cumpra com carinho e firmeza. Previsível acalma; negociável agita.</p>
+    </div>
+  </div>
+
+  <!-- erro 3 -->
+  <div class="card" style="margin-bottom:12px;display:flex;gap:16px;align-items:flex-start">
+    <div style="flex:0 0 46px;height:46px;border-radius:12px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;font-size:22px">💬</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+        <span class="tag" style="background:var(--rose-soft);color:#c04a68">ERRO 3</span>
+        <h3 style="font-size:16px">Discutir ou explicar demais na hora errada</h3>
+      </div>
+      <p class="small" style="margin-bottom:6px">Em plena crise, o cérebro da criança não processa argumento — só sente. Frases longas viram mais barulho e prolongam a tempestade.</p>
+      <p class="small" style="margin:0;color:var(--night-2)"><strong>No lugar:</strong> poucas palavras, tom baixo, presença. Explicações ficam para o dia seguinte, com ela calma.</p>
+    </div>
+  </div>
+
+  <!-- erro 4 -->
+  <div class="card" style="display:flex;gap:16px;align-items:flex-start">
+    <div style="flex:0 0 46px;height:46px;border-radius:12px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;font-size:22px">🔀</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+        <span class="tag" style="background:var(--rose-soft);color:#c04a68">ERRO 4</span>
+        <h3 style="font-size:16px">Trocar a rotina toda noite</h3>
+      </div>
+      <p class="small" style="margin-bottom:6px">Uma noite banho-história, outra história-banho, outra direto pra cama: a inconsistência tira a previsibilidade — e é justamente a previsibilidade que avisa ao corpo "está chegando a hora".</p>
+      <p class="small" style="margin:0;color:var(--night-2)"><strong>No lugar:</strong> a mesma sequência, na mesma ordem, todas as noites. Repetição vira segurança, e segurança vira sono.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 4 — LINHA DO TEMPO                                      -->
+<!-- ============================================================= -->
+<section class="page" data-pg="04">
+  <span class="brandfoot">Checklist Noturno</span>
+  <p class="eyebrow">Noção de tempo real</p>
+  <h2 class="title">A Linha do Tempo<br>da Noite Perfeita</h2>
+  <div class="hr"></div>
+  <p class="lead">Não é uma lista solta — é uma descida de 30 minutos, do estímulo total até a luz apagada. Cada bloco liga a um passo do checklist. Use como referência; ajuste os minutos ao seu ritmo.</p>
+
+  <div style="display:flex;flex-direction:column;gap:0;margin-top:6px">
+    <!-- helper linha -->
+    <div style="display:grid;grid-template-columns:78px 34px 1fr;align-items:stretch">
+      <!-- T-30 -->
+      <div style="text-align:right;padding-right:14px;padding-top:14px"><div style="font-weight:800;color:var(--night);font-size:15px">–30 min</div><div class="small" style="font-size:10px">tela ainda ligada</div></div>
+      <div style="position:relative"><div style="position:absolute;left:50%;top:0;bottom:0;width:3px;background:var(--lav-2);transform:translateX(-50%)"></div><div style="position:absolute;left:50%;top:16px;width:16px;height:16px;border-radius:50%;background:var(--peach);transform:translateX(-50%);border:3px solid var(--cream)"></div></div>
+      <div style="padding:8px 0 16px 6px"><div class="card" style="padding:12px 14px;background:var(--peach-soft);border:none"><strong style="font-size:13px">Passo 1 · Aviso prévio</strong><p class="small" style="margin:2px 0 0">"Faltam 30 minutinhos para a cama." O cérebro começa a se preparar para desacelerar.</p></div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:78px 34px 1fr;align-items:stretch">
+      <div style="text-align:right;padding-right:14px;padding-top:14px"><div style="font-weight:800;color:var(--night);font-size:15px">–22 min</div><div class="small" style="font-size:10px">fim do estímulo</div></div>
+      <div style="position:relative"><div style="position:absolute;left:50%;top:0;bottom:0;width:3px;background:var(--lav-2);transform:translateX(-50%)"></div><div style="position:absolute;left:50%;top:16px;width:16px;height:16px;border-radius:50%;background:var(--night-2);transform:translateX(-50%);border:3px solid var(--cream)"></div></div>
+      <div style="padding:8px 0 16px 6px"><div class="card" style="padding:12px 14px;background:var(--lav);border:none"><strong style="font-size:13px">Passo 2 · Desligar telas e estímulos</strong><p class="small" style="margin:2px 0 0">Luzes mais baixas, TV e tablet desligados, voz mais calma. A casa inteira dá o tom.</p></div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:78px 34px 1fr;align-items:stretch">
+      <div style="text-align:right;padding-right:14px;padding-top:14px"><div style="font-weight:800;color:var(--night);font-size:15px">–16 min</div><div class="small" style="font-size:10px">corpo desativa</div></div>
+      <div style="position:relative"><div style="position:absolute;left:50%;top:0;bottom:0;width:3px;background:var(--lav-2);transform:translateX(-50%)"></div><div style="position:absolute;left:50%;top:16px;width:16px;height:16px;border-radius:50%;background:var(--mint);transform:translateX(-50%);border:3px solid var(--cream)"></div></div>
+      <div style="padding:8px 0 16px 6px"><div class="card" style="padding:12px 14px;background:var(--mint-soft);border:none"><strong style="font-size:13px">Passos 3 e 4 · Exercícios de desativação</strong><p class="small" style="margin:2px 0 0">Dois exercícios curtos que baixam a "aceleração" do corpo (páginas 7–8).</p></div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:78px 34px 1fr;align-items:stretch">
+      <div style="text-align:right;padding-right:14px;padding-top:14px"><div style="font-weight:800;color:var(--night);font-size:15px">–7 min</div><div class="small" style="font-size:10px">ritual fixo</div></div>
+      <div style="position:relative"><div style="position:absolute;left:50%;top:0;bottom:0;width:3px;background:var(--lav-2);transform:translateX(-50%)"></div><div style="position:absolute;left:50%;top:16px;width:16px;height:16px;border-radius:50%;background:var(--gold);transform:translateX(-50%);border:3px solid var(--cream)"></div></div>
+      <div style="padding:8px 0 16px 6px"><div class="card" style="padding:12px 14px;background:#fdf3d9;border:none"><strong style="font-size:13px">Passo 5 · Ritual fixo</strong><p class="small" style="margin:2px 0 0">História, música baixinha ou carinho — sempre o mesmo, na mesma ordem. Isso é âncora.</p></div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:78px 34px 1fr;align-items:stretch">
+      <div style="text-align:right;padding-right:14px;padding-top:14px"><div style="font-weight:800;color:var(--night);font-size:15px">0 min</div><div class="small" style="font-size:10px">luz apagada 🌙</div></div>
+      <div style="position:relative"><div style="position:absolute;left:50%;top:0;height:16px;width:3px;background:var(--lav-2);transform:translateX(-50%)"></div><div style="position:absolute;left:50%;top:16px;width:18px;height:18px;border-radius:50%;background:var(--night);transform:translateX(-50%);border:3px solid var(--cream)"></div></div>
+      <div style="padding:8px 0 6px 6px"><div class="card" style="padding:12px 14px;background:var(--night);border:none;color:#fff"><strong style="font-size:13px;color:#fff">Passo 6 · Frase de fechamento</strong><p class="small" style="margin:2px 0 0;color:#e9e3f7">A mesma frase, todas as noites. Ponto final combinado, sem espaço para nova negociação.</p></div></div>
+    </div>
+  </div>
+
+  <div style="margin-top:auto;padding-top:14px">
+    <p class="small" style="text-align:center;font-style:italic;color:var(--ink-soft)">💡 Os minutos são referência. O que não muda é a <strong>ordem</strong>: é ela que ensina o corpo a dormir.</p>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 5 — CHECKLIST (parte 1: passos 1–3)                     -->
+<!-- ============================================================= -->
+<section class="page" data-pg="05">
+  <span class="brandfoot">Checklist Noturno</span>
+  <p class="eyebrow">O coração do guia</p>
+  <h2 class="title">O Checklist de 6 Passos</h2>
+  <div class="hr"></div>
+  <p class="lead">Cada passo tira um pouco de estímulo. Feitos na ordem, viram uma descida suave até o sono. Aqui, os passos 1 a 3 — os outros na próxima página.</p>
+
+  <!-- passo template -->
+  <div class="card" style="margin-bottom:14px">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--night);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">1</div>
+      <h3 style="font-size:18px">Aviso prévio &nbsp;<span style="font-size:20px">⏳</span></h3>
+      <div style="flex:1"></div>
+      <div style="width:52px;height:52px;border:2px dashed var(--lav-2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ink-soft);text-align:center">ícone</div>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--mint)">✓ O que fazer:</strong> avise 30 e 10 minutos antes. "Faltam 10 minutinhos para a cama." Concreto, tranquilo, sem pergunta.</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--night-2)">Por que funciona:</strong> transição avisada é transição aceita. O cérebro odeia surpresa e ama preparo.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> avisar uma vez só, no susto, já em cima da hora.</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--peach)">Se não funcionar:</strong> use um timer visível ou uma música de 3 min — quando acaba, acabou (não é você "mandando", é o combinado).</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--night);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">2</div>
+      <h3 style="font-size:18px">Desligar telas e estímulos &nbsp;<span style="font-size:20px">📴</span></h3>
+      <div style="flex:1"></div>
+      <div style="width:52px;height:52px;border:2px dashed var(--lav-2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ink-soft);text-align:center">ícone</div>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--mint)">✓ O que fazer:</strong> desligue telas, abaixe as luzes e diminua o barulho e a própria voz. A casa toda desacelera junto.</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--night-2)">Por que funciona:</strong> luz forte e tela dizem ao corpo "ainda é dia". No escuro suave, o sono é liberado.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> desligar a tela da criança, mas manter a TV da sala ligada e alta.</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--peach)">Se não funcionar:</strong> troque a tela por um "estímulo de saída" calmo — um abajur âmbar aceso junto, música lenta ligada no mesmo momento.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--night);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">3</div>
+      <h3 style="font-size:18px">Exercício de desativação 1 &nbsp;<span style="font-size:20px">🫧</span></h3>
+      <div style="flex:1"></div>
+      <div style="width:52px;height:52px;border:2px dashed var(--lav-2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ink-soft);text-align:center">ícone</div>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--mint)">✓ O que fazer:</strong> a "Respiração da Vela" (detalhe na p. 7). Dois minutos que tiram o corpo do modo acelerado.</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--night-2)">Por que funciona:</strong> soltar o ar devagar avisa o corpo de que está seguro — e ele baixa a "aceleração".</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> pedir para "se acalmar" com voz tensa — a criança copia o seu estado, não a sua ordem.</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--peach)">Se não funcionar:</strong> faça junto, exagerando o sopro, como brincadeira. Ela entra pela imitação, não pela obrigação.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 6 — CHECKLIST (parte 2: passos 4–6)                     -->
+<!-- ============================================================= -->
+<section class="page" data-pg="06">
+  <span class="brandfoot">Checklist Noturno</span>
+  <p class="eyebrow">O coração do guia · continuação</p>
+  <h2 class="title">O Checklist de 6 Passos</h2>
+  <div class="hr"></div>
+
+  <div class="card" style="margin-bottom:14px">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--night);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">4</div>
+      <h3 style="font-size:18px">Exercício de desativação 2 &nbsp;<span style="font-size:20px">🧸</span></h3>
+      <div style="flex:1"></div>
+      <div style="width:52px;height:52px;border:2px dashed var(--lav-2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ink-soft);text-align:center">ícone</div>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--mint)">✓ O que fazer:</strong> o "Abraço de Tartaruga" (detalhe na p. 8). Pressão suave e lenta que relaxa o corpo inteiro.</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--night-2)">Por que funciona:</strong> o toque firme e previsível é o sinal mais antigo de "você está protegida" que existe.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> fazer cócegas ou pressão rápida — isso reativa, em vez de acalmar.</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--peach)">Se não funcionar:</strong> troque por um cobertor mais pesadinho ou um abraço demorado e silencioso. O segredo é lento.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--night);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">5</div>
+      <h3 style="font-size:18px">Ritual fixo &nbsp;<span style="font-size:20px">📖</span></h3>
+      <div style="flex:1"></div>
+      <div style="width:52px;height:52px;border:2px dashed var(--lav-2);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--ink-soft);text-align:center">ícone</div>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--mint)">✓ O que fazer:</strong> escolha UM ritual (história, música baixinha, um carinho) e repita sempre igual, na mesma ordem.</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--night-2)">Por que funciona:</strong> a repetição vira âncora. O corpo aprende "depois disso, vem o sono" e já começa a desligar.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> deixar o ritual crescer — de uma história para cinco, empurrando a hora de dormir.</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--peach)">Se não funcionar:</strong> deixe a criança escolher dentro de um limite fixo ("uma história: essa ou aquela?"). Escolha acalma; limite protege.</p>
+    </div>
+  </div>
+
+  <div class="card" style="background:linear-gradient(135deg,var(--night),var(--night-2));border:none;color:#fff">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:#fff;color:var(--night);font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">6</div>
+      <h3 style="font-size:18px;color:#fff">Frase de fechamento &nbsp;<span style="font-size:20px">🌙</span></h3>
+      <div style="flex:1"></div>
+      <div style="width:52px;height:52px;border:2px dashed rgba(255,255,255,.4);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:9px;color:#c9bff0;text-align:center">ícone</div>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0;color:#e9e3f7"><strong style="color:#fff">✓ O que fazer:</strong> a MESMA frase toda noite. Ex.: "Boa noite, meu amor. Agora é hora de descansar. Te vejo amanhã."</p></div>
+      <div><p class="small" style="margin:0;color:#e9e3f7"><strong style="color:#fff">Por que funciona:</strong> é o ponto final combinado. Sinaliza que a rotina fechou e não há mais nada a negociar.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1;color:#e9e3f7"><strong style="color:#ffd9c9">Erro comum:</strong> reabrir a conversa depois da frase ("mas por quê?...") e destravar tudo de novo.</p>
+      <p class="small" style="margin:0;flex:1;color:#e9e3f7"><strong style="color:#ffd9c9">Se não funcionar:</strong> repita a mesma frase, igual, sem variação, e saia. A firmeza tranquila é a mensagem.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 7 — EXERCÍCIO 1                                          -->
+<!-- ============================================================= -->
+<section class="page" data-pg="07">
+  <span class="brandfoot">Checklist Noturno</span>
+  <p class="eyebrow">Os 2 exercícios de desativação · 1 de 2</p>
+  <h2 class="title">Respiração da Vela &nbsp;🕯️</h2>
+  <div class="hr"></div>
+  <p class="lead">Um exercício de 2 minutos para tirar o corpo do "modo acelerado". Serve para baixar a agitação e sinalizar ao sistema nervoso que já pode relaxar — tudo em forma de brincadeira.</p>
+
+  <div class="grid2" style="gap:18px;align-items:start">
+    <div>
+      <div class="card" style="background:var(--mint-soft);border:none;margin-bottom:12px">
+        <span class="tag" style="background:#fff;color:var(--night-2)">Para que serve</span>
+        <p class="small" style="margin:8px 0 0">Soltar o ar bem devagar é o freio natural do corpo. Ele reduz o "hormônio de alerta" (o cortisol) e liga o modo calmo — em linguagem simples, tira a criança do 220 e leva pro 110.</p>
+      </div>
+      <div class="card" style="background:#fff">
+        <span class="tag">Duração</span>
+        <p class="small" style="margin:8px 0 0"><strong>2 minutos</strong> — cerca de 6 a 8 respirações lentas. Sem pressa; o lento é o remédio.</p>
+      </div>
+    </div>
+
+    <div class="card" style="background:#fff">
+      <h3 style="font-size:15px;margin-bottom:12px">Passo a passo</h3>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;gap:12px"><div style="flex:0 0 28px;height:28px;border-radius:50%;background:var(--peach);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px">1</div><p class="small" style="margin:0">Sentados ou deitados, peça para ela imaginar uma <strong>vela acesa</strong> na frente do rosto (pode usar o dedo indicador levantado como a "chama").</p></div>
+        <div style="display:flex;gap:12px"><div style="flex:0 0 28px;height:28px;border-radius:50%;background:var(--peach);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px">2</div><p class="small" style="margin:0">Inspira pelo nariz contando até <strong>3</strong> — a barriga enche como um balão.</p></div>
+        <div style="display:flex;gap:12px"><div style="flex:0 0 28px;height:28px;border-radius:50%;background:var(--peach);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px">3</div><p class="small" style="margin:0">Sopra <strong>bem devagarinho</strong>, como se quisesse fazer a chama tremer sem apagar. Contando até <strong>5</strong>.</p></div>
+        <div style="display:flex;gap:12px"><div style="flex:0 0 28px;height:28px;border-radius:50%;background:var(--peach);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px">4</div><p class="small" style="margin:0">A cada rodada, sopre um pouquinho mais fraco. Na última, "apague" a vela devagar e feche os olhos.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- espaço ilustração -->
+  <div style="margin-top:16px;border:2px dashed var(--lav-2);border-radius:14px;padding:16px;display:flex;gap:12px;background:rgba(255,255,255,.5)">
+    <div style="flex:1;text-align:center"><div style="font-size:30px">🌬️</div><div class="small" style="font-weight:700">1. Inspira (3)</div></div>
+    <div style="flex:1;text-align:center"><div style="font-size:30px">🕯️</div><div class="small" style="font-weight:700">2. Segura</div></div>
+    <div style="flex:1;text-align:center"><div style="font-size:30px">😮‍💨</div><div class="small" style="font-weight:700">3. Sopra (5)</div></div>
+    <div style="flex:1;text-align:center"><div style="font-size:30px">😌</div><div class="small" style="font-weight:700">4. Apaga</div></div>
+  </div>
+  <p class="small" style="text-align:center;margin-top:8px;font-style:italic;color:var(--ink-soft)">📷 Espaço reservado para ilustração numerada (PDF impresso) ou animação de referência (app).</p>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 8 — EXERCÍCIO 2                                          -->
+<!-- ============================================================= -->
+<section class="page" data-pg="08">
+  <span class="brandfoot">Checklist Noturno</span>
+  <p class="eyebrow">Os 2 exercícios de desativação · 2 de 2</p>
+  <h2 class="title">Abraço de Tartaruga &nbsp;🐢</h2>
+  <div class="hr"></div>
+  <p class="lead">Um exercício de pressão suave que relaxa o corpo dos pés à cabeça. Ideal para a criança que "não para" na cama — o toque firme e lento é o sinal mais antigo de segurança que existe.</p>
+
+  <div class="grid2" style="gap:18px;align-items:start">
+    <div>
+      <div class="card" style="background:var(--mint-soft);border:none;margin-bottom:12px">
+        <span class="tag" style="background:#fff;color:var(--night-2)">Para que serve</span>
+        <p class="small" style="margin:8px 0 0">A pressão profunda e lenta relaxa os músculos e acalma o sistema nervoso. Ela "junta" o corpo agitado, como uma tartaruga que se recolhe no casco — e o corpo entende: pode desligar.</p>
+      </div>
+      <div class="card" style="background:#fff">
+        <span class="tag">Duração</span>
+        <p class="small" style="margin:8px 0 0"><strong>2 a 3 minutos</strong>, sempre com movimentos lentos. Rápido demais reativa; devagar desativa.</p>
+      </div>
+    </div>
+
+    <div class="card" style="background:#fff">
+      <h3 style="font-size:15px;margin-bottom:12px">Passo a passo</h3>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;gap:12px"><div style="flex:0 0 28px;height:28px;border-radius:50%;background:var(--mint);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px">1</div><p class="small" style="margin:0">Deitada de costas, peça para ela virar uma <strong>tartaruguinha</strong> encolhendo os joelhos em direção à barriga.</p></div>
+        <div style="display:flex;gap:12px"><div style="flex:0 0 28px;height:28px;border-radius:50%;background:var(--mint);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px">2</div><p class="small" style="margin:0">Com as mãos espalmadas, faça uma <strong>pressão firme e suave</strong> nos ombros, depois braços, mãos — sempre de cima para baixo.</p></div>
+        <div style="display:flex;gap:12px"><div style="flex:0 0 28px;height:28px;border-radius:50%;background:var(--mint);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px">3</div><p class="small" style="margin:0">Continue pelas pernas até os pés, apertando gentilmente cada parte por 3 segundos, como um "abraço" que percorre o corpo.</p></div>
+        <div style="display:flex;gap:12px"><div style="flex:0 0 28px;height:28px;border-radius:50%;background:var(--mint);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13px">4</div><p class="small" style="margin:0">Termine com um abraço envolvente e demorado, em silêncio, respirando devagar junto com ela.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:16px;border:2px dashed var(--lav-2);border-radius:14px;padding:16px;display:flex;gap:12px;background:rgba(255,255,255,.5)">
+    <div style="flex:1;text-align:center"><div style="font-size:30px">🐢</div><div class="small" style="font-weight:700">1. Encolhe</div></div>
+    <div style="flex:1;text-align:center"><div style="font-size:30px">🤲</div><div class="small" style="font-weight:700">2. Ombros e braços</div></div>
+    <div style="flex:1;text-align:center"><div style="font-size:30px">🦵</div><div class="small" style="font-weight:700">3. Pernas e pés</div></div>
+    <div style="flex:1;text-align:center"><div style="font-size:30px">🫂</div><div class="small" style="font-weight:700">4. Abraço final</div></div>
+  </div>
+  <p class="small" style="text-align:center;margin-top:8px;font-style:italic;color:var(--ink-soft)">📷 Espaço reservado para ilustração numerada (PDF impresso) ou animação de referência (app).</p>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 9 — SCRIPT DE FRASES                                    -->
+<!-- ============================================================= -->
+<section class="page" data-pg="09">
+  <span class="brandfoot">Checklist Noturno</span>
+  <p class="eyebrow">Nunca mais travar na hora H</p>
+  <h2 class="title">Script de Frases Prontas</h2>
+  <div class="hr"></div>
+  <p class="lead">No cansaço da noite, a gente fala no automático — e o automático costuma ser o gatilho. Aqui, situação por situação: o que <em>não</em> falar e o que dizer no lugar.</p>
+
+  <div style="display:grid;grid-template-columns:1fr;gap:12px">
+    <!-- cabeçalho -->
+    <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:0;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)">
+      <div style="padding:0 12px">Situação</div>
+      <div style="padding:0 12px;color:#c04a68">❌ Não fale</div>
+      <div style="padding:0 12px;color:var(--mint)">✓ Fale no lugar</div>
+    </div>
+
+    <!-- linhas -->
+    <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:0;border-radius:12px;overflow:hidden;border:1px solid var(--line)">
+      <div style="background:var(--lav);padding:12px 12px;font-weight:700;font-size:12.5px">Quando ela chora</div>
+      <div style="background:var(--rose-soft);padding:12px 12px" class="small">"Para de chorar, não tem motivo."</div>
+      <div style="background:var(--mint-soft);padding:12px 12px" class="small">"Eu sei que é difícil parar. Estou aqui do seu lado, pode chorar que eu espero."</div>
+
+      <div style="background:var(--lav);padding:12px 12px;font-weight:700;font-size:12.5px">Quando pede mais tempo</div>
+      <div style="background:var(--rose-soft);padding:12px 12px" class="small">"Tá, só mais 5 minutinhos então..."</div>
+      <div style="background:var(--mint-soft);padding:12px 12px" class="small">"Nosso combinado já acabou. Amanhã tem de novo. Agora é a hora do descanso."</div>
+
+      <div style="background:var(--lav);padding:12px 12px;font-weight:700;font-size:12.5px">Quando diz que não está com sono</div>
+      <div style="background:var(--rose-soft);padding:12px 12px" class="small">"Está sim, para de manha e dorme."</div>
+      <div style="background:var(--mint-soft);padding:12px 12px" class="small">"Não precisa dormir agora. Só precisa descansar o corpo deitadinha. O sono vem sozinho."</div>
+
+      <div style="background:var(--lav);padding:12px 12px;font-weight:700;font-size:12.5px">Quando grita</div>
+      <div style="background:var(--rose-soft);padding:12px 12px" class="small">"Para de gritar! Você vai acordar todo mundo!"</div>
+      <div style="background:var(--mint-soft);padding:12px 12px" class="small">(voz bem baixa) "Vou falar bem baixinho pra te ajudar a acalmar. Respira comigo."</div>
+
+      <div style="background:var(--lav);padding:12px 12px;font-weight:700;font-size:12.5px">Quando levanta de novo</div>
+      <div style="background:var(--rose-soft);padding:12px 12px" class="small">"De novo?! Volta pra cama AGORA!"</div>
+      <div style="background:var(--mint-soft);padding:12px 12px" class="small">"Já demos boa noite. Vou te levar de volta, sem conversa, quantas vezes precisar."</div>
+
+      <div style="background:var(--lav);padding:12px 12px;font-weight:700;font-size:12.5px">Quando chama a barganha ("com você não durmo")</div>
+      <div style="background:var(--rose-soft);padding:12px 12px" class="small">"Então chama seu pai, eu cansei."</div>
+      <div style="background:var(--mint-soft);padding:12px 12px" class="small">"Eu fico aqui pertinho até você relaxar. Não vou embora, só vou ficar quietinha."</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px;background:#fff;border-left:5px solid var(--peach)">
+    <p class="small" style="margin:0"><strong>💡 O segredo de todas elas:</strong> validar o sentimento sem ceder no limite. "Eu entendo o que você sente" + "e o combinado continua". As duas coisas juntas — nunca uma sem a outra.</p>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 10 — ADAPTANDO POR IDADE E PERFIL                       -->
+<!-- ============================================================= -->
+<section class="page" data-pg="10">
+  <span class="brandfoot">Checklist Noturno</span>
+  <p class="eyebrow">Personalização</p>
+  <h2 class="title">Adaptando o Checklist</h2>
+  <div class="hr"></div>
+  <p class="lead">A estrutura é a mesma; o que muda é a dose. Ajuste por idade e pelo perfil da criança — a mesma lógica de personalização que você já usa no <strong>Perfil da Criança</strong> do app.</p>
+
+  <h3 style="font-size:16px;margin-bottom:10px">Por faixa de idade</h3>
+  <div class="grid3" style="margin-bottom:20px">
+    <div class="card" style="background:var(--lav)">
+      <div style="font-size:22px;margin-bottom:4px">🧒</div>
+      <span class="tag" style="background:#fff">3 a 5 anos</span>
+      <ul class="clean" style="margin-top:10px">
+        <li style="font-size:11.5px"><strong>Rotina mais curta</strong> (15–20 min): a atenção é breve.</li>
+        <li style="font-size:11.5px">Você escolhe o ritual; ela escolhe entre 2 opções.</li>
+        <li style="font-size:11.5px">Frases bem curtas e concretas, com muito colo.</li>
+      </ul>
+    </div>
+    <div class="card" style="background:var(--peach-soft)">
+      <div style="font-size:22px;margin-bottom:4px">🧑</div>
+      <span class="tag" style="background:#fff">6 a 8 anos</span>
+      <ul class="clean" style="margin-top:10px">
+        <li style="font-size:11.5px"><strong>Rotina média</strong> (25–30 min).</li>
+        <li style="font-size:11.5px">Ela participa montando a ordem do ritual com você.</li>
+        <li style="font-size:11.5px">Frases já podem incluir um "porquê" curtinho.</li>
+      </ul>
+    </div>
+    <div class="card" style="background:var(--mint-soft)">
+      <div style="font-size:22px;margin-bottom:4px">🧑‍🦱</div>
+      <span class="tag" style="background:#fff">9 a 10 anos</span>
+      <ul class="clean" style="margin-top:10px">
+        <li style="font-size:11.5px"><strong>Rotina flexível</strong> (30 min), com mais autonomia.</li>
+        <li style="font-size:11.5px">Ela conduz o próprio ritual; você só ancora o horário.</li>
+        <li style="font-size:11.5px">Frases de parceria, tom mais adulto e respeitoso.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="font-size:16px;margin-bottom:10px">Por perfil da criança</h3>
+  <div class="grid2" style="gap:12px">
+    <div class="card" style="display:flex;gap:12px;align-items:flex-start">
+      <div style="font-size:24px">🎯</div>
+      <div><strong style="font-size:13px">Perfil Foco</strong><p class="small" style="margin:3px 0 0">Mente que não desliga. Reforce os exercícios de respiração e um ritual previsível ao extremo — a repetição é o que "para" o pensamento acelerado.</p></div>
+    </div>
+    <div class="card" style="display:flex;gap:12px;align-items:flex-start">
+      <div style="font-size:24px">😤</div>
+      <div><strong style="font-size:13px">Perfil Birra</strong><p class="small" style="margin:3px 0 0">Testa limites. Invista no aviso prévio e na frase de fechamento firme. Nunca reabra a negociação — a consistência é o remédio.</p></div>
+    </div>
+    <div class="card" style="display:flex;gap:12px;align-items:flex-start">
+      <div style="font-size:24px">💥</div>
+      <div><strong style="font-size:13px">Perfil Agressividade</strong><p class="small" style="margin:3px 0 0">Descarrega no corpo. Priorize o Abraço de Tartaruga e o toque firme; valide a emoção antes do limite ("é raiva, e a gente respira junto").</p></div>
+    </div>
+    <div class="card" style="display:flex;gap:12px;align-items:flex-start">
+      <div style="font-size:24px">🌀</div>
+      <div><strong style="font-size:13px">Perfil Agitação sensorial</strong><p class="small" style="margin:3px 0 0">Sensível a luz, som e textura. Capriche no ambiente: luz âmbar, silêncio, cobertor pesadinho. O passo 2 é o mais importante para ela.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 11 — TROUBLESHOOTING                                    -->
+<!-- ============================================================= -->
+<section class="page" data-pg="11">
+  <span class="brandfoot">Checklist Noturno</span>
+  <p class="eyebrow">Quando a vida real complica</p>
+  <h2 class="title">Quando o Checklist<br>Não Funciona</h2>
+  <div class="hr"></div>
+  <p class="lead">Nenhuma rotina funciona 100% das noites — e tudo bem. Aqui estão os cenários mais comuns e o ajuste certo para cada um. Consistência ao longo dos dias vale mais que perfeição numa noite.</p>
+
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <div class="card" style="display:flex;gap:16px;align-items:flex-start">
+      <div style="flex:0 0 48px;height:48px;border-radius:12px;background:var(--peach-soft);display:flex;align-items:center;justify-content:center;font-size:24px">🌚</div>
+      <div>
+        <h3 style="font-size:15px;margin-bottom:5px">"Ela já dorme tarde há meses"</h3>
+        <p class="small" style="margin:0">O corpo dela está "programado" para o horário atual. Não adiante 2 horas de uma vez. <strong>Antecipe 10 a 15 minutos a cada 3 noites</strong>, mantendo o checklist igual. Em duas semanas você recupera o horário ideal sem guerra.</p>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;gap:16px;align-items:flex-start">
+      <div style="flex:0 0 48px;height:48px;border-radius:12px;background:var(--lav);display:flex;align-items:center;justify-content:center;font-size:24px">🛏️</div>
+      <div>
+        <h3 style="font-size:15px;margin-bottom:5px">"Ela divide o quarto com o irmão"</h3>
+        <p class="small" style="margin:0">Faça o checklist com cada criança em ordem, e use o irmão a favor: o mais velho pode ser o "guardião do silêncio". Se os horários diferem, os exercícios de desativação podem ser feitos <strong>fora do quarto</strong>, e só o ritual e a frase de fechamento acontecem na cama.</p>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;gap:16px;align-items:flex-start">
+      <div style="flex:0 0 48px;height:48px;border-radius:12px;background:var(--mint-soft);display:flex;align-items:center;justify-content:center;font-size:24px">🌜</div>
+      <div>
+        <h3 style="font-size:15px;margin-bottom:5px">"Ela acorda no meio da noite"</h3>
+        <p class="small" style="margin:0">Crie uma <strong>versão mini do checklist</strong> para a madrugada: luz apagada, voz baixíssima, o Abraço de Tartaruga curtinho e a mesma frase de fechamento. Sem ligar luz, sem conversa, sem tela. A previsibilidade ensina o corpo a voltar a dormir sozinho.</p>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;gap:16px;align-items:flex-start">
+      <div style="flex:0 0 48px;height:48px;border-radius:12px;background:#fdf3d9;display:flex;align-items:center;justify-content:center;font-size:24px">🤒</div>
+      <div>
+        <h3 style="font-size:15px;margin-bottom:5px">"Deu tudo certo por dias e de repente voltou a regredir"</h3>
+        <p class="small" style="margin:0">Recaídas são normais — costumam vir com doença, viagem, mudança ou fase de crescimento. Não recomece do zero: <strong>volte ao checklist exatamente como era</strong>. O corpo lembra rápido do que já aprendeu. Em 2 a 3 noites, normaliza.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px;background:var(--night);border:none;color:#fff">
+    <p class="small" style="margin:0;color:#e9e3f7"><strong style="color:#fff">Regra de ouro do troubleshooting:</strong> quando algo dá errado, não mude a estrutura — ajuste a dose. Trocar o método toda vez que falha é o que mais atrapalha. Firmeza tranquila, noite após noite.</p>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 12 — SEMANA DE ACOMPANHAMENTO                           -->
+<!-- ============================================================= -->
+<section class="page" data-pg="12">
+  <span class="brandfoot">Checklist Noturno</span>
+  <p class="eyebrow">Sua prova de resultado</p>
+  <h2 class="title">Semana de Acompanhamento</h2>
+  <div class="hr"></div>
+  <p class="lead">Por 7 noites, marque como foi. Não é cobrança — é para você <em>ver</em> o progresso acontecer. Escolha o emoji que representa a noite e, se quiser, anote uma palavrinha.</p>
+
+  <div class="card" style="background:#fff;margin-bottom:14px">
+    <div style="display:flex;justify-content:space-around;text-align:center;gap:10px">
+      <div><div style="font-size:30px">😴</div><div class="small" style="font-weight:700;margin-top:2px">Noite tranquila</div><div class="small" style="font-size:10px">Dormiu sem drama</div></div>
+      <div style="width:1px;background:var(--line)"></div>
+      <div><div style="font-size:30px">😐</div><div class="small" style="font-weight:700;margin-top:2px">Mais ou menos</div><div class="small" style="font-size:10px">Resistiu, mas cedeu</div></div>
+      <div style="width:1px;background:var(--line)"></div>
+      <div><div style="font-size:30px">😣</div><div class="small" style="font-weight:700;margin-top:2px">Noite difícil</div><div class="small" style="font-size:10px">Foi puxado</div></div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:9px">
+    <!-- linha modelo x7 -->
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding:0 6px">
+      <div>Noite</div><div>Como foi</div><div>Uma palavra sobre hoje</div>
+    </div>
+    <!-- gerar 7 -->
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--lav);text-align:center;font-weight:700;font-size:12px">Noite 1</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😴 😐 😣</div><div style="border-bottom:2px dotted var(--lav-2);height:22px"></div></div>
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--lav);text-align:center;font-weight:700;font-size:12px">Noite 2</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😴 😐 😣</div><div style="border-bottom:2px dotted var(--lav-2);height:22px"></div></div>
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--lav);text-align:center;font-weight:700;font-size:12px">Noite 3</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😴 😐 😣</div><div style="border-bottom:2px dotted var(--lav-2);height:22px"></div></div>
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--lav);text-align:center;font-weight:700;font-size:12px">Noite 4</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😴 😐 😣</div><div style="border-bottom:2px dotted var(--lav-2);height:22px"></div></div>
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--lav);text-align:center;font-weight:700;font-size:12px">Noite 5</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😴 😐 😣</div><div style="border-bottom:2px dotted var(--lav-2);height:22px"></div></div>
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--lav);text-align:center;font-weight:700;font-size:12px">Noite 6</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😴 😐 😣</div><div style="border-bottom:2px dotted var(--lav-2);height:22px"></div></div>
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--peach-soft);text-align:center;font-weight:700;font-size:12px">Noite 7 🎉</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😴 😐 😣</div><div style="border-bottom:2px dotted var(--lav-2);height:22px"></div></div>
+  </div>
+
+  <div class="card" style="margin-top:14px;background:var(--mint-soft);border:none">
+    <p class="small" style="margin:0"><strong>No fim da semana, olhe para trás.</strong> Quantos 😴 a mais que na primeira noite? Esse é o seu resultado — construído por você, uma noite de cada vez.</p>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 13 — FECHAMENTO                                         -->
+<!-- ============================================================= -->
+<section class="page" data-pg="" style="background:linear-gradient(165deg,#3b2f66 0%,#2b2440 60%,#241d3a 100%);color:#fff;justify-content:center;align-items:center;text-align:center">
+  <svg style="position:absolute;inset:0;width:100%;height:100%" aria-hidden="true">
+    <g fill="#f4c04f" opacity="0.7">
+      <circle cx="80" cy="120" r="1.5"/><circle cx="660" cy="90" r="1.3"/>
+      <circle cx="120" cy="880" r="1.4"/><circle cx="700" cy="820" r="1.5"/>
+      <circle cx="720" cy="200" r="1"/><circle cx="60" cy="500" r="1.1"/>
+    </g>
+  </svg>
+  <div style="position:relative;max-width:135mm;padding:0 30px">
+    <div style="font-size:46px;margin-bottom:20px">🌙✨</div>
+    <p class="eyebrow" style="color:var(--gold);justify-content:center">Você chegou até aqui</p>
+    <h2 style="font-family:var(--serif);color:#fff;font-size:34px;line-height:1.15;font-weight:700;margin-bottom:20px">
+      Dormir não precisa ser<br>uma batalha
+    </h2>
+    <div style="width:70px;height:3px;background:var(--peach);margin:0 auto 24px;border-radius:3px"></div>
+    <p style="font-size:15px;line-height:1.7;color:#e9e3f7;margin-bottom:16px">
+      Você não vai acertar todas as noites — e não precisa. O que transforma a rotina não é a
+      noite perfeita, é a <strong style="color:#fff">repetição tranquila</strong>. Cada vez que você
+      segue o checklist, mesmo cansada, você está ensinando o corpo da sua filha a se acalmar sozinho.
+      Isso fica para a vida inteira.
+    </p>
+    <p style="font-size:15px;line-height:1.7;color:#e9e3f7;margin-bottom:30px">
+      Comece pelo passo que parecer mais fácil hoje. Amanhã, some mais um. Em uma semana,
+      a hora de dormir já vai parecer outra casa.
+    </p>
+
+    <div style="display:inline-block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:18px 26px">
+      <p style="font-family:var(--serif);font-style:italic;font-size:17px;color:#ffd9c9;margin:0">
+        "Uma criança calma na hora de dormir<br>é uma criança que se sente segura.<br>E você é essa segurança."
+      </p>
+    </div>
+
+    <div style="margin-top:36px;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:#c9bff0;font-weight:700">
+      Ginástica Cerebral · Continue com a gente 💜
+    </div>
+  </div>
+</section>
