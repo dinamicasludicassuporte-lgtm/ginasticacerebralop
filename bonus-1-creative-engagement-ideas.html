@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>30 Creative Engagement Ideas</title>
+<style>
+:root{
+  --ink:#26324a; --ink-soft:#5b6478; --cream:#fffdf8; --line:#e4e6ee;
+  --sans:Verdana,"Trebuchet MS","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--sans);color:var(--ink);background:#dfe3ee;line-height:1.35;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+
+.page{
+  width:210mm;height:297mm;min-height:297mm;
+  padding:12mm 14mm 10mm;margin:10mm auto;background:var(--cream);
+  position:relative;overflow:hidden;box-shadow:0 6px 24px rgba(38,50,74,.18);
+  display:flex;flex-direction:column;border-top:10mm solid var(--accent,#2f7d6b);
+}
+@media print{
+  html,body{margin:0;padding:0;background:#fff;width:210mm}
+  .page{margin:0;box-shadow:none;width:210mm;height:297mm;min-height:297mm;overflow:hidden;
+    page-break-after:always;break-after:page;break-inside:avoid;}
+  .page:last-child{page-break-after:auto;break-after:auto}
+}
+@page{size:210mm 297mm;margin:0}
+
+.pagehead{display:flex;justify-content:space-between;align-items:center;margin:2mm 0 3mm}
+.cat-pill{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.05em;
+  padding:4px 12px;border-radius:999px;background:var(--accent-bg,#eee);color:var(--accent,#333);
+  text-transform:uppercase}
+.pagenum{font-size:11px;color:var(--ink-soft);font-weight:700}
+
+.title{font-size:38px;font-weight:800;margin:0 0 4mm;color:var(--ink);line-height:1.08}
+.instruction{font-size:18px;font-weight:600;color:var(--ink-soft);margin:0 0 5mm;line-height:1.4;max-width:100%}
+
+.content{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6mm;overflow:hidden}
+
+.footer{position:absolute;bottom:6mm;left:14mm;right:14mm;font-size:9.5px;color:var(--ink-soft);
+  opacity:.65;text-align:center;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+
+.small-note{font-size:13px;color:var(--ink-soft);text-align:center}
+
+/* cover */
+.cover{color:#fff;justify-content:center;align-items:center;text-align:center;border-top:none;padding:0}
+.cover .eyebrow{font-size:13px;letter-spacing:.35em;text-transform:uppercase;color:#8fe3c8;font-weight:800;margin-bottom:20px}
+.cover h1{font-size:50px;line-height:1.12;margin:0 0 14px;font-weight:800}
+.cover p.sub{font-size:16px;color:#dfe9f5;max-width:135mm;margin:0 auto 30px}
+.cover .emojis{font-size:60px;letter-spacing:16px;margin-bottom:26px}
+.cover .foot{position:absolute;bottom:14mm;font-size:11px;letter-spacing:.2em;color:#9fb0c8;text-transform:uppercase}
+
+/* how-to / toc-like list */
+.howto-list{width:92%;display:flex;flex-direction:column;gap:5mm}
+.howto-item{display:flex;gap:6mm;align-items:flex-start}
+.howto-num{width:11mm;height:11mm;border-radius:50%;background:var(--accent,#333);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0}
+.howto-text{font-size:16px;line-height:1.5}
+
+/* -------- idea card (bonus 1 & 2) -------- */
+.idea-icon{font-size:110px}
+.idea-hook{font-size:24px;font-weight:700;color:var(--accent,#333);text-align:center;max-width:90%}
+.idea-tries{width:90%;display:flex;flex-direction:column;gap:4mm}
+.idea-try{display:flex;gap:5mm;align-items:flex-start;font-size:17px;line-height:1.4}
+.idea-bullet{width:9mm;height:9mm;border-radius:50%;background:var(--accent-bg,#eee);color:var(--accent,#333);
+  display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;font-size:13px}
+.zero-tag{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;
+  background:#1f6b3e;color:#fff;padding:6px 16px;border-radius:999px;letter-spacing:.04em}
+
+/* -------- routine (bonus 3) -------- */
+.routine-time{font-size:16px;font-weight:800;color:var(--accent,#333);background:var(--accent-bg);
+  display:inline-block;padding:5px 16px;border-radius:999px;margin-bottom:2mm}
+.routine-steps{width:92%;display:flex;flex-direction:column;gap:5mm;margin-top:2mm}
+.routine-step{display:flex;gap:6mm;align-items:center;font-size:20px;font-weight:600}
+.checkbox{width:12mm;height:12mm;border:3px solid var(--accent,#333);border-radius:6px;flex-shrink:0}
+.routine-tip{width:92%;margin-top:6mm;background:var(--accent-bg);border-radius:14px;padding:12px 18px;
+  font-size:15px;color:var(--ink);line-height:1.5}
+.routine-tip b{color:var(--accent,#333)}
+
+/* -------- emergency (bonus 4) -------- */
+.emg-header{display:flex;align-items:center;gap:6mm;justify-content:center;margin-bottom:2mm}
+.emg-meta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.emg-meta span{font-size:13px;font-weight:800;background:var(--accent-bg);color:var(--accent);
+  padding:5px 14px;border-radius:999px}
+.emg-steps{width:92%;display:flex;flex-direction:column;gap:5mm}
+.emg-step{display:flex;gap:6mm;align-items:flex-start;font-size:22px;font-weight:700;line-height:1.3}
+.emg-num{width:13mm;height:13mm;border-radius:50%;background:var(--accent,#c0392b);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;font-size:18px}
+.emg-fallback{width:92%;margin-top:6mm;background:#fdece9;border:2px dashed #e0a396;border-radius:14px;
+  padding:12px 18px;font-size:15px;color:#7a3325;line-height:1.5}
+</style>
+</head>
+<body>
+
+<section class="page cover" style="--accent:#2f7d6b;background:linear-gradient(165deg,#7d3f6b 0%,#3a2450 100%)">
+  <div class="eyebrow">Bonus #1 · A Printable Idea Deck</div>
+  <div class="emojis">🎨🎭🧱</div>
+  <h1>30 Creative<br>Engagement Ideas</h1>
+  <p class="sub">Open-ended art, pretend play, and build-it challenges that hold attention without step-by-step instructions — perfect for when your child needs to lead the way.</p>
+  <div class="foot">30 Ideas · No Right Answers · Ages 4–10</div>
+</section>
+<section class="page" style="--accent:#a04f8f;--accent-bg:#f7e9f3">
+  <div class="pagehead"><span class="cat-pill">Welcome</span></div>
+  <h1 class="title">How to Use This Bonus</h1>
+  <div class="content" style="justify-content:flex-start;padding-top:6mm">
+    <div class="howto-list"><div class="howto-item"><div class="howto-num">1</div><div class="howto-text">These are idea sparks, not worksheets — there is no wrong way to try them.</div></div><div class="howto-item"><div class="howto-num">2</div><div class="howto-text">Let your child pick the idea, not you. Choice keeps them engaged longer.</div></div><div class="howto-item"><div class="howto-num">3</div><div class="howto-text">The 3 'try this' tips on each card are optional add-ons, not requirements.</div></div><div class="howto-item"><div class="howto-num">4</div><div class="howto-text">It's okay to stop halfway — the goal is engagement, not a finished product.</div></div><div class="howto-item"><div class="howto-num">5</div><div class="howto-text">Mix and match: combine an Art idea with a Storytelling idea for extra fun.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas</div>
+</section>
+<section class="page" style="--accent:#c76b1f;--accent-bg:#fbeee0;">
+  <div class="pagehead">
+    <span class="cat-pill">Art &amp; Imagination</span>
+    <span class="pagenum">Activity #1</span>
+  </div>
+  <h1 class="title">Scribble Story</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🎨</div>
+    <div class="idea-hook">Make one big messy scribble on paper. Then hunt for hidden pictures inside it and color them in.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Turn the scribble sideways or upside down for new ideas.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Find at least 3 different pictures in one scribble.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Give each hidden picture a silly name.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 1 of 30</div>
+</section>
+<section class="page" style="--accent:#c76b1f;--accent-bg:#fbeee0;">
+  <div class="pagehead">
+    <span class="cat-pill">Art &amp; Imagination</span>
+    <span class="pagenum">Activity #2</span>
+  </div>
+  <h1 class="title">Color Mixing Lab</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🎨</div>
+    <div class="idea-hook">Using only red, blue, and yellow, see how many brand-new colors you can invent.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Name every new color you make (like 'Dinosaur Green').</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Try mixing with just a little water to make it lighter.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Make a color chart of your favorite mixes.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 2 of 30</div>
+</section>
+<section class="page" style="--accent:#c76b1f;--accent-bg:#fbeee0;">
+  <div class="pagehead">
+    <span class="cat-pill">Art &amp; Imagination</span>
+    <span class="pagenum">Activity #3</span>
+  </div>
+  <h1 class="title">Draw Your Superpower</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🎨</div>
+    <div class="idea-hook">If you could have any superpower in the world, draw yourself using it right now.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Add a cape, symbol, or costume.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Draw the villain you'd fight with your power.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Write one sentence about how you got your power.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 3 of 30</div>
+</section>
+<section class="page" style="--accent:#c76b1f;--accent-bg:#fbeee0;">
+  <div class="pagehead">
+    <span class="cat-pill">Art &amp; Imagination</span>
+    <span class="pagenum">Activity #4</span>
+  </div>
+  <h1 class="title">Sound Doodle</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🎨</div>
+    <div class="idea-hook">Hum a tune or play a song. Let the sound guide your hand — draw whatever shapes the music feels like.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Try a fast song, then a slow song — compare the drawings.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Use only lines, no pictures, just following the sound.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Add color where the music feels 'loud'.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 4 of 30</div>
+</section>
+<section class="page" style="--accent:#c76b1f;--accent-bg:#fbeee0;">
+  <div class="pagehead">
+    <span class="cat-pill">Art &amp; Imagination</span>
+    <span class="pagenum">Activity #5</span>
+  </div>
+  <h1 class="title">Monster Mash-Up</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🎨</div>
+    <div class="idea-hook">Draw a monster that is half one animal and half something totally different.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Try half-shark, half-cupcake.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Give your monster a name and a favorite snack.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Decide if it's friendly or just misunderstood.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 5 of 30</div>
+</section>
+<section class="page" style="--accent:#c76b1f;--accent-bg:#fbeee0;">
+  <div class="pagehead">
+    <span class="cat-pill">Art &amp; Imagination</span>
+    <span class="pagenum">Activity #6</span>
+  </div>
+  <h1 class="title">Blind Contour Drawing</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🎨</div>
+    <div class="idea-hook">Pick an object nearby. Draw it without ever looking down at your paper — only look at the object.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>It will look silly and that's the whole point!</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Try it with your own hand as the object.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Compare it to a normal drawing of the same thing.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 6 of 30</div>
+</section>
+<section class="page" style="--accent:#c76b1f;--accent-bg:#fbeee0;">
+  <div class="pagehead">
+    <span class="cat-pill">Art &amp; Imagination</span>
+    <span class="pagenum">Activity #7</span>
+  </div>
+  <h1 class="title">Finish the Doodle</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🎨</div>
+    <div class="idea-hook">Draw one random squiggle or shape on paper. Then turn it into anything you can imagine.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Ask someone else to draw the starting squiggle for you.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Try turning the same squiggle into 3 different things.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>The weirder the result, the better.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 7 of 30</div>
+</section>
+<section class="page" style="--accent:#c76b1f;--accent-bg:#fbeee0;">
+  <div class="pagehead">
+    <span class="cat-pill">Art &amp; Imagination</span>
+    <span class="pagenum">Activity #8</span>
+  </div>
+  <h1 class="title">Texture Rubbing Hunt</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🎨</div>
+    <div class="idea-hook">Find 5 different bumpy or textured surfaces around the house. Put paper over each one and rub a crayon on top.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Try a wall, a coin, a leaf, a shoe sole, a placemat.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Guess the texture before you find out what it was.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Make a 'texture collage' page of all 5.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 8 of 30</div>
+</section>
+<section class="page" style="--accent:#c76b1f;--accent-bg:#fbeee0;">
+  <div class="pagehead">
+    <span class="cat-pill">Art &amp; Imagination</span>
+    <span class="pagenum">Activity #9</span>
+  </div>
+  <h1 class="title">Design Your Dream Room</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🎨</div>
+    <div class="idea-hook">Draw or describe the coolest bedroom you could ever imagine having.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Include a secret feature, like a hidden door or slide.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Decide what's on the walls and the floor.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Add one thing that only exists in your imagination.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 9 of 30</div>
+</section>
+<section class="page" style="--accent:#c76b1f;--accent-bg:#fbeee0;">
+  <div class="pagehead">
+    <span class="cat-pill">Art &amp; Imagination</span>
+    <span class="pagenum">Activity #10</span>
+  </div>
+  <h1 class="title">Paint With Anything</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🎨</div>
+    <div class="idea-hook">Find something that isn&#x27;t a paintbrush — a cotton swab, a fork, a leaf, a sponge — and paint with it instead.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Try 3 different objects on the same page.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Guess what texture each object will make before trying.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Name your new 'invented' painting tool.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 10 of 30</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Storytelling &amp; Pretend Play</span>
+    <span class="pagenum">Activity #11</span>
+  </div>
+  <h1 class="title">Sock Puppet Show</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🎭</div>
+    <div class="idea-hook">Turn a sock into a puppet with a face and put on a two-minute show for someone.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Give your puppet a name and a favorite food.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Make up a tiny problem for the puppet to solve.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Try a different voice for the puppet.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 11 of 30</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Storytelling &amp; Pretend Play</span>
+    <span class="pagenum">Activity #12</span>
+  </div>
+  <h1 class="title">Story Dice</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🎭</div>
+    <div class="idea-hook">Pick 3 random objects near you right now. Make up a story that includes all three of them.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Reroll by picking 3 new objects for another story.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Try telling it backwards, ending first.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Add a funny villain to the story.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 12 of 30</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Storytelling &amp; Pretend Play</span>
+    <span class="pagenum">Activity #13</span>
+  </div>
+  <h1 class="title">What Happens Next?</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🎭</div>
+    <div class="idea-hook">Start a story with one sentence. Take turns with someone adding just one more sentence each time.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>No planning allowed — just say what pops into your head!</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Try to make the story as silly as possible.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>See how long you can keep it going.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 13 of 30</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Storytelling &amp; Pretend Play</span>
+    <span class="pagenum">Activity #14</span>
+  </div>
+  <h1 class="title">Become the Weather</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🎭</div>
+    <div class="idea-hook">Act out being a thunderstorm, then a gentle breeze, then a bright sunny day.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Use your whole body and your voice for each one.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Add sound effects for rain, wind, and sunshine.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Ask someone to guess which weather you're acting out.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 14 of 30</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Storytelling &amp; Pretend Play</span>
+    <span class="pagenum">Activity #15</span>
+  </div>
+  <h1 class="title">Restaurant Pretend</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🎭</div>
+    <div class="idea-hook">Set up a pretend restaurant. Take turns being the chef, the customer, and the waiter.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Make up a silly menu with invented food names.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Take a pretend order and 'cook' it up.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Add a rating at the end: how was the food?</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 15 of 30</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Storytelling &amp; Pretend Play</span>
+    <span class="pagenum">Activity #16</span>
+  </div>
+  <h1 class="title">Animal Detective</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🎭</div>
+    <div class="idea-hook">Pretend to be a detective animal solving a silly mystery somewhere in the house.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Decide what animal your detective is and how they walk and talk.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Invent a 'case' like the Mystery of the Missing Sock.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Find 3 clues to solve it.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 16 of 30</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Storytelling &amp; Pretend Play</span>
+    <span class="pagenum">Activity #17</span>
+  </div>
+  <h1 class="title">Talking Toys</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🎭</div>
+    <div class="idea-hook">Pick two toys or objects. Give each one a different voice and let them have a conversation.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Give them opposite personalities.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Make them disagree about something silly.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Let them become best friends by the end.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 17 of 30</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Storytelling &amp; Pretend Play</span>
+    <span class="pagenum">Activity #18</span>
+  </div>
+  <h1 class="title">Superhero Origin Story</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🎭</div>
+    <div class="idea-hook">Invent a brand-new superhero name and tell the story of how they got their powers.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Decide their one weakness.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Give them a catchphrase they always say.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Draw or act out their signature pose.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 18 of 30</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Storytelling &amp; Pretend Play</span>
+    <span class="pagenum">Activity #19</span>
+  </div>
+  <h1 class="title">Time Traveler</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🎭</div>
+    <div class="idea-hook">Pretend you just traveled back 100 years. What do you see, eat, wear, and do all day?</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Compare it to your life today.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Act out meeting someone from that time.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Decide what you'd miss most from now.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 19 of 30</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Storytelling &amp; Pretend Play</span>
+    <span class="pagenum">Activity #20</span>
+  </div>
+  <h1 class="title">Shadow Puppet Tales</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🎭</div>
+    <div class="idea-hook">Use a flashlight and your hands to tell a story with shadow puppets on the wall.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Practice a few hand shapes first (bird, dog, rabbit).</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Turn off other lights to make shadows extra clear.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Add a simple beginning, middle, and end.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 20 of 30</div>
+</section>
+<section class="page" style="--accent:#2f8f4f;--accent-bg:#e6f6ea;">
+  <div class="pagehead">
+    <span class="cat-pill">Build &amp; Create Challenges</span>
+    <span class="pagenum">Activity #21</span>
+  </div>
+  <h1 class="title">Tallest Tower</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🧱</div>
+    <div class="idea-hook">Build the tallest tower you can using blocks, cups, or books. Can it hold a small toy on top without falling?</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Try a wider base for more stability.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Time yourself and try to beat your record.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Test what happens with a gentle 'earthquake' shake.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 21 of 30</div>
+</section>
+<section class="page" style="--accent:#2f8f4f;--accent-bg:#e6f6ea;">
+  <div class="pagehead">
+    <span class="cat-pill">Build &amp; Create Challenges</span>
+    <span class="pagenum">Activity #22</span>
+  </div>
+  <h1 class="title">Pillow Fort HQ</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🧱</div>
+    <div class="idea-hook">Build a cozy fort using pillows and blankets, then give it a secret name and a special job it does.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Add a flashlight for reading inside.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Decide who is allowed in (the password!).</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Make a little sign for the entrance.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 22 of 30</div>
+</section>
+<section class="page" style="--accent:#2f8f4f;--accent-bg:#e6f6ea;">
+  <div class="pagehead">
+    <span class="cat-pill">Build &amp; Create Challenges</span>
+    <span class="pagenum">Activity #23</span>
+  </div>
+  <h1 class="title">Recycled Robot</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🧱</div>
+    <div class="idea-hook">Use empty boxes, tubes, and containers to build a robot out of things you&#x27;d normally recycle.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Give your robot a name and one special power.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Decorate it with markers or stickers.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Decide what job your robot does all day.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 23 of 30</div>
+</section>
+<section class="page" style="--accent:#2f8f4f;--accent-bg:#e6f6ea;">
+  <div class="pagehead">
+    <span class="cat-pill">Build &amp; Create Challenges</span>
+    <span class="pagenum">Activity #24</span>
+  </div>
+  <h1 class="title">Bridge Builder</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🧱</div>
+    <div class="idea-hook">Using paper and tape, build a bridge strong enough to hold a small toy car.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Try folding the paper to make it stronger.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Test different bridge shapes.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>See how many toy cars it can hold at once.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 24 of 30</div>
+</section>
+<section class="page" style="--accent:#2f8f4f;--accent-bg:#e6f6ea;">
+  <div class="pagehead">
+    <span class="cat-pill">Build &amp; Create Challenges</span>
+    <span class="pagenum">Activity #25</span>
+  </div>
+  <h1 class="title">Marble Run</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🧱</div>
+    <div class="idea-hook">Build a path for a marble or small ball to roll down using tubes, books, or ramps.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Try adding a loop or a jump.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Time how fast the marble reaches the end.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Rebuild it a totally different way.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 25 of 30</div>
+</section>
+<section class="page" style="--accent:#2f8f4f;--accent-bg:#e6f6ea;">
+  <div class="pagehead">
+    <span class="cat-pill">Build &amp; Create Challenges</span>
+    <span class="pagenum">Activity #26</span>
+  </div>
+  <h1 class="title">Balance Challenge</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🧱</div>
+    <div class="idea-hook">Using only 10 objects from around you, build a structure that stands on its own without falling.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Try building with your eyes closed for one part.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>See how tall you can go with exactly 10 objects.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Test it with a gentle poke — does it survive?</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 26 of 30</div>
+</section>
+<section class="page" style="--accent:#2f8f4f;--accent-bg:#e6f6ea;">
+  <div class="pagehead">
+    <span class="cat-pill">Build &amp; Create Challenges</span>
+    <span class="pagenum">Activity #27</span>
+  </div>
+  <h1 class="title">Secret Hideout Map</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🧱</div>
+    <div class="idea-hook">Design a map of an imaginary secret hideout, including traps, rooms, and hidden treasure.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Add a legend explaining the symbols.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Mark an 'X' where the treasure is buried.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Invent a name for your hideout.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 27 of 30</div>
+</section>
+<section class="page" style="--accent:#2f8f4f;--accent-bg:#e6f6ea;">
+  <div class="pagehead">
+    <span class="cat-pill">Build &amp; Create Challenges</span>
+    <span class="pagenum">Activity #28</span>
+  </div>
+  <h1 class="title">Sock Ball Catapult</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🧱</div>
+    <div class="idea-hook">Build a simple catapult using a spoon and a rubber band to launch a soft object like a balled-up sock.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Measure how far it launches.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Try adjusting the angle to launch farther.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Set up a target to aim for.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 28 of 30</div>
+</section>
+<section class="page" style="--accent:#2f8f4f;--accent-bg:#e6f6ea;">
+  <div class="pagehead">
+    <span class="cat-pill">Build &amp; Create Challenges</span>
+    <span class="pagenum">Activity #29</span>
+  </div>
+  <h1 class="title">Invent a Machine</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🧱</div>
+    <div class="idea-hook">Build a pretend machine out of household objects and explain exactly what it does.</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Give it a funny, official-sounding name.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Decide what buttons or levers it has.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Draw a diagram of how it works.</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 29 of 30</div>
+</section>
+<section class="page" style="--accent:#2f8f4f;--accent-bg:#e6f6ea;">
+  <div class="pagehead">
+    <span class="cat-pill">Build &amp; Create Challenges</span>
+    <span class="pagenum">Activity #30</span>
+  </div>
+  <h1 class="title">Card Tower</h1>
+  <div class="content">
+    
+    <div class="idea-icon">🧱</div>
+    <div class="idea-hook">Stack playing cards or index cards into a tower or pyramid. How high can you build before it falls?</div>
+    <div class="idea-tries"><div class="idea-try"><div class="idea-bullet">✦</div><div>Try a pyramid shape for extra stability.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>See if a partner can add just one more card.</div></div><div class="idea-try"><div class="idea-bullet">✦</div><div>Rebuild it after it falls — don't stop at one try!</div></div></div>
+  </div>
+  <div class="footer">30 Creative Engagement Ideas &middot; 30 of 30</div>
+</section>
+<section class="page cover" style="--accent:#2f7d6b;background:linear-gradient(165deg,#2f7d6b 0%,#173a4d 100%)">
+  <div class="eyebrow">You Did It!</div>
+  <div class="emojis">🎉🖍️🎉</div>
+  <h1>Great Creating!</h1>
+  <p class="sub">Every idea you tried builds imagination, flexible thinking, and focus — one open-ended moment at a time.</p>
+  <div class="foot">End of Bonus #1</div>
+</section>
+</body>
+</html>

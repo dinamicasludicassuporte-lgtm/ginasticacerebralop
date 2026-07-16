@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>20 Ready-to-Use Daily Routines</title>
+<style>
+:root{
+  --ink:#26324a; --ink-soft:#5b6478; --cream:#fffdf8; --line:#e4e6ee;
+  --sans:Verdana,"Trebuchet MS","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--sans);color:var(--ink);background:#dfe3ee;line-height:1.35;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+
+.page{
+  width:210mm;height:297mm;min-height:297mm;
+  padding:12mm 14mm 10mm;margin:10mm auto;background:var(--cream);
+  position:relative;overflow:hidden;box-shadow:0 6px 24px rgba(38,50,74,.18);
+  display:flex;flex-direction:column;border-top:10mm solid var(--accent,#2f7d6b);
+}
+@media print{
+  html,body{margin:0;padding:0;background:#fff;width:210mm}
+  .page{margin:0;box-shadow:none;width:210mm;height:297mm;min-height:297mm;overflow:hidden;
+    page-break-after:always;break-after:page;break-inside:avoid;}
+  .page:last-child{page-break-after:auto;break-after:auto}
+}
+@page{size:210mm 297mm;margin:0}
+
+.pagehead{display:flex;justify-content:space-between;align-items:center;margin:2mm 0 3mm}
+.cat-pill{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.05em;
+  padding:4px 12px;border-radius:999px;background:var(--accent-bg,#eee);color:var(--accent,#333);
+  text-transform:uppercase}
+.pagenum{font-size:11px;color:var(--ink-soft);font-weight:700}
+
+.title{font-size:38px;font-weight:800;margin:0 0 4mm;color:var(--ink);line-height:1.08}
+.instruction{font-size:18px;font-weight:600;color:var(--ink-soft);margin:0 0 5mm;line-height:1.4;max-width:100%}
+
+.content{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6mm;overflow:hidden}
+
+.footer{position:absolute;bottom:6mm;left:14mm;right:14mm;font-size:9.5px;color:var(--ink-soft);
+  opacity:.65;text-align:center;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+
+.small-note{font-size:13px;color:var(--ink-soft);text-align:center}
+
+/* cover */
+.cover{color:#fff;justify-content:center;align-items:center;text-align:center;border-top:none;padding:0}
+.cover .eyebrow{font-size:13px;letter-spacing:.35em;text-transform:uppercase;color:#8fe3c8;font-weight:800;margin-bottom:20px}
+.cover h1{font-size:50px;line-height:1.12;margin:0 0 14px;font-weight:800}
+.cover p.sub{font-size:16px;color:#dfe9f5;max-width:135mm;margin:0 auto 30px}
+.cover .emojis{font-size:60px;letter-spacing:16px;margin-bottom:26px}
+.cover .foot{position:absolute;bottom:14mm;font-size:11px;letter-spacing:.2em;color:#9fb0c8;text-transform:uppercase}
+
+/* how-to / toc-like list */
+.howto-list{width:92%;display:flex;flex-direction:column;gap:5mm}
+.howto-item{display:flex;gap:6mm;align-items:flex-start}
+.howto-num{width:11mm;height:11mm;border-radius:50%;background:var(--accent,#333);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0}
+.howto-text{font-size:16px;line-height:1.5}
+
+/* -------- idea card (bonus 1 & 2) -------- */
+.idea-icon{font-size:110px}
+.idea-hook{font-size:24px;font-weight:700;color:var(--accent,#333);text-align:center;max-width:90%}
+.idea-tries{width:90%;display:flex;flex-direction:column;gap:4mm}
+.idea-try{display:flex;gap:5mm;align-items:flex-start;font-size:17px;line-height:1.4}
+.idea-bullet{width:9mm;height:9mm;border-radius:50%;background:var(--accent-bg,#eee);color:var(--accent,#333);
+  display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;font-size:13px}
+.zero-tag{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;
+  background:#1f6b3e;color:#fff;padding:6px 16px;border-radius:999px;letter-spacing:.04em}
+
+/* -------- routine (bonus 3) -------- */
+.routine-time{font-size:16px;font-weight:800;color:var(--accent,#333);background:var(--accent-bg);
+  display:inline-block;padding:5px 16px;border-radius:999px;margin-bottom:2mm}
+.routine-steps{width:92%;display:flex;flex-direction:column;gap:5mm;margin-top:2mm}
+.routine-step{display:flex;gap:6mm;align-items:center;font-size:20px;font-weight:600}
+.checkbox{width:12mm;height:12mm;border:3px solid var(--accent,#333);border-radius:6px;flex-shrink:0}
+.routine-tip{width:92%;margin-top:6mm;background:var(--accent-bg);border-radius:14px;padding:12px 18px;
+  font-size:15px;color:var(--ink);line-height:1.5}
+.routine-tip b{color:var(--accent,#333)}
+
+/* -------- emergency (bonus 4) -------- */
+.emg-header{display:flex;align-items:center;gap:6mm;justify-content:center;margin-bottom:2mm}
+.emg-meta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.emg-meta span{font-size:13px;font-weight:800;background:var(--accent-bg);color:var(--accent);
+  padding:5px 14px;border-radius:999px}
+.emg-steps{width:92%;display:flex;flex-direction:column;gap:5mm}
+.emg-step{display:flex;gap:6mm;align-items:flex-start;font-size:22px;font-weight:700;line-height:1.3}
+.emg-num{width:13mm;height:13mm;border-radius:50%;background:var(--accent,#c0392b);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;font-size:18px}
+.emg-fallback{width:92%;margin-top:6mm;background:#fdece9;border:2px dashed #e0a396;border-radius:14px;
+  padding:12px 18px;font-size:15px;color:#7a3325;line-height:1.5}
+</style>
+</head>
+<body>
+
+<section class="page cover" style="--accent:#2f7d6b;background:linear-gradient(165deg,#1f3a5c 0%,#101c33 100%)">
+  <div class="eyebrow">Bonus #3 · A Printable Routine Set</div>
+  <div class="emojis">☀️🎒🌙</div>
+  <h1>20 Ready-to-Use<br>Daily Routines</h1>
+  <p class="sub">Simple checklist routines for morning, after-school, bedtime, and hard transitions — so the whole day feels more predictable for everyone.</p>
+  <div class="foot">20 Routines · Checkbox-Ready · Print &amp; Post</div>
+</section>
+<section class="page" style="--accent:#2f4f8f;--accent-bg:#e6ecf7">
+  <div class="pagehead"><span class="cat-pill">Welcome</span></div>
+  <h1 class="title">How to Use This Bonus</h1>
+  <div class="content" style="justify-content:flex-start;padding-top:6mm">
+    <div class="howto-list"><div class="howto-item"><div class="howto-num">1</div><div class="howto-text">Print the routines you need most and post them where the routine happens.</div></div><div class="howto-item"><div class="howto-num">2</div><div class="howto-text">Check off each step as you go — the visible progress helps a lot.</div></div><div class="howto-item"><div class="howto-num">3</div><div class="howto-text">It's okay to skip a step on a hard day. Read the tip for how to adapt.</div></div><div class="howto-item"><div class="howto-num">4</div><div class="howto-text">Try to keep the order the same each time, even if the exact time shifts.</div></div><div class="howto-item"><div class="howto-num">5</div><div class="howto-text">Routines work best with a calm, consistent tone — not as a strict checklist to enforce.</div></div></div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines</div>
+</section>
+<section class="page" style="--accent:#c76b1f;--accent-bg:#fbeee0;">
+  <div class="pagehead">
+    <span class="cat-pill">Morning</span>
+    <span class="pagenum">Activity #1</span>
+  </div>
+  <h1 class="title">Routine: Calm Morning Wake-Up</h1>
+  <div class="content">
+    
+    <div class="routine-time">🕐 7:00 AM</div>
+    <div class="routine-steps"><div class="routine-step"><div class="checkbox"></div><div>Turn on a soft light and open the curtains</div></div><div class="routine-step"><div class="checkbox"></div><div>Take 3 slow, deep breaths together in bed</div></div><div class="routine-step"><div class="checkbox"></div><div>Stretch arms up high, then touch your toes</div></div><div class="routine-step"><div class="checkbox"></div><div>Say one thing you&#x27;re looking forward to today</div></div></div>
+    <div class="routine-tip"><b>💡 Tip:</b> If they wake up grumpy, skip straight to the stretch — movement helps mood more than talking does.</div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines &middot; 1 of 20</div>
+</section>
+<section class="page" style="--accent:#c76b1f;--accent-bg:#fbeee0;">
+  <div class="pagehead">
+    <span class="cat-pill">Morning</span>
+    <span class="pagenum">Activity #2</span>
+  </div>
+  <h1 class="title">Routine: Getting Dressed Without a Fight</h1>
+  <div class="content">
+    
+    <div class="routine-time">🕐 7:15 AM</div>
+    <div class="routine-steps"><div class="routine-step"><div class="checkbox"></div><div>Lay out clothes the night before so there&#x27;s no choosing in the morning</div></div><div class="routine-step"><div class="checkbox"></div><div>Set a 5-minute timer</div></div><div class="routine-step"><div class="checkbox"></div><div>Get dressed one item at a time, checking each one off</div></div><div class="routine-step"><div class="checkbox"></div><div>High-five when fully dressed</div></div></div>
+    <div class="routine-tip"><b>💡 Tip:</b> If they refuse an item, offer 2 pre-approved choices instead of asking open-ended questions.</div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines &middot; 2 of 20</div>
+</section>
+<section class="page" style="--accent:#c76b1f;--accent-bg:#fbeee0;">
+  <div class="pagehead">
+    <span class="cat-pill">Morning</span>
+    <span class="pagenum">Activity #3</span>
+  </div>
+  <h1 class="title">Routine: Breakfast Time</h1>
+  <div class="content">
+    
+    <div class="routine-time">🕐 7:30 AM</div>
+    <div class="routine-steps"><div class="routine-step"><div class="checkbox"></div><div>Sit down together, even for 5 minutes</div></div><div class="routine-step"><div class="checkbox"></div><div>Choose from the same 2–3 breakfast options each day</div></div><div class="routine-step"><div class="checkbox"></div><div>Take 5 bites minimum before leaving the table</div></div><div class="routine-step"><div class="checkbox"></div><div>Clear your own plate when done</div></div></div>
+    <div class="routine-tip"><b>💡 Tip:</b> If they&#x27;re not hungry, offer a smaller portion — pressure to finish often backfires.</div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines &middot; 3 of 20</div>
+</section>
+<section class="page" style="--accent:#c76b1f;--accent-bg:#fbeee0;">
+  <div class="pagehead">
+    <span class="cat-pill">Morning</span>
+    <span class="pagenum">Activity #4</span>
+  </div>
+  <h1 class="title">Routine: Leaving the House Smoothly</h1>
+  <div class="content">
+    
+    <div class="routine-time">🕐 7:50 AM</div>
+    <div class="routine-steps"><div class="routine-step"><div class="checkbox"></div><div>Give a 10-minute warning, then a 5-minute warning</div></div><div class="routine-step"><div class="checkbox"></div><div>Shoes and bag by the door the night before</div></div><div class="routine-step"><div class="checkbox"></div><div>Do a &#x27;final check&#x27;: bag, shoes, jacket</div></div><div class="routine-step"><div class="checkbox"></div><div>Say a goodbye ritual (high-five, phrase, or hug)</div></div></div>
+    <div class="routine-tip"><b>💡 Tip:</b> If they&#x27;re still not ready at the warning, don&#x27;t rush silently — narrate the plan out loud: &#x27;shoes, then bag, then door.&#x27;</div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines &middot; 4 of 20</div>
+</section>
+<section class="page" style="--accent:#c76b1f;--accent-bg:#fbeee0;">
+  <div class="pagehead">
+    <span class="cat-pill">Morning</span>
+    <span class="pagenum">Activity #5</span>
+  </div>
+  <h1 class="title">Routine: Arriving at School Calmly</h1>
+  <div class="content">
+    
+    <div class="routine-time">🕐 8:15 AM</div>
+    <div class="routine-steps"><div class="routine-step"><div class="checkbox"></div><div>Take one big breath together before getting out</div></div><div class="routine-step"><div class="checkbox"></div><div>Repeat a short calming phrase (&#x27;I&#x27;ve got this&#x27;)</div></div><div class="routine-step"><div class="checkbox"></div><div>Walk in at your own pace, no rushing</div></div><div class="routine-step"><div class="checkbox"></div><div>End with the same goodbye every day</div></div></div>
+    <div class="routine-tip"><b>💡 Tip:</b> If they cling or stall, keep the goodbye short and consistent — long goodbyes tend to increase anxiety.</div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines &middot; 5 of 20</div>
+</section>
+<section class="page" style="--accent:#2f8f4f;--accent-bg:#e6f6ea;">
+  <div class="pagehead">
+    <span class="cat-pill">After School</span>
+    <span class="pagenum">Activity #6</span>
+  </div>
+  <h1 class="title">Routine: After-School Decompression</h1>
+  <div class="content">
+    
+    <div class="routine-time">🕐 3:30 PM</div>
+    <div class="routine-steps"><div class="routine-step"><div class="checkbox"></div><div>Give 15–20 minutes of no-talking downtime first</div></div><div class="routine-step"><div class="checkbox"></div><div>Offer a snack and water</div></div><div class="routine-step"><div class="checkbox"></div><div>Let them choose a quiet activity (no questions about school yet)</div></div><div class="routine-step"><div class="checkbox"></div><div>Ask about their day only after they seem settled</div></div></div>
+    <div class="routine-tip"><b>💡 Tip:</b> If they melt down right after school, that&#x27;s normal &#x27;holding it together all day&#x27; fatigue — decompression comes before conversation.</div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines &middot; 6 of 20</div>
+</section>
+<section class="page" style="--accent:#2f8f4f;--accent-bg:#e6f6ea;">
+  <div class="pagehead">
+    <span class="cat-pill">After School</span>
+    <span class="pagenum">Activity #7</span>
+  </div>
+  <h1 class="title">Routine: Snack &amp; Reset</h1>
+  <div class="content">
+    
+    <div class="routine-time">🕐 3:45 PM</div>
+    <div class="routine-steps"><div class="routine-step"><div class="checkbox"></div><div>Offer 2 snack choices</div></div><div class="routine-step"><div class="checkbox"></div><div>Sit somewhere calm, away from screens</div></div><div class="routine-step"><div class="checkbox"></div><div>Take 5 minutes with no demands or questions</div></div><div class="routine-step"><div class="checkbox"></div><div>Do one big stretch before moving on</div></div></div>
+    <div class="routine-tip"><b>💡 Tip:</b> If they want to skip straight to screens, that&#x27;s okay occasionally — the goal is a reset, not a strict rule.</div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines &middot; 7 of 20</div>
+</section>
+<section class="page" style="--accent:#2f8f4f;--accent-bg:#e6f6ea;">
+  <div class="pagehead">
+    <span class="cat-pill">After School</span>
+    <span class="pagenum">Activity #8</span>
+  </div>
+  <h1 class="title">Routine: Homework Time</h1>
+  <div class="content">
+    
+    <div class="routine-time">🕐 4:15 PM</div>
+    <div class="routine-steps"><div class="routine-step"><div class="checkbox"></div><div>Set a visible timer for a short work block (10–15 min)</div></div><div class="routine-step"><div class="checkbox"></div><div>Break work into 2–3 small chunks</div></div><div class="routine-step"><div class="checkbox"></div><div>Take a 2-minute movement break between chunks</div></div><div class="routine-step"><div class="checkbox"></div><div>Celebrate finishing, not perfection</div></div></div>
+    <div class="routine-tip"><b>💡 Tip:</b> If they&#x27;re stuck, don&#x27;t add more time pressure — shrink the task instead (&#x27;just do 3 problems&#x27;).</div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines &middot; 8 of 20</div>
+</section>
+<section class="page" style="--accent:#2f8f4f;--accent-bg:#e6f6ea;">
+  <div class="pagehead">
+    <span class="cat-pill">After School</span>
+    <span class="pagenum">Activity #9</span>
+  </div>
+  <h1 class="title">Routine: Screen Time Wind-Down</h1>
+  <div class="content">
+    
+    <div class="routine-time">🕐 5:00 PM</div>
+    <div class="routine-steps"><div class="routine-step"><div class="checkbox"></div><div>Give a 10-minute and a 2-minute warning before screens end</div></div><div class="routine-step"><div class="checkbox"></div><div>Offer to help them save/pause their game</div></div><div class="routine-step"><div class="checkbox"></div><div>Transition straight into a physical activity</div></div><div class="routine-step"><div class="checkbox"></div><div>Avoid new screen requests until the next scheduled time</div></div></div>
+    <div class="routine-tip"><b>💡 Tip:</b> If the warning triggers a meltdown, try a visual timer next time — seeing time pass is often easier than hearing it.</div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines &middot; 9 of 20</div>
+</section>
+<section class="page" style="--accent:#2f4f8f;--accent-bg:#e6ecf7;">
+  <div class="pagehead">
+    <span class="cat-pill">Before Bed</span>
+    <span class="pagenum">Activity #10</span>
+  </div>
+  <h1 class="title">Routine: Dinner Time Together</h1>
+  <div class="content">
+    
+    <div class="routine-time">🕐 6:00 PM</div>
+    <div class="routine-steps"><div class="routine-step"><div class="checkbox"></div><div>Sit at the table together, screens off</div></div><div class="routine-step"><div class="checkbox"></div><div>Use the same seat each night for predictability</div></div><div class="routine-step"><div class="checkbox"></div><div>Share one &#x27;high&#x27; and one &#x27;low&#x27; from the day</div></div><div class="routine-step"><div class="checkbox"></div><div>Help clear the table when finished</div></div></div>
+    <div class="routine-tip"><b>💡 Tip:</b> If they won&#x27;t eat, don&#x27;t turn it into a battle — offer one safe food alongside the family meal.</div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines &middot; 10 of 20</div>
+</section>
+<section class="page" style="--accent:#2f4f8f;--accent-bg:#e6ecf7;">
+  <div class="pagehead">
+    <span class="cat-pill">Before Bed</span>
+    <span class="pagenum">Activity #11</span>
+  </div>
+  <h1 class="title">Routine: Bath Time Routine</h1>
+  <div class="content">
+    
+    <div class="routine-time">🕐 7:00 PM</div>
+    <div class="routine-steps"><div class="routine-step"><div class="checkbox"></div><div>Warn 10 minutes before bath starts</div></div><div class="routine-step"><div class="checkbox"></div><div>Let them choose 1–2 bath toys or a scent</div></div><div class="routine-step"><div class="checkbox"></div><div>Keep the same wash order every night</div></div><div class="routine-step"><div class="checkbox"></div><div>Warm towel and pajamas ready right after</div></div></div>
+    <div class="routine-tip"><b>💡 Tip:</b> If they resist bathing, try a shower instead, or a &#x27;quick rinse&#x27; version on hard days — consistency matters more than length.</div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines &middot; 11 of 20</div>
+</section>
+<section class="page" style="--accent:#2f4f8f;--accent-bg:#e6ecf7;">
+  <div class="pagehead">
+    <span class="cat-pill">Before Bed</span>
+    <span class="pagenum">Activity #12</span>
+  </div>
+  <h1 class="title">Routine: Pajama &amp; Teeth Routine</h1>
+  <div class="content">
+    
+    <div class="routine-time">🕐 7:30 PM</div>
+    <div class="routine-steps"><div class="routine-step"><div class="checkbox"></div><div>Pajamas on first</div></div><div class="routine-step"><div class="checkbox"></div><div>Brush teeth for 2 minutes (use a timer or a song)</div></div><div class="routine-step"><div class="checkbox"></div><div>Use the bathroom</div></div><div class="routine-step"><div class="checkbox"></div><div>Get a drink of water for the nightstand</div></div></div>
+    <div class="routine-tip"><b>💡 Tip:</b> If teeth brushing is a fight, try singing the same song every night — the familiar tune signals &#x27;almost done.&#x27;</div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines &middot; 12 of 20</div>
+</section>
+<section class="page" style="--accent:#2f4f8f;--accent-bg:#e6ecf7;">
+  <div class="pagehead">
+    <span class="cat-pill">Before Bed</span>
+    <span class="pagenum">Activity #13</span>
+  </div>
+  <h1 class="title">Routine: Wind-Down Story Time</h1>
+  <div class="content">
+    
+    <div class="routine-time">🕐 7:45 PM</div>
+    <div class="routine-steps"><div class="routine-step"><div class="checkbox"></div><div>Dim the lights</div></div><div class="routine-step"><div class="checkbox"></div><div>Choose 1–2 books (same choices each night is fine)</div></div><div class="routine-step"><div class="checkbox"></div><div>Read in a slow, quiet voice</div></div><div class="routine-step"><div class="checkbox"></div><div>Talk about one favorite part of the story</div></div></div>
+    <div class="routine-tip"><b>💡 Tip:</b> If they ask for &#x27;one more&#x27; repeatedly, agree on the number of books before you start so there&#x27;s no negotiating.</div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines &middot; 13 of 20</div>
+</section>
+<section class="page" style="--accent:#2f4f8f;--accent-bg:#e6ecf7;">
+  <div class="pagehead">
+    <span class="cat-pill">Before Bed</span>
+    <span class="pagenum">Activity #14</span>
+  </div>
+  <h1 class="title">Routine: Lights Out Calm Routine</h1>
+  <div class="content">
+    
+    <div class="routine-time">🕐 8:00 PM</div>
+    <div class="routine-steps"><div class="routine-step"><div class="checkbox"></div><div>Play soft music or white noise</div></div><div class="routine-step"><div class="checkbox"></div><div>Do 5 slow breaths together</div></div><div class="routine-step"><div class="checkbox"></div><div>Say the same goodnight phrase every night</div></div><div class="routine-step"><div class="checkbox"></div><div>Leave a nightlight or door slightly open if needed</div></div></div>
+    <div class="routine-tip"><b>💡 Tip:</b> If they call you back repeatedly, do one calm, brief check-in — then hold the boundary kindly and consistently.</div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines &middot; 14 of 20</div>
+</section>
+<section class="page" style="--accent:#c76b1f;--accent-bg:#fbeee0;">
+  <div class="pagehead">
+    <span class="cat-pill">Morning</span>
+    <span class="pagenum">Activity #15</span>
+  </div>
+  <h1 class="title">Routine: Weekend Morning Freedom</h1>
+  <div class="content">
+    
+    <div class="routine-time">🕐 9:00 AM</div>
+    <div class="routine-steps"><div class="routine-step"><div class="checkbox"></div><div>Let them choose their own wake-up activity</div></div><div class="routine-step"><div class="checkbox"></div><div>Offer a special weekend-only breakfast option</div></div><div class="routine-step"><div class="checkbox"></div><div>Plan one loosely structured activity for the day</div></div><div class="routine-step"><div class="checkbox"></div><div>Keep bedtime close to the usual routine</div></div></div>
+    <div class="routine-tip"><b>💡 Tip:</b> If the lack of structure causes anxiety, add just one visual anchor for the day, like &#x27;breakfast, then park, then lunch.&#x27;</div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines &middot; 15 of 20</div>
+</section>
+<section class="page" style="--accent:#7d2f8f;--accent-bg:#f3e6f7;">
+  <div class="pagehead">
+    <span class="cat-pill">Anytime / Transitions</span>
+    <span class="pagenum">Activity #16</span>
+  </div>
+  <h1 class="title">Routine: Chore Time Made Easy</h1>
+  <div class="content">
+    
+    <div class="routine-time">🕐 Anytime</div>
+    <div class="routine-steps"><div class="routine-step"><div class="checkbox"></div><div>Pick one small chore, not a whole list</div></div><div class="routine-step"><div class="checkbox"></div><div>Set a timer to make it a beatable challenge</div></div><div class="routine-step"><div class="checkbox"></div><div>Work alongside them for the first minute</div></div><div class="routine-step"><div class="checkbox"></div><div>Celebrate finishing right away, no delay</div></div></div>
+    <div class="routine-tip"><b>💡 Tip:</b> If they refuse, shrink the chore further — &#x27;just the socks&#x27; is easier to say yes to than &#x27;clean your room.&#x27;</div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines &middot; 16 of 20</div>
+</section>
+<section class="page" style="--accent:#7d2f8f;--accent-bg:#f3e6f7;">
+  <div class="pagehead">
+    <span class="cat-pill">Anytime / Transitions</span>
+    <span class="pagenum">Activity #17</span>
+  </div>
+  <h1 class="title">Routine: Transition Warning Routine</h1>
+  <div class="content">
+    
+    <div class="routine-time">🕐 As Needed</div>
+    <div class="routine-steps"><div class="routine-step"><div class="checkbox"></div><div>Give a 5-minute warning out loud</div></div><div class="routine-step"><div class="checkbox"></div><div>Give a 2-minute warning with a visual cue (show fingers or a timer)</div></div><div class="routine-step"><div class="checkbox"></div><div>Announce the transition clearly: &#x27;Now it&#x27;s time to...&#x27;</div></div><div class="routine-step"><div class="checkbox"></div><div>Offer a small choice about how the transition happens</div></div></div>
+    <div class="routine-tip"><b>💡 Tip:</b> If a transition still causes a meltdown, that&#x27;s information, not failure — try adding an extra warning step next time.</div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines &middot; 17 of 20</div>
+</section>
+<section class="page" style="--accent:#7d2f8f;--accent-bg:#f3e6f7;">
+  <div class="pagehead">
+    <span class="cat-pill">Anytime / Transitions</span>
+    <span class="pagenum">Activity #18</span>
+  </div>
+  <h1 class="title">Routine: Waiting Room / Car Ride Routine</h1>
+  <div class="content">
+    
+    <div class="routine-time">🕐 As Needed</div>
+    <div class="routine-steps"><div class="routine-step"><div class="checkbox"></div><div>Bring one small quiet activity or fidget</div></div><div class="routine-step"><div class="checkbox"></div><div>Play a no-materials word game (see Bonus #2)</div></div><div class="routine-step"><div class="checkbox"></div><div>Take slow breaths together if it&#x27;s taking a while</div></div><div class="routine-step"><div class="checkbox"></div><div>Praise the waiting, not just the final behavior</div></div></div>
+    <div class="routine-tip"><b>💡 Tip:</b> If waiting is especially hard, tell them how long it will likely be using a comparison (&#x27;about as long as one show&#x27;).</div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines &middot; 18 of 20</div>
+</section>
+<section class="page" style="--accent:#7d2f8f;--accent-bg:#f3e6f7;">
+  <div class="pagehead">
+    <span class="cat-pill">Anytime / Transitions</span>
+    <span class="pagenum">Activity #19</span>
+  </div>
+  <h1 class="title">Routine: Meltdown Reset Routine</h1>
+  <div class="content">
+    
+    <div class="routine-time">🕐 As Needed</div>
+    <div class="routine-steps"><div class="routine-step"><div class="checkbox"></div><div>Lower your voice and get down to their level</div></div><div class="routine-step"><div class="checkbox"></div><div>Reduce the sensory noise around them if possible</div></div><div class="routine-step"><div class="checkbox"></div><div>Offer one simple choice (sit, walk, or squeeze a pillow)</div></div><div class="routine-step"><div class="checkbox"></div><div>Wait for calm before talking about what happened</div></div></div>
+    <div class="routine-tip"><b>💡 Tip:</b> If nothing seems to help, check Bonus #4 (Emergency Calm-Down Activities) for faster in-the-moment techniques.</div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines &middot; 19 of 20</div>
+</section>
+<section class="page" style="--accent:#7d2f8f;--accent-bg:#f3e6f7;">
+  <div class="pagehead">
+    <span class="cat-pill">Anytime / Transitions</span>
+    <span class="pagenum">Activity #20</span>
+  </div>
+  <h1 class="title">Routine: New Place / New Situation Routine</h1>
+  <div class="content">
+    
+    <div class="routine-time">🕐 As Needed</div>
+    <div class="routine-steps"><div class="routine-step"><div class="checkbox"></div><div>Preview what will happen before you arrive, in order</div></div><div class="routine-step"><div class="checkbox"></div><div>Point out one thing that will stay the same (a snack, a toy, a person)</div></div><div class="routine-step"><div class="checkbox"></div><div>Give them a job to do when you arrive (hold the bag, ring the bell)</div></div><div class="routine-step"><div class="checkbox"></div><div>Debrief afterward: what was easy, what was hard</div></div></div>
+    <div class="routine-tip"><b>💡 Tip:</b> If anxiety builds before you even leave, try a photo or simple drawing of the new place ahead of time.</div>
+  </div>
+  <div class="footer">20 Ready-to-Use Daily Routines &middot; 20 of 20</div>
+</section>
+<section class="page cover" style="--accent:#2f7d6b;background:linear-gradient(165deg,#2f7d6b 0%,#173a4d 100%)">
+  <div class="eyebrow">You Did It!</div>
+  <div class="emojis">🎉☑️🎉</div>
+  <h1>Routine Built!</h1>
+  <p class="sub">Predictable routines lower stress for the whole family. Keep using what works, and adjust what doesn't — that's the whole system.</p>
+  <div class="foot">End of Bonus #3</div>
+</section>
+</body>
+</html>

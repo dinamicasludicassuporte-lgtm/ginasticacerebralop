@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>50 No-Materials-Needed Activities</title>
+<style>
+:root{
+  --ink:#26324a; --ink-soft:#5b6478; --cream:#fffdf8; --line:#e4e6ee;
+  --sans:Verdana,"Trebuchet MS","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--sans);color:var(--ink);background:#dfe3ee;line-height:1.35;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+
+.page{
+  width:210mm;height:297mm;min-height:297mm;
+  padding:12mm 14mm 10mm;margin:10mm auto;background:var(--cream);
+  position:relative;overflow:hidden;box-shadow:0 6px 24px rgba(38,50,74,.18);
+  display:flex;flex-direction:column;border-top:10mm solid var(--accent,#2f7d6b);
+}
+@media print{
+  html,body{margin:0;padding:0;background:#fff;width:210mm}
+  .page{margin:0;box-shadow:none;width:210mm;height:297mm;min-height:297mm;overflow:hidden;
+    page-break-after:always;break-after:page;break-inside:avoid;}
+  .page:last-child{page-break-after:auto;break-after:auto}
+}
+@page{size:210mm 297mm;margin:0}
+
+.pagehead{display:flex;justify-content:space-between;align-items:center;margin:2mm 0 3mm}
+.cat-pill{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.05em;
+  padding:4px 12px;border-radius:999px;background:var(--accent-bg,#eee);color:var(--accent,#333);
+  text-transform:uppercase}
+.pagenum{font-size:11px;color:var(--ink-soft);font-weight:700}
+
+.title{font-size:38px;font-weight:800;margin:0 0 4mm;color:var(--ink);line-height:1.08}
+.instruction{font-size:18px;font-weight:600;color:var(--ink-soft);margin:0 0 5mm;line-height:1.4;max-width:100%}
+
+.content{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6mm;overflow:hidden}
+
+.footer{position:absolute;bottom:6mm;left:14mm;right:14mm;font-size:9.5px;color:var(--ink-soft);
+  opacity:.65;text-align:center;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+
+.small-note{font-size:13px;color:var(--ink-soft);text-align:center}
+
+/* cover */
+.cover{color:#fff;justify-content:center;align-items:center;text-align:center;border-top:none;padding:0}
+.cover .eyebrow{font-size:13px;letter-spacing:.35em;text-transform:uppercase;color:#8fe3c8;font-weight:800;margin-bottom:20px}
+.cover h1{font-size:50px;line-height:1.12;margin:0 0 14px;font-weight:800}
+.cover p.sub{font-size:16px;color:#dfe9f5;max-width:135mm;margin:0 auto 30px}
+.cover .emojis{font-size:60px;letter-spacing:16px;margin-bottom:26px}
+.cover .foot{position:absolute;bottom:14mm;font-size:11px;letter-spacing:.2em;color:#9fb0c8;text-transform:uppercase}
+
+/* how-to / toc-like list */
+.howto-list{width:92%;display:flex;flex-direction:column;gap:5mm}
+.howto-item{display:flex;gap:6mm;align-items:flex-start}
+.howto-num{width:11mm;height:11mm;border-radius:50%;background:var(--accent,#333);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0}
+.howto-text{font-size:16px;line-height:1.5}
+
+/* -------- idea card (bonus 1 & 2) -------- */
+.idea-icon{font-size:110px}
+.idea-hook{font-size:24px;font-weight:700;color:var(--accent,#333);text-align:center;max-width:90%}
+.idea-tries{width:90%;display:flex;flex-direction:column;gap:4mm}
+.idea-try{display:flex;gap:5mm;align-items:flex-start;font-size:17px;line-height:1.4}
+.idea-bullet{width:9mm;height:9mm;border-radius:50%;background:var(--accent-bg,#eee);color:var(--accent,#333);
+  display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;font-size:13px}
+.zero-tag{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;
+  background:#1f6b3e;color:#fff;padding:6px 16px;border-radius:999px;letter-spacing:.04em}
+
+/* -------- routine (bonus 3) -------- */
+.routine-time{font-size:16px;font-weight:800;color:var(--accent,#333);background:var(--accent-bg);
+  display:inline-block;padding:5px 16px;border-radius:999px;margin-bottom:2mm}
+.routine-steps{width:92%;display:flex;flex-direction:column;gap:5mm;margin-top:2mm}
+.routine-step{display:flex;gap:6mm;align-items:center;font-size:20px;font-weight:600}
+.checkbox{width:12mm;height:12mm;border:3px solid var(--accent,#333);border-radius:6px;flex-shrink:0}
+.routine-tip{width:92%;margin-top:6mm;background:var(--accent-bg);border-radius:14px;padding:12px 18px;
+  font-size:15px;color:var(--ink);line-height:1.5}
+.routine-tip b{color:var(--accent,#333)}
+
+/* -------- emergency (bonus 4) -------- */
+.emg-header{display:flex;align-items:center;gap:6mm;justify-content:center;margin-bottom:2mm}
+.emg-meta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.emg-meta span{font-size:13px;font-weight:800;background:var(--accent-bg);color:var(--accent);
+  padding:5px 14px;border-radius:999px}
+.emg-steps{width:92%;display:flex;flex-direction:column;gap:5mm}
+.emg-step{display:flex;gap:6mm;align-items:flex-start;font-size:22px;font-weight:700;line-height:1.3}
+.emg-num{width:13mm;height:13mm;border-radius:50%;background:var(--accent,#c0392b);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;font-size:18px}
+.emg-fallback{width:92%;margin-top:6mm;background:#fdece9;border:2px dashed #e0a396;border-radius:14px;
+  padding:12px 18px;font-size:15px;color:#7a3325;line-height:1.5}
+</style>
+</head>
+<body>
+
+<section class="page cover" style="--accent:#2f7d6b;background:linear-gradient(165deg,#1f4a5c 0%,#0f2a38 100%)">
+  <div class="eyebrow">Bonus #2 · A Printable Activity Deck</div>
+  <div class="emojis">🚫🏃💭</div>
+  <h1>50 No-Materials<br>Needed Activities</h1>
+  <p class="sub">Movement games, thinking games, and quiet-hands games you can do anywhere — no toys, no prep, no bag to pack. Perfect for the car, a waiting room, or a hard transition.</p>
+  <div class="foot">50 Activities · Zero Materials · Anywhere, Anytime</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5">
+  <div class="pagehead"><span class="cat-pill">Welcome</span></div>
+  <h1 class="title">How to Use This Bonus</h1>
+  <div class="content" style="justify-content:flex-start;padding-top:6mm">
+    <div class="howto-list"><div class="howto-item"><div class="howto-num">1</div><div class="howto-text">Nothing to grab, nothing to pack — just pick a card and go.</div></div><div class="howto-item"><div class="howto-num">2</div><div class="howto-text">Great for waiting rooms, car rides, lines, or restaurant tables.</div></div><div class="howto-item"><div class="howto-num">3</div><div class="howto-text">Body & Movement games help release extra energy before a hard transition.</div></div><div class="howto-item"><div class="howto-num">4</div><div class="howto-text">Word & Thinking games work well when hands need to stay still.</div></div><div class="howto-item"><div class="howto-num">5</div><div class="howto-text">Quiet-Hands games are ideal for church, a classroom, or a quiet space.</div></div></div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Body &amp; Movement</span>
+    <span class="pagenum">Activity #1</span>
+  </div>
+  <h1 class="title">Freeze Dance (Hum-Along)</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🏃</div>
+    <div class="idea-hook">Hum or sing a tune and dance. When the humming stops, freeze like a statue.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 1 of 50</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Body &amp; Movement</span>
+    <span class="pagenum">Activity #2</span>
+  </div>
+  <h1 class="title">Animal Walk Relay</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🏃</div>
+    <div class="idea-hook">Walk across the room like different animals — a crab, a bear, a bunny, a snake.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 2 of 50</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Body &amp; Movement</span>
+    <span class="pagenum">Activity #3</span>
+  </div>
+  <h1 class="title">Statue Challenge</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🏃</div>
+    <div class="idea-hook">Pick a silly pose and hold as still as a statue for 30 seconds. No wiggling!</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 3 of 50</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Body &amp; Movement</span>
+    <span class="pagenum">Activity #4</span>
+  </div>
+  <h1 class="title">Invisible Ball Toss</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🏃</div>
+    <div class="idea-hook">Mime tossing an invisible ball back and forth with someone, reacting to catches and misses.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 4 of 50</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Body &amp; Movement</span>
+    <span class="pagenum">Activity #5</span>
+  </div>
+  <h1 class="title">Simon Says</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🏃</div>
+    <div class="idea-hook">Play Simon Says using only body movements — no props needed at all.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 5 of 50</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Body &amp; Movement</span>
+    <span class="pagenum">Activity #6</span>
+  </div>
+  <h1 class="title">Balance on One Foot</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🏃</div>
+    <div class="idea-hook">See how long you can balance on one foot, then switch. Try with eyes closed for a challenge.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 6 of 50</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Body &amp; Movement</span>
+    <span class="pagenum">Activity #7</span>
+  </div>
+  <h1 class="title">Jumping Jack Countdown</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🏃</div>
+    <div class="idea-hook">Count down from 10 while doing a jumping jack for each number.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 7 of 50</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Body &amp; Movement</span>
+    <span class="pagenum">Activity #8</span>
+  </div>
+  <h1 class="title">Mirror Me</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🏃</div>
+    <div class="idea-hook">Face a partner and copy their movements exactly, like a mirror. Then switch who leads.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 8 of 50</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Body &amp; Movement</span>
+    <span class="pagenum">Activity #9</span>
+  </div>
+  <h1 class="title">Slow-Motion Walk</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🏃</div>
+    <div class="idea-hook">Walk across the room as slowly as you possibly can, like you&#x27;re underwater.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 9 of 50</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Body &amp; Movement</span>
+    <span class="pagenum">Activity #10</span>
+  </div>
+  <h1 class="title">Wall Push</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🏃</div>
+    <div class="idea-hook">Push against a wall as hard as you can for 10 seconds, then relax and notice how your arms feel.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 10 of 50</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Body &amp; Movement</span>
+    <span class="pagenum">Activity #11</span>
+  </div>
+  <h1 class="title">Superhero Poses</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🏃</div>
+    <div class="idea-hook">Strike a superhero pose and hold it for 10 seconds. Try 3 different heroes.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 11 of 50</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Body &amp; Movement</span>
+    <span class="pagenum">Activity #12</span>
+  </div>
+  <h1 class="title">Invisible Jump Rope</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🏃</div>
+    <div class="idea-hook">Pretend to jump rope without one — swing your arms and hop along with the rhythm.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 12 of 50</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Body &amp; Movement</span>
+    <span class="pagenum">Activity #13</span>
+  </div>
+  <h1 class="title">Animal Yoga Freeze</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🏃</div>
+    <div class="idea-hook">Move around like an animal, then freeze into that animal&#x27;s pose when someone says &#x27;freeze!&#x27;</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 13 of 50</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Body &amp; Movement</span>
+    <span class="pagenum">Activity #14</span>
+  </div>
+  <h1 class="title">Heavy Arms</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🏃</div>
+    <div class="idea-hook">Pretend your arms are made of heavy metal. Slowly lift them up, then let them drop.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 14 of 50</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Body &amp; Movement</span>
+    <span class="pagenum">Activity #15</span>
+  </div>
+  <h1 class="title">Silent Hopscotch</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🏃</div>
+    <div class="idea-hook">Hop through a pretend hopscotch pattern on the floor, counting each square in your head.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 15 of 50</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Body &amp; Movement</span>
+    <span class="pagenum">Activity #16</span>
+  </div>
+  <h1 class="title">Body Spelling</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🏃</div>
+    <div class="idea-hook">Use your whole body to make the shape of letters. Spell your name one letter at a time.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 16 of 50</div>
+</section>
+<section class="page" style="--accent:#2f6b7d;--accent-bg:#e7f1f5;">
+  <div class="pagehead">
+    <span class="cat-pill">Body &amp; Movement</span>
+    <span class="pagenum">Activity #17</span>
+  </div>
+  <h1 class="title">Crab Walk Race</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🏃</div>
+    <div class="idea-hook">Walk like a crab (hands and feet on the floor, belly up) across the room.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 17 of 50</div>
+</section>
+<section class="page" style="--accent:#7d6b2f;--accent-bg:#f5f1e7;">
+  <div class="pagehead">
+    <span class="cat-pill">Word &amp; Thinking Games</span>
+    <span class="pagenum">Activity #18</span>
+  </div>
+  <h1 class="title">I Spy (Colors)</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">💭</div>
+    <div class="idea-hook">Take turns spotting something of a certain color: &#x27;I spy something blue.&#x27;</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 18 of 50</div>
+</section>
+<section class="page" style="--accent:#7d6b2f;--accent-bg:#f5f1e7;">
+  <div class="pagehead">
+    <span class="cat-pill">Word &amp; Thinking Games</span>
+    <span class="pagenum">Activity #19</span>
+  </div>
+  <h1 class="title">20 Questions</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">💭</div>
+    <div class="idea-hook">Think of an object. Others ask yes-or-no questions to guess what it is in 20 tries or less.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 19 of 50</div>
+</section>
+<section class="page" style="--accent:#7d6b2f;--accent-bg:#f5f1e7;">
+  <div class="pagehead">
+    <span class="cat-pill">Word &amp; Thinking Games</span>
+    <span class="pagenum">Activity #20</span>
+  </div>
+  <h1 class="title">Alphabet Animals</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">💭</div>
+    <div class="idea-hook">Go through the alphabet naming an animal for each letter, A to Z.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 20 of 50</div>
+</section>
+<section class="page" style="--accent:#7d6b2f;--accent-bg:#f5f1e7;">
+  <div class="pagehead">
+    <span class="cat-pill">Word &amp; Thinking Games</span>
+    <span class="pagenum">Activity #21</span>
+  </div>
+  <h1 class="title">Would You Rather</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">💭</div>
+    <div class="idea-hook">Take turns asking silly &#x27;would you rather&#x27; questions and explaining your answer.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 21 of 50</div>
+</section>
+<section class="page" style="--accent:#7d6b2f;--accent-bg:#f5f1e7;">
+  <div class="pagehead">
+    <span class="cat-pill">Word &amp; Thinking Games</span>
+    <span class="pagenum">Activity #22</span>
+  </div>
+  <h1 class="title">Rhyme Time</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">💭</div>
+    <div class="idea-hook">Say a word. Take turns finding as many rhyming words as you can before running out.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 22 of 50</div>
+</section>
+<section class="page" style="--accent:#7d6b2f;--accent-bg:#f5f1e7;">
+  <div class="pagehead">
+    <span class="cat-pill">Word &amp; Thinking Games</span>
+    <span class="pagenum">Activity #23</span>
+  </div>
+  <h1 class="title">Category Countdown</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">💭</div>
+    <div class="idea-hook">Pick a category (fruits, animals, colors). Name 5 things in it before counting to 10.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 23 of 50</div>
+</section>
+<section class="page" style="--accent:#7d6b2f;--accent-bg:#f5f1e7;">
+  <div class="pagehead">
+    <span class="cat-pill">Word &amp; Thinking Games</span>
+    <span class="pagenum">Activity #24</span>
+  </div>
+  <h1 class="title">Story Chain</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">💭</div>
+    <div class="idea-hook">Build a story together one word at a time, going around in a circle.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 24 of 50</div>
+</section>
+<section class="page" style="--accent:#7d6b2f;--accent-bg:#f5f1e7;">
+  <div class="pagehead">
+    <span class="cat-pill">Word &amp; Thinking Games</span>
+    <span class="pagenum">Activity #25</span>
+  </div>
+  <h1 class="title">Guess the Sound</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">💭</div>
+    <div class="idea-hook">Make a sound with your mouth (animal, vehicle, weather) and have others guess it.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 25 of 50</div>
+</section>
+<section class="page" style="--accent:#7d6b2f;--accent-bg:#f5f1e7;">
+  <div class="pagehead">
+    <span class="cat-pill">Word &amp; Thinking Games</span>
+    <span class="pagenum">Activity #26</span>
+  </div>
+  <h1 class="title">Opposite Game</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">💭</div>
+    <div class="idea-hook">Say a word, the next person says its opposite, back and forth as fast as you can.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 26 of 50</div>
+</section>
+<section class="page" style="--accent:#7d6b2f;--accent-bg:#f5f1e7;">
+  <div class="pagehead">
+    <span class="cat-pill">Word &amp; Thinking Games</span>
+    <span class="pagenum">Activity #27</span>
+  </div>
+  <h1 class="title">Silly Sentence Builder</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">💭</div>
+    <div class="idea-hook">Each person adds one word to build the silliest sentence possible.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 27 of 50</div>
+</section>
+<section class="page" style="--accent:#7d6b2f;--accent-bg:#f5f1e7;">
+  <div class="pagehead">
+    <span class="cat-pill">Word &amp; Thinking Games</span>
+    <span class="pagenum">Activity #28</span>
+  </div>
+  <h1 class="title">Memory Chain</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">💭</div>
+    <div class="idea-hook">&#x27;I packed my bag and in it I put...&#x27; — each round, repeat the list and add one more item.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 28 of 50</div>
+</section>
+<section class="page" style="--accent:#7d6b2f;--accent-bg:#f5f1e7;">
+  <div class="pagehead">
+    <span class="cat-pill">Word &amp; Thinking Games</span>
+    <span class="pagenum">Activity #29</span>
+  </div>
+  <h1 class="title">Would You Rather (Silly Edition)</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">💭</div>
+    <div class="idea-hook">Ask only the goofiest, most ridiculous &#x27;would you rather&#x27; questions you can think of.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 29 of 50</div>
+</section>
+<section class="page" style="--accent:#7d6b2f;--accent-bg:#f5f1e7;">
+  <div class="pagehead">
+    <span class="cat-pill">Word &amp; Thinking Games</span>
+    <span class="pagenum">Activity #30</span>
+  </div>
+  <h1 class="title">Count By Twos</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">💭</div>
+    <div class="idea-hook">Take turns counting up by twos (or fives) as far as you can go without a mistake.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 30 of 50</div>
+</section>
+<section class="page" style="--accent:#7d6b2f;--accent-bg:#f5f1e7;">
+  <div class="pagehead">
+    <span class="cat-pill">Word &amp; Thinking Games</span>
+    <span class="pagenum">Activity #31</span>
+  </div>
+  <h1 class="title">Name That Animal</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">💭</div>
+    <div class="idea-hook">Describe an animal without saying its name — others guess which one it is.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 31 of 50</div>
+</section>
+<section class="page" style="--accent:#7d6b2f;--accent-bg:#f5f1e7;">
+  <div class="pagehead">
+    <span class="cat-pill">Word &amp; Thinking Games</span>
+    <span class="pagenum">Activity #32</span>
+  </div>
+  <h1 class="title">Spot the Color</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">💭</div>
+    <div class="idea-hook">Look around and find something of a chosen color within 10 seconds.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 32 of 50</div>
+</section>
+<section class="page" style="--accent:#7d6b2f;--accent-bg:#f5f1e7;">
+  <div class="pagehead">
+    <span class="cat-pill">Word &amp; Thinking Games</span>
+    <span class="pagenum">Activity #33</span>
+  </div>
+  <h1 class="title">Riddle Time</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">💭</div>
+    <div class="idea-hook">Take turns asking each other simple riddles and guessing the answers.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 33 of 50</div>
+</section>
+<section class="page" style="--accent:#7d6b2f;--accent-bg:#f5f1e7;">
+  <div class="pagehead">
+    <span class="cat-pill">Word &amp; Thinking Games</span>
+    <span class="pagenum">Activity #34</span>
+  </div>
+  <h1 class="title">Finish My Sentence</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">💭</div>
+    <div class="idea-hook">One person starts a sentence, the other has to finish it in a surprising way.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 34 of 50</div>
+</section>
+<section class="page" style="--accent:#5a2f8f;--accent-bg:#ece6f6;">
+  <div class="pagehead">
+    <span class="cat-pill">Quiet-Hands Games</span>
+    <span class="pagenum">Activity #35</span>
+  </div>
+  <h1 class="title">Finger Tapping Pattern</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🤲</div>
+    <div class="idea-hook">Tap out a simple rhythm on your leg or the table, then have someone copy it back.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 35 of 50</div>
+</section>
+<section class="page" style="--accent:#5a2f8f;--accent-bg:#ece6f6;">
+  <div class="pagehead">
+    <span class="cat-pill">Quiet-Hands Games</span>
+    <span class="pagenum">Activity #36</span>
+  </div>
+  <h1 class="title">Thumb Wrestling</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🤲</div>
+    <div class="idea-hook">Lock hands with a partner and try to pin their thumb — classic and quiet.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 36 of 50</div>
+</section>
+<section class="page" style="--accent:#5a2f8f;--accent-bg:#ece6f6;">
+  <div class="pagehead">
+    <span class="cat-pill">Quiet-Hands Games</span>
+    <span class="pagenum">Activity #37</span>
+  </div>
+  <h1 class="title">Hand Squeeze Countdown</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🤲</div>
+    <div class="idea-hook">Squeeze your hands together tightly, count to 5, then release and shake them out.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 37 of 50</div>
+</section>
+<section class="page" style="--accent:#5a2f8f;--accent-bg:#ece6f6;">
+  <div class="pagehead">
+    <span class="cat-pill">Quiet-Hands Games</span>
+    <span class="pagenum">Activity #38</span>
+  </div>
+  <h1 class="title">Finger Trace</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🤲</div>
+    <div class="idea-hook">Use one finger to trace shapes or letters gently on the palm of your other hand.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 38 of 50</div>
+</section>
+<section class="page" style="--accent:#5a2f8f;--accent-bg:#ece6f6;">
+  <div class="pagehead">
+    <span class="cat-pill">Quiet-Hands Games</span>
+    <span class="pagenum">Activity #39</span>
+  </div>
+  <h1 class="title">Silent Clap Patterns</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🤲</div>
+    <div class="idea-hook">Clap out a simple rhythm and have a partner copy it back without talking.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 39 of 50</div>
+</section>
+<section class="page" style="--accent:#5a2f8f;--accent-bg:#ece6f6;">
+  <div class="pagehead">
+    <span class="cat-pill">Quiet-Hands Games</span>
+    <span class="pagenum">Activity #40</span>
+  </div>
+  <h1 class="title">Rock Paper Scissors Tournament</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🤲</div>
+    <div class="idea-hook">Play best-of-5 rock paper scissors and keep score.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 40 of 50</div>
+</section>
+<section class="page" style="--accent:#5a2f8f;--accent-bg:#ece6f6;">
+  <div class="pagehead">
+    <span class="cat-pill">Quiet-Hands Games</span>
+    <span class="pagenum">Activity #41</span>
+  </div>
+  <h1 class="title">Finger Puppets (No Props)</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🤲</div>
+    <div class="idea-hook">Use just your fingers and thumb to make a &#x27;talking&#x27; puppet mouth and give it a voice.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 41 of 50</div>
+</section>
+<section class="page" style="--accent:#5a2f8f;--accent-bg:#ece6f6;">
+  <div class="pagehead">
+    <span class="cat-pill">Quiet-Hands Games</span>
+    <span class="pagenum">Activity #42</span>
+  </div>
+  <h1 class="title">Hand Shadow Shapes</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🤲</div>
+    <div class="idea-hook">Use a lamp or flashlight to make shadow animals on the wall with just your hands.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 42 of 50</div>
+</section>
+<section class="page" style="--accent:#5a2f8f;--accent-bg:#ece6f6;">
+  <div class="pagehead">
+    <span class="cat-pill">Quiet-Hands Games</span>
+    <span class="pagenum">Activity #43</span>
+  </div>
+  <h1 class="title">Pretend Piano</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🤲</div>
+    <div class="idea-hook">&#x27;Play&#x27; an imaginary piano on your lap or the table, humming the tune as you go.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 43 of 50</div>
+</section>
+<section class="page" style="--accent:#5a2f8f;--accent-bg:#ece6f6;">
+  <div class="pagehead">
+    <span class="cat-pill">Quiet-Hands Games</span>
+    <span class="pagenum">Activity #44</span>
+  </div>
+  <h1 class="title">Slow Finger Countdown</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🤲</div>
+    <div class="idea-hook">Starting with all 10 fingers up, fold one down at a time as slowly as you can.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 44 of 50</div>
+</section>
+<section class="page" style="--accent:#5a2f8f;--accent-bg:#ece6f6;">
+  <div class="pagehead">
+    <span class="cat-pill">Quiet-Hands Games</span>
+    <span class="pagenum">Activity #45</span>
+  </div>
+  <h1 class="title">Praying Hands Press</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🤲</div>
+    <div class="idea-hook">Press your palms firmly together in front of your chest and hold for 10 seconds.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 45 of 50</div>
+</section>
+<section class="page" style="--accent:#5a2f8f;--accent-bg:#ece6f6;">
+  <div class="pagehead">
+    <span class="cat-pill">Quiet-Hands Games</span>
+    <span class="pagenum">Activity #46</span>
+  </div>
+  <h1 class="title">Finger Twist</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🤲</div>
+    <div class="idea-hook">Touch each fingertip to your thumb one at a time, as fast (or as slow) as you can.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 46 of 50</div>
+</section>
+<section class="page" style="--accent:#5a2f8f;--accent-bg:#ece6f6;">
+  <div class="pagehead">
+    <span class="cat-pill">Quiet-Hands Games</span>
+    <span class="pagenum">Activity #47</span>
+  </div>
+  <h1 class="title">Air Writing</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🤲</div>
+    <div class="idea-hook">Write your name in the air with your finger, nice and big, then try it tiny.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 47 of 50</div>
+</section>
+<section class="page" style="--accent:#5a2f8f;--accent-bg:#ece6f6;">
+  <div class="pagehead">
+    <span class="cat-pill">Quiet-Hands Games</span>
+    <span class="pagenum">Activity #48</span>
+  </div>
+  <h1 class="title">Hand Massage</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🤲</div>
+    <div class="idea-hook">Gently squeeze and rub your own hands and fingers, one at a time, like giving yourself a massage.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 48 of 50</div>
+</section>
+<section class="page" style="--accent:#5a2f8f;--accent-bg:#ece6f6;">
+  <div class="pagehead">
+    <span class="cat-pill">Quiet-Hands Games</span>
+    <span class="pagenum">Activity #49</span>
+  </div>
+  <h1 class="title">Invisible String</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🤲</div>
+    <div class="idea-hook">Pretend to wind an invisible string around each finger, one at a time, then wind it back off.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 49 of 50</div>
+</section>
+<section class="page" style="--accent:#5a2f8f;--accent-bg:#ece6f6;">
+  <div class="pagehead">
+    <span class="cat-pill">Quiet-Hands Games</span>
+    <span class="pagenum">Activity #50</span>
+  </div>
+  <h1 class="title">Knuckle Press Count</h1>
+  <div class="content">
+    
+    <div class="zero-tag">🚫 ZERO MATERIALS</div>
+    <div class="idea-icon">🤲</div>
+    <div class="idea-hook">Gently press and release each knuckle, one at a time, counting as you go.</div>
+  </div>
+  <div class="footer">50 No-Materials-Needed Activities &middot; 50 of 50</div>
+</section>
+<section class="page cover" style="--accent:#2f7d6b;background:linear-gradient(165deg,#2f7d6b 0%,#173a4d 100%)">
+  <div class="eyebrow">You Did It!</div>
+  <div class="emojis">🎉🚫🎉</div>
+  <h1>Great Job, Anywhere!</h1>
+  <p class="sub">No toys, no prep, no problem — you found a way to move, think, and stay calm using nothing but what you already had.</p>
+  <div class="foot">End of Bonus #2</div>
+</section>
+</body>
+</html>

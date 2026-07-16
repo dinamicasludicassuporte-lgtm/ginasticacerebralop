@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>15 Emergency Calm-Down Activities</title>
+<style>
+:root{
+  --ink:#26324a; --ink-soft:#5b6478; --cream:#fffdf8; --line:#e4e6ee;
+  --sans:Verdana,"Trebuchet MS","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--sans);color:var(--ink);background:#dfe3ee;line-height:1.35;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+
+.page{
+  width:210mm;height:297mm;min-height:297mm;
+  padding:12mm 14mm 10mm;margin:10mm auto;background:var(--cream);
+  position:relative;overflow:hidden;box-shadow:0 6px 24px rgba(38,50,74,.18);
+  display:flex;flex-direction:column;border-top:10mm solid var(--accent,#2f7d6b);
+}
+@media print{
+  html,body{margin:0;padding:0;background:#fff;width:210mm}
+  .page{margin:0;box-shadow:none;width:210mm;height:297mm;min-height:297mm;overflow:hidden;
+    page-break-after:always;break-after:page;break-inside:avoid;}
+  .page:last-child{page-break-after:auto;break-after:auto}
+}
+@page{size:210mm 297mm;margin:0}
+
+.pagehead{display:flex;justify-content:space-between;align-items:center;margin:2mm 0 3mm}
+.cat-pill{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.05em;
+  padding:4px 12px;border-radius:999px;background:var(--accent-bg,#eee);color:var(--accent,#333);
+  text-transform:uppercase}
+.pagenum{font-size:11px;color:var(--ink-soft);font-weight:700}
+
+.title{font-size:38px;font-weight:800;margin:0 0 4mm;color:var(--ink);line-height:1.08}
+.instruction{font-size:18px;font-weight:600;color:var(--ink-soft);margin:0 0 5mm;line-height:1.4;max-width:100%}
+
+.content{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6mm;overflow:hidden}
+
+.footer{position:absolute;bottom:6mm;left:14mm;right:14mm;font-size:9.5px;color:var(--ink-soft);
+  opacity:.65;text-align:center;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+
+.small-note{font-size:13px;color:var(--ink-soft);text-align:center}
+
+/* cover */
+.cover{color:#fff;justify-content:center;align-items:center;text-align:center;border-top:none;padding:0}
+.cover .eyebrow{font-size:13px;letter-spacing:.35em;text-transform:uppercase;color:#8fe3c8;font-weight:800;margin-bottom:20px}
+.cover h1{font-size:50px;line-height:1.12;margin:0 0 14px;font-weight:800}
+.cover p.sub{font-size:16px;color:#dfe9f5;max-width:135mm;margin:0 auto 30px}
+.cover .emojis{font-size:60px;letter-spacing:16px;margin-bottom:26px}
+.cover .foot{position:absolute;bottom:14mm;font-size:11px;letter-spacing:.2em;color:#9fb0c8;text-transform:uppercase}
+
+/* how-to / toc-like list */
+.howto-list{width:92%;display:flex;flex-direction:column;gap:5mm}
+.howto-item{display:flex;gap:6mm;align-items:flex-start}
+.howto-num{width:11mm;height:11mm;border-radius:50%;background:var(--accent,#333);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0}
+.howto-text{font-size:16px;line-height:1.5}
+
+/* -------- idea card (bonus 1 & 2) -------- */
+.idea-icon{font-size:110px}
+.idea-hook{font-size:24px;font-weight:700;color:var(--accent,#333);text-align:center;max-width:90%}
+.idea-tries{width:90%;display:flex;flex-direction:column;gap:4mm}
+.idea-try{display:flex;gap:5mm;align-items:flex-start;font-size:17px;line-height:1.4}
+.idea-bullet{width:9mm;height:9mm;border-radius:50%;background:var(--accent-bg,#eee);color:var(--accent,#333);
+  display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;font-size:13px}
+.zero-tag{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;
+  background:#1f6b3e;color:#fff;padding:6px 16px;border-radius:999px;letter-spacing:.04em}
+
+/* -------- routine (bonus 3) -------- */
+.routine-time{font-size:16px;font-weight:800;color:var(--accent,#333);background:var(--accent-bg);
+  display:inline-block;padding:5px 16px;border-radius:999px;margin-bottom:2mm}
+.routine-steps{width:92%;display:flex;flex-direction:column;gap:5mm;margin-top:2mm}
+.routine-step{display:flex;gap:6mm;align-items:center;font-size:20px;font-weight:600}
+.checkbox{width:12mm;height:12mm;border:3px solid var(--accent,#333);border-radius:6px;flex-shrink:0}
+.routine-tip{width:92%;margin-top:6mm;background:var(--accent-bg);border-radius:14px;padding:12px 18px;
+  font-size:15px;color:var(--ink);line-height:1.5}
+.routine-tip b{color:var(--accent,#333)}
+
+/* -------- emergency (bonus 4) -------- */
+.emg-header{display:flex;align-items:center;gap:6mm;justify-content:center;margin-bottom:2mm}
+.emg-meta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.emg-meta span{font-size:13px;font-weight:800;background:var(--accent-bg);color:var(--accent);
+  padding:5px 14px;border-radius:999px}
+.emg-steps{width:92%;display:flex;flex-direction:column;gap:5mm}
+.emg-step{display:flex;gap:6mm;align-items:flex-start;font-size:22px;font-weight:700;line-height:1.3}
+.emg-num{width:13mm;height:13mm;border-radius:50%;background:var(--accent,#c0392b);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;font-size:18px}
+.emg-fallback{width:92%;margin-top:6mm;background:#fdece9;border:2px dashed #e0a396;border-radius:14px;
+  padding:12px 18px;font-size:15px;color:#7a3325;line-height:1.5}
+</style>
+</head>
+<body>
+
+<section class="page cover" style="--accent:#2f7d6b;background:linear-gradient(165deg,#7d2318 0%,#3a0f0a 100%)">
+  <div class="eyebrow">Bonus #4 · Fast-Read Emergency Cards</div>
+  <div class="emojis">🚨🫂🚨</div>
+  <h1>15 Emergency<br>Calm-Down Activities</h1>
+  <p class="sub">For when a meltdown is already happening. No long explanations — just fast, simple steps you can read in seconds, anywhere.</p>
+  <div class="foot">15 Techniques · 1–3 Minutes Each · Works Anywhere</div>
+</section>
+<section class="page" style="--accent:#c0392b;--accent-bg:#fbe3e0">
+  <div class="pagehead"><span class="cat-pill">Welcome</span></div>
+  <h1 class="title">How to Use This Bonus</h1>
+  <div class="content" style="justify-content:flex-start;padding-top:6mm">
+    <div class="howto-list"><div class="howto-item"><div class="howto-num">1</div><div class="howto-text">These are for active meltdowns — read fast, act fast, keep your own voice calm.</div></div><div class="howto-item"><div class="howto-num">2</div><div class="howto-text">Every card takes 1-3 minutes and needs nothing but a body and a few seconds.</div></div><div class="howto-item"><div class="howto-num">3</div><div class="howto-text">If one technique doesn't help within 2 minutes, the card tells you what to try next.</div></div><div class="howto-item"><div class="howto-num">4</div><div class="howto-text">Talking less and doing more works best in the moment — save the conversation for after.</div></div><div class="howto-item"><div class="howto-num">5</div><div class="howto-text">Keep this list somewhere fast to grab: the car, a bag, or on the fridge.</div></div></div>
+  </div>
+  <div class="footer">15 Emergency Calm-Down Activities</div>
+</section>
+<section class="page" style="--accent:#c0392b;--accent-bg:#fbe3e0;">
+  <div class="pagehead">
+    <span class="cat-pill">Emergency Calm-Down</span>
+    <span class="pagenum">Activity #1</span>
+  </div>
+  <h1 class="title">🚨 5-4-3-2-1 Grounding</h1>
+  <div class="content">
+    
+    <div class="emg-header"><div style="font-size:70px">🚨</div></div>
+    <div class="emg-meta"><span>⏱ 1-2 min</span><span>📍 Anywhere</span></div>
+    <div class="idea-hook" style="font-size:19px;color:var(--accent);margin-top:2mm">Do this now:</div>
+    <div class="emg-steps"><div class="emg-step"><div class="emg-num">1</div><div>Name 5 things you can see</div></div><div class="emg-step"><div class="emg-num">2</div><div>Name 4 things you can touch</div></div><div class="emg-step"><div class="emg-num">3</div><div>Name 3 things you can hear (then 2 you can smell, 1 you can taste)</div></div></div>
+    <div class="emg-fallback">💡 <b>If it doesn't work in 2 minutes:</b> try "Wall Push-Away"</div>
+  </div>
+  <div class="footer">15 Emergency Calm-Down Activities &middot; 1 of 15</div>
+</section>
+<section class="page" style="--accent:#c0392b;--accent-bg:#fbe3e0;">
+  <div class="pagehead">
+    <span class="cat-pill">Emergency Calm-Down</span>
+    <span class="pagenum">Activity #2</span>
+  </div>
+  <h1 class="title">🚨 Wall Push-Away</h1>
+  <div class="content">
+    
+    <div class="emg-header"><div style="font-size:70px">🚨</div></div>
+    <div class="emg-meta"><span>⏱ 1 min</span><span>📍 Anywhere with a wall</span></div>
+    <div class="idea-hook" style="font-size:19px;color:var(--accent);margin-top:2mm">Do this now:</div>
+    <div class="emg-steps"><div class="emg-step"><div class="emg-num">1</div><div>Place both palms flat on a wall</div></div><div class="emg-step"><div class="emg-num">2</div><div>Push as hard as you can for 10 seconds</div></div><div class="emg-step"><div class="emg-num">3</div><div>Release, shake out your arms, repeat 3 times</div></div></div>
+    <div class="emg-fallback">💡 <b>If it doesn't work in 2 minutes:</b> try "Bear Hug Squeeze"</div>
+  </div>
+  <div class="footer">15 Emergency Calm-Down Activities &middot; 2 of 15</div>
+</section>
+<section class="page" style="--accent:#c0392b;--accent-bg:#fbe3e0;">
+  <div class="pagehead">
+    <span class="cat-pill">Emergency Calm-Down</span>
+    <span class="pagenum">Activity #3</span>
+  </div>
+  <h1 class="title">🚨 Bear Hug Squeeze</h1>
+  <div class="content">
+    
+    <div class="emg-header"><div style="font-size:70px">🚨</div></div>
+    <div class="emg-meta"><span>⏱ 1 min</span><span>📍 Anywhere</span></div>
+    <div class="idea-hook" style="font-size:19px;color:var(--accent);margin-top:2mm">Do this now:</div>
+    <div class="emg-steps"><div class="emg-step"><div class="emg-num">1</div><div>Wrap both arms around yourself tightly</div></div><div class="emg-step"><div class="emg-num">2</div><div>Squeeze hard and hold for 10 seconds</div></div><div class="emg-step"><div class="emg-num">3</div><div>Release slowly, then squeeze again 2 more times</div></div></div>
+    <div class="emg-fallback">💡 <b>If it doesn't work in 2 minutes:</b> try "Straw Breathing"</div>
+  </div>
+  <div class="footer">15 Emergency Calm-Down Activities &middot; 3 of 15</div>
+</section>
+<section class="page" style="--accent:#c0392b;--accent-bg:#fbe3e0;">
+  <div class="pagehead">
+    <span class="cat-pill">Emergency Calm-Down</span>
+    <span class="pagenum">Activity #4</span>
+  </div>
+  <h1 class="title">🚨 Straw Breathing</h1>
+  <div class="content">
+    
+    <div class="emg-header"><div style="font-size:70px">🚨</div></div>
+    <div class="emg-meta"><span>⏱ 1-2 min</span><span>📍 Anywhere</span></div>
+    <div class="idea-hook" style="font-size:19px;color:var(--accent);margin-top:2mm">Do this now:</div>
+    <div class="emg-steps"><div class="emg-step"><div class="emg-num">1</div><div>Pretend you&#x27;re holding a straw</div></div><div class="emg-step"><div class="emg-num">2</div><div>Breathe in through your nose for 3 counts</div></div><div class="emg-step"><div class="emg-num">3</div><div>Breathe out slowly through the pretend straw for 6 counts</div></div></div>
+    <div class="emg-fallback">💡 <b>If it doesn't work in 2 minutes:</b> try "5-4-3-2-1 Grounding"</div>
+  </div>
+  <div class="footer">15 Emergency Calm-Down Activities &middot; 4 of 15</div>
+</section>
+<section class="page" style="--accent:#c0392b;--accent-bg:#fbe3e0;">
+  <div class="pagehead">
+    <span class="cat-pill">Emergency Calm-Down</span>
+    <span class="pagenum">Activity #5</span>
+  </div>
+  <h1 class="title">🚨 Cold Water Reset</h1>
+  <div class="content">
+    
+    <div class="emg-header"><div style="font-size:70px">🚨</div></div>
+    <div class="emg-meta"><span>⏱ 1 min</span><span>📍 Near a sink or water bottle</span></div>
+    <div class="idea-hook" style="font-size:19px;color:var(--accent);margin-top:2mm">Do this now:</div>
+    <div class="emg-steps"><div class="emg-step"><div class="emg-num">1</div><div>Run cool water over your hands, or hold a cold water bottle</div></div><div class="emg-step"><div class="emg-num">2</div><div>Focus only on the feeling of the cold</div></div><div class="emg-step"><div class="emg-num">3</div><div>Take 3 slow breaths while the water runs</div></div></div>
+    <div class="emg-fallback">💡 <b>If it doesn't work in 2 minutes:</b> try "Bear Hug Squeeze"</div>
+  </div>
+  <div class="footer">15 Emergency Calm-Down Activities &middot; 5 of 15</div>
+</section>
+<section class="page" style="--accent:#c0392b;--accent-bg:#fbe3e0;">
+  <div class="pagehead">
+    <span class="cat-pill">Emergency Calm-Down</span>
+    <span class="pagenum">Activity #6</span>
+  </div>
+  <h1 class="title">🚨 Heavy Blanket Squeeze</h1>
+  <div class="content">
+    
+    <div class="emg-header"><div style="font-size:70px">🚨</div></div>
+    <div class="emg-meta"><span>⏱ 1-3 min</span><span>📍 Anywhere with a blanket or pillow</span></div>
+    <div class="idea-hook" style="font-size:19px;color:var(--accent);margin-top:2mm">Do this now:</div>
+    <div class="emg-steps"><div class="emg-step"><div class="emg-num">1</div><div>Wrap up tightly in a blanket or hug a heavy pillow</div></div><div class="emg-step"><div class="emg-num">2</div><div>Press it against your body firmly</div></div><div class="emg-step"><div class="emg-num">3</div><div>Rock gently side to side for 1 minute</div></div></div>
+    <div class="emg-fallback">💡 <b>If it doesn't work in 2 minutes:</b> try "Rock and Hum"</div>
+  </div>
+  <div class="footer">15 Emergency Calm-Down Activities &middot; 6 of 15</div>
+</section>
+<section class="page" style="--accent:#c0392b;--accent-bg:#fbe3e0;">
+  <div class="pagehead">
+    <span class="cat-pill">Emergency Calm-Down</span>
+    <span class="pagenum">Activity #7</span>
+  </div>
+  <h1 class="title">🚨 Count Backwards From 20</h1>
+  <div class="content">
+    
+    <div class="emg-header"><div style="font-size:70px">🚨</div></div>
+    <div class="emg-meta"><span>⏱ 1 min</span><span>📍 Anywhere</span></div>
+    <div class="idea-hook" style="font-size:19px;color:var(--accent);margin-top:2mm">Do this now:</div>
+    <div class="emg-steps"><div class="emg-step"><div class="emg-num">1</div><div>Say the number 20 out loud</div></div><div class="emg-step"><div class="emg-num">2</div><div>Count backwards one number at a time, slowly</div></div><div class="emg-step"><div class="emg-num">3</div><div>If you lose count, just start again at 20 — that&#x27;s okay</div></div></div>
+    <div class="emg-fallback">💡 <b>If it doesn't work in 2 minutes:</b> try "5-4-3-2-1 Grounding"</div>
+  </div>
+  <div class="footer">15 Emergency Calm-Down Activities &middot; 7 of 15</div>
+</section>
+<section class="page" style="--accent:#c0392b;--accent-bg:#fbe3e0;">
+  <div class="pagehead">
+    <span class="cat-pill">Emergency Calm-Down</span>
+    <span class="pagenum">Activity #8</span>
+  </div>
+  <h1 class="title">🚨 Stomp It Out</h1>
+  <div class="content">
+    
+    <div class="emg-header"><div style="font-size:70px">🚨</div></div>
+    <div class="emg-meta"><span>⏱ 1-2 min</span><span>📍 Anywhere with floor space</span></div>
+    <div class="idea-hook" style="font-size:19px;color:var(--accent);margin-top:2mm">Do this now:</div>
+    <div class="emg-steps"><div class="emg-step"><div class="emg-num">1</div><div>Stomp your feet hard on the ground, one at a time</div></div><div class="emg-step"><div class="emg-num">2</div><div>Do 10 stomps on each foot</div></div><div class="emg-step"><div class="emg-num">3</div><div>Finish with 3 big, slow breaths standing still</div></div></div>
+    <div class="emg-fallback">💡 <b>If it doesn't work in 2 minutes:</b> try "Wall Push-Away"</div>
+  </div>
+  <div class="footer">15 Emergency Calm-Down Activities &middot; 8 of 15</div>
+</section>
+<section class="page" style="--accent:#c0392b;--accent-bg:#fbe3e0;">
+  <div class="pagehead">
+    <span class="cat-pill">Emergency Calm-Down</span>
+    <span class="pagenum">Activity #9</span>
+  </div>
+  <h1 class="title">🚨 Silent Scream</h1>
+  <div class="content">
+    
+    <div class="emg-header"><div style="font-size:70px">🚨</div></div>
+    <div class="emg-meta"><span>⏱ 30 sec - 1 min</span><span>📍 Anywhere</span></div>
+    <div class="idea-hook" style="font-size:19px;color:var(--accent);margin-top:2mm">Do this now:</div>
+    <div class="emg-steps"><div class="emg-step"><div class="emg-num">1</div><div>Open your mouth as wide as it goes</div></div><div class="emg-step"><div class="emg-num">2</div><div>&#x27;Scream&#x27; with no sound coming out, using all your energy</div></div><div class="emg-step"><div class="emg-num">3</div><div>Close your mouth, breathe out slowly through your nose</div></div></div>
+    <div class="emg-fallback">💡 <b>If it doesn't work in 2 minutes:</b> try "Stomp It Out"</div>
+  </div>
+  <div class="footer">15 Emergency Calm-Down Activities &middot; 9 of 15</div>
+</section>
+<section class="page" style="--accent:#c0392b;--accent-bg:#fbe3e0;">
+  <div class="pagehead">
+    <span class="cat-pill">Emergency Calm-Down</span>
+    <span class="pagenum">Activity #10</span>
+  </div>
+  <h1 class="title">🚨 Push the Wall Down</h1>
+  <div class="content">
+    
+    <div class="emg-header"><div style="font-size:70px">🚨</div></div>
+    <div class="emg-meta"><span>⏱ 1 min</span><span>📍 Anywhere with a wall</span></div>
+    <div class="idea-hook" style="font-size:19px;color:var(--accent);margin-top:2mm">Do this now:</div>
+    <div class="emg-steps"><div class="emg-step"><div class="emg-num">1</div><div>Stand facing a wall, arms straight out</div></div><div class="emg-step"><div class="emg-num">2</div><div>Push like you&#x27;re trying to move the wall, for 10 seconds</div></div><div class="emg-step"><div class="emg-num">3</div><div>Rest 5 seconds, then push again, 3 times total</div></div></div>
+    <div class="emg-fallback">💡 <b>If it doesn't work in 2 minutes:</b> try "Tight Fist Release"</div>
+  </div>
+  <div class="footer">15 Emergency Calm-Down Activities &middot; 10 of 15</div>
+</section>
+<section class="page" style="--accent:#c0392b;--accent-bg:#fbe3e0;">
+  <div class="pagehead">
+    <span class="cat-pill">Emergency Calm-Down</span>
+    <span class="pagenum">Activity #11</span>
+  </div>
+  <h1 class="title">🚨 Name 5 Things You Can Hear</h1>
+  <div class="content">
+    
+    <div class="emg-header"><div style="font-size:70px">🚨</div></div>
+    <div class="emg-meta"><span>⏱ 1 min</span><span>📍 Anywhere</span></div>
+    <div class="idea-hook" style="font-size:19px;color:var(--accent);margin-top:2mm">Do this now:</div>
+    <div class="emg-steps"><div class="emg-step"><div class="emg-num">1</div><div>Close your eyes if that feels okay</div></div><div class="emg-step"><div class="emg-num">2</div><div>Listen carefully and count 5 different sounds</div></div><div class="emg-step"><div class="emg-num">3</div><div>Say each one out loud as you notice it</div></div></div>
+    <div class="emg-fallback">💡 <b>If it doesn't work in 2 minutes:</b> try "5-4-3-2-1 Grounding"</div>
+  </div>
+  <div class="footer">15 Emergency Calm-Down Activities &middot; 11 of 15</div>
+</section>
+<section class="page" style="--accent:#c0392b;--accent-bg:#fbe3e0;">
+  <div class="pagehead">
+    <span class="cat-pill">Emergency Calm-Down</span>
+    <span class="pagenum">Activity #12</span>
+  </div>
+  <h1 class="title">🚨 Tight Fist Release</h1>
+  <div class="content">
+    
+    <div class="emg-header"><div style="font-size:70px">🚨</div></div>
+    <div class="emg-meta"><span>⏱ 1 min</span><span>📍 Anywhere</span></div>
+    <div class="idea-hook" style="font-size:19px;color:var(--accent);margin-top:2mm">Do this now:</div>
+    <div class="emg-steps"><div class="emg-step"><div class="emg-num">1</div><div>Make both hands into tight fists</div></div><div class="emg-step"><div class="emg-num">2</div><div>Squeeze as hard as you can for 5 seconds</div></div><div class="emg-step"><div class="emg-num">3</div><div>Open your hands wide and let your fingers go floppy</div></div></div>
+    <div class="emg-fallback">💡 <b>If it doesn't work in 2 minutes:</b> try "Hand Massage"</div>
+  </div>
+  <div class="footer">15 Emergency Calm-Down Activities &middot; 12 of 15</div>
+</section>
+<section class="page" style="--accent:#c0392b;--accent-bg:#fbe3e0;">
+  <div class="pagehead">
+    <span class="cat-pill">Emergency Calm-Down</span>
+    <span class="pagenum">Activity #13</span>
+  </div>
+  <h1 class="title">🚨 Rock and Hum</h1>
+  <div class="content">
+    
+    <div class="emg-header"><div style="font-size:70px">🚨</div></div>
+    <div class="emg-meta"><span>⏱ 1-2 min</span><span>📍 Anywhere to sit</span></div>
+    <div class="idea-hook" style="font-size:19px;color:var(--accent);margin-top:2mm">Do this now:</div>
+    <div class="emg-steps"><div class="emg-step"><div class="emg-num">1</div><div>Sit down and wrap your arms around your knees</div></div><div class="emg-step"><div class="emg-num">2</div><div>Rock gently forward and back</div></div><div class="emg-step"><div class="emg-num">3</div><div>Hum any low, steady sound while you rock</div></div></div>
+    <div class="emg-fallback">💡 <b>If it doesn't work in 2 minutes:</b> try "Heavy Blanket Squeeze"</div>
+  </div>
+  <div class="footer">15 Emergency Calm-Down Activities &middot; 13 of 15</div>
+</section>
+<section class="page" style="--accent:#c0392b;--accent-bg:#fbe3e0;">
+  <div class="pagehead">
+    <span class="cat-pill">Emergency Calm-Down</span>
+    <span class="pagenum">Activity #14</span>
+  </div>
+  <h1 class="title">🚨 Step Outside Reset</h1>
+  <div class="content">
+    
+    <div class="emg-header"><div style="font-size:70px">🚨</div></div>
+    <div class="emg-meta"><span>⏱ 2-3 min</span><span>📍 Anywhere with outdoor access</span></div>
+    <div class="idea-hook" style="font-size:19px;color:var(--accent);margin-top:2mm">Do this now:</div>
+    <div class="emg-steps"><div class="emg-step"><div class="emg-num">1</div><div>Step outside or near an open window if possible</div></div><div class="emg-step"><div class="emg-num">2</div><div>Take 5 slow breaths of fresh air</div></div><div class="emg-step"><div class="emg-num">3</div><div>Notice one thing in the sky and one thing on the ground</div></div></div>
+    <div class="emg-fallback">💡 <b>If it doesn't work in 2 minutes:</b> try "Cold Water Reset"</div>
+  </div>
+  <div class="footer">15 Emergency Calm-Down Activities &middot; 14 of 15</div>
+</section>
+<section class="page" style="--accent:#c0392b;--accent-bg:#fbe3e0;">
+  <div class="pagehead">
+    <span class="cat-pill">Emergency Calm-Down</span>
+    <span class="pagenum">Activity #15</span>
+  </div>
+  <h1 class="title">🚨 Safe Corner Retreat</h1>
+  <div class="content">
+    
+    <div class="emg-header"><div style="font-size:70px">🚨</div></div>
+    <div class="emg-meta"><span>⏱ 2-3 min</span><span>📍 A quiet corner or small space</span></div>
+    <div class="idea-hook" style="font-size:19px;color:var(--accent);margin-top:2mm">Do this now:</div>
+    <div class="emg-steps"><div class="emg-step"><div class="emg-num">1</div><div>Go to a quiet, low-stimulation spot</div></div><div class="emg-step"><div class="emg-num">2</div><div>Sit or lie down and make yourself small and comfortable</div></div><div class="emg-step"><div class="emg-num">3</div><div>Stay there until your breathing feels slow and even</div></div></div>
+    <div class="emg-fallback">💡 <b>If it doesn't work in 2 minutes:</b> try "Heavy Blanket Squeeze"</div>
+  </div>
+  <div class="footer">15 Emergency Calm-Down Activities &middot; 15 of 15</div>
+</section>
+<section class="page cover" style="--accent:#2f7d6b;background:linear-gradient(165deg,#2f7d6b 0%,#173a4d 100%)">
+  <div class="eyebrow">You Got Through It</div>
+  <div class="emojis">🎉🫂🎉</div>
+  <h1>Calm Restored</h1>
+  <p class="sub">Every meltdown you help navigate teaches a little more self-regulation for next time. You're doing the hard, important work.</p>
+  <div class="foot">End of Bonus #4</div>
+</section>
+</body>
+</html>
