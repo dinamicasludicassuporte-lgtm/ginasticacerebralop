@@ -93,9 +93,8 @@ strong{color:var(--ink)}
 .cover .sub{font-size:14.5px;color:#eef3ff;max-width:120mm;line-height:1.5}
 .cover .catrow{display:flex;gap:10px;margin-top:6px;flex-wrap:wrap;justify-content:center}
 .cover .catpill{font-size:10px;font-weight:800;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3)}
-.cover .coverimg{width:120mm;height:70mm;margin-top:6px;border-radius:18px;background:rgba(255,255,255,.08);border:2px dashed rgba(255,255,255,.5)}
-.cover .coverimg .lbl{color:#fff9e6}
-.cover .coverimg .cap{color:#e9eefb}
+.cover .coverimg{width:120mm;height:70mm;margin-top:6px;border-radius:18px;object-fit:cover;
+  border:3px solid rgba(255,255,255,.5);box-shadow:0 10px 30px rgba(0,0,0,.25)}
 .cover .foot{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#cfe0ff;margin-top:10px}
 
 /* ---------------- COMO USAR / listas ---------------- */
@@ -132,7 +131,7 @@ table.overview tr:nth-child(even) td{background:#faf7ee}
 .weekpage h2{font-size:30px;margin-top:2px}
 .weekpage .sub{font-size:13.5px;color:var(--ink-soft);margin-bottom:16px}
 .weekpage .msg{font-size:13.5px;line-height:1.6;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;max-width:170mm}
-.weekbanner{width:100%;height:78mm;margin:18px 0}
+.weekbanner{width:100%;height:78mm;margin:18px 0;object-fit:cover;border-radius:16px;box-shadow:0 6px 20px rgba(35,50,74,.15)}
 .weekdays{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:20px}
 .weekday-chip{border-radius:12px;border:1px solid var(--line);background:#fff;padding:11px 13px;font-size:11px;line-height:1.5}
 .weekday-chip b{display:block;font-size:12.5px;color:var(--coral);margin-bottom:4px}
@@ -194,7 +193,7 @@ def page_cover():
     <h1>Ginástica Cerebral <span class="accent">para Crianças</span></h1>
     <div class="sub">120 atividades de coordenação, força, equilíbrio e respiração organizadas em uma rotina diária de 4 exercícios — para pais e mães de crianças de 3 a 10 anos que enfrentam explosões de raiva, agitação, dificuldade de foco, birras frequentes e desobediência.</div>
     <div class="catrow">{cats}</div>
-    {imgph(70,"IMG-CAPA","Ilustração de capa: crianças diversas brincando e se movendo com alegria, estilo flat design colorido","IMG-CAPA").replace('imgph','coverimg')}
+    <img class="coverimg" src="ginastica-cerebral-imagens/img-capa.jpg" alt="Crianças brincando alegremente no quintal">
     <div class="foot">7 minutos por dia · sem telas · sem equipamentos caros</div>
   </div>
 </section>"""
@@ -312,17 +311,12 @@ def page_week_divider(w):
         i = d - 1
         names = [BLOCK1[i]["nome"], BLOCK2[i]["nome"], BLOCK3[i]["nome"], BLOCK4[i]["nome"]]
         chips += f"""<div class="weekday-chip"><b>Dia {d}</b>{" · ".join(names)}</div>"""
-    banner = imgph(0, f"IMG-SEMANA-{w['num']}", w["img_prompt_tema"], f"IMG-SEMANA-{w['num']}").replace('style="height:0mm"','')
     return f"""
 <section class="page weekpage" data-pg="semana {w['num']}">
   <div class="weeknum">Semana {w['num']}</div>
   <h2>{w['titulo']}</h2>
   <div class="sub">{w['subtitulo']}</div>
-  <div class="weekbanner imgph">
-    <div class="ico">🖼️</div>
-    <div class="lbl">Placeholder de imagem · IMG-SEMANA-{w['num']}</div>
-    <div class="cap">{w['img_prompt_tema']}</div>
-  </div>
+  <img class="weekbanner" src="ginastica-cerebral-imagens/img-semana-{w['num']}.jpg" alt="{w['titulo']}">
   <div class="msg">{w['mensagem']}</div>
   <div class="weekdays">{chips}</div>
 </section>"""
@@ -331,7 +325,7 @@ def render_card(a, meta):
     steps = "".join(f"<li>{s}</li>" for s in a["passos"])
     return f"""<div class="acard" style="--accent:{meta['cor']};--accent-soft:{meta['cor_soft']}">
       <div class="ahead"><span class="aicon">{meta['icone']}</span><span class="acat">{meta['nome_curto']}</span></div>
-      <h3>{a['num']}. {a['nome']}</h3>
+      <h3>{a['nome']}</h3>
       <div class="ameta"><span><b>Idade:</b> {a['idade']}</span><span><b>Duração:</b> {a['duracao']}</span></div>
       <div class="adesc">{a['descricao']}</div>
       <ol>{steps}</ol>
