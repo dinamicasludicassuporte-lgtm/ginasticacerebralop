@@ -1,0 +1,1716 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ginástica Cerebral para Crianças · Guia de 30 Dias</title>
+<style>
+:root{
+  --ink:#23324a;
+  --ink-soft:#5c6c85;
+  --paper:#fffdf6;
+  --paper-2:#fbf6e9;
+  --line:#e9e1cb;
+  --sun:#f4b73f;
+  --sun-soft:#fdf0d4;
+  --b1:#2f8f7a; --b1-soft:#e2f5ef;
+  --b2:#c1611a; --b2-soft:#fdead9;
+  --b3:#b23b6b; --b3-soft:#fbe4ee;
+  --b4:#2e6fb0; --b4-soft:#e3eefb;
+  --coral:#ef7a5e;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --round:"Arial Rounded MT Bold","Baloo 2","Segoe UI",var(--sans);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  background:#ddd6c2;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  line-height:1.45;
+}
+.page{
+  width:210mm; min-height:297mm; padding:14mm 14mm 13mm;
+  margin:10mm auto; background:var(--paper); position:relative;
+  overflow:hidden; box-shadow:0 6px 30px rgba(35,50,74,.18);
+  display:flex; flex-direction:column;
+}
+.page::after{
+  content:attr(data-pg); position:absolute; bottom:6mm; right:14mm;
+  font-size:8.5px; letter-spacing:.16em; color:var(--ink-soft); opacity:.65; font-weight:700;
+}
+.brandfoot{
+  position:absolute; bottom:6mm; left:14mm; font-size:8.5px; letter-spacing:.14em;
+  color:var(--ink-soft); opacity:.65; text-transform:uppercase; font-weight:700;
+}
+@media print{
+  html,body{margin:0;padding:0;background:#fff;width:210mm}
+  .page{margin:0;box-shadow:none;width:210mm;height:297mm;min-height:297mm;overflow:hidden;
+    page-break-after:always; break-after:page; break-inside:avoid;}
+  .page:last-child{page-break-after:auto;break-after:auto}
+}
+@page{ size:210mm 297mm; margin:0; }
+
+h1,h2,h3,h4{font-family:var(--round);margin:0;color:var(--ink)}
+p{margin:0 0 8px}
+.eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.2em;font-size:10px;font-weight:800;color:var(--coral);margin:0 0 8px}
+.hr{height:3px;border-radius:3px;margin:4px 0 14px;width:56px;background:linear-gradient(90deg,var(--coral),var(--sun))}
+.small{font-size:10.5px;color:var(--ink-soft)}
+strong{color:var(--ink)}
+
+.imgph{
+  border:2.2px dashed #c9c0a4; border-radius:16px; background:var(--paper-2);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; color:var(--ink-soft); padding:10px; gap:4px;
+}
+.imgph .ico{font-size:26px}
+.imgph .lbl{font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;color:#a99b6f}
+.imgph .cap{font-size:9px;max-width:70%}
+
+/* ---------------- CAPA ---------------- */
+.cover{
+  background:linear-gradient(160deg,#2f8f7a 0%,#2e6fb0 55%,#23324a 100%);
+  color:#fff; padding:0; justify-content:center; align-items:center; text-align:center;
+}
+.cover .deco{position:absolute;inset:0}
+.cover .blob{position:absolute;border-radius:50%;opacity:.16;background:#fff}
+.cover-inner{position:relative;padding:0 34px;max-width:160mm;display:flex;flex-direction:column;align-items:center;gap:14px}
+.cover-eyebrow{font-size:12px;letter-spacing:.38em;text-transform:uppercase;color:var(--sun);font-weight:800}
+.cover h1{font-size:44px;line-height:1.08;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.15)}
+.cover h1 .accent{color:var(--sun)}
+.cover .sub{font-size:14.5px;color:#eef3ff;max-width:120mm;line-height:1.5}
+.cover .catrow{display:flex;gap:10px;margin-top:6px;flex-wrap:wrap;justify-content:center}
+.cover .catpill{font-size:10px;font-weight:800;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3)}
+.cover .coverimg{width:120mm;height:70mm;margin-top:6px;border-radius:18px;background:rgba(255,255,255,.08);border:2px dashed rgba(255,255,255,.5)}
+.cover .coverimg .lbl{color:#fff9e6}
+.cover .coverimg .cap{color:#e9eefb}
+.cover .foot{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#cfe0ff;margin-top:10px}
+
+/* ---------------- COMO USAR / listas ---------------- */
+.title-blk{margin-bottom:14px}
+.title-blk h2{font-size:26px}
+.lead{font-size:12.5px;color:var(--ink-soft);max-width:66ch}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+ul.clean{list-style:none;margin:0;padding:0}
+ul.clean li{position:relative;padding-left:20px;margin-bottom:7px;font-size:11.5px}
+ul.clean li::before{content:"";position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:50%;background:var(--coral)}
+ol.steps{margin:0;padding-left:18px}
+ol.steps li{font-size:11.5px;margin-bottom:5px}
+
+.note{border-radius:12px;padding:10px 13px;font-size:10.8px;background:var(--sun-soft);border:1px solid #ecd7a4}
+.note strong{color:#8a5a12}
+
+/* ---------------- CATEGORIAS ---------------- */
+.catcard{border-radius:16px;padding:14px 16px;border:1.5px solid; }
+.catcard h3{font-size:15px;margin-bottom:4px}
+.catcard .icon{font-size:22px}
+.catcard p{font-size:11px;color:var(--ink-soft);margin:4px 0 0}
+
+/* ---------------- VISÃO GERAL / TABELA ---------------- */
+table.overview{width:100%;border-collapse:collapse;font-size:11px}
+table.overview th{text-align:left;font-size:9.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);border-bottom:2px solid var(--line);padding:6px 8px}
+table.overview td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+table.overview tr:nth-child(even) td{background:#faf7ee}
+
+/* ---------------- DIVISOR DE SEMANA ---------------- */
+.weekpage{justify-content:flex-start}
+.weeknum{font-family:var(--round);font-size:70px;line-height:1;color:var(--paper-2);-webkit-text-stroke:2px var(--coral);color:transparent}
+.weekpage h2{font-size:30px;margin-top:2px}
+.weekpage .sub{font-size:13.5px;color:var(--ink-soft);margin-bottom:16px}
+.weekpage .msg{font-size:13.5px;line-height:1.6;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;max-width:170mm}
+.weekbanner{width:100%;height:78mm;margin:18px 0}
+.weekdays{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:20px}
+.weekday-chip{border-radius:12px;border:1px solid var(--line);background:#fff;padding:11px 13px;font-size:11px;line-height:1.5}
+.weekday-chip b{display:block;font-size:12.5px;color:var(--coral);margin-bottom:4px}
+
+/* ---------------- PÁGINA DE DIA ---------------- */
+.daypage{}
+.dayhead{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:8px}
+.dayhead .dtag{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);font-weight:800}
+.dayhead h2{font-size:22px;margin-top:2px}
+.dayintro{font-size:10.8px;color:var(--ink-soft);max-width:150mm;margin-bottom:10px}
+.progress{width:100%;height:6px;border-radius:6px;background:var(--line);overflow:hidden;margin-bottom:12px}
+.progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--coral),var(--sun))}
+
+.acards{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;flex:1}
+.acard{border-radius:14px;padding:12px 14px 10px;border:1.4px solid var(--accent-soft);background:var(--accent-soft);
+  display:flex;flex-direction:column;gap:5px;overflow:hidden}
+.acard .ahead{display:flex;align-items:center;gap:6px}
+.acard .aicon{font-size:16px}
+.acard .acat{font-size:9.3px;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:var(--accent)}
+.acard h3{font-size:14.5px;line-height:1.2;color:var(--ink);margin-top:2px}
+.acard .ameta{font-size:9.3px;color:var(--ink-soft);display:flex;gap:10px;flex-wrap:wrap;margin:2px 0 3px}
+.acard .ameta b{color:var(--ink)}
+.acard .adesc{font-size:10.6px;color:var(--ink-soft);margin-bottom:3px;line-height:1.4}
+.acard ol{margin:0 0 4px;padding-left:15px}
+.acard ol li{font-size:10.2px;margin-bottom:3px;line-height:1.36}
+.acard .abox{font-size:9.8px;border-radius:9px;padding:5px 8px;margin-bottom:3px;line-height:1.38;background:rgba(255,255,255,.65)}
+.acard .abox b{color:var(--accent)}
+.acard .afoot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-size:9px;color:var(--ink-soft);padding-top:2px}
+.acard .afoot label{display:flex;align-items:center;gap:4px}
+.acard .afoot input{width:11px;height:11px}
+
+/* ---------------- FECHAMENTO ---------------- */
+.closepage{justify-content:center;align-items:center;text-align:center;
+  background:linear-gradient(160deg,#f4b73f 0%,#ef7a5e 60%,#b23b6b 100%);color:#fff;padding:0}
+.closepage .inner{max-width:150mm;padding:0 30px}
+.closepage h2{color:#fff;font-size:30px}
+.closepage p{color:#fff6ea;font-size:12.5px}
+</style>
+</head>
+<body>
+
+<section class="page cover" data-pg="capa">
+  <div class="deco">
+    <div class="blob" style="width:260px;height:260px;top:-60px;left:-70px"></div>
+    <div class="blob" style="width:180px;height:180px;bottom:-40px;right:-50px"></div>
+    <div class="blob" style="width:120px;height:120px;bottom:120px;left:-40px;opacity:.10"></div>
+  </div>
+  <div class="cover-inner">
+    <div class="cover-eyebrow">Guia Completo · 30 Dias de Rotina</div>
+    <h1>Ginástica Cerebral <span class="accent">para Crianças</span></h1>
+    <div class="sub">120 atividades de coordenação, força, equilíbrio e respiração organizadas em uma rotina diária de 4 exercícios — para pais e mães de crianças de 3 a 10 anos que enfrentam explosões de raiva, agitação, dificuldade de foco, birras frequentes e desobediência.</div>
+    <div class="catrow"><span class="catpill">🔀 Coordenação</span><span class="catpill">💪 Força & Propriocepção</span><span class="catpill">🎈 Regulação Emocional</span><span class="catpill">🌬️ Respiração & Foco</span></div>
+    <div class="coverimg" style="height:70mm">
+      <div class="ico">🖼️</div>
+      <div class="lbl">Placeholder de imagem · IMG-CAPA</div>
+      <div class="cap">Ilustração de capa: crianças diversas brincando e se movendo com alegria, estilo flat design colorido</div>
+    </div>
+    <div class="foot">7 minutos por dia · sem telas · sem equipamentos caros</div>
+  </div>
+</section>
+<section class="page" data-pg="introdução">
+  <div class="eyebrow">Antes de começar</div>
+  <div class="title-blk"><h2>Como usar este guia</h2>
+  <div class="hr"></div>
+  <p class="lead">Este guia reúne 120 atividades organizadas em uma rotina de 30 dias. Todo dia, seu filho ou filha vai praticar <strong>4 atividades curtas</strong> — uma de cada categoria — em cerca de <strong>7 a 15 minutos</strong> no total. Não é preciso equipamento especial nem experiência prévia: qualquer adulto pode conduzir.</p></div>
+
+  <div class="grid2" style="margin-bottom:12px">
+    <div class="card">
+      <h3 style="font-size:13.5px;margin-bottom:6px">📅 Estrutura do programa</h3>
+      <ul class="clean">
+        <li>30 dias, organizados em 5 semanas de 6 dias.</li>
+        <li>4 atividades por dia — uma de cada uma das 4 categorias.</li>
+        <li>Cada atividade leva entre 1 e 10 minutos.</li>
+        <li>Pode ser feito em qualquer ordem ao longo do dia.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="font-size:13.5px;margin-bottom:6px">⏰ Quando praticar</h3>
+      <ul class="clean">
+        <li>Escolha um horário fixo — de preferência fora de momentos de crise.</li>
+        <li>Bons momentos: ao acordar, após a escola, antes do dever de casa.</li>
+        <li>Evite praticar como punição ou logo após uma birra.</li>
+        <li>Um horário previsível ajuda mais do que a atividade perfeita.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="grid2" style="margin-bottom:12px">
+    <div class="card">
+      <h3 style="font-size:13.5px;margin-bottom:6px">🧩 Se a criança recusar</h3>
+      <ul class="clean">
+        <li>Não force — ofereça, convide, demonstre você primeiro.</li>
+        <li>Troque a ordem: comece pela atividade que ela mais gosta.</li>
+        <li>Tudo bem pular um dia; retome no dia seguinte sem culpa.</li>
+        <li>Transforme em brincadeira, não em tarefa obrigatória.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="font-size:13.5px;margin-bottom:6px">✅ Cada atividade traz</h3>
+      <ul class="clean">
+        <li>Faixa etária, duração e materiais necessários.</li>
+        <li>Passo a passo simples de como conduzir.</li>
+        <li>Por que funciona — a lógica por trás do exercício.</li>
+        <li>Uma dica extra para dias mais difíceis.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note" style="margin-bottom:12px"><strong>Um aviso importante:</strong> este guia é um complemento lúdico à rotina familiar e não substitui avaliação, diagnóstico ou acompanhamento de profissionais de saúde. Se as explosões de raiva, a agitação ou a desobediência forem muito intensas, frequentes ou estiverem prejudicando a rotina escolar e familiar, procure apoio de um pediatra, psicólogo infantil ou terapeuta ocupacional.</div>
+
+  <div class="card">
+    <h3 style="font-size:13.5px;margin-bottom:8px">🧺 Kit básico sugerido (opcional)</h3>
+    <p class="small" style="margin-bottom:8px">A grande maioria das atividades não exige nada além do corpo. Estes poucos itens, se disponíveis em casa, deixam alguns dias ainda mais ricos:</p>
+    <div class="grid2" style="gap:6px 18px">
+      <ul class="clean" style="margin:0">
+        <li>Bola de sabão para bolhas</li>
+        <li>Massinha de modelar (uma firme, tipo theraputty)</li>
+        <li>Bola de meia ou bolinha macia</li>
+      </ul>
+      <ul class="clean" style="margin:0">
+        <li>Cobertor ou almofada pesada</li>
+        <li>Fita adesiva ou giz para desenhar linhas no chão</li>
+        <li>Pote transparente, água, cola e glitter (pote da calma)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="page" data-pg="categorias">
+  <div class="eyebrow">As 4 categorias</div>
+  <div class="title-blk"><h2>De onde vêm as atividades</h2><div class="hr"></div>
+  <p class="lead">As 120 atividades foram organizadas em 4 categorias que se complementam. Todo dia da rotina inclui uma atividade de cada uma delas, formando um pacote completo para o corpo e para as emoções.</p></div>
+  <div class="grid2" style="gap:14px"><div class="catcard" style="background:#e2f5ef;border-color:#2f8f7a22">
+          <span class="icon">🔀</span>
+          <h3 style="color:#2f8f7a">Coordenação & Linha Média</h3>
+          <p>Movimentos que cruzam o corpo de um lado para o outro, ajudando os dois hemisférios do cérebro a trabalharem juntos — a base para ler, escrever, prestar atenção e organizar o próprio corpo no espaço.</p>
+        </div><div class="catcard" style="background:#fdead9;border-color:#c1611a22">
+          <span class="icon">💪</span>
+          <h3 style="color:#c1611a">Ritmo & Força</h3>
+          <p>Atividades de 'trabalho pesado' que empurram, puxam e pressionam as articulações — o jeito mais eficaz de organizar o corpo e prevenir explosões antes que elas comecem.</p>
+        </div><div class="catcard" style="background:#fbe4ee;border-color:#b23b6b22">
+          <span class="icon">🎈</span>
+          <h3 style="color:#b23b6b">Equilíbrio & Emoções</h3>
+          <p>Equilíbrio corporal e consciência das emoções andam juntos: quando o corpo se sente seguro e estável, fica muito mais fácil nomear e atravessar sentimentos grandes sem explodir.</p>
+        </div><div class="catcard" style="background:#e3eefb;border-color:#2e6fb022">
+          <span class="icon">🌬️</span>
+          <h3 style="color:#2e6fb0">Calma & Foco</h3>
+          <p>Respiração e jogos de atenção ativam o sistema nervoso parassimpático e treinam as funções executivas — a dupla que sustenta o autocontrole diante de birras e desobediência.</p>
+        </div></div>
+  <div class="note" style="margin-top:14px"><strong>Sobre as fontes:</strong> as atividades se inspiram em práticas amplamente usadas em Terapia Ocupacional, Integração Sensorial (Ayres), educação psicomotora, mindfulness infantil, ioga para crianças e nos movimentos populares do método Brain Gym® (Dennison) — usados aqui como exercícios de coordenação e cruzamento de linha média, sem qualquer promessa de efeito neurológico específico. Também trazem ideias de autores como Daniel Siegel & Tina Payne Bryson ("Name it to tame it") e Bruce Perry sobre regulação emocional através do corpo.</div>
+</section>
+<section class="page" data-pg="visão geral">
+  <div class="eyebrow">Mapa do programa</div>
+  <div class="title-blk"><h2>Visão geral das 5 semanas</h2><div class="hr"></div>
+  <p class="lead">Um resumo rápido de para onde a rotina caminha ao longo dos 30 dias — útil para acompanhar o progresso ou retomar de onde parou.</p></div>
+  <table class="overview">
+    <thead><tr><th>Semana</th><th>Dias</th><th>Tema</th><th>Foco</th></tr></thead>
+    <tbody><tr><td><strong>Semana 1</strong></td><td>Dias 1–6</td><td>Descobrindo o Corpo</td><td>Fundamentos de coordenação, ritmo, equilíbrio e respiração</td></tr><tr><td><strong>Semana 2</strong></td><td>Dias 7–12</td><td>Construindo Ritmo</td><td>Bilateralidade, força leve e propriocepção</td></tr><tr><td><strong>Semana 3</strong></td><td>Dias 13–18</td><td>Liberando Energia com Segurança</td><td>Equilíbrio corporal e primeiras ferramentas emocionais</td></tr><tr><td><strong>Semana 4</strong></td><td>Dias 19–24</td><td>Nomeando Sentimentos</td><td>Consciência emocional e funções executivas</td></tr><tr><td><strong>Semana 5</strong></td><td>Dias 25–30</td><td>Colhendo a Calma</td><td>Consolidando o que foi praticado</td></tr></tbody>
+  </table>
+  <div class="note" style="margin-top:16px"><strong>Dica de acompanhamento:</strong> use as caixinhas "Feito" em cada atividade para marcar o progresso diário junto com a criança. Ver os dias se acumulando costuma ser motivador tanto para os pais quanto para os pequenos.</div>
+</section>
+<section class="page weekpage" data-pg="semana 1">
+  <div class="weeknum">Semana 1</div>
+  <h2>Descobrindo o Corpo</h2>
+  <div class="sub">Dias 1 a 6 — Fundamentos de coordenação, ritmo, equilíbrio e respiração</div>
+  <div class="weekbanner imgph">
+    <div class="ico">🖼️</div>
+    <div class="lbl">Placeholder de imagem · IMG-SEMANA-1</div>
+    <div class="cap">crianças pequenas fazendo movimentos simples de coordenação motora em uma sala colorida e aconchegante, tocando o joelho oposto com a mão</div>
+  </div>
+  <div class="msg">Nesta primeira semana o objetivo não é 'corrigir comportamento' — é ajudar seu filho ou filha a conhecer melhor o próprio corpo. Crianças que têm explosões de raiva, agitação e birras frequentes muitas vezes ainda não sentem com clareza os próprios sinais internos. Vá com calma, sem cobrar perfeição nos movimentos: o que importa é a repetição gentil, todos os dias, no mesmo horário se possível.</div>
+  <div class="weekdays"><div class="weekday-chip"><b>Dia 1</b>Marcha Cruzada (Cross Crawl) · Bater Pés Alternados · Almofada Pesada no Colo · Aperta o Limão (Relaxamento Muscular)</div><div class="weekday-chip"><b>Dia 2</b>Cotovelo-Joelho · Rolar Massinha com Rolo · Pular no Colchão ou Cama Elástica · Abraço de Borboleta</div><div class="weekday-chip"><b>Dia 3</b>Toque no Calcanhar por Trás · Passar Bola Costas-com-Costas · Balançar Devagar (linear) · Varredura Corporal (Body Scan)</div><div class="weekday-chip"><b>Dia 4</b>Oito Deitado (Lazy 8) · Bola de Meia entre as Mãos · Cadeira de Balanço · STOP (Pare, Respire, Observe, Prossiga)</div><div class="weekday-chip"><b>Dia 5</b>Oito com as Duas Mãos · Copiar a Sequência da Mesa · Equilíbrio num Pé Só · Respiração da Flor e da Vela</div><div class="weekday-chip"><b>Dia 6</b>Oito do Alfabeto (Alphabet 8s) · Engatinhar (Andar de Gatinho) · Andar na Linha · Respiração do Balão</div></div>
+</section>
+<section class="page daypage" data-pg="dia 1/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 1 · Descobrindo o Corpo</div><h2>Dia 1 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">Hoje começamos devagar: um movimento de coordenação simples, um toque rítmico com os pés, um peso confortável no colo e o primeiro exercício de tensão-relaxamento muscular.</div>
+  <div class="progress"><i style="width:3%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>1. Marcha Cruzada (Cross Crawl)</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–10 anos</span><span><b>Duração:</b> 3 a 5 minutos</span></div>
+      <div class="adesc">Em pé, a criança marcha bem devagar tocando o joelho esquerdo com a mão direita e depois o joelho direito com a mão esquerda.</div>
+      <ol><li>Peça para a criança ficar em pé, braços soltos ao lado do corpo.</li><li>Marchando bem devagar, ela toca o joelho esquerdo com a mão direita.</li><li>Troca de lado: toca o joelho direito com a mão esquerda, repetindo por 1 a 2 minutos.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O movimento alternado exige que os dois lados do corpo conversem entre si, exercitando o planejamento motor que também sustenta a atenção e o autocontrole.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se a criança estiver muito agitada, comece bem devagar e conte em voz alta junto com ela — o ritmo compartilhado já começa a acalmar.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>31. Bater Pés Alternados</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–6 anos</span><span><b>Duração:</b> 2 minutos</span></div>
+      <div class="adesc">Sentada, a criança marcha batendo os pés no chão alternadamente, seguindo um ritmo simples.</div>
+      <ol><li>Sente a criança numa cadeira com os pés soltos.</li><li>Peça para bater o pé esquerdo e depois o direito no chão, num ritmo constante.</li><li>Cante ou conte junto para manter o ritmo por 1 a 2 minutos.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Um movimento simples e discreto que ajuda a canalizar a inquietação motora dos pés, comum em crianças pequenas em momentos de espera.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Ótimo para usar sentado à mesa antes das refeições, quando a criança tem dificuldade de ficar parada.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>61. Almofada Pesada no Colo</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 5 a 10 minutos</span></div>
+      <div class="adesc">A criança segura um peso confortável no colo (almofada pesada, cobertor dobrado) enquanto ouve uma história tranquila.</div>
+      <ol><li>Escolha uma almofada pesada, um cobertor bem dobrado ou uma bolsa de arroz confortável.</li><li>Sente a criança e coloque o peso sobre o colo dela.</li><li>Leia uma história calma enquanto ela sente o peso, sem pressa.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O peso constante no colo oferece estímulo proprioceptivo contínuo, ajudando a criança a permanecer sentada e regulada por mais tempo.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use esse recurso durante momentos de espera difíceis, como consultas médicas ou viagens longas.</div>
+      <div class="afoot"><span>Materiais: Uma almofada pesada ou cobertor dobrado</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>91. Aperta o Limão (Relaxamento Muscular)</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 3 a 5 minutos</span></div>
+      <div class="adesc">A criança aperta e solta grupos musculares do corpo (mãos, braços, ombros) como se estivesse espremendo limões imaginários.</div>
+      <ol><li>Peça para a criança fechar as mãos com força, como se espremesse um limão, por 5 segundos.</li><li>Solte de uma vez, sentindo a diferença entre tensão e relaxamento.</li><li>Repita com os braços, ombros e pernas, um grupo muscular por vez.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O relaxamento muscular progressivo ensina o corpo a diferenciar tensão de relaxamento, uma habilidade central para acalmar-se de forma ativa e não só passiva.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use antes de dormir se a criança tiver dificuldade de relaxar o corpo à noite.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 2/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 1 · Descobrindo o Corpo</div><h2>Dia 2 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">O corpo aprende cruzando o cotovelo ao joelho, as mãos ganham força moldando massinha, e a respiração da borboleta chega como primeira ferramenta de autoacalento.</div>
+  <div class="progress"><i style="width:6%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>2. Cotovelo-Joelho</h3>
+      <div class="ameta"><span><b>Idade:</b> 6–10 anos</span><span><b>Duração:</b> 3 a 5 minutos</span></div>
+      <div class="adesc">Igual à marcha cruzada, mas tocando o cotovelo no joelho oposto, exigindo mais flexão de tronco e equilíbrio.</div>
+      <ol><li>Em pé, peça para levar o cotovelo direito em direção ao joelho esquerdo, que sobe para encontrá-lo.</li><li>Volte à posição inicial com controle, sem deixar o corpo cair.</li><li>Alterne para o lado oposto, repetindo por 8 a 10 vezes de cada lado.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> A flexão de tronco soma exigência de equilíbrio ao cruzamento da linha média, fortalecendo o core e a autorregulação motora ao mesmo tempo.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Em dias de muita agitação, faça mais devagar e peça para a criança segurar 1 segundo em cada toque — isso naturalmente reduz a impulsividade do movimento.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>32. Rolar Massinha com Rolo</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 5 minutos</span></div>
+      <div class="adesc">A criança usa as duas mãos ao mesmo tempo para rolar massinha com um rolinho, em movimento simétrico.</div>
+      <ol><li>Dê uma porção de massinha e um rolinho pequeno para a criança.</li><li>Peça para apoiar as duas mãos no rolinho e empurrar para frente e para trás.</li><li>Repita até achatar bem a massinha, depois recomece com uma nova bolinha.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O esforço simétrico das duas mãos contra a resistência da massinha oferece input proprioceptivo calmante, útil antes de tarefas que exigem concentração.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se a criança estiver muito agitada, use massinha mais firme (theraputty) para exigir mais força e gerar mais efeito calmante.</div>
+      <div class="afoot"><span>Materiais: Massinha de modelar e um rolinho</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>62. Pular no Colchão ou Cama Elástica</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–10 anos</span><span><b>Duração:</b> 3 a 5 minutos</span></div>
+      <div class="adesc">Saltos repetidos numa superfície elástica, combinando estímulo proprioceptivo e vestibular intenso.</div>
+      <ol><li>Escolha um local seguro: cama elástica, colchão no chão ou até um sofá firme com supervisão.</li><li>Peça para a criança pular de forma controlada, mantendo os pés juntos.</li><li>Estabeleça um tempo (3 a 5 minutos) e avise 1 minuto antes de terminar.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Combina dois dos estímulos mais organizadores para o sistema nervoso — peso e movimento — sendo uma das formas mais rápidas de descarregar energia intensa.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Avisar com antecedência que a atividade vai terminar em breve ajuda a evitar birras na hora de parar.</div>
+      <div class="afoot"><span>Materiais: Colchão ou cama elástica</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>92. Abraço de Borboleta</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–10 anos</span><span><b>Duração:</b> 1 a 3 minutos</span></div>
+      <div class="adesc">A criança cruza os braços sobre o peito e dá tapinhas leves e alternados nos próprios ombros, como asas de borboleta batendo.</div>
+      <ol><li>Peça para a criança cruzar os braços sobre o peito, mãos nos ombros opostos.</li><li>Ela dá tapinhas leves e alternados, primeiro num ombro, depois no outro, num ritmo lento.</li><li>Continue por 1 a 2 minutos, respirando devagar junto.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O toque bilateral rítmico e autoaplicado é uma técnica usada em terapias de trauma para ajudar a acalmar o sistema nervoso de forma autônoma.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Ensine como ferramenta que a criança pode usar sozinha, em qualquer lugar, sem precisar de ajuda de um adulto.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 3/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 1 · Descobrindo o Corpo</div><h2>Dia 3 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">Hoje unimos rotação de tronco, cooperação em dupla, embalo lento e uma pausa de atenção ao corpo inteiro — uma combinação especialmente boa para tardes corridas.</div>
+  <div class="progress"><i style="width:10%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>3. Toque no Calcanhar por Trás</h3>
+      <div class="ameta"><span><b>Idade:</b> 6–10 anos</span><span><b>Duração:</b> 3 a 5 minutos</span></div>
+      <div class="adesc">A criança levanta o calcanhar para trás e o toca com a mão do lado oposto do corpo, cruzando a linha média com rotação de tronco.</div>
+      <ol><li>Em pé, peça para dobrar o joelho e levar o calcanhar esquerdo para trás.</li><li>A mão direita alcança e toca esse calcanhar, girando levemente o tronco.</li><li>Troque de lado e repita por cerca de 10 repetições de cada lado.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> A rotação de tronco combinada ao cruzamento amplia a consciência corporal e ajuda crianças agitadas a sentirem melhor os limites do próprio corpo.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se a criança perder o equilíbrio com facilidade, deixe-a apoiar a outra mão numa parede ou cadeira.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>33. Passar Bola Costas-com-Costas</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 5 minutos</span></div>
+      <div class="adesc">Em dupla, sentados ou em pé de costas um para o outro, giram o tronco para passar a bola de mão em mão.</div>
+      <ol><li>Posicione os dois participantes de costas um para o outro, próximos.</li><li>Um segura a bola e gira o tronco para passá-la ao parceiro pelo lado.</li><li>O parceiro recebe e gira para o outro lado, devolvendo a bola em círculo.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> A cooperação em dupla soma o componente social ao exercício físico, ajudando crianças com dificuldade de compartilhar e esperar a vez.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se a criança se frustra em jogos de dupla, comece você mesmo como parceiro antes de introduzir outro colega ou irmão.</div>
+      <div class="afoot"><span>Materiais: Uma bola</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>63. Balançar Devagar (linear)</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–10 anos</span><span><b>Duração:</b> 3 a 5 minutos</span></div>
+      <div class="adesc">Balanço ritmado e linear, para frente e para trás, num ritmo lento e constante.</div>
+      <ol><li>Sente a criança num balanço ou rede segura.</li><li>Empurre suavemente, mantendo um ritmo lento e constante, sem movimentos bruscos.</li><li>Continue por alguns minutos, observando o corpo dela relaxar.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O movimento linear e lento é um dos estímulos vestibulares mais calmantes que existem, com efeito quase imediato sobre a ansiedade e a agitação.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Evite balançar rápido ou de forma irregular — quanto mais previsível o ritmo, maior o efeito calmante.</div>
+      <div class="afoot"><span>Materiais: Um balanço ou rede</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>93. Varredura Corporal (Body Scan)</h3>
+      <div class="ameta"><span><b>Idade:</b> 6–10 anos</span><span><b>Duração:</b> 3 a 5 minutos</span></div>
+      <div class="adesc">Deitada ou sentada confortavelmente, a criança presta atenção, parte por parte, em como cada região do corpo está se sentindo.</div>
+      <ol><li>Peça para a criança deitar ou sentar confortavelmente e fechar os olhos, se quiser.</li><li>Guie a atenção devagar: 'sinta seus pés... suas pernas... sua barriga... seus ombros...' até chegar à cabeça.</li><li>Termine convidando para uma respiração funda e uma volta gradual à atenção do ambiente.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Notar as sensações corporais parte por parte amplia a interocepção e ensina a criança a perceber sinais físicos de tensão antes que virem explosões.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Grave sua própria voz guiando a varredura para que a criança possa ouvir sozinha quando precisar, sem depender de você estar presente.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 4/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 1 · Descobrindo o Corpo</div><h2>Dia 4 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">Um oito no ar para os olhos, uma bola que cruza o centro do corpo, o balanço tranquilo da cadeira e o primeiro treino do STOP: parar antes de reagir.</div>
+  <div class="progress"><i style="width:13%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>4. Oito Deitado (Lazy 8)</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 2 a 3 minutos</span></div>
+      <div class="adesc">Com o braço estendido, a criança traça um '8' deitado (símbolo do infinito) no ar, com os olhos acompanhando a mão sem mexer a cabeça.</div>
+      <ol><li>Peça para a criança esticar o braço à frente com o polegar para cima.</li><li>Ela desenha um 8 deitado bem grande no ar, começando pelo centro e subindo para a esquerda.</li><li>Os olhos seguem o polegar o tempo todo, sem virar a cabeça; repita 3 a 5 vezes com cada mão.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Seguir o próprio movimento com os olhos através do centro do campo visual treina o rastreamento ocular suave, importante para leitura e foco sustentado.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se a criança estiver dispersa, diminua a velocidade do traçado — quanto mais devagar o 8, mais fácil sustentar a atenção nele.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário (opcional: cartolina com o 8 desenhado)</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>34. Bola de Meia entre as Mãos</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–8 anos</span><span><b>Duração:</b> 3 minutos</span></div>
+      <div class="adesc">A criança passa uma bola de meia de uma mão para a outra, cruzando o centro do corpo a cada passagem.</div>
+      <ol><li>Dê a bola de meia na mão direita da criança.</li><li>Peça para passá-la para a mão esquerda cruzando por trás das costas.</li><li>Depois, tente passar por baixo das pernas, alternando os trajetos.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Um jogo simples que combina cruzamento da linha média com propriocepção leve, fácil de fazer em qualquer lugar, inclusive no carro.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Transforme em desafio de tempo: 'quantas vezes você consegue passar em 30 segundos?' — o cronômetro ajuda a manter o foco.</div>
+      <div class="afoot"><span>Materiais: Uma bola de meia (ou bolinha macia)</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>64. Cadeira de Balanço</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 3 a 5 minutos</span></div>
+      <div class="adesc">A criança se balança sentada numa cadeira de balanço, num ritmo próprio e constante.</div>
+      <ol><li>Sente a criança numa cadeira de balanço segura e estável.</li><li>Deixe-a se balançar no próprio ritmo, sem pressa.</li><li>Aproveite o momento para uma conversa tranquila ou apenas silêncio compartilhado.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O ritmo autoregulado (ela mesma controla a velocidade) dá senso de controle à criança, o que por si só já é regulador emocionalmente.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Ótimo lugar para o 'cantinho da calma' de casa — deixe a cadeira sempre disponível e sem regras rígidas de uso.</div>
+      <div class="afoot"><span>Materiais: Uma cadeira de balanço</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>94. STOP (Pare, Respire, Observe, Prossiga)</h3>
+      <div class="ameta"><span><b>Idade:</b> 7–10 anos</span><span><b>Duração:</b> 1 a 2 minutos</span></div>
+      <div class="adesc">Um acrônimo simples ensinado à criança para pausar antes de reagir por impulso: Pare, Respire, Observe o que está sentindo, e então Prossiga.</div>
+      <ol><li>Ensine o acrônimo num momento calmo: Pare o que está fazendo, Respire fundo uma vez, Observe o que está sentindo no corpo e na mente, e só então Prossiga com uma escolha.</li><li>Pratique o STOP em situações neutras primeiro, como um jogo, antes de esperar que funcione numa crise real.</li><li>Quando surgir uma situação de frustração leve, relembre gentilmente: 'lembra do nosso STOP?'</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Dar um passo formal e nomeado entre o gatilho e a reação constrói literalmente a pausa que falta em crianças com explosões impulsivas de raiva.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Nunca introduza essa ferramenta pela primeira vez durante uma crise — ensine e pratique em momentos calmos para que já esteja disponível quando for necessária.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 5/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 1 · Descobrindo o Corpo</div><h2>Dia 5 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">As duas mãos entrelaçadas desenham o infinito, uma sequência de movimentos desafia a memória, o equilíbrio num pé só pede presença, e a flor e a vela ensinam a respirar devagar.</div>
+  <div class="progress"><i style="width:16%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>5. Oito com as Duas Mãos</h3>
+      <div class="ameta"><span><b>Idade:</b> 6–10 anos</span><span><b>Duração:</b> 2 a 3 minutos</span></div>
+      <div class="adesc">A criança entrelaça as mãos e traça o oito deitado no ar com as duas mãos juntas, unindo integração bilateral e cruzamento visual.</div>
+      <ol><li>Peça para entrelaçar os dedos das duas mãos, formando um só 'punho duplo'.</li><li>Trace o 8 deitado bem devagar no ar, olhos acompanhando as mãos.</li><li>Repita por cerca de 1 minuto, depois inverta o entrelaçar dos dedos e repita.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Unir as duas mãos em um único movimento fluido treina a cooperação entre os dois lados do corpo, essencial para tarefas finas como escrever.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se a criança tiver dificuldade para entrelaçar os dedos, tudo bem segurar um bastão curto ou lápis grande com as duas mãos.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>35. Copiar a Sequência da Mesa</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 4 minutos</span></div>
+      <div class="adesc">O adulto cria uma pequena sequência de movimentos ('2 vezes na cabeça, 1 no chão, mãos nos joelhos') que a criança repete de memória.</div>
+      <ol><li>Demonstre uma sequência curta de 3 movimentos, por exemplo: 2 toques na cabeça, 1 toque no chão, mãos nos joelhos.</li><li>Peça para a criança repetir a sequência exatamente na mesma ordem.</li><li>Crie uma nova sequência a cada rodada, aumentando aos poucos a quantidade de movimentos.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Memorizar e reproduzir sequências motoras treina diretamente a memória de trabalho, uma das funções executivas mais associadas à desobediência quando fraca.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se a criança errar, não corrija de imediato — deixe ela perceber sozinha e tentar de novo; isso constrói autonomia em vez de dependência da correção externa.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>65. Equilíbrio num Pé Só</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–10 anos</span><span><b>Duração:</b> 2 a 3 minutos</span></div>
+      <div class="adesc">A criança fica em pé apoiada só numa perna, depois troca para a outra, treinando o equilíbrio estático.</div>
+      <ol><li>Peça para a criança ficar em pé apoiada só na perna direita.</li><li>Sustente por 10 a 15 segundos, ou o quanto conseguir.</li><li>Troque para a perna esquerda e repita, alternando algumas vezes.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O equilíbrio estático exige foco total no momento presente, funcionando quase como uma meditação em movimento para crianças pequenas.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Transforme em jogo: 'quem consegue ficar mais tempo parado?' — o desafio ajuda a sustentar o foco sem parecer exercício chato.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>95. Respiração da Flor e da Vela</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 1 a 2 minutos</span></div>
+      <div class="adesc">A criança imagina cheirar uma flor (inspirando devagar pelo nariz) e depois apagar uma vela (expirando devagar pela boca).</div>
+      <ol><li>Peça para a criança imaginar segurar uma flor na mão e cheirá-la, inspirando devagar pelo nariz.</li><li>Depois, imaginar uma vela na outra mão e apagá-la, soprando devagar pela boca.</li><li>Repita o ciclo de 5 a 8 vezes, alternando flor e vela.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Uma das técnicas de respiração mais simples e eficazes para os menores, por usar imagens concretas fáceis de entender.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use os próprios dedos como flor e vela imaginárias — não precisa de nenhum objeto real, funciona em qualquer lugar.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 6/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 1 · Descobrindo o Corpo</div><h2>Dia 6 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">Fechamos a primeira semana com letras dentro do oito, o engatinhar clássico, uma linha reta no chão para caminhar e a respiração do balão enchendo a barriga.</div>
+  <div class="progress"><i style="width:20%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>6. Oito do Alfabeto (Alphabet 8s)</h3>
+      <div class="ameta"><span><b>Idade:</b> 6–10 anos</span><span><b>Duração:</b> 4 a 5 minutos</span></div>
+      <div class="adesc">A criança traça letras do próprio nome ou do alfabeto dentro do formato do oito deitado, unindo escrita e cruzamento visual.</div>
+      <ol><li>Desenhe (ou peça que ela desenhe) um 8 deitado grande no papel ou no ar.</li><li>Escolha uma letra do nome dela e trace essa letra seguindo o caminho do 8.</li><li>Repita com outras letras, sempre acompanhando com os olhos.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Combina o cruzamento da linha média com a prática da escrita, ajudando crianças com dificuldade de foco a se manterem engajadas por mais tempo em tarefas de mesa.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Para quem resiste a atividades de 'lição', transforme em jogo: 'vamos escrever seu nome dentro do laço mágico'.</div>
+      <div class="afoot"><span>Materiais: Papel e lápis (opcional)</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>36. Engatinhar (Andar de Gatinho)</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 3 a 5 minutos</span></div>
+      <div class="adesc">A criança engatinha normalmente, com o braço e a perna opostos avançando juntos, num padrão contralateral clássico.</div>
+      <ol><li>Peça para a criança apoiar mãos e joelhos no chão.</li><li>Ela avança o braço direito junto com a perna esquerda, depois o braço esquerdo com a perna direita.</li><li>Faça um pequeno percurso (de um móvel a outro) engatinhando.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O engatinhar é um dos padrões motores mais fundamentais para a integração dos dois lados do corpo, servindo de base para o cruzamento da linha média em outras atividades.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Transforme num 'circuito de animais': engatinhar como cachorro, depois como urso — a variação mantém o interesse de crianças que se distraem fácil.</div>
+      <div class="afoot"><span>Materiais: Espaço livre no chão</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>66. Andar na Linha</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–10 anos</span><span><b>Duração:</b> 3 minutos</span></div>
+      <div class="adesc">A criança caminha sobre uma linha reta no chão, com os braços abertos para ajudar no equilíbrio.</div>
+      <ol><li>Coloque uma fita adesiva ou corda esticada no chão, formando uma linha reta.</li><li>Peça para a criança caminhar sobre a linha com os braços abertos.</li><li>Repita ida e volta, aumentando aos poucos a velocidade.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Caminhar numa linha estreita exige atenção plena ao próprio corpo, sendo uma forma simples de ancorar a criança no momento presente.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use fita colorida e deixe a criança desenhar o próprio caminho (curvas, zigue-zague) para aumentar o engajamento.</div>
+      <div class="afoot"><span>Materiais: Uma corda, fita adesiva ou linha desenhada no chão</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>96. Respiração do Balão</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 1 a 2 minutos</span></div>
+      <div class="adesc">A criança imagina a barriga como um balão, enchendo devagar ao inspirar e esvaziando devagar ao expirar.</div>
+      <ol><li>Peça para a criança deitar ou sentar e colocar as mãos na barriga.</li><li>Ela inspira devagar pelo nariz, imaginando a barriga inflando como um balão.</li><li>Expira devagar pela boca, sentindo a barriga esvaziar, e repete por 5 a 8 ciclos.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Sentir as mãos subindo e descendo com a respiração ajuda a criança a perceber fisicamente o próprio ritmo respiratório, o primeiro passo para controlá-lo.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Coloque um bichinho de pelúcia leve sobre a barriga para tornar o movimento ainda mais visível e divertido.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page weekpage" data-pg="semana 2">
+  <div class="weeknum">Semana 2</div>
+  <h2>Construindo Ritmo</h2>
+  <div class="sub">Dias 7 a 12 — Bilateralidade, força leve e propriocepção</div>
+  <div class="weekbanner imgph">
+    <div class="ico">🖼️</div>
+    <div class="lbl">Placeholder de imagem · IMG-SEMANA-2</div>
+    <div class="cap">criança empurrando uma parede com as duas mãos com esforço, expressão de concentração e força tranquila</div>
+  </div>
+  <div class="msg">Agora que o corpo já está mais familiarizado com o cruzamento e o equilíbrio, esta semana soma atividades de 'trabalho pesado' — empurrar, puxar, carregar. Esses movimentos são especialmente úteis para crianças agitadas ou impulsivas, porque oferecem ao corpo o input intenso que ele está buscando, mas de um jeito seguro e organizado, em vez de uma explosão.</div>
+  <div class="weekdays"><div class="weekday-chip"><b>Dia 7</b>Rabisco Duplo (Double Doodle) · Bicicleta no Ar · Andar na Linha de Costas · Respiração Quadrada (Box Breathing)</div><div class="weekday-chip"><b>Dia 8</b>O Elefante · Bicicleta em Dupla · Pose da Árvore · Respiração da Estrela</div><div class="weekday-chip"><b>Dia 9</b>Toque Cruzado Sentado · Bateria de Panelas · Rolar na Grama ou Ladeira Suave · Respiração dos 5 Dedos</div><div class="weekday-chip"><b>Dia 10</b>Robô e Guia · Conduzir a Bola com Pés Alternados · Cambalhota · Respiração com Bichinho de Pelúcia</div><div class="weekday-chip"><b>Dia 11</b>Pontos Coloridos Cruzados · Bater Palma antes de Pegar · Cabeça para Baixo (Cachorro Olhando) · Respiração da Abelha (Bhramari)</div><div class="weekday-chip"><b>Dia 12</b>Bolha que Atravessa · Passar o Ritmo em Roda · Girar Devagar e Parar · Respiração do Chocolate Quente</div></div>
+</section>
+<section class="page daypage" data-pg="dia 7/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 2 · Construindo Ritmo</div><h2>Dia 7 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">Nova semana, novo desafio: desenhar com as duas mãos ao mesmo tempo, pedalar deitado no ar, caminhar de costas numa linha e a respiração quadrada, contando cada lado.</div>
+  <div class="progress"><i style="width:23%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>7. Rabisco Duplo (Double Doodle)</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–10 anos</span><span><b>Duração:</b> 3 a 5 minutos</span></div>
+      <div class="adesc">A criança desenha formas espelhadas com as duas mãos ao mesmo tempo, cada mão fazendo o movimento oposto da outra como um espelho.</div>
+      <ol><li>Dê um lápis para cada mão da criança sobre uma folha grande.</li><li>Peça para desenhar círculos, ondas ou corações com as duas mãos ao mesmo tempo, uma espelhando a outra.</li><li>Deixe explorar livremente por alguns minutos, trocando os formatos.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Trabalhar as duas mãos simultaneamente em espelho fortalece a integração bilateral e costuma ser muito prazeroso, o que ajuda a regular o humor.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Ótima atividade de transição antes do dever de casa: acalma sem exigir muito esforço cognitivo.</div>
+      <div class="afoot"><span>Materiais: Papel grande e dois lápis/giz de cera</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>37. Bicicleta no Ar</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 2 a 3 minutos</span></div>
+      <div class="adesc">Deitada de costas, a criança pedala as pernas no ar como se estivesse andando de bicicleta.</div>
+      <ol><li>Peça para a criança deitar de costas com os braços apoiados no chão.</li><li>Ela levanta as pernas e pedala como numa bicicleta, num ritmo confortável.</li><li>Continue por 30 segundos a 1 minuto, com pequenas pausas se precisar.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Ativa a musculatura abdominal e o padrão alternado das pernas, sendo uma ótima forma de gastar energia física em espaços pequenos.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use antes de dormir se a criança estiver com dificuldade de 'desligar' o corpo à noite — o esforço curto e intenso ajuda a cansar sem estimular demais.</div>
+      <div class="afoot"><span>Materiais: Um tapete ou colchonete</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>67. Andar na Linha de Costas</h3>
+      <div class="ameta"><span><b>Idade:</b> 6–10 anos</span><span><b>Duração:</b> 3 minutos</span></div>
+      <div class="adesc">Versão mais desafiadora da caminhada na linha, feita de costas, exigindo ainda mais equilíbrio e concentração.</div>
+      <ol><li>Use a mesma linha da atividade anterior.</li><li>Peça para a criança caminhar de costas sobre a linha, devagar e com cuidado.</li><li>Fique por perto para garantir segurança, já que ela não vê para onde vai.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O aumento de dificuldade exige concentração ainda maior, sendo ótimo para crianças maiores que já dominam a versão básica.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Só introduza essa versão depois que a criança já estiver segura na versão de frente, para evitar frustração.</div>
+      <div class="afoot"><span>Materiais: Uma corda, fita adesiva ou linha desenhada no chão</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>97. Respiração Quadrada (Box Breathing)</h3>
+      <div class="ameta"><span><b>Idade:</b> 7–10 anos</span><span><b>Duração:</b> 2 a 3 minutos</span></div>
+      <div class="adesc">A criança inspira contando até 4, segura o ar contando até 4, expira contando até 4 e segura vazio contando até 4, repetindo o ciclo.</div>
+      <ol><li>Desenhe (ou imagine) um quadrado, um lado para cada etapa da respiração.</li><li>Guie a contagem: inspire contando até 4, segure contando até 4, expire contando até 4, segure vazio contando até 4.</li><li>Repita o ciclo completo de 3 a 5 vezes.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Usada até por atletas e militares para regular o sistema nervoso sob pressão, é uma ferramenta poderosa para crianças maiores com explosões de raiva frequentes.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Pratique traçando o quadrado com o dedo no ar ou numa superfície — o movimento físico ajuda a manter o ritmo da contagem.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário (opcional: desenho de um quadrado)</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 8/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 2 · Construindo Ritmo</div><h2>Dia 8 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">O elefante desenha o oito com o corpo inteiro, duas crianças pedalam juntas em sincronia, a pose da árvore pede equilíbrio e respiração, e uma estrela guia o ritmo de respirar.</div>
+  <div class="progress"><i style="width:26%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>8. O Elefante</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–10 anos</span><span><b>Duração:</b> 2 a 3 minutos</span></div>
+      <div class="adesc">Com o braço estendido junto à orelha e os joelhos levemente flexionados, a criança desenha um 8 grande usando o corpo inteiro, como uma tromba de elefante.</div>
+      <ol><li>Peça para dobrar levemente os joelhos e encostar o braço na orelha, como uma tromba.</li><li>Usando o corpo inteiro (não só o braço), trace um 8 grande no ar olhando para a mão.</li><li>Repita por 3 a 4 voltas e troque de braço.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O movimento amplo do corpo todo oferece um estímulo vestibular leve, ajudando a organizar o sistema de equilíbrio de crianças muito agitadas ou muito 'desligadas'.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se a criança sentir tontura, reduza a amplitude do movimento e faça pausas.</div>
+      <div class="afoot"><span>Materiais: Espaço livre</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>38. Bicicleta em Dupla</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 3 minutos</span></div>
+      <div class="adesc">Duas crianças deitam de costas, uma de frente para a outra, unem as solas dos pés e pedalam juntas.</div>
+      <ol><li>Deite as duas crianças de costas, uma de frente para a outra, com as solas dos pés encostadas.</li><li>Peça para pedalarem juntas, tentando manter o mesmo ritmo.</li><li>Incentive a se olharem e rirem durante o movimento.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Além do benefício motor, a sincronia com o parceiro treina a leitura do ritmo do outro, importante para habilidades sociais e cooperação.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Ótima atividade para reduzir rivalidade entre irmãos — cooperar fisicamente costuma abrir espaço para cooperar em outras áreas do dia.</div>
+      <div class="afoot"><span>Materiais: Um tapete ou colchonete</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>68. Pose da Árvore</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–10 anos</span><span><b>Duração:</b> 1 a 2 minutos por lado</span></div>
+      <div class="adesc">Postura de yoga em que a criança apoia a sola do pé na perna oposta, com as mãos unidas acima da cabeça.</div>
+      <ol><li>Peça para a criança ficar em pé e apoiar a sola de um pé na parte interna da outra perna (panturrilha ou coxa).</li><li>Junte as mãos acima da cabeça, como galhos de árvore.</li><li>Sustente a posição respirando devagar, depois troque de perna.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Combina equilíbrio físico com respiração consciente, sendo uma das posturas mais usadas em yoga infantil para regulação emocional.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se a criança perder o equilíbrio, tudo bem apoiar o pé mais baixo, na canela, em vez da coxa — o importante é a experiência, não a perfeição.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>98. Respiração da Estrela</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 2 minutos</span></div>
+      <div class="adesc">A criança traça o contorno de uma estrela desenhada com o dedo, inspirando ao subir cada ponta e expirando ao descer.</div>
+      <ol><li>Desenhe uma estrela de cinco pontas num papel.</li><li>Peça para a criança traçar o contorno com o dedo: inspira subindo até a ponta, expira descendo até o vale.</li><li>Complete a estrela toda, uma respiração completa por lado.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Combina o apoio visual e tátil do traçado com o ritmo respiratório, ajudando crianças que têm dificuldade em respirar apenas contando números.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Deixe a criança decorar a própria estrela antes de usá-la — o senso de propriedade aumenta o engajamento com a ferramenta.</div>
+      <div class="afoot"><span>Materiais: Uma estrela desenhada em papel</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 9/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 2 · Construindo Ritmo</div><h2>Dia 9 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">Um toque cruzado sentado para os menores, o som de uma pequena bateria caseira, rolar livremente pela grama e a respiração dos 5 dedos, sempre à mão.</div>
+  <div class="progress"><i style="width:30%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>9. Toque Cruzado Sentado</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–5 anos</span><span><b>Duração:</b> 2 a 3 minutos</span></div>
+      <div class="adesc">Sentada, a criança toca a mão no joelho do lado oposto alternadamente — uma versão de baixo esforço da marcha cruzada, ideal para os menores.</div>
+      <ol><li>Sente a criança numa cadeira ou no chão, com as costas apoiadas se precisar.</li><li>Peça para tocar o joelho esquerdo com a mão direita.</li><li>Alterne para o joelho direito com a mão esquerda, num ritmo tranquilo, por cerca de 1 minuto.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Por exigir menos equilíbrio que a versão em pé, é uma ótima porta de entrada para crianças pequenas praticarem o cruzamento da linha média sem frustração.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Cante uma musiquinha simples no ritmo do toque — crianças pequenas se engajam muito mais com apoio sonoro.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>39. Bateria de Panelas</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–6 anos</span><span><b>Duração:</b> 3 a 5 minutos</span></div>
+      <div class="adesc">A criança cria ritmos usando as duas mãos para bater em panelas ou potes, como uma pequena bateria caseira.</div>
+      <ol><li>Separe algumas panelas ou potes de diferentes tamanhos no chão.</li><li>Dê uma colher de pau (ou as próprias mãos) para a criança tocar.</li><li>Incentive a criar um ritmo próprio, depois imite o ritmo dela e peça para ela imitar o seu.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Liberar energia através do som e do ritmo é uma forma eficaz e divertida de descarregar frustração de maneira segura e construtiva.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se o barulho for um problema em casa, combine um horário e local específicos — a criança aprende que há tempo e lugar certos para essa liberação.</div>
+      <div class="afoot"><span>Materiais: Panelas ou potes e uma colher de pau</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>69. Rolar na Grama ou Ladeira Suave</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 3 a 5 minutos</span></div>
+      <div class="adesc">A criança rola pelo chão num gramado ou ladeira suave, sentindo o corpo girar livremente.</div>
+      <ol><li>Escolha um local seguro, gramado e sem obstáculos.</li><li>Peça para a criança deitar e rolar de um lado para o outro, com os braços esticados acima da cabeça.</li><li>Repita algumas vezes, alternando a direção do rolamento.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O estímulo vestibular do giro, combinado ao contato com a natureza, costuma gerar bastante alegria e liberação de tensão física.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Observe sinais de tontura excessiva e faça pausas — para algumas crianças esse estímulo é muito intenso e deve ser dosado.</div>
+      <div class="afoot"><span>Materiais: Um gramado ou ladeira suave e segura</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>99. Respiração dos 5 Dedos</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–10 anos</span><span><b>Duração:</b> 1 a 2 minutos</span></div>
+      <div class="adesc">A criança traça a própria mão com o dedo indicador da outra mão, inspirando ao subir cada dedo e expirando ao descer.</div>
+      <ol><li>Peça para a criança abrir uma mão como um leque, dedos separados.</li><li>Com o dedo indicador da outra mão, ela traça a lateral do polegar inspirando, e desce do outro lado expirando.</li><li>Continua traçando dedo por dedo até completar a mão toda.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Combina tato e respiração numa única ferramenta que a criança sempre tem consigo, sem precisar de nenhum objeto ou preparo prévio.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> É uma das técnicas mais discretas de autorregulação — pode ser usada até debaixo da carteira, na escola, sem chamar atenção.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 10/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 2 · Construindo Ritmo</div><h2>Dia 10 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">Hoje o robô segue o guia com o corpo inteiro, a bola é conduzida com os pés alternados, a cambalhota exige coragem supervisionada, e um bichinho de pelúcia ensina a respirar fundo.</div>
+  <div class="progress"><i style="width:33%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>10. Robô e Guia</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 4 a 6 minutos</span></div>
+      <div class="adesc">Em dupla, o 'guia' toca o braço direito ou esquerdo do 'robô', que deve virar o corpo inteiro na direção tocada, alternando os papéis.</div>
+      <ol><li>Combine que um toque no braço direito significa 'vire para a direita' e no esquerdo, 'vire para a esquerda'.</li><li>O guia toca um dos braços do robô, que vira o corpo devagar naquela direção.</li><li>Depois de algumas rodadas, troquem os papéis de guia e robô.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Reagir a um comando externo com o corpo inteiro treina lateralidade e escuta corporal — duas bases importantes para seguir instruções com mais facilidade.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use esse jogo como treino de 'obedecer rápido e sem discutir' de um jeito lúdico, sem cobrança — o objetivo é praticar, não acertar sempre.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>40. Conduzir a Bola com Pés Alternados</h3>
+      <div class="ameta"><span><b>Idade:</b> 6–10 anos</span><span><b>Duração:</b> 5 minutos</span></div>
+      <div class="adesc">A criança leva a bola pelo chão alternando o pé direito e o esquerdo para tocá-la para frente, como num pequeno drible.</div>
+      <ol><li>Coloque a bola no chão e peça para a criança tocá-la levemente para frente com o pé direito.</li><li>No passo seguinte, ela toca com o pé esquerdo, mantendo a bola em movimento.</li><li>Faça um pequeno percurso em zigue-zague entre objetos.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Coordenação entre visão, pés e planejamento de percurso — uma atividade completa que também gasta bastante energia física.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Ideal para o período da tarde, quando a energia represada do dia escolar costuma aparecer como agitação em casa.</div>
+      <div class="afoot"><span>Materiais: Uma bola</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>70. Cambalhota</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 2 minutos</span></div>
+      <div class="adesc">A criança rola para frente apoiando a cabeça e as mãos no chão, sempre com supervisão do adulto.</div>
+      <ol><li>Coloque um tapete ou colchonete no chão para segurança.</li><li>Ajude a criança a agachar, apoiar as mãos no chão e a cabeça encostada no peito.</li><li>Auxilie o impulso para que ela role para frente com segurança, terminando sentada.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Um movimento clássico de estímulo vestibular que, quando bem executado, gera grande sensação de conquista e orgulho corporal.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Sempre supervisione fisicamente até a criança dominar o movimento com segurança, apoiando a nuca se necessário.</div>
+      <div class="afoot"><span>Materiais: Um tapete ou colchonete</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>100. Respiração com Bichinho de Pelúcia</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 2 a 3 minutos</span></div>
+      <div class="adesc">Deitada de costas, a criança coloca um bichinho de pelúcia sobre a barriga e observa ele subir e descer com a respiração.</div>
+      <ol><li>Peça para a criança deitar de costas com um bichinho de pelúcia leve sobre a barriga.</li><li>Ela respira devagar, observando o bichinho subir ao inspirar e descer ao expirar.</li><li>Continue por 1 a 2 minutos, num ritmo tranquilo.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O apoio visual do bichinho subindo e descendo facilita muito a compreensão da respiração diafragmática nos menores.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use um bichinho já querido pela criança — o vínculo afetivo com o objeto aumenta a disposição para a prática.</div>
+      <div class="afoot"><span>Materiais: Um bichinho de pelúcia leve</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 11/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 2 · Construindo Ritmo</div><h2>Dia 11 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">Pontos coloridos cruzam a folha, uma palma marca o tempo antes de pegar a bola, a cabeça vira o mundo de ponta-cabeça, e a respiração da abelha vibra e acalma.</div>
+  <div class="progress"><i style="width:36%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>11. Pontos Coloridos Cruzados</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 5 minutos</span></div>
+      <div class="adesc">Pontos coloridos são desenhados nas margens esquerda e direita de uma folha; a criança conecta pontos da mesma cor cruzando o centro do papel.</div>
+      <ol><li>Desenhe pontos coloridos espalhados dos dois lados de uma folha, com cores repetidas de um lado e do outro.</li><li>Peça para a criança ligar pontos da mesma cor com uma linha, sempre cruzando o meio da folha.</li><li>Aumente a dificuldade colocando as cores mais espalhadas ou fora de ordem.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Uma atividade de mesa calma que treina coordenação olho-mão e cruzamento visual sem exigir movimento corporal amplo — ótima para momentos de menor energia.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Para crianças com dificuldade de foco, limite a folha a 4 ou 5 pontos por vez em vez de encher a página toda.</div>
+      <div class="afoot"><span>Materiais: Papel e canetinhas coloridas</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>41. Bater Palma antes de Pegar</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 5 minutos</span></div>
+      <div class="adesc">Antes de agarrar a bola lançada pelo adulto, a criança bate uma ou mais palmas, treinando timing e coordenação olho-mão.</div>
+      <ol><li>Fique a uma distância curta e lance a bola suavemente para a criança.</li><li>Peça para ela bater uma palma antes de pegar a bola no ar.</li><li>Aumente o desafio pedindo duas palmas, ou aumentando a distância do lançamento.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O timing preciso entre bater palma e pegar a bola treina a antecipação e o controle de impulso — parar um movimento automático para inserir outro no meio.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se a criança se frustra ao deixar a bola cair, celebre a tentativa, não só o acerto — isso reduz a associação entre erro e vergonha.</div>
+      <div class="afoot"><span>Materiais: Uma bola macia</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>71. Cabeça para Baixo (Cachorro Olhando)</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–10 anos</span><span><b>Duração:</b> 30 segundos a 1 minuto</span></div>
+      <div class="adesc">Postura de yoga em que a criança forma um 'V' invertido com o corpo e olha para trás, entre as pernas.</div>
+      <ol><li>Peça para a criança apoiar mãos e pés no chão, formando um 'V' invertido com o corpo (postura do cachorro olhando para baixo).</li><li>Depois de se estabilizar, ela olha para trás, entre as próprias pernas.</li><li>Sustente por alguns segundos e volte com calma à posição normal.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> A posição invertida oferece um estímulo vestibular diferente, e a mudança de perspectiva visual costuma trazer risadas e leveza.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use com moderação — para algumas crianças esse estímulo invertido é bastante intenso e deve ser feito só uma ou duas vezes.</div>
+      <div class="afoot"><span>Materiais: Um tapete</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>101. Respiração da Abelha (Bhramari)</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–10 anos</span><span><b>Duração:</b> 1 a 2 minutos</span></div>
+      <div class="adesc">A criança expira fazendo um som de 'zzz' contínuo, como uma abelha, sentindo a vibração do som no corpo.</div>
+      <ol><li>Peça para a criança inspirar fundo pelo nariz.</li><li>Ao expirar, ela faz um som de 'zzz' longo e contínuo, como uma abelha.</li><li>Repita por 4 a 6 ciclos, sentindo a vibração do som.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> A vibração sonora produzida durante a expiração tem efeito calmante reconhecido em práticas de respiração (pranayama), sendo divertida para os pequenos.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Faça em dupla, comparando o som de abelha de cada um — o elemento lúdico aumenta bastante a adesão.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 12/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 2 · Construindo Ritmo</div><h2>Dia 12 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">Fechamos a semana com bolhas de sabão estouradas do lado oposto do corpo, um ritmo passado em roda, um giro cuidadoso e a respiração quente do chocolate imaginário.</div>
+  <div class="progress"><i style="width:40%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>12. Bolha que Atravessa</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–6 anos</span><span><b>Duração:</b> 5 minutos</span></div>
+      <div class="adesc">O adulto sopra bolhas de sabão e a criança as estoura usando a mão do lado oposto do corpo em relação a onde a bolha está.</div>
+      <ol><li>Sopre bolhas de sabão para o lado esquerdo e direito da criança.</li><li>Peça para estourar as bolhas do lado esquerdo com a mão direita, e vice-versa.</li><li>Continue soprando bolhas em diferentes alturas para variar o desafio.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Uma das formas mais divertidas e leves de praticar o cruzamento da linha média com os pequenos, associando o movimento a uma experiência prazerosa.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Excelente para acalmar antes de uma transição difícil (como sair de casa) — o riso ajuda a regular o sistema nervoso.</div>
+      <div class="afoot"><span>Materiais: Frasco de bolhas de sabão</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>42. Passar o Ritmo em Roda</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 5 minutos</span></div>
+      <div class="adesc">Em roda, os participantes passam uma palma (ou um som) em sequência ao redor do círculo, mantendo o ritmo.</div>
+      <ol><li>Forme uma roda com pelo menos 3 pessoas (pode ser em família).</li><li>O primeiro bate uma palma, e a pessoa ao lado bate a palma seguinte, passando a sequência ao redor.</li><li>Aumente a velocidade aos poucos, mantendo o ritmo sem atropelar.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Esperar a própria vez dentro de um ritmo coletivo é um excelente treino de autocontrole e paciência para crianças com birras frequentes.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se a criança tende a se antecipar e falhar em esperar a vez, nomeie isso com carinho antes de começar: 'vamos treinar esperar nossa vez hoje'.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário (funciona melhor em grupo)</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>72. Girar Devagar e Parar</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 1 minuto</span></div>
+      <div class="adesc">A criança gira poucas vezes no próprio eixo e depois para, tentando recuperar o equilíbrio — usar com cautela e moderação.</div>
+      <ol><li>Escolha um espaço aberto e sem obstáculos ao redor.</li><li>Peça para a criança girar devagar, no máximo 3 a 4 voltas.</li><li>Ela para e tenta ficar parada, sentindo o corpo se estabilizar.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Ajuda a criança a perceber e nomear a sensação de desequilíbrio temporário, um exercício útil de tolerância a sensações desconfortáveis passageiras.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Esta atividade é estimulante e deve ser usada com cautela — evite em crianças muito sensíveis a estímulos vestibulares ou próximo da hora de dormir.</div>
+      <div class="afoot"><span>Materiais: Espaço livre e seguro</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>102. Respiração do Chocolate Quente</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 1 a 2 minutos</span></div>
+      <div class="adesc">A criança imagina segurar uma caneca de chocolate quente, cheirando o aroma (inspirando) e soprando para esfriar (expirando).</div>
+      <ol><li>Peça para a criança imaginar segurar uma caneca de chocolate quente com as duas mãos.</li><li>Ela inspira fundo pelo nariz, 'cheirando' o aroma da bebida.</li><li>Expira soprando devagar pela boca, como se esfriasse o chocolate, repetindo por 5 a 6 vezes.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Uma variação afetuosa e sensorial da respiração da flor e da vela, funciona muito bem em dias frios ou antes de dormir.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se possível, ofereça de verdade uma bebida quente segura depois, associando a técnica a um momento de aconchego real.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page weekpage" data-pg="semana 3">
+  <div class="weeknum">Semana 3</div>
+  <h2>Liberando Energia com Segurança</h2>
+  <div class="sub">Dias 13 a 18 — Equilíbrio corporal e primeiras ferramentas emocionais</div>
+  <div class="weekbanner imgph">
+    <div class="ico">🖼️</div>
+    <div class="lbl">Placeholder de imagem · IMG-SEMANA-3</div>
+    <div class="cap">criança em pé sobre uma linha desenhada no chão com os braços abertos, praticando equilíbrio, sorrindo</div>
+  </div>
+  <div class="msg">Na metade do programa, começamos a unir o corpo às emoções de forma mais direta. As atividades desta semana treinam equilíbrio físico ao mesmo tempo em que introduzem as primeiras ferramentas de autorregulação, como o jogo da estátua e a respiração do vulcão. É normal que a criança ainda tenha dias difíceis — o objetivo é prática, não perfeição.</div>
+  <div class="weekdays"><div class="weekday-chip"><b>Dia 13</b>Lavar o Braço Oposto · Empurrar a Parede · Bola de Ginástica (quicar sentado) · Soprar Bolhas</div><div class="weekday-chip"><b>Dia 14</b>Passar a Bola Girando · Abraço de Urso Apertado · Estátua (Congela) · Respiração da Cobra</div><div class="weekday-chip"><b>Dia 15</b>Tocar os Pés Cruzado · Caminhada do Urso · Caminhar sobre Almofadas · Respiração do Coelho</div><div class="weekday-chip"><b>Dia 16</b>Dança do Dab Cruzado · Caminhada do Caranguejo · Dançar Livre · Expiração Longa (4-6)</div><div class="weekday-chip"><b>Dia 17</b>Carimbo Cruzado · Salto da Rã · Pose do Flamingo · Respiração do Vulcão</div><div class="weekday-chip"><b>Dia 18</b>Alcançar Alvos Opostos · Minhoca (Inchworm) · Sobe-e-Desce em Dupla · Bola de Respiração (Hoberman)</div></div>
+</section>
+<section class="page daypage" data-pg="dia 13/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 3 · Liberando Energia com Segurança</div><h2>Dia 13 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">No banho, um braço lava o outro cruzando o centro; na sala, empurramos a parede com força total, quicamos na bola de ginástica e sopramos bolhas bem devagar.</div>
+  <div class="progress"><i style="width:43%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>13. Lavar o Braço Oposto</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–6 anos</span><span><b>Duração:</b> 1 a 2 minutos</span></div>
+      <div class="adesc">Durante o banho, a criança lava um braço usando a mão do lado oposto do corpo, depois troca de lado.</div>
+      <ol><li>No banho, peça para ensaboar o braço esquerdo usando a mão direita.</li><li>Depois, ensaboar o braço direito usando a mão esquerda.</li><li>Repita a mesma ideia nas pernas, se quiser prolongar a prática.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Transforma uma rotina diária já existente em treino de cruzamento da linha média, sem exigir tempo extra — ótimo para famílias com agenda cheia.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Vire ritual fixo do banho: a repetição diária, mesmo curta, é mais eficaz do que sessões longas e esporádicas.</div>
+      <div class="afoot"><span>Materiais: Água e sabonete (no banho)</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>43. Empurrar a Parede</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–10 anos</span><span><b>Duração:</b> 1 minuto</span></div>
+      <div class="adesc">A criança empurra a parede com as duas mãos como se quisesse movê-la, sustentando a força por cerca de 10 segundos.</div>
+      <ol><li>Peça para a criança apoiar as duas mãos na parede, braços semi-flexionados.</li><li>Ela empurra com força total, como se quisesse mover a parede, por 8 a 10 segundos.</li><li>Descanse e repita 3 a 4 vezes.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Um dos exercícios de 'trabalho pesado' mais rápidos e eficazes: o esforço isométrico envia sinais proprioceptivos que organizam e acalmam o sistema nervoso quase imediatamente.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Ensine como estratégia de emergência: assim que perceber os primeiros sinais de explosão de raiva, leve a criança até uma parede e proponha empurrar juntos.</div>
+      <div class="afoot"><span>Materiais: Uma parede</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>73. Bola de Ginástica (quicar sentado)</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–10 anos</span><span><b>Duração:</b> 3 a 5 minutos</span></div>
+      <div class="adesc">Sentada numa bola de ginástica, a criança quica levemente para cima e para baixo, mantendo o equilíbrio.</div>
+      <ol><li>Sente a criança numa bola de ginástica adequada ao tamanho dela, com os pés apoiados no chão.</li><li>Peça para quicar levemente, sem sair do lugar.</li><li>Aumente aos poucos a intensidade conforme ela ganha confiança no equilíbrio.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O movimento constante e o desafio de equilíbrio ajudam crianças que têm dificuldade em ficar sentadas paradas por muito tempo.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Considere trocar a cadeira de estudo por uma bola de ginástica em dias de muita inquietação — o movimento sutil pode aumentar o foco.</div>
+      <div class="afoot"><span>Materiais: Uma bola de ginástica (bola suíça)</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>103. Soprar Bolhas</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 3 a 5 minutos</span></div>
+      <div class="adesc">A criança sopra devagar e de forma controlada para formar bolhas de sabão grandes, em vez de sopros rápidos e curtos.</div>
+      <ol><li>Dê o bastão de bolhas de sabão para a criança.</li><li>Peça para soprar bem devagar e de forma constante, para formar bolhas grandes em vez de várias pequenas.</li><li>Observe juntos as bolhas flutuando e estourando.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Formar bolhas grandes exige naturalmente uma expiração longa e controlada, treinando a respiração de forma lúdica e sem esforço consciente.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Peça para a criança tentar fazer 'a maior bolha do mundo' — o objetivo concreto naturalmente alonga a expiração.</div>
+      <div class="afoot"><span>Materiais: Frasco de bolhas de sabão</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 14/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 3 · Liberando Energia com Segurança</div><h2>Dia 14 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">A bola gira com o tronco, um abraço de urso apertado acalma o corpo, o jogo da estátua treina parar a tempo, e a respiração da cobra alonga cada expiração.</div>
+  <div class="progress"><i style="width:46%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>14. Passar a Bola Girando</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–8 anos</span><span><b>Duração:</b> 5 minutos</span></div>
+      <div class="adesc">Sentada, a criança gira o tronco para passar a bola para o lado, cruzando o centro do corpo a cada passagem.</div>
+      <ol><li>Sente a criança no chão com as pernas cruzadas, segurando a bola à frente do corpo.</li><li>Peça para girar o tronco e passar a bola para o lado direito, depois trazê-la de volta girando para o outro lado.</li><li>Se estiver em dupla, um passa a bola girando para o outro receber.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> A rotação de tronco ativa a musculatura do core junto ao cruzamento da linha média, ajudando na postura e na organização corporal ao sentar.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use uma bola levemente pesada (bola de meia com arroz, por exemplo) para dar mais input proprioceptivo em crianças muito inquietas.</div>
+      <div class="afoot"><span>Materiais: Uma bola pequena ou bola de meia</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>44. Abraço de Urso Apertado</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–10 anos</span><span><b>Duração:</b> 30 segundos a 1 minuto</span></div>
+      <div class="adesc">A criança se abraça apertado sozinha ou recebe um abraço firme e seguro do adulto, sustentando a pressão por alguns segundos.</div>
+      <ol><li>Pergunte à criança se ela quer um abraço apertado (respeite se ela disser não).</li><li>Abrace-a firmemente, com pressão constante e segura, por 15 a 20 segundos.</li><li>Solte aos poucos, perguntando como o corpo dela está se sentindo.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> A pressão profunda ativa o sistema nervoso parassimpático, reduzindo rapidamente os níveis de agitação e ansiedade — uma das ferramentas mais estudadas em terapia ocupacional.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Nunca force o abraço se a criança recusar; ofereça alternativas como um cobertor pesado ou uma almofada para apertar.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>74. Estátua (Congela)</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 3 a 5 minutos</span></div>
+      <div class="adesc">A criança dança livremente e, quando a música para (ou o adulto diz 'congela'), ela deve ficar completamente parada.</div>
+      <ol><li>Toque uma música animada e incentive a criança a dançar livremente.</li><li>Pause a música (ou grite 'congela!') de forma imprevisível.</li><li>A criança deve parar completamente, como uma estátua, até a música voltar.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Um dos jogos mais eficazes para treinar o controle postural e a inibição de impulso de forma divertida, sem parecer uma ordem direta.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Jogue esse jogo regularmente, não só em momentos de crise — o treino preventivo é o que constrói a habilidade de parar a tempo.</div>
+      <div class="afoot"><span>Materiais: Música (opcional)</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>104. Respiração da Cobra</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 1 a 2 minutos</span></div>
+      <div class="adesc">A criança expira fazendo um som longo de 'sssss', como uma cobra, alongando a expiração.</div>
+      <ol><li>Peça para a criança inspirar fundo pelo nariz.</li><li>Ao expirar, ela faz um som longo de 'sssss', como uma cobra, até o ar acabar.</li><li>Repita por 4 a 6 vezes, tentando alongar um pouco mais o som a cada vez.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O som contínuo ajuda a criança a manter a expiração longa sem precisar contar números, sendo ideal para os menores.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Movam o corpo como uma cobra enquanto fazem o som — juntar movimento e respiração aumenta o engajamento.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 15/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 3 · Liberando Energia com Segurança</div><h2>Dia 15 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">Os pés se tocam cruzando o corpo, a caminhada do urso sustenta o peso nos braços, almofadas viram um caminho instável, e a respiração do coelho contrasta rápido e devagar.</div>
+  <div class="progress"><i style="width:50%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>15. Tocar os Pés Cruzado</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 3 minutos</span></div>
+      <div class="adesc">Em pé com as pernas afastadas, a criança toca o pé esquerdo com a mão direita e o pé direito com a mão esquerda.</div>
+      <ol><li>Peça para a criança abrir as pernas na largura dos ombros.</li><li>Ela se inclina e toca o pé esquerdo com a mão direita.</li><li>Volta à posição ereta e repete tocando o pé direito com a mão esquerda, alternando por 8 a 10 vezes.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Somar a flexão de quadril ao cruzamento amplia o alongamento posterior e ajuda a liberar tensão física acumulada, comum em crianças muito agitadas.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se a criança não alcançar o pé, tudo bem tocar o tornozelo ou a canela — o importante é o cruzamento, não a amplitude.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>45. Caminhada do Urso</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–10 anos</span><span><b>Duração:</b> 2 a 3 minutos</span></div>
+      <div class="adesc">A criança anda com as mãos e os pés apoiados no chão e o quadril elevado, como um urso caminhando.</div>
+      <ol><li>Peça para a criança apoiar mãos e pés no chão, com os joelhos levemente afastados do chão.</li><li>Ela caminha para frente movendo mão e pé opostos juntos.</li><li>Faça um pequeno percurso de 3 a 5 metros, ida e volta.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Sustentar o peso do corpo nos braços e pernas é um excelente trabalho pesado que organiza o sistema proprioceptivo antes de tarefas que exigem calma.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se a criança tiver pouca força nos braços, permita pausas com os joelhos no chão antes de continuar.</div>
+      <div class="afoot"><span>Materiais: Espaço livre</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>75. Caminhar sobre Almofadas</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 3 minutos</span></div>
+      <div class="adesc">A criança atravessa um pequeno percurso de almofadas espalhadas pelo chão, superfície instável que exige mais equilíbrio.</div>
+      <ol><li>Espalhe almofadas ou travesseiros formando um pequeno caminho pelo chão.</li><li>Peça para a criança atravessar pisando só nas almofadas, sem tocar o chão.</li><li>Repita o percurso algumas vezes, variando a disposição das almofadas.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> A superfície instável exige ajustes constantes de equilíbrio, mantendo a criança presente e atenta ao próprio corpo.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Transforme em brincadeira de 'lava' (o chão é lava) — a narrativa aumenta muito o engajamento das crianças pequenas.</div>
+      <div class="afoot"><span>Materiais: Almofadas ou travesseiros</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>105. Respiração do Coelho</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 1 minuto</span></div>
+      <div class="adesc">A criança dá três fungadas curtas e rápidas pelo nariz, seguidas de uma expiração longa pela boca, como um coelho cheirando o ar.</div>
+      <ol><li>Peça para a criança fazer três fungadas curtas e rápidas pelo nariz, como um coelho cheirando algo.</li><li>Depois, uma expiração longa e devagar pela boca.</li><li>Repita o ciclo (3 fungadas + 1 expiração longa) de 3 a 4 vezes.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O contraste entre respiração rápida e depois lenta ajuda a criança a sentir na prática a diferença entre um corpo agitado e um corpo calmo.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Ótima opção para crianças muito pequenas que ainda não conseguem sustentar respirações longas desde o início.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 16/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 3 · Liberando Energia com Segurança</div><h2>Dia 16 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">O dab cruzado anima o corpo, o caranguejo desafia os braços, dançar livre solta a energia do dia, e a expiração longa até 6 acalma o sistema nervoso.</div>
+  <div class="progress"><i style="width:53%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>16. Dança do Dab Cruzado</h3>
+      <div class="ameta"><span><b>Idade:</b> 7–10 anos</span><span><b>Duração:</b> 3 a 4 minutos</span></div>
+      <div class="adesc">Os braços cruzam em posição de 'dab' enquanto os pés dão passos laterais, num movimento popular entre crianças maiores.</div>
+      <ol><li>Peça para a criança dobrar um braço na frente do rosto e esticar o outro para trás, na posição de 'dab'.</li><li>Enquanto faz o movimento dos braços, ela dá um passo lateral para o lado do braço esticado.</li><li>Alterne os lados a cada passo, seguindo o ritmo de uma música se quiser.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Por ser um movimento popular e divertido para crianças maiores, aumenta a adesão à prática de coordenação sem parecer 'exercício chato'.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Deixe a criança escolher a música — o senso de autonomia por si só já reduz a resistência típica da fase de 6 a 10 anos.</div>
+      <div class="afoot"><span>Materiais: Música animada (opcional)</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>46. Caminhada do Caranguejo</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–10 anos</span><span><b>Duração:</b> 2 a 3 minutos</span></div>
+      <div class="adesc">A criança anda de barriga para cima, apoiada em mãos e pés, movendo-se como um caranguejo.</div>
+      <ol><li>Peça para a criança sentar, apoiar as mãos atrás do corpo e levantar o quadril.</li><li>Nessa posição, ela caminha para os lados ou para frente, como um caranguejo.</li><li>Faça uma pequena corrida ou percurso com essa caminhada.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Fortalece braços, ombros e core enquanto oferece forte estímulo proprioceptivo, ajudando a organizar crianças com dificuldade de ficar paradas.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Transforme numa corridinha entre irmãos — a competição saudável aumenta a adesão sem gerar comparação negativa.</div>
+      <div class="afoot"><span>Materiais: Espaço livre</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>76. Dançar Livre</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–10 anos</span><span><b>Duração:</b> 5 minutos</span></div>
+      <div class="adesc">A criança move o corpo e a cabeça livremente ao som de uma música que gosta, sem coreografia definida.</div>
+      <ol><li>Escolha uma música que a criança goste bastante.</li><li>Convide-a a dançar do jeito que quiser, sem regras ou coreografia.</li><li>Dance junto, se possível — a participação do adulto aumenta a conexão e a alegria.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O movimento livre e prazeroso é uma das formas mais naturais de regular o humor e liberar emoções acumuladas ao longo do dia.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use como ritual de transição entre a escola e casa, um jeito de 'sacudir' o dia antes de entrar em outra rotina.</div>
+      <div class="afoot"><span>Materiais: Música favorita</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>106. Expiração Longa (4-6)</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 2 a 3 minutos</span></div>
+      <div class="adesc">A criança inspira contando até 4 e expira contando até 6, tornando a saída do ar mais longa que a entrada.</div>
+      <ol><li>Peça para a criança inspirar pelo nariz contando devagar até 4.</li><li>Depois, expirar pela boca contando devagar até 6.</li><li>Repita o ciclo por 5 a 8 vezes, num ritmo tranquilo.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Expirações mais longas que as inspirações ativam de forma mais eficaz o sistema nervoso parassimpático, responsável pela resposta de calma do corpo.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use os dedos da mão para marcar a contagem visualmente, já que crianças pequenas nem sempre conseguem contar mentalmente enquanto respiram.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 17/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 3 · Liberando Energia com Segurança</div><h2>Dia 17 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">Carimbos cruzam a folha, o salto da rã descarrega energia, o flamingo pede equilíbrio numa perna só, e a respiração do vulcão dá uma saída segura para a raiva.</div>
+  <div class="progress"><i style="width:56%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>17. Carimbo Cruzado</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–6 anos</span><span><b>Duração:</b> 5 minutos</span></div>
+      <div class="adesc">A criança carimba ou cola adesivos em figuras posicionadas do lado oposto ao da mão que está usando.</div>
+      <ol><li>Desenhe ou imprima figuras espalhadas nos dois lados de uma folha.</li><li>Peça para a criança usar sempre a mão direita para carimbar as figuras do lado esquerdo, e a mão esquerda para as do lado direito.</li><li>Continue até preencher a folha.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Uma atividade de mesa tranquila, ótima para momentos de menor energia, que ainda assim garante a prática do cruzamento da linha média.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Perfeita para os minutos de 'transição calma' entre a chegada da escola e o início de outra atividade.</div>
+      <div class="afoot"><span>Materiais: Carimbos ou adesivos e uma folha com figuras</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>47. Salto da Rã</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 2 minutos</span></div>
+      <div class="adesc">A criança agacha bem baixo e salta para frente com as duas pernas juntas, como uma rã.</div>
+      <ol><li>Peça para a criança agachar com as mãos no chão entre os pés.</li><li>Ela salta para frente com força, aterrissando agachada novamente.</li><li>Repita por 8 a 10 saltos seguidos.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O salto explosivo é uma excelente forma de descarregar energia física acumulada de maneira segura e rápida.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Ótimo 'intervalo ativo' no meio de tarefas de mesa longas, para evitar que a inquietação vire birra por excesso de tempo parado.</div>
+      <div class="afoot"><span>Materiais: Espaço livre</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>77. Pose do Flamingo</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–8 anos</span><span><b>Duração:</b> 1 a 2 minutos por lado</span></div>
+      <div class="adesc">Equilíbrio numa perna imitando um flamingo, com a outra perna dobrada para trás e os braços abertos.</div>
+      <ol><li>Peça para a criança ficar em pé apoiada numa perna só.</li><li>A outra perna dobra para trás, como um flamingo, com os braços abertos para ajudar no equilíbrio.</li><li>Sustente por alguns segundos e troque de perna.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Uma variação divertida do equilíbrio numa perna só, com apelo lúdico que aumenta o interesse das crianças menores.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Faça sons de flamingo ou combine com uma pequena história sobre a ave para tornar a brincadeira mais envolvente.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>107. Respiração do Vulcão</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–8 anos</span><span><b>Duração:</b> 1 a 2 minutos</span></div>
+      <div class="adesc">As mãos sobem juntas na frente do corpo enquanto a criança inspira, e 'explodem' abrindo para os lados enquanto expira, como um vulcão.</div>
+      <ol><li>Peça para a criança juntar as palmas das mãos na frente do peito.</li><li>Ao inspirar, as mãos sobem juntas até acima da cabeça.</li><li>Ao expirar com força, as mãos 'explodem' abrindo para os lados, como um vulcão soltando fumaça.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O movimento amplo dá uma saída física e visual para a energia da raiva, mostrando que é possível expressar intensidade de forma segura e controlada.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Excelente ferramenta para o início de uma crise de raiva — dá permissão física para 'explodir' de um jeito que não machuca ninguém.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 18/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 3 · Liberando Energia com Segurança</div><h2>Dia 18 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">Fechamos a terceira semana alcançando alvos opostos, caminhando como uma minhoca, balançando como uma gangorra em dupla, e expandindo uma bola de respiração com as duas mãos.</div>
+  <div class="progress"><i style="width:60%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>18. Alcançar Alvos Opostos</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–8 anos</span><span><b>Duração:</b> 5 minutos</span></div>
+      <div class="adesc">Alvos são colados ou desenhados do lado contrário do corpo em relação à mão usada; a criança toca cada alvo com um cotonete ou o dedo.</div>
+      <ol><li>Cole pequenos alvos (bolinhas, estrelas) do lado esquerdo do corpo da criança.</li><li>Peça para tocar cada alvo usando a mão direita, cruzando o centro.</li><li>Troque os alvos para o lado direito e use a mão esquerda.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Precisão + cruzamento treinam simultaneamente a coordenação fina e a comunicação entre os hemisférios cerebrais.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Aumente a distância dos alvos aos poucos — começar fácil evita frustração em crianças com baixa tolerância a erros.</div>
+      <div class="afoot"><span>Materiais: Cotonete, adesivos ou dedo, e alvos desenhados</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>48. Minhoca (Inchworm)</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 2 a 3 minutos</span></div>
+      <div class="adesc">Com as pernas esticadas, as mãos 'caminham' para a frente até a posição de prancha, e depois os pés seguem até as mãos.</div>
+      <ol><li>Peça para a criança ficar em pé e se curvar para tocar o chão com as mãos.</li><li>As mãos caminham para frente até formar uma prancha.</li><li>Depois, os pés dão pequenos passos até se aproximarem das mãos novamente, repetindo o ciclo.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Alonga a cadeia posterior e fortalece braços e core, sendo um exercício de trabalho pesado completo que ajuda a organizar o corpo antes de tarefas de concentração.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Demonstre primeiro devagar — o movimento tem várias etapas e crianças com dificuldade de planejamento motor precisam ver antes de tentar.</div>
+      <div class="afoot"><span>Materiais: Espaço livre</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>78. Sobe-e-Desce em Dupla</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–6 anos</span><span><b>Duração:</b> 3 minutos</span></div>
+      <div class="adesc">Sentados frente a frente, de mãos dadas, os dois participantes se inclinam para trás e para frente alternadamente, como uma gangorra.</div>
+      <ol><li>Sente-se no chão de frente para a criança, com as pernas levemente afastadas e os pés se tocando.</li><li>Deem as mãos e inclinem o corpo para trás e para frente alternadamente, como uma gangorra.</li><li>Repita o movimento ritmado por 1 a 2 minutos, com risadas.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O movimento rítmico e o contato visual constante fortalecem o vínculo entre adulto e criança enquanto oferecem estímulo vestibular suave.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Ótimo momento de reconexão logo após um conflito — o toque seguro e o riso ajudam a 'reparar' a relação depois de uma birra.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>108. Bola de Respiração (Hoberman)</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 2 a 3 minutos</span></div>
+      <div class="adesc">A criança expande a esfera ao inspirar e a contrai ao expirar, acompanhando visualmente o próprio ritmo respiratório.</div>
+      <ol><li>Segure a esfera fechada nas mãos da criança (ou junto com ela).</li><li>Ao inspirar, expandam a esfera juntos, abrindo-a devagar.</li><li>Ao expirar, fechem a esfera devagar, repetindo o ciclo algumas vezes.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O apoio visual concreto e tridimensional facilita muito a compreensão do ritmo respiratório para crianças pequenas ou com dificuldade de abstração.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se não tiver a esfera, um balão de festa (sem encher totalmente) pode ser usado como alternativa parecida.</div>
+      <div class="afoot"><span>Materiais: Uma esfera expansível tipo Hoberman</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page weekpage" data-pg="semana 4">
+  <div class="weeknum">Semana 4</div>
+  <h2>Nomeando Sentimentos</h2>
+  <div class="sub">Dias 19 a 24 — Consciência emocional e funções executivas</div>
+  <div class="weekbanner imgph">
+    <div class="ico">🖼️</div>
+    <div class="lbl">Placeholder de imagem · IMG-SEMANA-4</div>
+    <div class="cap">criança e um adulto sentados no chão conversando calmamente, apontando para um termômetro de emoções colorido desenhado em papel</div>
+  </div>
+  <div class="msg">Esta semana tem um foco mais explícito em vocabulário emocional e autocontrole: nomear o que se sente, esperar a vez, seguir uma regra mesmo quando é difícil. São exatamente as habilidades que costumam faltar em crianças com desobediência crônica — e elas se constroem com prática repetida, não com sermões.</div>
+  <div class="weekdays"><div class="weekday-chip"><b>Dia 19</b>Pintura no Cavalete Amplo · Carrinho de Mão · 5-4-3-2-1 (Cinco Sentidos) · Seguir o Polegar (Padrão H)</div><div class="weekday-chip"><b>Dia 20</b>Volante Imaginário · Carregar Sacolas ou Livros · Pote da Calma (Glitter Jar) · Push-up de Lápis</div><div class="weekday-chip"><b>Dia 21</b>Palminhas Simples · Empurrar Cesto de Roupa · Nomear o Sentimento (Name It to Tame It) · Seguir a Bolha</div><div class="weekday-chip"><b>Dia 22</b>Adoletá / Miss Mary Mack · Cabo de Guerra · Respirar Junto (Coregulação) · Lanterna no Teto</div><div class="weekday-chip"><b>Dia 23</b>Palmas-Coxas-Estalo · Espremer Massinha Firme · Termômetro das Emoções · Bolinha na Canaleta</div><div class="weekday-chip"><b>Dia 24</b>Palma-Estala-Toca (Clap, Snap, Tap) · Vitamina Grossa no Canudo · Safari dos Sentidos · Cartas ao Redor do Oito</div></div>
+</section>
+<section class="page daypage" data-pg="dia 19/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 4 · Nomeando Sentimentos</div><h2>Dia 19 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">Pintar em traços amplos solta o corpo, o carrinho de mão fortalece os braços, os cinco sentidos ancoram no presente, e o polegar guia os olhos devagar.</div>
+  <div class="progress"><i style="width:63%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>19. Pintura no Cavalete Amplo</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–8 anos</span><span><b>Duração:</b> 8 a 10 minutos</span></div>
+      <div class="adesc">Pintando numa folha grande fixada na parede ou num cavalete, a criança alcança os cantos opostos com a mesma mão, cruzando amplamente o corpo.</div>
+      <ol><li>Fixe uma folha grande na parede, numa altura confortável para a criança.</li><li>Peça para pintar traços que vão de um canto ao outro da folha usando a mesma mão.</li><li>Incentive movimentos amplos, sem trocar de mão no meio do traço.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Pintar na vertical amplia o cruzamento da linha média e fortalece a musculatura do ombro, importante para a escrita futura.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Ótima válvula de escape para dias de muita raiva acumulada: os traços grandes e livres ajudam a 'colocar para fora' a energia sem julgamento.</div>
+      <div class="afoot"><span>Materiais: Papel grande, tinta ou giz de cera, superfície vertical</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>49. Carrinho de Mão</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–10 anos</span><span><b>Duração:</b> 1 a 2 minutos</span></div>
+      <div class="adesc">O adulto segura os pés (ou tornozelos) da criança enquanto ela caminha apoiada apenas nas mãos.</div>
+      <ol><li>Peça para a criança apoiar as mãos no chão e o adulto segurar os tornozelos dela, erguendo as pernas.</li><li>A criança caminha para frente usando só os braços, enquanto o adulto acompanha segurando as pernas.</li><li>Faça um trajeto curto de 2 a 3 metros e descanse.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Um dos exercícios de trabalho pesado mais intensos para os braços, muito eficaz para organizar crianças extremamente agitadas em pouco tempo.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Comece com trajetos bem curtos — a força nos braços de crianças pequenas é limitada e frustrar-se rápido reduz o interesse em repetir.</div>
+      <div class="afoot"><span>Materiais: Espaço livre</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>79. 5-4-3-2-1 (Cinco Sentidos)</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 3 a 5 minutos</span></div>
+      <div class="adesc">A criança nomeia, em voz alta ou mentalmente, 5 coisas que vê, 4 que sente no corpo, 3 que ouve, 2 que cheira e 1 que saboreia.</div>
+      <ol><li>Peça para a criança sentar confortavelmente e respirar fundo uma vez.</li><li>Guie devagar: 'me diga 5 coisas que você vê', depois 4 que sente no corpo, 3 que ouve, 2 que cheira e 1 que saboreia.</li><li>Não corrija as respostas — o objetivo é apenas notar, não acertar.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Uma técnica clássica de ancoragem sensorial que traz a atenção da criança de volta ao momento presente, interrompendo o ciclo de pensamentos que alimenta a raiva ou a ansiedade.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use bem no início de uma explosão de raiva, antes que ela escale — quanto mais cedo, mais fácil ainda é interromper o ciclo.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>109. Seguir o Polegar (Padrão H)</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 2 a 3 minutos</span></div>
+      <div class="adesc">A criança move o próprio polegar formando um H, círculos e diagonais no ar, com os olhos seguindo o movimento e a cabeça parada.</div>
+      <ol><li>Peça para a criança esticar o braço à frente com o polegar para cima.</li><li>Ela move o polegar devagar formando um H no ar (para cima, para baixo, para os lados), mantendo a cabeça parada.</li><li>Repita formando círculos e depois diagonais, sempre só com os olhos acompanhando.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Treina o rastreamento ocular suave de forma isolada da cabeça, uma habilidade visual de base importante para acompanhar linhas de texto ao ler.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se a criança mover a cabeça junto, gentilmente lembre 'só os olhinhos se movem' — é comum precisar de alguns lembretes no início.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 20/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 4 · Nomeando Sentimentos</div><h2>Dia 20 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">O volante imaginário cruza as mãos, carregar sacolas de verdade ajuda de verdade, o pote de glitter mostra os pensamentos se acalmando, e o lápis treina o foco de perto.</div>
+  <div class="progress"><i style="width:66%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>20. Volante Imaginário</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–6 anos</span><span><b>Duração:</b> 2 a 3 minutos</span></div>
+      <div class="adesc">A criança 'dirige' um volante grande e imaginário, cruzando as mãos alternadamente sobre o centro do corpo.</div>
+      <ol><li>Peça para a criança segurar um volante imaginário (ou um prato de papelão) à frente do corpo.</li><li>Ela gira o volante para a esquerda e para a direita, cruzando as mãos no processo.</li><li>Brinque de 'dirigir' por uma estrada imaginária cheia de curvas.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Um jeito lúdico e simples de praticar o cruzamento para os menores, encaixando perfeitamente em brincadeiras de faz de conta.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use antes de sair de carro/ônibus — a brincadeira prepara o corpo e ainda distrai de birras de última hora.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário (opcional: prato de papelão)</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>50. Carregar Sacolas ou Livros</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–10 anos</span><span><b>Duração:</b> 3 a 5 minutos</span></div>
+      <div class="adesc">A criança ajuda a carregar sacolas de compras ou uma pilha de livros de um lugar a outro, uma tarefa cotidiana com efeito calmante.</div>
+      <ol><li>Escolha uma sacola ou pilha de peso adequado à idade e força da criança.</li><li>Peça para ela carregar o objeto de um cômodo a outro, ajudando de verdade em uma tarefa real.</li><li>Agradeça pela ajuda genuína, reforçando o senso de contribuição.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O trabalho pesado embutido em tarefas reais organiza o sistema nervoso e ainda constrói senso de competência e pertencimento na família.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Peça ajuda genuína (não só como 'exercício') sempre que possível — sentir-se útil reduz comportamentos de oposição em muitas crianças.</div>
+      <div class="afoot"><span>Materiais: Sacolas de compras ou uma pilha de livros</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>80. Pote da Calma (Glitter Jar)</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–10 anos</span><span><b>Duração:</b> 2 a 3 minutos</span></div>
+      <div class="adesc">A criança chacoalha um pote com glitter e água e observa o glitter assentar devagar enquanto respira, usando o pote como âncora visual.</div>
+      <ol><li>Prepare com antecedência um pote transparente com água, um pouco de cola e glitter (a cola deixa o glitter mais lento para assentar).</li><li>Quando a criança estiver agitada, convide-a a chacoalhar o pote com força.</li><li>Observem juntos o glitter assentando devagar, respirando fundo enquanto isso acontece.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O glitter assentando funciona como metáfora visual concreta de como os pensamentos e sentimentos se acalmam com o tempo, algo abstrato demais para explicar só com palavras.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Deixe o pote sempre visível e acessível no cantinho da calma, para que a criança possa usá-lo sozinha quando precisar.</div>
+      <div class="afoot"><span>Materiais: Um pote transparente com água, glitter e cola</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>110. Push-up de Lápis</h3>
+      <div class="ameta"><span><b>Idade:</b> 6–10 anos</span><span><b>Duração:</b> 2 minutos</span></div>
+      <div class="adesc">A criança aproxima devagar um lápis do próprio nariz, mantendo o foco visual até quase ver a imagem duplicar, depois afasta.</div>
+      <ol><li>Peça para a criança segurar um lápis com o braço esticado à frente do rosto.</li><li>Ela aproxima o lápis devagar do nariz, mantendo os olhos focados nele o tempo todo.</li><li>Quando a imagem começar a duplicar, ela afasta o lápis de volta, repetindo o movimento algumas vezes.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Treina a convergência ocular (a capacidade dos dois olhos trabalharem juntos de perto), uma habilidade visual associada à leitura e à atenção sustentada.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se a criança sentir desconforto ou dor de cabeça, pare e tente novamente em outro momento com menos repetições.</div>
+      <div class="afoot"><span>Materiais: Um lápis</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 21/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 4 · Nomeando Sentimentos</div><h2>Dia 21 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">Palmas simples marcam o ritmo, empurrar o cesto de roupa é trabalho pesado disfarçado de ajuda, nomear o sentimento vem antes de qualquer correção, e os olhos seguem uma bolha no ar.</div>
+  <div class="progress"><i style="width:70%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>21. Palminhas Simples</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–6 anos</span><span><b>Duração:</b> 2 minutos</span></div>
+      <div class="adesc">A criança bate palmas seguindo o ritmo de uma música, do jeito mais simples possível.</div>
+      <ol><li>Escolha uma música com ritmo claro e não muito rápido.</li><li>Bata palmas junto com a criança seguindo o tempo da música.</li><li>Aumente aos poucos a velocidade conforme ela ganha segurança.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Bater palmas no ritmo treina a sincronização motora básica, uma das primeiras habilidades de autorregulação através do corpo.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use como 'sinal sonoro' de transição: bater palmas juntos antes de trocar de atividade ajuda a criança a se preparar para a mudança.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário (opcional: música)</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>51. Empurrar Cesto de Roupa</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 2 a 3 minutos</span></div>
+      <div class="adesc">A criança empurra um cesto de roupa ou caixa com peso leve a moderado pelo chão de um lugar a outro.</div>
+      <ol><li>Coloque algumas roupas ou objetos leves dentro de um cesto ou caixa.</li><li>Peça para a criança empurrar o cesto pelo chão até um ponto combinado.</li><li>Repita o trajeto de ida e volta, ajustando o peso conforme a força dela.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Empurrar contra resistência é uma das formas mais simples de trabalho pesado do dia a dia, com efeito organizador quase imediato.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Aproveite tarefas domésticas reais (organizar o quarto, por exemplo) para embutir esse tipo de esforço sem parecer 'exercício'.</div>
+      <div class="afoot"><span>Materiais: Um cesto ou caixa com algum peso</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>81. Nomear o Sentimento (Name It to Tame It)</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–10 anos</span><span><b>Duração:</b> 2 a 5 minutos</span></div>
+      <div class="adesc">O adulto ajuda a criança a colocar em palavras a emoção que está sentindo, validando antes de tentar resolver.</div>
+      <ol><li>Observe os sinais no corpo da criança (punhos fechados, rosto vermelho, choro) e nomeie em voz calma: 'parece que você está muito bravo agora'.</li><li>Espere a criança confirmar ou corrigir o nome do sentimento.</li><li>Só depois de nomeado e validado, converse sobre o que fazer a seguir.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Segundo o psiquiatra Daniel Siegel, dar nome a uma emoção intensa ativa áreas do cérebro que ajudam a regulá-la — 'nomear para domar'.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Nomeie o sentimento antes de qualquer tentativa de correção de comportamento; tentar ensinar durante a explosão raramente funciona.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>111. Seguir a Bolha</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–6 anos</span><span><b>Duração:</b> 3 minutos</span></div>
+      <div class="adesc">A criança acompanha bolhas de sabão só com os olhos, sem virar a cabeça, até elas estourarem ou tocarem o chão.</div>
+      <ol><li>Sopre uma bolha de sabão devagar.</li><li>Peça para a criança seguir a bolha só com os olhos, mantendo a cabeça parada.</li><li>Repita algumas vezes, variando a direção das bolhas.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Uma forma lúdica e sem esforço aparente de treinar o rastreamento visual suave nos menores, sem parecer um exercício formal.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Sopre as bolhas em diferentes alturas e velocidades para variar o desafio visual.</div>
+      <div class="afoot"><span>Materiais: Frasco de bolhas de sabão</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 22/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 4 · Nomeando Sentimentos</div><h2>Dia 22 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">O jogo de palmas em dupla une ritmo e memória, o cabo de guerra mede força com segurança, respirar junto ensina pelo exemplo, e uma lanterna guia os olhos no escuro.</div>
+  <div class="progress"><i style="width:73%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>22. Adoletá / Miss Mary Mack</h3>
+      <div class="ameta"><span><b>Idade:</b> 6–10 anos</span><span><b>Duração:</b> 5 minutos</span></div>
+      <div class="adesc">Jogo tradicional de palmas em dupla, com uma sequência de mãos cantada, que combina ritmo, memória e cruzamento da linha média.</div>
+      <ol><li>Ensine a sequência básica: palma própria, palma com a mão direita do parceiro, palma própria, palma com a mão esquerda do parceiro.</li><li>Adicione uma cantiga simples no mesmo ritmo da sequência.</li><li>Repita até a dupla conseguir manter o ritmo sem errar, aumentando a velocidade aos poucos.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Combina cruzamento, memória de sequência e conexão social — excelente treino integrado para crianças que têm dificuldade tanto de foco quanto de regular emoções em grupo.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se a criança se frustra ao errar, comece só com duas mãos (sem cantiga) e adicione complexidade progressivamente.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>52. Cabo de Guerra</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 2 a 3 minutos</span></div>
+      <div class="adesc">A criança puxa uma corda ou toalha contra a resistência oferecida pelo adulto, num pequeno cabo de guerra.</div>
+      <ol><li>Segure as duas pontas de uma toalha ou corda, com a criança segurando a outra ponta.</li><li>Peça para ela puxar com força enquanto você oferece resistência controlada.</li><li>Alterne entre puxar e soltar em pequenos ciclos de esforço e descanso.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O esforço muscular sustentado contra resistência é altamente organizador para o sistema proprioceptivo, muito indicado antes de momentos de transição difícil.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Sempre ajuste a resistência para que a criança 'vença' às vezes — o senso de força e capacidade fortalece a autoestima.</div>
+      <div class="afoot"><span>Materiais: Uma corda ou toalha resistente</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>82. Respirar Junto (Coregulação)</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–10 anos</span><span><b>Duração:</b> 1 a 3 minutos</span></div>
+      <div class="adesc">O adulto senta ao lado da criança agitada, com tom de voz calmo, e respira devagar e visivelmente, sem exigir que ela imite de imediato.</div>
+      <ol><li>Aproxime-se da criança em crise mantendo o corpo relaxado e o tom de voz baixo.</li><li>Respire devagar e de forma visível, sem pedir que ela faça o mesmo imediatamente.</li><li>Fique presente e disponível até que o corpo dela comece a acompanhar o seu ritmo, naturalmente.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O sistema nervoso de uma criança se regula, em grande parte, pelo contato com o sistema nervoso calmo de um adulto de confiança — é a base da coregulação.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Lembre-se: sua calma é a ferramenta mais poderosa que você tem durante uma crise, mais do que qualquer palavra ou punição.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>112. Lanterna no Teto</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–8 anos</span><span><b>Duração:</b> 2 a 3 minutos</span></div>
+      <div class="adesc">Num ambiente com pouca luz, a criança segue com os olhos o ponto de luz de uma lanterna projetada no teto ou na parede.</div>
+      <ol><li>Escureça um pouco o ambiente e ligue uma lanterna.</li><li>Mova o feixe de luz devagar pelo teto ou parede, em linhas retas e depois curvas.</li><li>Peça para a criança seguir o ponto de luz só com os olhos, sem apontar ou levantar.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Um jeito calmo e envolvente de treinar o rastreamento visual, especialmente eficaz à noite como parte de uma rotina de desaceleração antes de dormir.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use como parte da rotina noturna, momentos antes de deitar, para ajudar a transição do dia agitado para o sono.</div>
+      <div class="afoot"><span>Materiais: Uma lanterna e um ambiente escurecido</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 23/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 4 · Nomeando Sentimentos</div><h2>Dia 23 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">Palmas, coxas e estalo formam uma sequência, a massinha firme exercita as mãos, o termômetro das emoções dá nome à intensidade, e uma bolinha rola devagar pela calha.</div>
+  <div class="progress"><i style="width:76%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>23. Palmas-Coxas-Estalo</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 3 minutos</span></div>
+      <div class="adesc">Sequência rítmica repetida: bater palmas, bater nas coxas e estalar os dedos, em ciclos.</div>
+      <ol><li>Ensine a sequência: 1 palma, 1 batida nas coxas, 1 estalo de dedos.</li><li>Repita a sequência devagar até a criança memorizar.</li><li>Aumente a velocidade gradualmente, mantendo o ritmo constante.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Sequenciar três movimentos diferentes em ordem fixa treina a memória de trabalho e a inibição de impulso ao mesmo tempo.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se estalar os dedos for difícil, substitua por uma batida no peito — o importante é manter os três tempos diferentes.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>53. Espremer Massinha Firme</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–10 anos</span><span><b>Duração:</b> 3 a 5 minutos</span></div>
+      <div class="adesc">A criança aperta e estica repetidamente uma massinha bem firme, exercitando a força das mãos.</div>
+      <ol><li>Dê uma bola de massinha firme (ou theraputty) para a criança.</li><li>Peça para apertar bem forte com a mão fechada, depois abrir os dedos esticando a massinha.</li><li>Repita o ciclo de apertar e esticar por alguns minutos, trocando de mão.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Um exercício discreto e portátil de trabalho pesado nas mãos, ótimo para momentos de espera ou ansiedade fora de casa.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Mantenha um potinho de massinha na bolsa ou na mochila escolar como ferramenta de autorregulação disponível a qualquer momento.</div>
+      <div class="afoot"><span>Materiais: Massinha firme ou theraputty</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>83. Termômetro das Emoções</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–10 anos</span><span><b>Duração:</b> 2 minutos</span></div>
+      <div class="adesc">A criança aponta, num termômetro desenhado com cores do calmo ao explosivo, como está se sentindo naquele momento.</div>
+      <ol><li>Desenhe (ou imprima) um termômetro com faixas de cor: verde (calmo), amarelo (agitado), laranja (muito agitado) e vermelho (explosão).</li><li>Pergunte à criança, algumas vezes ao dia, em que cor ela está.</li><li>Use a resposta para decidir juntos qual estratégia de regulação usar naquele momento.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Dá à criança um vocabulário visual e concreto para identificar a própria intensidade emocional antes de perder o controle — o primeiro passo da autorregulação.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use o termômetro em momentos calmos também, não só em crises, para que a criança se familiarize com a ferramenta antes de precisar dela de verdade.</div>
+      <div class="afoot"><span>Materiais: Um termômetro desenhado em papel</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>113. Bolinha na Canaleta</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–8 anos</span><span><b>Duração:</b> 3 minutos</span></div>
+      <div class="adesc">A criança rola uma bolinha por uma calha (feita de um pool noodle cortado ao meio) e a segue com o olhar até o final.</div>
+      <ol><li>Corte um pool noodle ao meio no sentido do comprimento, formando uma calha.</li><li>Incline levemente a calha e solte uma bolinha pequena numa das pontas.</li><li>Peça para a criança seguir a bolinha com os olhos até ela chegar ao final.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O movimento previsível e constante da bolinha é ideal para treinar o rastreamento visual suave de forma tranquila e repetitiva.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Deixe a criança soltar a própria bolinha e cronometrar o tempo — o senso de controle aumenta o engajamento na atividade.</div>
+      <div class="afoot"><span>Materiais: Uma calha de pool noodle cortada ao meio e uma bolinha</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 24/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 4 · Nomeando Sentimentos</div><h2>Dia 24 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">A sequência de palma-estala-toca acelera aos poucos, uma vitamina grossa exercita a boca, um passeio de atenção plena nota cada detalhe, e cartas seguem o caminho do oito.</div>
+  <div class="progress"><i style="width:80%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>24. Palma-Estala-Toca (Clap, Snap, Tap)</h3>
+      <div class="ameta"><span><b>Idade:</b> 6–10 anos</span><span><b>Duração:</b> 3 a 4 minutos</span></div>
+      <div class="adesc">Sequência rítmica de bater palma, estalar os dedos e tocar a mesa (ou o corpo), que vai ficando mais rápida a cada rodada.</div>
+      <ol><li>Ensine a sequência: bater palma, estalar os dedos, tocar a mesa com as duas mãos.</li><li>Repita algumas vezes num ritmo constante e tranquilo.</li><li>A cada rodada completa, aumente um pouco a velocidade, como um jogo de 'quem aguenta mais'.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O aumento progressivo de velocidade exige atenção sustentada e ajuda a treinar a tolerância à frustração de forma lúdica quando o ritmo falha.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Rir do próprio erro junto com a criança modela que errar faz parte do processo — importante para quem tem baixa tolerância à frustração.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>54. Vitamina Grossa no Canudo</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 3 a 5 minutos</span></div>
+      <div class="adesc">A criança suga um líquido espesso, como iogurte ou smoothie, através de um canudo, exigindo esforço oral maior que o normal.</div>
+      <ol><li>Prepare um smoothie ou iogurte líquido espesso num copo com canudo.</li><li>Peça para a criança sugar devagar, sentindo o esforço na boca.</li><li>Aproveite o momento para conversar tranquilamente enquanto ela bebe.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O esforço de sucção oferece input proprioceptivo pela musculatura da boca, com efeito calmante reconhecido em terapia ocupacional para crianças agitadas.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Ótimo como lanche calmante antes do dever de casa ou de outra tarefa que exija concentração.</div>
+      <div class="afoot"><span>Materiais: Um líquido espesso (iogurte, smoothie) e um canudo</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>84. Safari dos Sentidos</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–10 anos</span><span><b>Duração:</b> 10 a 15 minutos</span></div>
+      <div class="adesc">Um passeio ao ar livre em que a criança é convidada a notar o máximo de detalhes, sons e pequenas criaturas ao redor.</div>
+      <ol><li>Escolha um espaço externo seguro, como um quintal, praça ou parque.</li><li>Convide a criança a caminhar devagar, notando cores, texturas, sons e cheiros diferentes.</li><li>Pergunte de vez em quando: 'o que você está notando agora?'</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Caminhar com atenção plena na natureza reduz níveis de estresse e melhora o foco, com efeitos documentados mesmo em passeios curtos.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Resista à tentação de apressar o passeio — o valor está justamente na lentidão e na atenção aos detalhes.</div>
+      <div class="afoot"><span>Materiais: Espaço externo (quintal, praça, parque)</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>114. Cartas ao Redor do Oito</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 3 minutos</span></div>
+      <div class="adesc">A criança move cartas de baralho ao longo do caminho de um oito deitado desenhado no chão ou na mesa, acompanhando com os olhos.</div>
+      <ol><li>Desenhe um oito deitado grande numa folha ou no chão com giz.</li><li>Peça para a criança mover uma carta devagar seguindo o contorno do oito.</li><li>Os olhos acompanham a carta o tempo todo, sem virar a cabeça bruscamente.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Une o cruzamento da linha média ao treino de rastreamento visual, reforçando duas habilidades ao mesmo tempo numa única atividade.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Peça para a criança nomear o naipe ou número da carta ao passar por pontos específicos do oito, somando um desafio de atenção.</div>
+      <div class="afoot"><span>Materiais: Um oito deitado desenhado grande e algumas cartas de baralho</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page weekpage" data-pg="semana 5">
+  <div class="weeknum">Semana 5</div>
+  <h2>Colhendo a Calma</h2>
+  <div class="sub">Dias 25 a 30 — Consolidando o que foi praticado</div>
+  <div class="weekbanner imgph">
+    <div class="ico">🖼️</div>
+    <div class="lbl">Placeholder de imagem · IMG-SEMANA-5</div>
+    <div class="cap">criança deitada tranquila em um tapete macio ao ar livre, pés descalços na grama, expressão serena, entardecer suave</div>
+  </div>
+  <div class="msg">Na última semana, muitas das ferramentas praticadas nos últimos 24 dias começam a aparecer sozinhas, sem que você precise pedir. Continue oferecendo as atividades com a mesma constância — a regulação emocional infantil não é uma linha reta, e alguns dias vão parecer um recomeço. Isso também faz parte do processo.</div>
+  <div class="weekdays"><div class="weekday-chip"><b>Dia 25</b>Espelho de Movimentos (Mirroring) · Apertar Bolinha Antiestresse · Charadas de Emoções · Respiração + Movimento Ocular</div><div class="weekday-chip"><b>Dia 26</b>Pular Corda · Prancha (segurar) · Cantinho da Calma · Genius / Simon (sequência de cores)</div><div class="weekday-chip"><b>Dia 27</b>Amarelinha · Aspirar ou Passar Pano · Escuta Ativa ('Estou aqui') · 'Fui à Feira e Comprei...'</div><div class="weekday-chip"><b>Dia 28</b>Polichinelos · Rastejar como Cobra · Sentir os Batimentos · Simon Diz</div><div class="weekday-chip"><b>Dia 29</b>Polichinelo Cruzado (Cross-Country) · Empurrar-se na Cadeira · Empurrar os Pés no Chão (Aterramento) · Copo Mágico</div><div class="weekday-chip"><b>Dia 30</b>Tamborilar com as Duas Mãos · Rolinho no Cobertor · Pés Descalços na Grama · Telefone sem Fio</div></div>
+</section>
+<section class="page daypage" data-pg="dia 25/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 5 · Colhendo a Calma</div><h2>Dia 25 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">Fechamos a quarta semana com o espelho de movimentos, uma bolinha antiestresse sempre à mão, charadas de emoções pelo corpo, e a respiração acompanhando o olhar de um lado ao outro.</div>
+  <div class="progress"><i style="width:83%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>25. Espelho de Movimentos (Mirroring)</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–10 anos</span><span><b>Duração:</b> 5 minutos</span></div>
+      <div class="adesc">Um participante lidera movimentos lentos enquanto o outro copia como se fosse um espelho, alternando os papéis depois.</div>
+      <ol><li>Fiquem de frente um para o outro, a uma distância de um braço.</li><li>Um lidera com movimentos lentos (levantar braço, virar a cabeça, agachar) enquanto o outro copia como espelho.</li><li>Depois de 1 a 2 minutos, troquem os papéis de líder e espelho.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Exige atenção total ao parceiro e imitação motora precisa, fortalecendo tanto o foco quanto a conexão emocional entre adulto e criança.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Ótimo momento de conexão antes de uma conversa difícil — o jogo cria proximidade e reduz a defensividade da criança.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>55. Apertar Bolinha Antiestresse</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–10 anos</span><span><b>Duração:</b> 2 a 5 minutos</span></div>
+      <div class="adesc">A criança aperta repetidamente uma bolinha macia com a mão, num movimento simples e repetitivo.</div>
+      <ol><li>Dê uma bolinha antiestresse (ou uma bexiga cheia de farinha, como alternativa caseira) para a criança.</li><li>Peça para apertar com força e soltar, repetindo o movimento.</li><li>Deixe que ela use livremente sempre que sentir necessidade, sem regras rígidas de tempo.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Um recurso simples e sempre disponível de autorregulação através das mãos, útil em qualquer ambiente, inclusive na escola.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Tenha uma bolinha guardada na mochila e outra em casa — a disponibilidade constante é o que faz a ferramenta funcionar nos momentos certos.</div>
+      <div class="afoot"><span>Materiais: Uma bolinha antiestresse ou similar macio</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>85. Charadas de Emoções</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–10 anos</span><span><b>Duração:</b> 5 a 10 minutos</span></div>
+      <div class="adesc">Um participante representa uma emoção só com o corpo e o rosto, sem falar, e o outro tenta adivinhar qual é.</div>
+      <ol><li>Escreva algumas emoções em pedaços de papel (alegria, raiva, medo, tristeza, surpresa).</li><li>Um participante sorteia um papel e representa a emoção só com corpo e expressão facial, sem falar.</li><li>O outro tenta adivinhar; depois trocam os papéis.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Reconhecer emoções na linguagem corporal do outro amplia o vocabulário emocional da criança e sua capacidade de se colocar no lugar do outro.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Inclua emoções mais sutis (frustração, vergonha, orgulho) conforme a criança cresce — isso amplia o repertório além do básico.</div>
+      <div class="afoot"><span>Materiais: Cartões com nomes de emoções (opcional)</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>115. Respiração + Movimento Ocular</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 2 minutos</span></div>
+      <div class="adesc">A criança inspira olhando para um lado e expira olhando para o lado oposto, unindo respiração e rastreamento suave.</div>
+      <ol><li>Peça para a criança olhar para a esquerda enquanto inspira devagar.</li><li>Ela olha para a direita enquanto expira devagar.</li><li>Repita o ciclo por 5 a 6 vezes, mantendo a cabeça parada, só os olhos se movendo.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Combina dois recursos regulatórios numa só prática — a calma da respiração e a organização visual do rastreamento — potencializando o efeito de ambos.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use bem devagar no início; se a criança sentir tontura, reduza a amplitude do movimento dos olhos.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 26/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 5 · Colhendo a Calma</div><h2>Dia 26 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">Pular corda libera bastante energia física, a prancha organiza o corpo em segundos, o cantinho da calma acolhe quando é preciso, e um jogo de memória desafia com cores.</div>
+  <div class="progress"><i style="width:86%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>26. Pular Corda</h3>
+      <div class="ameta"><span><b>Idade:</b> 6–10 anos</span><span><b>Duração:</b> 5 a 8 minutos</span></div>
+      <div class="adesc">Pular corda coordena braços e pernas em ritmo constante, exigindo sincronização de todo o corpo.</div>
+      <ol><li>Ajude a criança a encontrar o comprimento certo da corda para a altura dela.</li><li>Comece sem pular, apenas girando a corda para trás e passando por cima com um passo.</li><li>Depois de pegar o jeito, avance para o pulo contínuo, contando os pulos em voz alta.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> A coordenação rítmica de todo o corpo libera bastante energia física, sendo uma das atividades mais eficazes para descarregar agitação acumulada.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use como 'válvula de escape' logo após um momento de frustração — o esforço físico intenso ajuda a metabolizar a emoção antes de conversar sobre ela.</div>
+      <div class="afoot"><span>Materiais: Uma corda de pular</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>56. Prancha (segurar)</h3>
+      <div class="ameta"><span><b>Idade:</b> 6–10 anos</span><span><b>Duração:</b> 20 a 30 segundos</span></div>
+      <div class="adesc">A criança se apoia nos antebraços e pontas dos pés, mantendo o corpo reto na posição de prancha por alguns segundos.</div>
+      <ol><li>Peça para a criança se apoiar nos antebraços e pontas dos pés, corpo reto como uma tábua.</li><li>Ajude a manter os quadris alinhados, nem muito altos nem caídos.</li><li>Sustente a posição por 10 a 20 segundos, descanse e repita 2 a 3 vezes.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> A descarga de peso sustentada nas articulações organiza o sistema proprioceptivo de forma intensa em pouco tempo, sendo ótima antes de tarefas de concentração.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Transforme em desafio contando junto em voz alta — contar dá previsibilidade e ajuda a sustentar o esforço até o fim.</div>
+      <div class="afoot"><span>Materiais: Um tapete</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>86. Cantinho da Calma</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–10 anos</span><span><b>Duração:</b> Livre, conforme a necessidade</span></div>
+      <div class="adesc">Um espaço fixo em casa, com luz baixa, almofadas e objetos de conforto, para onde a criança pode ir se regular quando precisar.</div>
+      <ol><li>Escolha um cantinho tranquilo da casa e monte com almofadas, um cobertor macio e alguns objetos de conforto (pelúcia, pote da calma, livro).</li><li>Apresente o espaço em um momento calmo, explicando que ele é para se acalmar, não um castigo.</li><li>Convide a criança a usá-lo sempre que sentir necessidade, sozinha ou acompanhada.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Ter um espaço físico e previsível dedicado à autorregulação ensina que sentir emoções fortes é normal e que existe um lugar seguro para atravessá-las.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Nunca use o cantinho da calma como punição ('vá pro seu quarto pensar no que fez') — isso destrói a função regulatória do espaço.</div>
+      <div class="afoot"><span>Materiais: Um espaço com almofadas, luz baixa e objetos de conforto</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>116. Genius / Simon (sequência de cores)</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 5 a 10 minutos</span></div>
+      <div class="adesc">A criança precisa repetir sequências crescentes de cores ou sons, treinando diretamente a memória de trabalho.</div>
+      <ol><li>Use o brinquedo eletrônico Genius/Simon, ou crie uma versão caseira com 4 cartões coloridos.</li><li>Mostre uma sequência curta de cores (ou toque os cartões numa ordem) e peça para a criança repetir.</li><li>Aumente a sequência em uma cor a cada rodada bem-sucedida.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Repetir sequências cada vez maiores é um dos treinos mais diretos de memória de trabalho, função executiva central para seguir instruções de vários passos.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se a criança errar, volte ao tamanho de sequência anterior antes de tentar aumentar de novo — o sucesso constante mantém a motivação.</div>
+      <div class="afoot"><span>Materiais: Um jogo Genius/Simon ou cartões coloridos</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 27/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 5 · Colhendo a Calma</div><h2>Dia 27 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">A amarelinha combina salto e sequência numérica, tarefas domésticas de verdade fortalecem o corpo, escutar com atenção total fortalece o vínculo, e uma lista crescente desafia a memória.</div>
+  <div class="progress"><i style="width:90%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>27. Amarelinha</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–10 anos</span><span><b>Duração:</b> 5 a 8 minutos</span></div>
+      <div class="adesc">A criança pula com os pés juntos ou separados seguindo a sequência numerada desenhada no chão.</div>
+      <ol><li>Desenhe a amarelinha tradicional no chão com giz ou fita.</li><li>Explique a sequência: pé único nos números sozinhos, pés juntos nos números duplos.</li><li>Deixe a criança pular a sequência, ajudando a contar em voz alta.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Uma brincadeira clássica que combina coordenação bilateral, equilíbrio e sequenciamento numérico de forma natural e prazerosa.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Desenhe a amarelinha junto com a criança — o ato de criar a brincadeira já reduz a resistência em participar dela.</div>
+      <div class="afoot"><span>Materiais: Giz para desenhar no chão (ou fita adesiva)</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>57. Aspirar ou Passar Pano</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 5 minutos</span></div>
+      <div class="adesc">A criança participa de tarefas domésticas de resistência, como aspirar o chão ou passar pano, empurrando o equipamento com força.</div>
+      <ol><li>Escolha uma área pequena e segura para a criança limpar.</li><li>Mostre como segurar e empurrar o aspirador ou o pano com firmeza.</li><li>Deixe-a fazer a tarefa de verdade, mesmo que não fique perfeita.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Tarefas domésticas de resistência são trabalho pesado disfarçado de contribuição real, unindo regulação sensorial e senso de responsabilidade.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Evite corrigir o resultado na frente da criança — o valor está no esforço e na participação, não na perfeição do serviço.</div>
+      <div class="afoot"><span>Materiais: Aspirador ou pano de chão</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>87. Escuta Ativa ('Estou aqui')</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–10 anos</span><span><b>Duração:</b> 2 a 5 minutos</span></div>
+      <div class="adesc">O adulto se abaixa ao nível dos olhos da criança e diz claramente que está ali para ouvir, sem interromper ou corrigir de imediato.</div>
+      <ol><li>Abaixe-se fisicamente até ficar no nível dos olhos da criança.</li><li>Diga com calma: 'estou aqui, quero te ouvir'.</li><li>Escute sem interromper, corrigir ou tentar resolver antes que ela termine de falar.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> A postura física de igualdade e a escuta sem julgamento imediato comunicam segurança relacional, o ingrediente central da coregulação emocional.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Resista ao impulso de corrigir o comportamento no mesmo momento — primeiro conecte-se, depois oriente.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>117. 'Fui à Feira e Comprei...'</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 5 a 10 minutos</span></div>
+      <div class="adesc">Jogo em que cada participante repete a lista de itens já ditos e adiciona um novo item ao final, num ciclo crescente.</div>
+      <ol><li>Comece dizendo: 'fui à feira e comprei uma maçã'.</li><li>O próximo jogador repete o item anterior e adiciona um novo: 'fui à feira e comprei uma maçã e uma banana'.</li><li>Continue a rodada, cada um repetindo a lista toda e somando um item novo.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Um clássico jogo de memória verbal que pode ser jogado em qualquer lugar (fila, carro, mesa de jantar) sem nenhum material.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Adapte o tema conforme o interesse da criança ('fui ao zoológico e vi...') para manter o engajamento ao longo dos 30 dias.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 28/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 5 · Colhendo a Calma</div><h2>Dia 28 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">Polichinelos regulam rápido o sistema nervoso, rastejar como cobra oferece contato com o chão, sentir o próprio coração ensina a perceber sinais internos, e 'Simon diz' treina esperar antes de agir.</div>
+  <div class="progress"><i style="width:93%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>28. Polichinelos</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 2 a 3 minutos</span></div>
+      <div class="adesc">Braços e pernas abrem e fecham juntos em saltos repetidos, um clássico aquecimento de educação física.</div>
+      <ol><li>Peça para a criança ficar em pé com os braços ao lado do corpo.</li><li>Ao saltar, ela abre pernas e braços ao mesmo tempo.</li><li>No salto seguinte, fecha tudo de volta, repetindo por 10 a 15 vezes.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Movimento simétrico de alta energia que ajuda a regular o sistema nervoso rapidamente antes de tarefas que exigem calma, como o dever de casa.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use como 'reset' de 1 minuto sempre que perceber que a energia da criança está subindo antes de virar birra.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>58. Rastejar como Cobra</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 2 minutos</span></div>
+      <div class="adesc">A criança desliza pelo chão de barriga para baixo, usando braços e corpo para se impulsionar como uma cobra.</div>
+      <ol><li>Peça para a criança deitar de barriga para baixo no chão.</li><li>Ela usa os braços e a torção do corpo para se impulsionar para frente, como uma cobra.</li><li>Faça um pequeno percurso, incentivando o movimento sinuoso do corpo.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O atrito do corpo contra o chão oferece input tátil e proprioceptivo simultâneo, com efeito organizador para o sistema sensorial.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Ótima brincadeira de 'esconde-esconde rastejando' para tornar o exercício ainda mais envolvente.</div>
+      <div class="afoot"><span>Materiais: Espaço livre no chão</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>88. Sentir os Batimentos</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 2 minutos</span></div>
+      <div class="adesc">Depois de correr no lugar por 1 minuto, a criança coloca a mão no peito e presta atenção nos próprios batimentos cardíacos.</div>
+      <ol><li>Peça para a criança correr no lugar por cerca de 1 minuto, com energia.</li><li>Pare e peça para colocar a mão sobre o peito.</li><li>Fiquem em silêncio por alguns segundos, sentindo o coração bater e ir se acalmando aos poucos.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Perceber conscientemente as sensações internas do corpo (interocepção) é uma habilidade central para identificar emoções antes que elas virem explosões.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Compare o antes e o depois com a criança: 'seu coração estava rápido, e agora?' — isso constrói o vocabulário da autopercepção.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>118. Simon Diz</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–10 anos</span><span><b>Duração:</b> 5 a 8 minutos</span></div>
+      <div class="adesc">A criança só deve seguir os comandos do adulto quando eles começarem com a frase 'Simon diz'; comandos sem essa frase devem ser ignorados.</div>
+      <ol><li>Explique a regra: só vale seguir o comando se começar com 'Simon diz'.</li><li>Dê comandos alternando com e sem a frase mágica: 'Simon diz toque no nariz' / 'pule'.</li><li>Quem seguir um comando sem 'Simon diz' aprende com uma risada, sem punição, e o jogo continua.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Treina simultaneamente a escuta atenta, a memória da regra e, principalmente, a inibição de resposta automática — a habilidade que mais falta em crianças com desobediência crônica.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Jogue esse jogo regularmente como treino preventivo, não como teste — o objetivo é praticar a pausa antes de agir, não pegar a criança errando.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 29/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 5 · Colhendo a Calma</div><h2>Dia 29 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">O polichinelo cruzado desafia o planejamento motor, empurrar o corpo na cadeira fortalece os braços, sentir os pés no chão ancora no presente, e um copo escondido desafia a atenção.</div>
+  <div class="progress"><i style="width:96%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>29. Polichinelo Cruzado (Cross-Country)</h3>
+      <div class="ameta"><span><b>Idade:</b> 7–10 anos</span><span><b>Duração:</b> 3 minutos</span></div>
+      <div class="adesc">Variação do polichinelo em que o braço e a perna do mesmo lado avançam juntos para a frente, depois trocam.</div>
+      <ol><li>Peça para a criança saltar levando o braço direito e a perna esquerda para a frente ao mesmo tempo.</li><li>No salto seguinte, troca para braço esquerdo e perna direita.</li><li>Repita alternando por 10 a 12 saltos, mantendo o ritmo.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Exige mais planejamento motor que o polichinelo comum, sendo um bom desafio para crianças maiores que já dominam a versão simples.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Se a criança se enrolar toda hora, comece devagar em câmera lenta antes de acelerar — o padrão motor precisa ser aprendido antes de ganhar velocidade.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>59. Empurrar-se na Cadeira</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 1 a 2 minutos</span></div>
+      <div class="adesc">Sentada, a criança apoia as mãos no assento ao lado do corpo e eleva o próprio corpo, sustentando o peso nos braços.</div>
+      <ol><li>Sente a criança numa cadeira firme, com as mãos apoiadas no assento ao lado das pernas.</li><li>Peça para empurrar com os braços, elevando o corpo alguns centímetros do assento.</li><li>Sustente por 3 a 5 segundos e desça com controle, repetindo algumas vezes.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Um exercício de trabalho pesado que pode ser feito sentado à mesa, ótimo para intervalos rápidos durante tarefas escolares.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use como 'pausa ativa' de 30 segundos no meio do dever de casa sempre que perceber sinais de inquietação.</div>
+      <div class="afoot"><span>Materiais: Uma cadeira firme</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>89. Empurrar os Pés no Chão (Aterramento)</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–10 anos</span><span><b>Duração:</b> 1 a 2 minutos</span></div>
+      <div class="adesc">A criança fica em pé ou sentada e sente os pés firmemente apoiados no chão, imaginando raízes crescendo deles.</div>
+      <ol><li>Peça para a criança ficar em pé ou sentada com os pés bem apoiados no chão.</li><li>Peça para empurrar os pés contra o chão com firmeza, como se tivesse raízes crescendo deles.</li><li>Fiquem juntos por alguns segundos sentindo essa sensação de estar 'plantado' e firme.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O aterramento (grounding) usa a sensação física de estabilidade para ajudar a mente a se sentir segura, sendo eficaz mesmo em espaços pequenos como uma sala de aula.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Ensine essa técnica como recurso discreto para usar na escola, sem que ninguém mais perceba o que está acontecendo.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>119. Copo Mágico</h3>
+      <div class="ameta"><span><b>Idade:</b> 4–8 anos</span><span><b>Duração:</b> 5 minutos</span></div>
+      <div class="adesc">O adulto embaralha três copos virados de cabeça para baixo, um deles escondendo uma bolinha, e a criança tenta adivinhar onde ela está.</div>
+      <ol><li>Coloque uma bolinha pequena embaixo de um dos três copos virados.</li><li>Embaralhe os copos devagar, trocando as posições algumas vezes.</li><li>Peça para a criança apontar onde acha que está a bolinha.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Acompanhar visualmente um objeto em movimento entre distratores treina a atenção sustentada e o rastreamento visual de forma competitiva e divertida.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Comece embaralhando bem devagar e poucas vezes, aumentando a dificuldade só conforme a criança ganha confiança.</div>
+      <div class="afoot"><span>Materiais: Três copos opacos e uma bolinha pequena</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page daypage" data-pg="dia 30/30">
+  <div class="dayhead">
+    <div><div class="dtag">Semana 5 · Colhendo a Calma</div><h2>Dia 30 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+  </div>
+  <div class="dayintro">No último dia, tamborilamos as duas mãos com discrição, nos enrolamos com carinho num cobertor, sentimos a grama descalços e passamos uma mensagem sussurrada — encerrando os 30 dias com leveza e conexão.</div>
+  <div class="progress"><i style="width:100%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordenação</span></div>
+      <h3>30. Tamborilar com as Duas Mãos</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 3 minutos</span></div>
+      <div class="adesc">A criança toca um ritmo numa superfície alternando as mãos, como um pequeno tambor.</div>
+      <ol><li>Sente a criança à mesa e mostre um ritmo simples alternando as mãos (esquerda-direita-esquerda-direita).</li><li>Peça para ela repetir o mesmo ritmo.</li><li>Vá variando o ritmo (mais rápido, mais devagar, com pausas) e peça para ela imitar.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Um jeito discreto e silencioso o suficiente de praticar coordenação bilateral, útil até mesmo em ambientes como a sala de aula ou o carro.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Ensine essa como 'estratégia secreta' para momentos de ansiedade fora de casa — pode ser feita debaixo da mesa, sem chamar atenção.</div>
+      <div class="afoot"><span>Materiais: Uma mesa ou superfície para tamborilar</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Força & Propriocepção</span></div>
+      <h3>60. Rolinho no Cobertor</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–8 anos</span><span><b>Duração:</b> 3 a 5 minutos</span></div>
+      <div class="adesc">A criança se deita numa ponta do cobertor e é enrolada firmemente como um rolinho, depois se desenrola devagar.</div>
+      <ol><li>Estenda um cobertor no chão e peça para a criança deitar numa das pontas, com os braços junto ao corpo.</li><li>Enrole o cobertor ao redor dela com firmeza (sem apertar o rosto), como um rolinho.</li><li>Deixe-a sentir a pressão por alguns segundos e depois se desenrolar devagar, ou ajude a desenrolar.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> A pressão profunda e constante do cobertor tem efeito calmante comparável ao de um abraço apertado, muito útil antes de dormir ou após uma crise.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Sempre pergunte antes e observe sinais de desconforto — a criança deve poder sair do rolinho a qualquer momento que quiser.</div>
+      <div class="afoot"><span>Materiais: Um cobertor ou toalha grande</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Regulação Emocional</span></div>
+      <h3>90. Pés Descalços na Grama</h3>
+      <div class="ameta"><span><b>Idade:</b> 3–10 anos</span><span><b>Duração:</b> 5 a 10 minutos</span></div>
+      <div class="adesc">A criança caminha descalça sobre a grama, sentindo as diferentes texturas do chão como forma de aterramento sensorial.</div>
+      <ol><li>Escolha uma área externa segura, com grama limpa e sem objetos perigosos.</li><li>Peça para a criança tirar os sapatos e caminhar devagar sobre a grama.</li><li>Pergunte o que ela está sentindo nos pés, incentivando a atenção às texturas.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> O contato direto dos pés com a natureza é uma forma simples e gratuita de aterramento sensorial, associada à redução do estresse.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Combine com a atividade 'Safari dos Sentidos' para uma experiência sensorial ainda mais completa ao ar livre.</div>
+      <div class="afoot"><span>Materiais: Um gramado ou área externa segura</span><label><input type="checkbox"/> Feito</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Respiração & Foco</span></div>
+      <h3>120. Telefone sem Fio</h3>
+      <div class="ameta"><span><b>Idade:</b> 5–10 anos</span><span><b>Duração:</b> 5 a 10 minutos</span></div>
+      <div class="adesc">Uma mensagem é sussurrada de pessoa em pessoa ao longo de uma fila ou roda, até chegar ao último, que diz em voz alta o que ouviu.</div>
+      <ol><li>Formem uma fila ou roda com pelo menos 3 pessoas.</li><li>O primeiro sussurra uma frase curta no ouvido do próximo, que repassa adiante da mesma forma.</li><li>O último diz em voz alta o que ouviu, e comparam com a frase original.</li></ol>
+      <div class="abox"><b>Por que funciona:</b> Exige atenção auditiva total a um estímulo sussurrado uma única vez, treinando escuta ativa e memória de curto prazo de forma divertida.</div>
+      <div class="abox"><b>Dica p/ dias difíceis:</b> Use frases mais curtas para crianças menores e vá aumentando a complexidade conforme a idade e a habilidade do grupo.</div>
+      <div class="afoot"><span>Materiais: Nenhum material necessário (funciona melhor em grupo)</span><label><input type="checkbox"/> Feito</label></div>
+    </div></div>
+  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+</section>
+<section class="page closepage" data-pg="fim">
+  <div class="inner">
+    <div class="cover-eyebrow" style="color:#fff">Parabéns pela jornada!</div>
+    <h2>30 dias, 120 atividades, um corpo e uma mente mais fortes.</h2>
+    <p>Regular emoções é uma habilidade que se constrói aos poucos, com repetição e paciência — assim como qualquer outra. Se alguns dias foram mais fáceis que outros, isso também faz parte do processo, tanto para a criança quanto para você.</p>
+    <p><strong>E agora?</strong> Recomece o ciclo do início, escolhendo as atividades favoritas da família para repetir com mais frequência. Mantenha o cantinho da calma, o pote da glitter e as respirações favoritas sempre à mão — elas continuam funcionando muito depois do dia 30.</p>
+    <div style="display:flex;gap:14px;justify-content:center;margin-top:26px;flex-wrap:wrap">
+      <div style="background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);border-radius:14px;padding:14px 22px">
+        <div style="font-family:var(--round);font-size:26px">30</div><div style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase">dias praticados</div>
+      </div>
+      <div style="background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);border-radius:14px;padding:14px 22px">
+        <div style="font-family:var(--round);font-size:26px">120</div><div style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase">atividades</div>
+      </div>
+      <div style="background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);border-radius:14px;padding:14px 22px">
+        <div style="font-family:var(--round);font-size:26px">4</div><div style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase">categorias</div>
+      </div>
+    </div>
+    <p style="margin-top:26px;font-size:11px;opacity:.9">Feito com carinho para famílias que fazem o melhor que podem, todos os dias. 💛</p>
+  </div>
+</section>
+</body>
+</html>
