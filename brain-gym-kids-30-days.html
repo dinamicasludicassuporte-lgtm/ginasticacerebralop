@@ -1,0 +1,1659 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brain Gym for Kids · 30-Day Guide</title>
+<style>
+:root{
+  --ink:#23324a;
+  --ink-soft:#5c6c85;
+  --paper:#fffdf6;
+  --paper-2:#fbf6e9;
+  --line:#e9e1cb;
+  --sun:#f4b73f;
+  --sun-soft:#fdf0d4;
+  --b1:#2f8f7a; --b1-soft:#e2f5ef;
+  --b2:#c1611a; --b2-soft:#fdead9;
+  --b3:#b23b6b; --b3-soft:#fbe4ee;
+  --b4:#2e6fb0; --b4-soft:#e3eefb;
+  --coral:#ef7a5e;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --round:"Arial Rounded MT Bold","Baloo 2","Segoe UI",var(--sans);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  background:#ddd6c2;
+  -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  line-height:1.45;
+}
+.page{
+  width:210mm; min-height:297mm; padding:14mm 14mm 13mm;
+  margin:10mm auto; background:var(--paper); position:relative;
+  overflow:hidden; box-shadow:0 6px 30px rgba(35,50,74,.18);
+  display:flex; flex-direction:column;
+}
+.page::after{
+  content:attr(data-pg); position:absolute; bottom:6mm; right:14mm;
+  font-size:8.5px; letter-spacing:.16em; color:var(--ink-soft); opacity:.65; font-weight:700;
+}
+.brandfoot{
+  position:absolute; bottom:6mm; left:14mm; font-size:8.5px; letter-spacing:.14em;
+  color:var(--ink-soft); opacity:.65; text-transform:uppercase; font-weight:700;
+}
+@media print{
+  html,body{margin:0;padding:0;background:#fff;width:210mm}
+  .page{margin:0;box-shadow:none;width:210mm;height:297mm;min-height:297mm;overflow:hidden;
+    page-break-after:always; break-after:page; break-inside:avoid;}
+  .page:last-child{page-break-after:auto;break-after:auto}
+}
+@page{ size:210mm 297mm; margin:0; }
+
+h1,h2,h3,h4{font-family:var(--round);margin:0;color:var(--ink)}
+p{margin:0 0 8px}
+.eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.2em;font-size:10px;font-weight:800;color:var(--coral);margin:0 0 8px}
+.hr{height:3px;border-radius:3px;margin:4px 0 14px;width:56px;background:linear-gradient(90deg,var(--coral),var(--sun))}
+.small{font-size:10.5px;color:var(--ink-soft)}
+strong{color:var(--ink)}
+
+.imgph{
+  border:2.2px dashed #c9c0a4; border-radius:16px; background:var(--paper-2);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; color:var(--ink-soft); padding:10px; gap:4px;
+}
+.imgph .ico{font-size:26px}
+.imgph .lbl{font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;color:#a99b6f}
+.imgph .cap{font-size:9px;max-width:70%}
+
+/* ---------------- CAPA ---------------- */
+.cover{
+  background:linear-gradient(160deg,#2f8f7a 0%,#2e6fb0 55%,#23324a 100%);
+  color:#fff; padding:0; justify-content:center; align-items:center; text-align:center;
+}
+.cover .deco{position:absolute;inset:0}
+.cover .blob{position:absolute;border-radius:50%;opacity:.16;background:#fff}
+.cover-inner{position:relative;padding:0 34px;max-width:160mm;display:flex;flex-direction:column;align-items:center;gap:14px}
+.cover-eyebrow{font-size:12px;letter-spacing:.38em;text-transform:uppercase;color:var(--sun);font-weight:800}
+.cover h1{font-size:44px;line-height:1.08;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.15)}
+.cover h1 .accent{color:var(--sun)}
+.cover .sub{font-size:14.5px;color:#eef3ff;max-width:120mm;line-height:1.5}
+.cover .catrow{display:flex;gap:10px;margin-top:6px;flex-wrap:wrap;justify-content:center}
+.cover .catpill{font-size:10px;font-weight:800;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3)}
+.cover .coverimg{width:120mm;height:70mm;margin-top:6px;border-radius:18px;object-fit:cover;
+  border:3px solid rgba(255,255,255,.5);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.cover .foot{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#cfe0ff;margin-top:10px}
+
+/* ---------------- COMO USAR / listas ---------------- */
+.title-blk{margin-bottom:14px}
+.title-blk h2{font-size:26px}
+.lead{font-size:12.5px;color:var(--ink-soft);max-width:66ch}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+ul.clean{list-style:none;margin:0;padding:0}
+ul.clean li{position:relative;padding-left:20px;margin-bottom:7px;font-size:11.5px}
+ul.clean li::before{content:"";position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:50%;background:var(--coral)}
+ol.steps{margin:0;padding-left:18px}
+ol.steps li{font-size:11.5px;margin-bottom:5px}
+
+.note{border-radius:12px;padding:10px 13px;font-size:10.8px;background:var(--sun-soft);border:1px solid #ecd7a4}
+.note strong{color:#8a5a12}
+
+/* ---------------- CATEGORIAS ---------------- */
+.catcard{border-radius:16px;padding:14px 16px;border:1.5px solid; }
+.catcard h3{font-size:15px;margin-bottom:4px}
+.catcard .icon{font-size:22px}
+.catcard p{font-size:11px;color:var(--ink-soft);margin:4px 0 0}
+
+/* ---------------- VISÃO GERAL / TABELA ---------------- */
+table.overview{width:100%;border-collapse:collapse;font-size:11px}
+table.overview th{text-align:left;font-size:9.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);border-bottom:2px solid var(--line);padding:6px 8px}
+table.overview td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+table.overview tr:nth-child(even) td{background:#faf7ee}
+
+/* ---------------- DIVISOR DE SEMANA ---------------- */
+.weekpage{justify-content:flex-start}
+.weeknum{font-family:var(--round);font-size:70px;line-height:1;color:var(--paper-2);-webkit-text-stroke:2px var(--coral);color:transparent}
+.weekpage h2{font-size:30px;margin-top:2px}
+.weekpage .sub{font-size:13.5px;color:var(--ink-soft);margin-bottom:16px}
+.weekpage .msg{font-size:13.5px;line-height:1.6;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;max-width:170mm}
+.weekbanner{width:100%;height:78mm;margin:18px 0;object-fit:cover;border-radius:16px;box-shadow:0 6px 20px rgba(35,50,74,.15)}
+.weekdays{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:20px}
+.weekday-chip{border-radius:12px;border:1px solid var(--line);background:#fff;padding:11px 13px;font-size:11px;line-height:1.5}
+.weekday-chip b{display:block;font-size:12.5px;color:var(--coral);margin-bottom:4px}
+
+/* ---------------- PÁGINA DE DIA ---------------- */
+.daypage{}
+.dayhead{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:8px}
+.dayhead .dtag{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);font-weight:800}
+.dayhead h2{font-size:22px;margin-top:2px}
+.dayintro{font-size:10.8px;color:var(--ink-soft);max-width:150mm;margin-bottom:10px}
+.progress{width:100%;height:6px;border-radius:6px;background:var(--line);overflow:hidden;margin-bottom:12px}
+.progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--coral),var(--sun))}
+
+.acards{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;flex:1}
+.acard{border-radius:14px;padding:12px 14px 10px;border:1.4px solid var(--accent-soft);background:var(--accent-soft);
+  display:flex;flex-direction:column;gap:5px;overflow:hidden}
+.acard .ahead{display:flex;align-items:center;gap:6px}
+.acard .aicon{font-size:16px}
+.acard .acat{font-size:9.3px;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:var(--accent)}
+.acard h3{font-size:14.5px;line-height:1.2;color:var(--ink);margin-top:2px}
+.acard .ameta{font-size:9.3px;color:var(--ink-soft);display:flex;gap:10px;flex-wrap:wrap;margin:2px 0 3px}
+.acard .ameta b{color:var(--ink)}
+.acard .adesc{font-size:10.6px;color:var(--ink-soft);margin-bottom:3px;line-height:1.4}
+.acard ol{margin:0 0 4px;padding-left:15px}
+.acard ol li{font-size:10.2px;margin-bottom:3px;line-height:1.36}
+.acard .abox{font-size:9.8px;border-radius:9px;padding:5px 8px;margin-bottom:3px;line-height:1.38;background:rgba(255,255,255,.65)}
+.acard .abox b{color:var(--accent)}
+.acard .afoot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-size:9px;color:var(--ink-soft);padding-top:2px}
+.acard .afoot label{display:flex;align-items:center;gap:4px}
+.acard .afoot input{width:11px;height:11px}
+
+/* ---------------- FECHAMENTO ---------------- */
+.closepage{justify-content:center;align-items:center;text-align:center;
+  background:linear-gradient(160deg,#f4b73f 0%,#ef7a5e 60%,#b23b6b 100%);color:#fff;padding:0}
+.closepage .inner{max-width:150mm;padding:0 30px}
+.closepage h2{color:#fff;font-size:30px}
+.closepage p{color:#fff6ea;font-size:12.5px}
+</style>
+</head>
+<body>
+
+<section class="page cover" data-pg="cover">
+  <div class="deco">
+    <div class="blob" style="width:260px;height:260px;top:-60px;left:-70px"></div>
+    <div class="blob" style="width:180px;height:180px;bottom:-40px;right:-50px"></div>
+    <div class="blob" style="width:120px;height:120px;bottom:120px;left:-40px;opacity:.10"></div>
+  </div>
+  <div class="cover-inner">
+    <div class="cover-eyebrow">Complete Guide · 30-Day Routine</div>
+    <h1>Brain Gym <span class="accent">for Kids</span></h1>
+    <div class="sub">120 coordination, strength, balance and breathing activities organized into a daily routine of 4 exercises — for parents of children ages 3 to 10 who struggle with anger outbursts, hyperactivity, trouble focusing, frequent tantrums and chronic defiance.</div>
+    <div class="catrow"><span class="catpill">🔀 Coordination</span><span class="catpill">💪 Strength & Proprioception</span><span class="catpill">🎈 Emotional Regulation</span><span class="catpill">🌬️ Breathing & Focus</span></div>
+    <img class="coverimg" src="ginastica-cerebral-imagens/img-capa.jpg" alt="Children playing happily in the backyard">
+    <div class="foot">7 minutes a day · no screens · no expensive equipment</div>
+  </div>
+</section>
+<section class="page" data-pg="introduction">
+  <div class="eyebrow">Before you start</div>
+  <div class="title-blk"><h2>How to use this guide</h2>
+  <div class="hr"></div>
+  <p class="lead">This guide brings together 120 activities organized into a 30-day routine. Every day, your child will practice <strong>4 short activities</strong> — one from each category — in about <strong>7 to 15 minutes</strong> total. No special equipment or prior experience is needed: any adult can lead it.</p></div>
+
+  <div class="grid2" style="margin-bottom:12px">
+    <div class="card">
+      <h3 style="font-size:13.5px;margin-bottom:6px">📅 Program structure</h3>
+      <ul class="clean"><li>30 days, organized into 5 weeks of 6 days.</li><li>4 activities per day — one from each of the 4 categories.</li><li>Each activity takes between 1 and 10 minutes.</li><li>Can be done in any order throughout the day.</li></ul>
+    </div>
+    <div class="card">
+      <h3 style="font-size:13.5px;margin-bottom:6px">⏰ When to practice</h3>
+      <ul class="clean"><li>Pick a fixed time — ideally away from moments of crisis.</li><li>Good windows: right after waking up, after school, before homework.</li><li>Avoid using it as a punishment or right after a meltdown.</li><li>A predictable schedule helps more than a perfect activity.</li></ul>
+    </div>
+  </div>
+
+  <div class="grid2" style="margin-bottom:12px">
+    <div class="card">
+      <h3 style="font-size:13.5px;margin-bottom:6px">🧩 If your child refuses</h3>
+      <ul class="clean"><li>Don't force it — offer, invite, demonstrate it yourself first.</li><li>Change the order: start with the activity they enjoy most.</li><li>It's fine to skip a day; pick back up the next day, guilt-free.</li><li>Turn it into a game, not a mandatory chore.</li></ul>
+    </div>
+    <div class="card">
+      <h3 style="font-size:13.5px;margin-bottom:6px">✅ Every activity includes</h3>
+      <ul class="clean"><li>Age range, duration and required materials.</li><li>A simple step-by-step on how to lead it.</li><li>Why it works — the reasoning behind the exercise.</li><li>An extra tip for tougher days.</li></ul>
+    </div>
+  </div>
+
+  <div class="note" style="margin-bottom:12px"><strong>An important note:</strong> this guide is a playful complement to your family routine and does not replace evaluation, diagnosis or follow-up care from health professionals. If anger outbursts, hyperactivity or defiance are very intense, frequent, or are disrupting school and family life, seek support from a pediatrician, child psychologist or occupational therapist.</div>
+
+  <div class="card">
+    <h3 style="font-size:13.5px;margin-bottom:8px">🧺 Suggested basic kit (optional)</h3>
+    <p class="small" style="margin-bottom:8px">The vast majority of activities need nothing beyond the body itself. These few items, if available at home, make some days even richer:</p>
+    <div class="grid2" style="gap:6px 18px">
+      <ul class="clean" style="margin:0"><li>Bubble solution and wand</li><li>Modeling dough (a firm one, like theraputty)</li><li>A sock ball or soft small ball</li></ul>
+      <ul class="clean" style="margin:0"><li>A heavy blanket or weighted pillow</li><li>Painter's tape or chalk to draw lines on the floor</li><li>A clear jar, water, glue and glitter (calm-down jar)</li></ul>
+    </div>
+  </div>
+</section>
+<section class="page" data-pg="categories">
+  <div class="eyebrow">The 4 categories</div>
+  <div class="title-blk"><h2>Where the activities come from</h2><div class="hr"></div>
+  <p class="lead">The 120 activities were organized into 4 categories that complement each other. Every day of the routine includes one activity from each of them, forming a complete package for the body and the emotions.</p></div>
+  <div class="grid2" style="gap:14px"><div class="catcard" style="background:#e2f5ef;border-color:#2f8f7a22">
+          <span class="icon">🔀</span>
+          <h3 style="color:#2f8f7a">Coordination & Midline</h3>
+          <p>Movements that cross the body from one side to the other, helping both brain hemispheres work together — the foundation for reading, writing, paying attention and organizing one's own body in space.</p>
+        </div><div class="catcard" style="background:#fdead9;border-color:#c1611a22">
+          <span class="icon">💪</span>
+          <h3 style="color:#c1611a">Rhythm & Strength</h3>
+          <p>'Heavy work' activities that push, pull and press through the joints — the most effective way to organize the body and prevent meltdowns before they start.</p>
+        </div><div class="catcard" style="background:#fbe4ee;border-color:#b23b6b22">
+          <span class="icon">🎈</span>
+          <h3 style="color:#b23b6b">Balance & Emotions</h3>
+          <p>Body balance and emotional awareness go hand in hand: when the body feels safe and steady, it becomes much easier to name and move through big feelings without exploding.</p>
+        </div><div class="catcard" style="background:#e3eefb;border-color:#2e6fb022">
+          <span class="icon">🌬️</span>
+          <h3 style="color:#2e6fb0">Calm & Focus</h3>
+          <p>Breathing and attention games activate the parasympathetic nervous system and train executive functions — the pair that underlies self-control in the face of tantrums and defiance.</p>
+        </div></div>
+  <div class="note" style="margin-top:14px"><strong>About the sources:</strong> the activities draw on practices widely used in Occupational Therapy, Sensory Integration (Ayres), psychomotor education, mindfulness for children, kids' yoga, and the popular movements from the Brain Gym® method (Dennison) — used here purely as coordination and midline-crossing exercises, without any claim of a specific neurological effect. They also draw on ideas from authors like Daniel Siegel & Tina Payne Bryson ("name it to tame it") and Bruce Perry on regulating emotion through the body.</div>
+</section>
+<section class="page" data-pg="overview">
+  <div class="eyebrow">Program map</div>
+  <div class="title-blk"><h2>Overview of the 5 weeks</h2><div class="hr"></div>
+  <p class="lead">A quick summary of where the routine is heading over the 30 days — handy for tracking progress or picking back up where you left off.</p></div>
+  <table class="overview">
+    <thead><tr><th>Week</th><th>Days</th><th>Theme</th><th>Focus</th></tr></thead>
+    <tbody><tr><td><strong>Week 1</strong></td><td>Days 1–6</td><td>Discovering the Body</td><td>Foundations of coordination, rhythm, balance and breathing</td></tr><tr><td><strong>Week 2</strong></td><td>Days 7–12</td><td>Building Rhythm</td><td>Bilaterality, light strength work and proprioception</td></tr><tr><td><strong>Week 3</strong></td><td>Days 13–18</td><td>Releasing Energy Safely</td><td>Body balance and first emotional tools</td></tr><tr><td><strong>Week 4</strong></td><td>Days 19–24</td><td>Naming Feelings</td><td>Emotional awareness and executive functions</td></tr><tr><td><strong>Week 5</strong></td><td>Days 25–30</td><td>Harvesting Calm</td><td>Consolidating what's been practiced</td></tr></tbody>
+  </table>
+  <div class="note" style="margin-top:16px"><strong>Tracking tip:</strong> use the "Done" checkboxes on each activity to mark daily progress together with your child. Watching the days add up tends to be motivating for parents and kids alike.</div>
+</section>
+<section class="page weekpage" data-pg="week 1">
+  <div class="weeknum">Week 1</div>
+  <h2>Discovering the Body</h2>
+  <div class="sub">Days 1 to 6 — Foundations of coordination, rhythm, balance and breathing</div>
+  <img class="weekbanner" src="ginastica-cerebral-imagens/img-semana-1.jpg" alt="Discovering the Body">
+  <div class="msg">In this first week the goal isn't to 'fix behavior' — it's to help your child get to know their own body better. Children with anger outbursts, agitation and frequent tantrums often still don't clearly feel their own internal signals. Take it slow, without demanding perfect movements: what matters is gentle repetition, every day, at the same time if possible.</div>
+  <div class="weekdays"><div class="weekday-chip"><b>Day 1</b>Cross Crawl · Alternating Foot Taps · Weighted Pillow on the Lap · Squeeze the Lemon (Progressive Muscle Relaxation)</div><div class="weekday-chip"><b>Day 2</b>Elbow-to-Knee · Rolling Dough with a Rolling Pin · Jumping on a Mattress or Trampoline · Butterfly Hug</div><div class="weekday-chip"><b>Day 3</b>Heel Touch Behind the Back · Back-to-Back Ball Pass · Slow Linear Swinging · Body Scan</div><div class="weekday-chip"><b>Day 4</b>Lazy 8 · Sock Ball Between the Hands · Rocking Chair · STOP (Stop, Take a Breath, Observe, Proceed)</div><div class="weekday-chip"><b>Day 5</b>Two-Handed Lazy 8 · Copy the Tabletop Sequence · Single-Leg Balance · Flower and Candle Breathing</div><div class="weekday-chip"><b>Day 6</b>Alphabet 8s · Crawling on All Fours · Walking the Line · Balloon Breathing</div></div>
+</section>
+<section class="page daypage" data-pg="day 1/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 1 · Discovering the Body</div><h2>Day 1 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">Today we start slow: a simple coordination move, a rhythmic foot tap, a comfortable weight on the lap, and the first tense-and-release muscle exercise.</div>
+  <div class="progress"><i style="width:3%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Cross Crawl</h3>
+      <div class="ameta"><span><b>Age:</b> 3–10 years</span><span><b>Duration:</b> 3 to 5 minutes</span></div>
+      <div class="adesc">Standing up, the child marches very slowly, touching the left knee with the right hand and then the right knee with the left hand.</div>
+      <ol><li>Have the child stand with arms relaxed at their sides.</li><li>Marching very slowly, they touch the left knee with the right hand.</li><li>Switch sides: touch the right knee with the left hand, repeating for 1 to 2 minutes.</li></ol>
+      <div class="abox"><b>Why it works:</b> The alternating movement requires both sides of the body to communicate with each other, exercising the motor planning that also supports attention and self-control.</div>
+      <div class="abox"><b>Tip for tough days:</b> If the child is very worked up, start extra slow and count out loud together — the shared rhythm alone starts to calm things down.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Alternating Foot Taps</h3>
+      <div class="ameta"><span><b>Age:</b> 3–6 years</span><span><b>Duration:</b> 2 minutes</span></div>
+      <div class="adesc">Seated, the child marches by tapping their feet on the floor alternately, following a simple rhythm.</div>
+      <ol><li>Seat the child in a chair with feet free.</li><li>Have them tap the left foot and then the right foot on the floor, at a steady rhythm.</li><li>Sing or count along to keep the rhythm for 1 to 2 minutes.</li></ol>
+      <div class="abox"><b>Why it works:</b> A simple, discreet movement that helps channel foot restlessness, common in young children during moments of waiting.</div>
+      <div class="abox"><b>Tip for tough days:</b> Great to use at the table before meals, when the child struggles to sit still.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Weighted Pillow on the Lap</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 5 to 10 minutes</span></div>
+      <div class="adesc">The child holds a comfortable weight on their lap (weighted pillow, folded blanket) while listening to a calm story.</div>
+      <ol><li>Choose a weighted pillow, a well-folded blanket or a comfortable rice bag.</li><li>Sit the child down and place the weight on their lap.</li><li>Read a calm story while they feel the weight, without rushing.</li></ol>
+      <div class="abox"><b>Why it works:</b> The constant weight on the lap provides continuous proprioceptive input, helping the child stay seated and regulated for longer.</div>
+      <div class="abox"><b>Tip for tough days:</b> Use this resource during difficult waiting moments, like doctor visits or long trips.</div>
+      <div class="afoot"><span>Materials: A weighted pillow or a folded blanket</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Squeeze the Lemon (Progressive Muscle Relaxation)</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 3 to 5 minutes</span></div>
+      <div class="adesc">The child squeezes and releases muscle groups of the body (hands, arms, shoulders) as if squeezing imaginary lemons.</div>
+      <ol><li>Have the child close their hands with force, as if squeezing a lemon, for 5 seconds.</li><li>Release all at once, feeling the difference between tension and relaxation.</li><li>Repeat with the arms, shoulders and legs, one muscle group at a time.</li></ol>
+      <div class="abox"><b>Why it works:</b> Progressive muscle relaxation teaches the body to tell tension apart from relaxation, a key skill for calming down actively rather than just passively.</div>
+      <div class="abox"><b>Tip for tough days:</b> Use before bed if the child struggles to relax their body at night.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 2/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 1 · Discovering the Body</div><h2>Day 2 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">The body learns by crossing elbow to knee, the hands build strength shaping dough, and butterfly breathing arrives as a first self-soothing tool.</div>
+  <div class="progress"><i style="width:6%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Elbow-to-Knee</h3>
+      <div class="ameta"><span><b>Age:</b> 6–10 years</span><span><b>Duration:</b> 3 to 5 minutes</span></div>
+      <div class="adesc">Like the cross crawl, but touching the elbow to the opposite knee, requiring more trunk flexion and balance.</div>
+      <ol><li>Standing up, have them bring the right elbow toward the left knee, which lifts to meet it.</li><li>Return to the starting position with control, without letting the body collapse.</li><li>Alternate to the other side, repeating 8 to 10 times per side.</li></ol>
+      <div class="abox"><b>Why it works:</b> The trunk flexion adds a balance demand on top of the midline crossing, strengthening the core and motor self-regulation at the same time.</div>
+      <div class="abox"><b>Tip for tough days:</b> On very agitated days, slow it down and have the child hold each touch for 1 second — this naturally reduces the impulsiveness of the movement.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Rolling Dough with a Rolling Pin</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 5 minutes</span></div>
+      <div class="adesc">The child uses both hands at the same time to roll dough with a rolling pin, in a symmetrical movement.</div>
+      <ol><li>Give the child a portion of dough and a small rolling pin.</li><li>Have them rest both hands on the pin and push it forward and back.</li><li>Repeat until the dough is well flattened, then start again with a new ball.</li></ol>
+      <div class="abox"><b>Why it works:</b> The symmetrical effort of both hands against the dough's resistance provides calming proprioceptive input, useful before tasks that require concentration.</div>
+      <div class="abox"><b>Tip for tough days:</b> If the child is very agitated, use firmer dough (like theraputty) to demand more strength and generate a stronger calming effect.</div>
+      <div class="afoot"><span>Materials: Modeling dough and a small rolling pin</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Jumping on a Mattress or Trampoline</h3>
+      <div class="ameta"><span><b>Age:</b> 3–10 years</span><span><b>Duration:</b> 3 to 5 minutes</span></div>
+      <div class="adesc">Repeated jumps on a springy surface, combining intense proprioceptive and vestibular stimulation.</div>
+      <ol><li>Choose a safe spot: a trampoline, a mattress on the floor, or even a sturdy sofa with supervision.</li><li>Have the child jump in a controlled way, keeping their feet together.</li><li>Set a time limit (3 to 5 minutes) and give a 1-minute warning before it ends.</li></ol>
+      <div class="abox"><b>Why it works:</b> Combines two of the most organizing stimuli for the nervous system — weight and movement — making it one of the fastest ways to discharge intense energy.</div>
+      <div class="abox"><b>Tip for tough days:</b> Giving advance notice that the activity is about to end helps avoid meltdowns when it's time to stop.</div>
+      <div class="afoot"><span>Materials: A mattress or trampoline</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Butterfly Hug</h3>
+      <div class="ameta"><span><b>Age:</b> 4–10 years</span><span><b>Duration:</b> 1 to 3 minutes</span></div>
+      <div class="adesc">The child crosses their arms over the chest and gives gentle, alternating taps to their own shoulders, like butterfly wings flapping.</div>
+      <ol><li>Have the child cross their arms over the chest, hands on opposite shoulders.</li><li>They give gentle, alternating taps, first on one shoulder, then the other, at a slow rhythm.</li><li>Continue for 1 to 2 minutes, breathing slowly together.</li></ol>
+      <div class="abox"><b>Why it works:</b> Rhythmic, self-applied bilateral touch is a technique used in trauma therapies to help calm the nervous system independently.</div>
+      <div class="abox"><b>Tip for tough days:</b> Teach it as a tool the child can use alone, anywhere, without needing an adult's help.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 3/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 1 · Discovering the Body</div><h2>Day 3 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">Today we combine trunk rotation, paired cooperation, a slow gentle swing, and a whole-body attention pause — a great combo for hectic afternoons.</div>
+  <div class="progress"><i style="width:10%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Heel Touch Behind the Back</h3>
+      <div class="ameta"><span><b>Age:</b> 6–10 years</span><span><b>Duration:</b> 3 to 5 minutes</span></div>
+      <div class="adesc">The child lifts a heel behind them and touches it with the opposite hand, crossing the midline with a trunk rotation.</div>
+      <ol><li>Standing up, have them bend a knee and lift the left heel behind them.</li><li>The right hand reaches back and touches that heel, rotating the trunk slightly.</li><li>Switch sides and repeat for about 10 reps per side.</li></ol>
+      <div class="abox"><b>Why it works:</b> The trunk rotation combined with the crossing broadens body awareness and helps agitated children better feel the boundaries of their own body.</div>
+      <div class="abox"><b>Tip for tough days:</b> If the child loses balance easily, let them rest the other hand on a wall or chair.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Back-to-Back Ball Pass</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 5 minutes</span></div>
+      <div class="adesc">In pairs, seated or standing back-to-back, they rotate the trunk to pass the ball from hand to hand.</div>
+      <ol><li>Position both participants back-to-back, close together.</li><li>One holds the ball and rotates the trunk to pass it to the partner sideways.</li><li>The partner receives it and rotates to the other side, passing the ball back around in a circle.</li></ol>
+      <div class="abox"><b>Why it works:</b> The pair cooperation adds a social component to the physical exercise, helping children who struggle with sharing and waiting their turn.</div>
+      <div class="abox"><b>Tip for tough days:</b> If the child gets frustrated with paired games, start as their partner yourself before introducing another child or sibling.</div>
+      <div class="afoot"><span>Materials: A ball</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Slow Linear Swinging</h3>
+      <div class="ameta"><span><b>Age:</b> 3–10 years</span><span><b>Duration:</b> 3 to 5 minutes</span></div>
+      <div class="adesc">Rhythmic, linear swinging back and forth, at a slow, steady pace.</div>
+      <ol><li>Seat the child on a safe swing or hammock.</li><li>Push gently, keeping a slow, steady rhythm, with no sudden movements.</li><li>Continue for a few minutes, watching their body relax.</li></ol>
+      <div class="abox"><b>Why it works:</b> Slow, linear movement is one of the most calming vestibular stimuli there is, with an almost immediate effect on anxiety and agitation.</div>
+      <div class="abox"><b>Tip for tough days:</b> Avoid swinging fast or irregularly — the more predictable the rhythm, the greater the calming effect.</div>
+      <div class="afoot"><span>Materials: A swing or hammock</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Body Scan</h3>
+      <div class="ameta"><span><b>Age:</b> 6–10 years</span><span><b>Duration:</b> 3 to 5 minutes</span></div>
+      <div class="adesc">Lying or sitting comfortably, the child pays attention, part by part, to how each region of the body is feeling.</div>
+      <ol><li>Have the child lie or sit comfortably and close their eyes if they'd like.</li><li>Slowly guide the attention: 'feel your feet... your legs... your belly... your shoulders...' up to the head.</li><li>End by inviting a deep breath and a gradual return of attention to the room.</li></ol>
+      <div class="abox"><b>Why it works:</b> Noticing body sensations part by part broadens interoception and teaches the child to notice physical signs of tension before they turn into meltdowns.</div>
+      <div class="abox"><b>Tip for tough days:</b> Record your own voice guiding the body scan so the child can listen alone whenever they need it, without depending on you being present.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 4/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 1 · Discovering the Body</div><h2>Day 4 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">A lazy 8 for the eyes, a ball that crosses the body's center, the steady rocking of a chair, and the first practice of STOP: pausing before reacting.</div>
+  <div class="progress"><i style="width:13%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Lazy 8</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 2 to 3 minutes</span></div>
+      <div class="adesc">With the arm extended, the child traces a lying-down '8' (the infinity symbol) in the air, eyes following the hand without turning the head.</div>
+      <ol><li>Have the child extend an arm forward with the thumb up.</li><li>They draw a large lazy 8 in the air, starting from the center and going up to the left.</li><li>The eyes follow the thumb the whole time without turning the head; repeat 3 to 5 times with each hand.</li></ol>
+      <div class="abox"><b>Why it works:</b> Following one's own movement with the eyes across the center of the visual field trains smooth eye tracking, which matters for reading and sustained focus.</div>
+      <div class="abox"><b>Tip for tough days:</b> If the child is distracted, slow down the tracing — the slower the 8, the easier it is to sustain attention on it.</div>
+      <div class="afoot"><span>Materials: No materials needed (optional: cardboard with an 8 drawn on it)</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Sock Ball Between the Hands</h3>
+      <div class="ameta"><span><b>Age:</b> 4–8 years</span><span><b>Duration:</b> 3 minutes</span></div>
+      <div class="adesc">The child passes a sock ball from one hand to the other, crossing the center of the body with each pass.</div>
+      <ol><li>Place the sock ball in the child's right hand.</li><li>Have them pass it to the left hand crossing behind the back.</li><li>Then try passing it under the legs, alternating the routes.</li></ol>
+      <div class="abox"><b>Why it works:</b> A simple game that combines midline crossing with light proprioception, easy to do anywhere, including in the car.</div>
+      <div class="abox"><b>Tip for tough days:</b> Turn it into a timed challenge: 'how many times can you pass it in 30 seconds?' — the timer helps keep focus.</div>
+      <div class="afoot"><span>Materials: A sock ball (or a soft small ball)</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Rocking Chair</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 3 to 5 minutes</span></div>
+      <div class="adesc">The child rocks seated in a rocking chair, at their own steady pace.</div>
+      <ol><li>Seat the child in a safe, stable rocking chair.</li><li>Let them rock at their own pace, with no rush.</li><li>Use the moment for a calm chat or simply shared silence.</li></ol>
+      <div class="abox"><b>Why it works:</b> The self-regulated rhythm (they control the speed themselves) gives the child a sense of control, which by itself is emotionally regulating.</div>
+      <div class="abox"><b>Tip for tough days:</b> A great spot for the home 'calm-down corner' — keep the chair always available, with no strict rules about when it can be used.</div>
+      <div class="afoot"><span>Materials: A rocking chair</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>STOP (Stop, Take a Breath, Observe, Proceed)</h3>
+      <div class="ameta"><span><b>Age:</b> 7–10 years</span><span><b>Duration:</b> 1 to 2 minutes</span></div>
+      <div class="adesc">A simple acronym taught to the child to pause before reacting on impulse: Stop what they're doing, Take a breath, Observe what they're feeling, and only then Proceed.</div>
+      <ol><li>Teach the acronym during a calm moment: Stop what you're doing, Take a deep breath, Observe what you're feeling in body and mind, and only then Proceed with a choice.</li><li>Practice STOP in neutral situations first, like a game, before expecting it to work in a real crisis.</li><li>When a mild frustration comes up, gently remind them: 'remember our STOP?'</li></ol>
+      <div class="abox"><b>Why it works:</b> Adding a named, formal step between the trigger and the reaction literally builds the pause that's missing in children with impulsive anger outbursts.</div>
+      <div class="abox"><b>Tip for tough days:</b> Never introduce this tool for the first time during a crisis — teach and practice it during calm moments so it's already available when it's needed.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 5/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 1 · Discovering the Body</div><h2>Day 5 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">Both hands interlaced draw the infinity symbol, a sequence challenges memory, single-leg balance calls for presence, and flower-and-candle breathing teaches a slow exhale.</div>
+  <div class="progress"><i style="width:16%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Two-Handed Lazy 8</h3>
+      <div class="ameta"><span><b>Age:</b> 6–10 years</span><span><b>Duration:</b> 2 to 3 minutes</span></div>
+      <div class="adesc">The child interlaces their hands and traces the lazy 8 in the air with both hands joined together, combining bilateral integration with visual crossing.</div>
+      <ol><li>Have them interlace the fingers of both hands, forming one joined fist.</li><li>Trace the lazy 8 very slowly in the air, eyes following the hands.</li><li>Repeat for about 1 minute, then switch the finger interlacing and repeat.</li></ol>
+      <div class="abox"><b>Why it works:</b> Joining both hands into a single fluid movement trains cooperation between the two sides of the body, essential for fine motor tasks like handwriting.</div>
+      <div class="abox"><b>Tip for tough days:</b> If interlacing the fingers is hard, it's fine to hold a short stick or a large pencil with both hands instead.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Copy the Tabletop Sequence</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 4 minutes</span></div>
+      <div class="adesc">The adult creates a short sequence of movements ('tap your head twice, tap the floor once, hands on your knees') that the child repeats from memory.</div>
+      <ol><li>Demonstrate a short 3-move sequence, for example: tap the head twice, tap the floor once, hands on the knees.</li><li>Have the child repeat the sequence in the exact same order.</li><li>Create a new sequence each round, gradually adding more movements.</li></ol>
+      <div class="abox"><b>Why it works:</b> Memorizing and reproducing motor sequences directly trains working memory, one of the executive functions most linked to defiance when it's weak.</div>
+      <div class="abox"><b>Tip for tough days:</b> If the child makes a mistake, don't correct right away — let them notice on their own and try again; this builds independence instead of reliance on outside correction.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Single-Leg Balance</h3>
+      <div class="ameta"><span><b>Age:</b> 4–10 years</span><span><b>Duration:</b> 2 to 3 minutes</span></div>
+      <div class="adesc">The child stands supported on just one leg, then switches to the other, training static balance.</div>
+      <ol><li>Have the child stand supported on just the right leg.</li><li>Hold for 10 to 15 seconds, or as long as they can.</li><li>Switch to the left leg and repeat, alternating a few times.</li></ol>
+      <div class="abox"><b>Why it works:</b> Static balance demands total focus on the present moment, working almost like a moving meditation for young children.</div>
+      <div class="abox"><b>Tip for tough days:</b> Turn it into a game: 'who can stay still longest?' — the challenge helps sustain focus without it feeling like a boring exercise.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Flower and Candle Breathing</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 1 to 2 minutes</span></div>
+      <div class="adesc">The child imagines smelling a flower (breathing in slowly through the nose) and then blowing out a candle (breathing out slowly through the mouth).</div>
+      <ol><li>Have the child imagine holding a flower in one hand and smelling it, breathing in slowly through the nose.</li><li>Then, imagining a candle in the other hand, blowing it out slowly through the mouth.</li><li>Repeat the cycle 5 to 8 times, alternating flower and candle.</li></ol>
+      <div class="abox"><b>Why it works:</b> One of the simplest and most effective breathing techniques for young children, since it uses concrete, easy-to-grasp images.</div>
+      <div class="abox"><b>Tip for tough days:</b> Use the child's own fingers as the imaginary flower and candle — no real object needed, works anywhere.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 6/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 1 · Discovering the Body</div><h2>Day 6 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">We close the first week with letters inside the 8, classic crawling, a straight line on the floor to walk, and balloon breathing filling the belly.</div>
+  <div class="progress"><i style="width:20%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Alphabet 8s</h3>
+      <div class="ameta"><span><b>Age:</b> 6–10 years</span><span><b>Duration:</b> 4 to 5 minutes</span></div>
+      <div class="adesc">The child traces letters from their own name or the alphabet inside the shape of the lazy 8, combining handwriting practice with visual crossing.</div>
+      <ol><li>Draw (or have them draw) a large lazy 8 on paper or in the air.</li><li>Pick a letter from their name and trace that letter following the path of the 8.</li><li>Repeat with other letters, always tracking with the eyes.</li></ol>
+      <div class="abox"><b>Why it works:</b> Combines midline crossing with handwriting practice, helping children with focus difficulties stay engaged longer with desk tasks.</div>
+      <div class="abox"><b>Tip for tough days:</b> For kids who resist anything that looks like schoolwork, turn it into a game: 'let's write your name inside the magic loop.'</div>
+      <div class="afoot"><span>Materials: Paper and pencil (optional)</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Crawling on All Fours</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 3 to 5 minutes</span></div>
+      <div class="adesc">The child crawls normally, with the opposite arm and leg moving forward together, a classic contralateral pattern.</div>
+      <ol><li>Have the child rest hands and knees on the floor.</li><li>They move the right arm forward together with the left leg, then the left arm with the right leg.</li><li>Make a short course (from one piece of furniture to another) crawling.</li></ol>
+      <div class="abox"><b>Why it works:</b> Crawling is one of the most fundamental motor patterns for integrating the two sides of the body, forming the base for midline crossing in other activities.</div>
+      <div class="abox"><b>Tip for tough days:</b> Turn it into an 'animal circuit': crawl like a dog, then like a bear — the variety keeps easily-distracted children engaged.</div>
+      <div class="afoot"><span>Materials: Open floor space</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Walking the Line</h3>
+      <div class="ameta"><span><b>Age:</b> 3–10 years</span><span><b>Duration:</b> 3 minutes</span></div>
+      <div class="adesc">The child walks along a straight line on the floor, with arms out to help with balance.</div>
+      <ol><li>Place a strip of tape or a stretched rope on the floor, forming a straight line.</li><li>Have the child walk along the line with arms out.</li><li>Repeat back and forth, gradually increasing speed.</li></ol>
+      <div class="abox"><b>Why it works:</b> Walking on a narrow line demands full attention to one's own body, a simple way to anchor the child in the present moment.</div>
+      <div class="abox"><b>Tip for tough days:</b> Use colored tape and let the child draw their own path (curves, zigzags) to boost engagement.</div>
+      <div class="afoot"><span>Materials: A rope, tape, or a line drawn on the floor</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Balloon Breathing</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 1 to 2 minutes</span></div>
+      <div class="adesc">The child imagines their belly as a balloon, filling up slowly on the in-breath and emptying slowly on the out-breath.</div>
+      <ol><li>Have the child lie down or sit and place their hands on their belly.</li><li>They breathe in slowly through the nose, imagining the belly inflating like a balloon.</li><li>They breathe out slowly through the mouth, feeling the belly deflate, and repeat for 5 to 8 cycles.</li></ol>
+      <div class="abox"><b>Why it works:</b> Feeling the hands rise and fall with the breath helps the child physically notice their own breathing rhythm, the first step toward controlling it.</div>
+      <div class="abox"><b>Tip for tough days:</b> Place a light stuffed animal on the belly to make the movement even more visible and fun.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page weekpage" data-pg="week 2">
+  <div class="weeknum">Week 2</div>
+  <h2>Building Rhythm</h2>
+  <div class="sub">Days 7 to 12 — Bilaterality, light strength work and proprioception</div>
+  <img class="weekbanner" src="ginastica-cerebral-imagens/img-semana-2.jpg" alt="Building Rhythm">
+  <div class="msg">Now that the body is more familiar with crossing and balance, this week adds 'heavy work' activities — pushing, pulling, carrying. These movements are especially useful for agitated or impulsive children, because they give the body the intense input it's seeking, in a safe, organized way instead of a meltdown.</div>
+  <div class="weekdays"><div class="weekday-chip"><b>Day 7</b>Double Doodle · Air Bicycle · Walking the Line Backwards · Box Breathing</div><div class="weekday-chip"><b>Day 8</b>The Elephant · Paired Bicycle · Tree Pose · Star Breathing</div><div class="weekday-chip"><b>Day 9</b>Seated Cross Touch · Pot Drumming · Rolling on Grass or a Gentle Slope · Five-Finger Breathing</div><div class="weekday-chip"><b>Day 10</b>Robot and Guide · Dribbling with Alternating Feet · Forward Roll · Breathing with a Stuffed Animal</div><div class="weekday-chip"><b>Day 11</b>Crossed Colored Dots · Clap Before You Catch · Downward Dog Look-Back · Bee Breath (Bhramari)</div><div class="weekday-chip"><b>Day 12</b>Bubble Crossing · Pass the Rhythm Around the Circle · Slow Spin and Stop · Hot Chocolate Breathing</div></div>
+</section>
+<section class="page daypage" data-pg="day 7/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 2 · Building Rhythm</div><h2>Day 7 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">New week, new challenge: drawing with both hands at once, pedaling lying down in the air, walking backwards on a line, and box breathing, counting each side.</div>
+  <div class="progress"><i style="width:23%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Double Doodle</h3>
+      <div class="ameta"><span><b>Age:</b> 4–10 years</span><span><b>Duration:</b> 3 to 5 minutes</span></div>
+      <div class="adesc">The child draws mirrored shapes with both hands at the same time, each hand making the opposite movement of the other.</div>
+      <ol><li>Give the child a pencil for each hand over a large sheet of paper.</li><li>Have them draw circles, waves or hearts with both hands at once, one mirroring the other.</li><li>Let them explore freely for a few minutes, switching shapes.</li></ol>
+      <div class="abox"><b>Why it works:</b> Working both hands at once in mirror image strengthens bilateral integration and tends to be very enjoyable, which helps regulate mood.</div>
+      <div class="abox"><b>Tip for tough days:</b> A great transition activity before homework: it calms without demanding much cognitive effort.</div>
+      <div class="afoot"><span>Materials: Large paper and two pencils/crayons</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Air Bicycle</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 2 to 3 minutes</span></div>
+      <div class="adesc">Lying on their back, the child pedals their legs in the air as if riding a bicycle.</div>
+      <ol><li>Have the child lie on their back with arms resting on the floor.</li><li>They lift their legs and pedal like a bicycle, at a comfortable pace.</li><li>Continue for 30 seconds to 1 minute, with short breaks if needed.</li></ol>
+      <div class="abox"><b>Why it works:</b> Activates the abdominal muscles and the alternating leg pattern, a great way to burn physical energy in small spaces.</div>
+      <div class="abox"><b>Tip for tough days:</b> Use it before bed if the child struggles to 'power down' the body at night — the short, intense effort helps tire them out without over-stimulating.</div>
+      <div class="afoot"><span>Materials: A mat or rug</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Walking the Line Backwards</h3>
+      <div class="ameta"><span><b>Age:</b> 6–10 years</span><span><b>Duration:</b> 3 minutes</span></div>
+      <div class="adesc">A more challenging version of walking the line, done backwards, requiring even more balance and concentration.</div>
+      <ol><li>Use the same line from the previous activity.</li><li>Have the child walk backwards along the line, slowly and carefully.</li><li>Stay close for safety, since they can't see where they're going.</li></ol>
+      <div class="abox"><b>Why it works:</b> The added difficulty demands even greater concentration, great for older children who already master the basic version.</div>
+      <div class="abox"><b>Tip for tough days:</b> Only introduce this version once the child is confident with the forward version, to avoid frustration.</div>
+      <div class="afoot"><span>Materials: A rope, tape, or a line drawn on the floor</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Box Breathing</h3>
+      <div class="ameta"><span><b>Age:</b> 7–10 years</span><span><b>Duration:</b> 2 to 3 minutes</span></div>
+      <div class="adesc">The child breathes in counting to 4, holds the breath counting to 4, breathes out counting to 4 and holds empty counting to 4, repeating the cycle.</div>
+      <ol><li>Draw (or imagine) a square, one side for each stage of the breath.</li><li>Guide the count: breathe in counting to 4, hold counting to 4, breathe out counting to 4, hold empty counting to 4.</li><li>Repeat the full cycle 3 to 5 times.</li></ol>
+      <div class="abox"><b>Why it works:</b> Used even by athletes and the military to regulate the nervous system under pressure, it's a powerful tool for older children with frequent anger outbursts.</div>
+      <div class="abox"><b>Tip for tough days:</b> Practice tracing the square with a finger in the air or on a surface — the physical movement helps keep the count's rhythm.</div>
+      <div class="afoot"><span>Materials: No materials needed (optional: a drawing of a square)</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 8/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 2 · Building Rhythm</div><h2>Day 8 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">The elephant draws the 8 with the whole body, two children pedal together in sync, tree pose calls for balance and breath, and a star guides the breathing rhythm.</div>
+  <div class="progress"><i style="width:26%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>The Elephant</h3>
+      <div class="ameta"><span><b>Age:</b> 4–10 years</span><span><b>Duration:</b> 2 to 3 minutes</span></div>
+      <div class="adesc">With the arm extended alongside the ear and knees slightly bent, the child draws a large 8 using the whole body, like an elephant's trunk.</div>
+      <ol><li>Have them bend the knees slightly and rest the arm against the ear, like a trunk.</li><li>Using the whole body (not just the arm), trace a large 8 in the air while looking at the hand.</li><li>Repeat for 3 to 4 loops and switch arms.</li></ol>
+      <div class="abox"><b>Why it works:</b> The wide, whole-body movement offers a gentle vestibular stimulus, helping to organize the balance system of very agitated or very 'checked-out' children.</div>
+      <div class="abox"><b>Tip for tough days:</b> If the child feels dizzy, reduce the size of the movement and take breaks.</div>
+      <div class="afoot"><span>Materials: Open space</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Paired Bicycle</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 3 minutes</span></div>
+      <div class="adesc">Two children lie on their backs facing each other, soles of their feet touching, and pedal together.</div>
+      <ol><li>Lay the two children on their backs, facing each other, soles of their feet touching.</li><li>Have them pedal together, trying to keep the same rhythm.</li><li>Encourage them to look at each other and laugh during the movement.</li></ol>
+      <div class="abox"><b>Why it works:</b> Beyond the motor benefit, syncing up with a partner trains reading the other person's rhythm, important for social skills and cooperation.</div>
+      <div class="abox"><b>Tip for tough days:</b> A great activity for reducing sibling rivalry — cooperating physically tends to open the door to cooperating in other parts of the day.</div>
+      <div class="afoot"><span>Materials: A mat or rug</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Tree Pose</h3>
+      <div class="ameta"><span><b>Age:</b> 4–10 years</span><span><b>Duration:</b> 1 to 2 minutes per side</span></div>
+      <div class="adesc">A yoga posture where the child rests the sole of one foot on the opposite leg, with hands joined above the head.</div>
+      <ol><li>Have the child stand and rest the sole of one foot against the inside of the other leg (calf or thigh).</li><li>Join the hands above the head, like tree branches.</li><li>Hold the position while breathing slowly, then switch legs.</li></ol>
+      <div class="abox"><b>Why it works:</b> Combines physical balance with mindful breathing, one of the most-used postures in kids' yoga for emotional regulation.</div>
+      <div class="abox"><b>Tip for tough days:</b> If the child loses balance, it's fine to rest the lifted foot lower, on the shin instead of the thigh — what matters is the experience, not perfection.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Star Breathing</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 2 minutes</span></div>
+      <div class="adesc">The child traces the outline of a drawn star with a finger, breathing in going up each point and breathing out going down.</div>
+      <ol><li>Draw a five-pointed star on a sheet of paper.</li><li>Have the child trace the outline with a finger: breathe in going up to a point, breathe out going down into the valley.</li><li>Complete the whole star, one full breath per side.</li></ol>
+      <div class="abox"><b>Why it works:</b> Combines the visual and tactile support of tracing with the breathing rhythm, helping children who struggle to breathe just by counting numbers.</div>
+      <div class="abox"><b>Tip for tough days:</b> Let the child decorate their own star before using it — the sense of ownership boosts engagement with the tool.</div>
+      <div class="afoot"><span>Materials: A star drawn on paper</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 9/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 2 · Building Rhythm</div><h2>Day 9 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">A seated cross touch for the little ones, the sound of a homemade drum kit, rolling freely on the grass, and five-finger breathing, always within reach.</div>
+  <div class="progress"><i style="width:30%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Seated Cross Touch</h3>
+      <div class="ameta"><span><b>Age:</b> 3–5 years</span><span><b>Duration:</b> 2 to 3 minutes</span></div>
+      <div class="adesc">Seated, the child touches a hand to the opposite knee alternately — a lower-effort version of the cross crawl, ideal for the youngest children.</div>
+      <ol><li>Seat the child in a chair or on the floor, back supported if needed.</li><li>Have them touch the left knee with the right hand.</li><li>Alternate to the right knee with the left hand, at a relaxed pace, for about 1 minute.</li></ol>
+      <div class="abox"><b>Why it works:</b> Because it demands less balance than the standing version, this is a great entry point for young children to practice midline crossing without frustration.</div>
+      <div class="abox"><b>Tip for tough days:</b> Sing a simple little song to the rhythm of the touches — young children engage far more with sound support.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Pot Drumming</h3>
+      <div class="ameta"><span><b>Age:</b> 3–6 years</span><span><b>Duration:</b> 3 to 5 minutes</span></div>
+      <div class="adesc">The child creates rhythms using both hands to hit pots or containers, like a little homemade drum kit.</div>
+      <ol><li>Set out a few pots or containers of different sizes on the floor.</li><li>Give the child a wooden spoon (or let them use their hands) to play.</li><li>Encourage them to create their own rhythm, then mirror it back and have them mirror yours.</li></ol>
+      <div class="abox"><b>Why it works:</b> Releasing energy through sound and rhythm is an effective and fun way to discharge frustration safely and constructively.</div>
+      <div class="abox"><b>Tip for tough days:</b> If the noise is an issue at home, agree on a specific time and place — the child learns there's a right time and place for this kind of release.</div>
+      <div class="afoot"><span>Materials: Pots or containers and a wooden spoon</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Rolling on Grass or a Gentle Slope</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 3 to 5 minutes</span></div>
+      <div class="adesc">The child rolls across the ground on grass or a gentle slope, feeling the body spin freely.</div>
+      <ol><li>Choose a safe, obstacle-free grassy spot.</li><li>Have the child lie down and roll from side to side, arms stretched above the head.</li><li>Repeat a few times, alternating the direction of the roll.</li></ol>
+      <div class="abox"><b>Why it works:</b> The vestibular stimulation from spinning, combined with contact with nature, tends to generate a lot of joy and physical tension release.</div>
+      <div class="abox"><b>Tip for tough days:</b> Watch for signs of excessive dizziness and take breaks — for some children this stimulus is very intense and should be dosed carefully.</div>
+      <div class="afoot"><span>Materials: A lawn or gentle, safe slope</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Five-Finger Breathing</h3>
+      <div class="ameta"><span><b>Age:</b> 4–10 years</span><span><b>Duration:</b> 1 to 2 minutes</span></div>
+      <div class="adesc">The child traces their own hand with the index finger of the other hand, breathing in going up each finger and out going down.</div>
+      <ol><li>Have the child spread one hand open like a fan, fingers apart.</li><li>With the index finger of the other hand, they trace up the side of the thumb while breathing in, and down the other side while breathing out.</li><li>Continue tracing finger by finger until the whole hand is done.</li></ol>
+      <div class="abox"><b>Why it works:</b> Combines touch and breathing in a single tool the child always has with them, no object or setup needed.</div>
+      <div class="abox"><b>Tip for tough days:</b> It's one of the most discreet self-regulation techniques — it can be used even under a desk at school without drawing attention.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 10/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 2 · Building Rhythm</div><h2>Day 10 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">Today the robot follows the guide with its whole body, the ball is dribbled with alternating feet, the forward roll takes some supervised courage, and a stuffed animal teaches deep breathing.</div>
+  <div class="progress"><i style="width:33%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Robot and Guide</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 4 to 6 minutes</span></div>
+      <div class="adesc">In pairs, the 'guide' touches the 'robot's' right or left arm, and the robot must turn its whole body in the direction touched, alternating roles.</div>
+      <ol><li>Agree that a touch on the right arm means 'turn right' and on the left means 'turn left.'</li><li>The guide touches one of the robot's arms, and the robot slowly turns its body that way.</li><li>After a few rounds, switch the guide and robot roles.</li></ol>
+      <div class="abox"><b>Why it works:</b> Reacting to an external cue with the whole body trains laterality and body awareness — two important foundations for following instructions more easily.</div>
+      <div class="abox"><b>Tip for tough days:</b> Use this game as playful practice for 'obeying quickly without arguing,' with no pressure — the goal is practice, not always getting it right.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Dribbling with Alternating Feet</h3>
+      <div class="ameta"><span><b>Age:</b> 6–10 years</span><span><b>Duration:</b> 5 minutes</span></div>
+      <div class="adesc">The child moves the ball along the ground alternating the right and left foot to tap it forward, like a small dribble.</div>
+      <ol><li>Place the ball on the ground and have the child lightly tap it forward with the right foot.</li><li>On the next step, they tap it with the left foot, keeping the ball moving.</li><li>Make a short zigzag course between objects.</li></ol>
+      <div class="abox"><b>Why it works:</b> Coordination between vision, feet and route planning — a complete activity that also burns a lot of physical energy.</div>
+      <div class="abox"><b>Tip for tough days:</b> Ideal for the afternoon, when pent-up energy from the school day often shows up as restlessness at home.</div>
+      <div class="afoot"><span>Materials: A ball</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Forward Roll</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 2 minutes</span></div>
+      <div class="adesc">The child rolls forward, tucking the head and hands to the floor, always with adult supervision.</div>
+      <ol><li>Place a mat or rug on the floor for safety.</li><li>Help the child squat, place hands on the floor and tuck the chin to the chest.</li><li>Assist the push so they roll forward safely, ending up seated.</li></ol>
+      <div class="abox"><b>Why it works:</b> A classic vestibular-stimulation movement that, when done well, generates a great sense of accomplishment and body pride.</div>
+      <div class="abox"><b>Tip for tough days:</b> Always supervise physically until the child masters the movement safely, supporting the neck if needed.</div>
+      <div class="afoot"><span>Materials: A mat or rug</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Breathing with a Stuffed Animal</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 2 to 3 minutes</span></div>
+      <div class="adesc">Lying on their back, the child places a stuffed animal on their belly and watches it rise and fall with their breathing.</div>
+      <ol><li>Have the child lie on their back with a light stuffed animal on their belly.</li><li>They breathe slowly, watching the animal rise as they breathe in and fall as they breathe out.</li><li>Continue for 1 to 2 minutes, at a relaxed pace.</li></ol>
+      <div class="abox"><b>Why it works:</b> The concrete visual of the animal rising and falling makes it much easier for young children to understand diaphragmatic breathing.</div>
+      <div class="abox"><b>Tip for tough days:</b> Use a stuffed animal the child already loves — the emotional bond with the object increases willingness to practice.</div>
+      <div class="afoot"><span>Materials: A light stuffed animal</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 11/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 2 · Building Rhythm</div><h2>Day 11 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">Colored dots cross the page, a clap marks the beat before catching the ball, the head turns the world upside down, and bee breath hums and calms.</div>
+  <div class="progress"><i style="width:36%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Crossed Colored Dots</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 5 minutes</span></div>
+      <div class="adesc">Colored dots are drawn on the left and right margins of a sheet of paper; the child connects dots of the same color, crossing the center.</div>
+      <ol><li>Draw colored dots scattered on both sides of a sheet of paper, with repeated colors on each side.</li><li>Have the child connect dots of the same color with a line, always crossing the middle of the page.</li><li>Increase the difficulty by spacing the colors further apart or out of order.</li></ol>
+      <div class="abox"><b>Why it works:</b> A calm desk activity that trains eye-hand coordination and visual crossing without requiring large body movement — great for lower-energy moments.</div>
+      <div class="abox"><b>Tip for tough days:</b> For children with focus difficulties, limit the page to 4 or 5 dots at a time instead of filling the whole sheet.</div>
+      <div class="afoot"><span>Materials: Paper and colored markers</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Clap Before You Catch</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 5 minutes</span></div>
+      <div class="adesc">Before catching the ball thrown by the adult, the child claps once or more, training timing and eye-hand coordination.</div>
+      <ol><li>Stand a short distance away and toss the ball gently to the child.</li><li>Have them clap once before catching the ball in the air.</li><li>Increase the challenge by asking for two claps, or increasing the throw distance.</li></ol>
+      <div class="abox"><b>Why it works:</b> The precise timing between clapping and catching trains anticipation and impulse control — pausing one automatic movement to insert another in between.</div>
+      <div class="abox"><b>Tip for tough days:</b> If the child gets frustrated when the ball drops, celebrate the attempt, not just the catch — this reduces the link between mistakes and shame.</div>
+      <div class="afoot"><span>Materials: A soft ball</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Downward Dog Look-Back</h3>
+      <div class="ameta"><span><b>Age:</b> 4–10 years</span><span><b>Duration:</b> 30 seconds to 1 minute</span></div>
+      <div class="adesc">A yoga posture in which the child forms an inverted 'V' with the body and looks back between the legs.</div>
+      <ol><li>Have the child rest hands and feet on the floor, forming an inverted 'V' with the body (downward-facing dog).</li><li>Once stable, they look back between their own legs.</li><li>Hold for a few seconds and return calmly to a normal standing position.</li></ol>
+      <div class="abox"><b>Why it works:</b> The inverted position offers a different vestibular stimulus, and the change in visual perspective usually brings laughter and lightness.</div>
+      <div class="abox"><b>Tip for tough days:</b> Use in moderation — for some children this inverted stimulus is quite intense and should only be done once or twice.</div>
+      <div class="afoot"><span>Materials: A mat</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Bee Breath (Bhramari)</h3>
+      <div class="ameta"><span><b>Age:</b> 4–10 years</span><span><b>Duration:</b> 1 to 2 minutes</span></div>
+      <div class="adesc">The child breathes out making a continuous 'zzz' sound, like a bee, feeling the vibration of the sound in their body.</div>
+      <ol><li>Have the child breathe in deeply through the nose.</li><li>As they breathe out, they make a long, continuous 'zzz' sound, like a bee.</li><li>Repeat for 4 to 6 cycles, feeling the vibration of the sound.</li></ol>
+      <div class="abox"><b>Why it works:</b> The sound vibration produced during the exhale has a recognized calming effect in breathing practices (pranayama), and is fun for young children.</div>
+      <div class="abox"><b>Tip for tough days:</b> Do it in pairs, comparing each other's bee sounds — the playful element greatly boosts engagement.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 12/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 2 · Building Rhythm</div><h2>Day 12 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">We close the week popping bubbles with the opposite hand, passing a rhythm around the circle, a careful spin, and the warm breath of imaginary hot chocolate.</div>
+  <div class="progress"><i style="width:40%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Bubble Crossing</h3>
+      <div class="ameta"><span><b>Age:</b> 3–6 years</span><span><b>Duration:</b> 5 minutes</span></div>
+      <div class="adesc">The adult blows soap bubbles and the child pops them using the hand on the opposite side of the body from where the bubble is.</div>
+      <ol><li>Blow bubbles to the child's left and right side.</li><li>Have them pop the bubbles on the left side with the right hand, and vice versa.</li><li>Keep blowing bubbles at different heights to vary the challenge.</li></ol>
+      <div class="abox"><b>Why it works:</b> One of the most fun and light ways to practice midline crossing with young kids, pairing the movement with an enjoyable experience.</div>
+      <div class="abox"><b>Tip for tough days:</b> Great for calming down before a difficult transition (like leaving the house) — laughter helps regulate the nervous system.</div>
+      <div class="afoot"><span>Materials: A bottle of bubble solution</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Pass the Rhythm Around the Circle</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 5 minutes</span></div>
+      <div class="adesc">In a circle, participants pass a clap (or a sound) in sequence around the group, keeping the rhythm.</div>
+      <ol><li>Form a circle with at least 3 people (can be family members).</li><li>The first person claps once, and the person beside them claps next, passing the sequence around.</li><li>Gradually increase the speed, keeping the rhythm without rushing.</li></ol>
+      <div class="abox"><b>Why it works:</b> Waiting for your own turn within a collective rhythm is an excellent workout in self-control and patience for children with frequent tantrums.</div>
+      <div class="abox"><b>Tip for tough days:</b> If the child tends to jump in early and mess up, gently name that before starting: 'let's practice waiting for our turn today.'</div>
+      <div class="afoot"><span>Materials: No materials needed (works best in a group)</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Slow Spin and Stop</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 1 minute</span></div>
+      <div class="adesc">The child spins slowly a few times in place and then stops, trying to regain their balance — use with caution and moderation.</div>
+      <ol><li>Choose an open space free of obstacles.</li><li>Have the child spin slowly, no more than 3 to 4 turns.</li><li>They stop and try to stand still, feeling the body stabilize.</li></ol>
+      <div class="abox"><b>Why it works:</b> Helps the child notice and name the sensation of temporary imbalance, a useful exercise in tolerating passing discomfort.</div>
+      <div class="abox"><b>Tip for tough days:</b> This activity is stimulating and should be used with caution — avoid it with children very sensitive to vestibular input or close to bedtime.</div>
+      <div class="afoot"><span>Materials: Open, safe space</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Hot Chocolate Breathing</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 1 to 2 minutes</span></div>
+      <div class="adesc">The child imagines holding a mug of hot chocolate, smelling the aroma (breathing in) and blowing to cool it down (breathing out).</div>
+      <ol><li>Have the child imagine holding a mug of hot chocolate with both hands.</li><li>They breathe in deeply through the nose, 'smelling' the drink's aroma.</li><li>They breathe out slowly through the mouth, as if cooling the chocolate, repeating 5 to 6 times.</li></ol>
+      <div class="abox"><b>Why it works:</b> A warm, sensory variation of flower-and-candle breathing, works especially well on cold days or before bed.</div>
+      <div class="abox"><b>Tip for tough days:</b> If possible, offer an actual safe warm drink afterward, pairing the technique with a real moment of comfort.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page weekpage" data-pg="week 3">
+  <div class="weeknum">Week 3</div>
+  <h2>Releasing Energy Safely</h2>
+  <div class="sub">Days 13 to 18 — Body balance and first emotional tools</div>
+  <img class="weekbanner" src="ginastica-cerebral-imagens/img-semana-3.jpg" alt="Releasing Energy Safely">
+  <div class="msg">Halfway through the program, we start connecting body and emotions more directly. This week's activities train physical balance while introducing the first self-regulation tools, like the freeze dance and volcano breath. It's normal for the child to still have tough days — the goal is practice, not perfection.</div>
+  <div class="weekdays"><div class="weekday-chip"><b>Day 13</b>Washing the Opposite Arm · Pushing the Wall · Exercise Ball Bounce (seated) · Blowing Bubbles</div><div class="weekday-chip"><b>Day 14</b>Spinning Ball Pass · Tight Bear Hug · Freeze Dance · Snake Breath</div><div class="weekday-chip"><b>Day 15</b>Crossed Foot Touch · Bear Walk · Walking on Cushions · Bunny Breath</div><div class="weekday-chip"><b>Day 16</b>Cross Dab Dance · Crab Walk · Free Dancing · Long Exhale (4-6)</div><div class="weekday-chip"><b>Day 17</b>Crossed Stamping · Frog Jump · Flamingo Pose · Volcano Breath</div><div class="weekday-chip"><b>Day 18</b>Reaching Opposite Targets · Inchworm · Paired Seesaw · Breathing Ball (Hoberman Sphere)</div></div>
+</section>
+<section class="page daypage" data-pg="day 13/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 3 · Releasing Energy Safely</div><h2>Day 13 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">In the bath, one arm washes the other crossing the center; in the living room, we push the wall with full force, bounce on the exercise ball, and blow bubbles nice and slow.</div>
+  <div class="progress"><i style="width:43%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Washing the Opposite Arm</h3>
+      <div class="ameta"><span><b>Age:</b> 3–6 years</span><span><b>Duration:</b> 1 to 2 minutes</span></div>
+      <div class="adesc">During bath time, the child washes one arm using the hand on the opposite side of the body, then switches.</div>
+      <ol><li>At bath time, have them soap the left arm using the right hand.</li><li>Then soap the right arm using the left hand.</li><li>Repeat the same idea on the legs if you want to extend the practice.</li></ol>
+      <div class="abox"><b>Why it works:</b> Turns an existing daily routine into midline-crossing practice, with no extra time needed — great for busy families.</div>
+      <div class="abox"><b>Tip for tough days:</b> Make it a fixed bath-time ritual: even short daily repetition is more effective than long, occasional sessions.</div>
+      <div class="afoot"><span>Materials: Water and soap (at bath time)</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Pushing the Wall</h3>
+      <div class="ameta"><span><b>Age:</b> 3–10 years</span><span><b>Duration:</b> 1 minute</span></div>
+      <div class="adesc">The child pushes the wall with both hands as if trying to move it, sustaining the force for about 10 seconds.</div>
+      <ol><li>Have the child rest both hands on the wall, arms slightly bent.</li><li>They push with full effort, as if trying to move the wall, for 8 to 10 seconds.</li><li>Rest and repeat 3 to 4 times.</li></ol>
+      <div class="abox"><b>Why it works:</b> One of the fastest, most effective 'heavy work' exercises: the isometric effort sends proprioceptive signals that organize and calm the nervous system almost immediately.</div>
+      <div class="abox"><b>Tip for tough days:</b> Teach this as an emergency strategy: at the very first signs of an anger outburst, walk the child to a wall and suggest pushing it together.</div>
+      <div class="afoot"><span>Materials: A wall</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Exercise Ball Bounce (seated)</h3>
+      <div class="ameta"><span><b>Age:</b> 3–10 years</span><span><b>Duration:</b> 3 to 5 minutes</span></div>
+      <div class="adesc">Seated on an exercise ball, the child bounces lightly up and down, keeping their balance.</div>
+      <ol><li>Seat the child on an exercise ball sized right for them, feet resting on the floor.</li><li>Have them bounce lightly, without moving out of place.</li><li>Gradually increase intensity as they gain confidence in their balance.</li></ol>
+      <div class="abox"><b>Why it works:</b> The constant movement and balance challenge help children who struggle to sit still for long periods.</div>
+      <div class="abox"><b>Tip for tough days:</b> Consider swapping the study chair for an exercise ball on very restless days — the subtle movement can boost focus.</div>
+      <div class="afoot"><span>Materials: An exercise ball (Swiss ball)</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Blowing Bubbles</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 3 to 5 minutes</span></div>
+      <div class="adesc">The child blows slowly and in a controlled way to form large soap bubbles, instead of quick, short puffs.</div>
+      <ol><li>Give the bubble wand to the child.</li><li>Have them blow very slowly and steadily, to form large bubbles instead of several small ones.</li><li>Watch the bubbles float and pop together.</li></ol>
+      <div class="abox"><b>Why it works:</b> Forming large bubbles naturally requires a long, controlled exhale, training breathing in a playful, effortless way.</div>
+      <div class="abox"><b>Tip for tough days:</b> Ask the child to try to make 'the biggest bubble in the world' — the concrete goal naturally lengthens the exhale.</div>
+      <div class="afoot"><span>Materials: A bottle of bubble solution</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 14/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 3 · Releasing Energy Safely</div><h2>Day 14 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">The ball rotates with the trunk, a tight bear hug calms the body, freeze dance trains stopping in time, and snake breath stretches out every exhale.</div>
+  <div class="progress"><i style="width:46%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Spinning Ball Pass</h3>
+      <div class="ameta"><span><b>Age:</b> 4–8 years</span><span><b>Duration:</b> 5 minutes</span></div>
+      <div class="adesc">Seated, the child rotates the trunk to pass the ball to the side, crossing the center of the body with each pass.</div>
+      <ol><li>Seat the child on the floor with legs crossed, holding the ball in front of the body.</li><li>Have them rotate the trunk and pass the ball to the right side, then bring it back rotating to the other side.</li><li>If in pairs, one passes the ball by rotating for the other to receive.</li></ol>
+      <div class="abox"><b>Why it works:</b> The trunk rotation activates the core muscles alongside the midline crossing, helping with posture and body organization while seated.</div>
+      <div class="abox"><b>Tip for tough days:</b> Use a slightly weighted ball (like a sock ball filled with rice) to give extra proprioceptive input for very restless children.</div>
+      <div class="afoot"><span>Materials: A small ball or sock ball</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Tight Bear Hug</h3>
+      <div class="ameta"><span><b>Age:</b> 3–10 years</span><span><b>Duration:</b> 30 seconds to 1 minute</span></div>
+      <div class="adesc">The child hugs themselves tightly alone or receives a firm, safe hug from the adult, sustaining the pressure for a few seconds.</div>
+      <ol><li>Ask the child if they'd like a tight hug (respect it if they say no).</li><li>Hug them firmly, with steady, safe pressure, for 15 to 20 seconds.</li><li>Release gradually, asking how their body feels.</li></ol>
+      <div class="abox"><b>Why it works:</b> Deep pressure activates the parasympathetic nervous system, quickly reducing levels of agitation and anxiety — one of the most studied tools in occupational therapy.</div>
+      <div class="abox"><b>Tip for tough days:</b> Never force the hug if the child refuses; offer alternatives like a weighted blanket or a pillow to squeeze instead.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Freeze Dance</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 3 to 5 minutes</span></div>
+      <div class="adesc">The child dances freely and, when the music stops (or the adult says 'freeze'), must stay completely still.</div>
+      <ol><li>Play upbeat music and encourage the child to dance freely.</li><li>Pause the music (or shout 'freeze!') unpredictably.</li><li>The child must stop completely, like a statue, until the music comes back.</li></ol>
+      <div class="abox"><b>Why it works:</b> One of the most effective games for playfully training postural control and impulse inhibition, without it feeling like a direct order.</div>
+      <div class="abox"><b>Tip for tough days:</b> Play this regularly, not just during moments of crisis — preventive practice is what builds the ability to stop in time.</div>
+      <div class="afoot"><span>Materials: Music (optional)</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Snake Breath</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 1 to 2 minutes</span></div>
+      <div class="adesc">The child breathes out making a long 'sssss' sound, like a snake, lengthening the exhale.</div>
+      <ol><li>Have the child breathe in deeply through the nose.</li><li>As they breathe out, they make a long 'sssss' sound, like a snake, until the air runs out.</li><li>Repeat 4 to 6 times, trying to stretch the sound a bit longer each time.</li></ol>
+      <div class="abox"><b>Why it works:</b> The continuous sound helps the child sustain a long exhale without needing to count numbers, ideal for younger children.</div>
+      <div class="abox"><b>Tip for tough days:</b> Move the body like a snake while making the sound — pairing movement with breathing boosts engagement.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 15/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 3 · Releasing Energy Safely</div><h2>Day 15 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">Feet touch crossing the body, the bear walk bears weight through the arms, cushions become an unstable path, and bunny breath contrasts fast and slow.</div>
+  <div class="progress"><i style="width:50%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Crossed Foot Touch</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 3 minutes</span></div>
+      <div class="adesc">Standing with legs apart, the child touches the left foot with the right hand and the right foot with the left hand.</div>
+      <ol><li>Have the child stand with legs shoulder-width apart.</li><li>They bend and touch the left foot with the right hand.</li><li>Return to standing and repeat touching the right foot with the left hand, alternating 8 to 10 times.</li></ol>
+      <div class="abox"><b>Why it works:</b> Adding hip flexion to the crossing increases the posterior stretch and helps release built-up physical tension, common in very agitated children.</div>
+      <div class="abox"><b>Tip for tough days:</b> If the child can't reach the foot, it's fine to touch the ankle or the shin — what matters is the crossing, not the range of motion.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Bear Walk</h3>
+      <div class="ameta"><span><b>Age:</b> 3–10 years</span><span><b>Duration:</b> 2 to 3 minutes</span></div>
+      <div class="adesc">The child walks with hands and feet on the floor and hips raised, like a bear walking.</div>
+      <ol><li>Have the child rest hands and feet on the floor, knees slightly off the ground.</li><li>They walk forward moving opposite hand and foot together.</li><li>Do a short course of 3 to 5 meters, there and back.</li></ol>
+      <div class="abox"><b>Why it works:</b> Bearing body weight through the arms and legs is excellent heavy work that organizes the proprioceptive system before tasks that require calm.</div>
+      <div class="abox"><b>Tip for tough days:</b> If the child has little arm strength, allow breaks with knees on the ground before continuing.</div>
+      <div class="afoot"><span>Materials: Open space</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Walking on Cushions</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 3 minutes</span></div>
+      <div class="adesc">The child crosses a small course of cushions scattered on the floor, an unstable surface that demands more balance.</div>
+      <ol><li>Scatter cushions or pillows to form a small path on the floor.</li><li>Have the child cross by stepping only on the cushions, without touching the floor.</li><li>Repeat the course a few times, varying the arrangement of the cushions.</li></ol>
+      <div class="abox"><b>Why it works:</b> The unstable surface demands constant balance adjustments, keeping the child present and attentive to their own body.</div>
+      <div class="abox"><b>Tip for tough days:</b> Turn it into a 'the floor is lava' game — the story greatly boosts engagement for young children.</div>
+      <div class="afoot"><span>Materials: Cushions or pillows</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Bunny Breath</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 1 minute</span></div>
+      <div class="adesc">The child takes three short, quick sniffs through the nose, followed by one long exhale through the mouth, like a bunny sniffing the air.</div>
+      <ol><li>Have the child take three short, quick sniffs through the nose, like a bunny sniffing something.</li><li>Then, one long, slow exhale through the mouth.</li><li>Repeat the cycle (3 sniffs + 1 long exhale) 3 to 4 times.</li></ol>
+      <div class="abox"><b>Why it works:</b> The contrast between fast and then slow breathing helps the child feel, in practice, the difference between an agitated body and a calm one.</div>
+      <div class="abox"><b>Tip for tough days:</b> A great option for very young children who can't yet sustain long breaths from the start.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 16/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 3 · Releasing Energy Safely</div><h2>Day 16 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">The cross dab gets the body moving, the crab walk challenges the arms, free dancing releases the day's energy, and a long exhale to 6 calms the nervous system.</div>
+  <div class="progress"><i style="width:53%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Cross Dab Dance</h3>
+      <div class="ameta"><span><b>Age:</b> 7–10 years</span><span><b>Duration:</b> 3 to 4 minutes</span></div>
+      <div class="adesc">The arms cross into a 'dab' position while the feet take side steps, in a movement popular with older kids.</div>
+      <ol><li>Have the child bend one arm in front of the face and stretch the other one back, into the 'dab' position.</li><li>While doing the arm movement, they take a side step toward the extended arm's side.</li><li>Alternate sides with each step, following the beat of music if you like.</li></ol>
+      <div class="abox"><b>Why it works:</b> Since it's a fun, popular movement for older children, it boosts engagement with coordination practice without it feeling like a 'boring exercise.'</div>
+      <div class="abox"><b>Tip for tough days:</b> Let the child pick the music — the sense of ownership alone reduces the typical resistance of the 6-to-10 age range.</div>
+      <div class="afoot"><span>Materials: Upbeat music (optional)</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Crab Walk</h3>
+      <div class="ameta"><span><b>Age:</b> 4–10 years</span><span><b>Duration:</b> 2 to 3 minutes</span></div>
+      <div class="adesc">The child walks belly-up, supported on hands and feet, moving like a crab.</div>
+      <ol><li>Have the child sit, rest their hands behind their body and lift the hips.</li><li>In this position, they walk sideways or forward, like a crab.</li><li>Do a little race or course with this walk.</li></ol>
+      <div class="abox"><b>Why it works:</b> Strengthens arms, shoulders and core while offering strong proprioceptive input, helping organize children who struggle to sit still.</div>
+      <div class="abox"><b>Tip for tough days:</b> Turn it into a little race between siblings — healthy competition boosts engagement without triggering negative comparison.</div>
+      <div class="afoot"><span>Materials: Open space</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Free Dancing</h3>
+      <div class="ameta"><span><b>Age:</b> 3–10 years</span><span><b>Duration:</b> 5 minutes</span></div>
+      <div class="adesc">The child moves their body and head freely to a favorite song, with no set choreography.</div>
+      <ol><li>Choose a song the child really enjoys.</li><li>Invite them to dance however they want, with no rules or choreography.</li><li>Dance along if you can — the adult's participation greatly boosts connection and joy.</li></ol>
+      <div class="abox"><b>Why it works:</b> Free, joyful movement is one of the most natural ways to regulate mood and release emotions built up throughout the day.</div>
+      <div class="abox"><b>Tip for tough days:</b> Use it as a transition ritual between school and home, a way to 'shake off' the day before settling into another routine.</div>
+      <div class="afoot"><span>Materials: Favorite music</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Long Exhale (4-6)</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 2 to 3 minutes</span></div>
+      <div class="adesc">The child breathes in counting to 4 and breathes out counting to 6, making the exhale longer than the inhale.</div>
+      <ol><li>Have the child breathe in through the nose, slowly counting to 4.</li><li>Then breathe out through the mouth, slowly counting to 6.</li><li>Repeat the cycle 5 to 8 times, at a relaxed pace.</li></ol>
+      <div class="abox"><b>Why it works:</b> Exhales longer than inhales more effectively activate the parasympathetic nervous system, responsible for the body's calming response.</div>
+      <div class="abox"><b>Tip for tough days:</b> Use the fingers of one hand to visually mark the count, since young children can't always count mentally while breathing.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 17/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 3 · Releasing Energy Safely</div><h2>Day 17 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">Stamps cross the page, the frog jump burns off energy, the flamingo calls for balance on one leg, and volcano breath gives anger a safe way out.</div>
+  <div class="progress"><i style="width:56%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Crossed Stamping</h3>
+      <div class="ameta"><span><b>Age:</b> 3–6 years</span><span><b>Duration:</b> 5 minutes</span></div>
+      <div class="adesc">The child stamps or sticks stickers onto pictures placed on the opposite side from the hand being used.</div>
+      <ol><li>Draw or print pictures scattered on both sides of a sheet.</li><li>Have the child always use the right hand to stamp the pictures on the left side, and the left hand for the right side.</li><li>Continue until the sheet is filled.</li></ol>
+      <div class="abox"><b>Why it works:</b> A calm desk activity, great for lower-energy moments, that still guarantees midline-crossing practice.</div>
+      <div class="abox"><b>Tip for tough days:</b> Perfect for the 'calm transition' minutes between arriving home from school and starting another activity.</div>
+      <div class="afoot"><span>Materials: Stamps or stickers and a sheet with pictures</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Frog Jump</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 2 minutes</span></div>
+      <div class="adesc">The child squats low and jumps forward with both legs together, like a frog.</div>
+      <ol><li>Have the child squat with hands on the floor between the feet.</li><li>They jump forward with force, landing back in a squat.</li><li>Repeat for 8 to 10 jumps in a row.</li></ol>
+      <div class="abox"><b>Why it works:</b> The explosive jump is an excellent way to discharge built-up physical energy safely and quickly.</div>
+      <div class="abox"><b>Tip for tough days:</b> A great 'active break' in the middle of long desk tasks, to prevent restlessness from turning into a meltdown from too much sitting still.</div>
+      <div class="afoot"><span>Materials: Open space</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Flamingo Pose</h3>
+      <div class="ameta"><span><b>Age:</b> 4–8 years</span><span><b>Duration:</b> 1 to 2 minutes per side</span></div>
+      <div class="adesc">Balancing on one leg like a flamingo, with the other leg bent back and arms out.</div>
+      <ol><li>Have the child stand supported on just one leg.</li><li>The other leg bends back, like a flamingo, arms out to help balance.</li><li>Hold for a few seconds and switch legs.</li></ol>
+      <div class="abox"><b>Why it works:</b> A fun variation of single-leg balance, with a playful appeal that boosts interest for younger children.</div>
+      <div class="abox"><b>Tip for tough days:</b> Make flamingo sounds or add a short story about the bird to make the game more engaging.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Volcano Breath</h3>
+      <div class="ameta"><span><b>Age:</b> 4–8 years</span><span><b>Duration:</b> 1 to 2 minutes</span></div>
+      <div class="adesc">The hands rise together in front of the body while the child breathes in, and 'erupt' opening to the sides while breathing out, like a volcano.</div>
+      <ol><li>Have the child join their palms together in front of the chest.</li><li>On the in-breath, the hands rise together above the head.</li><li>On a forceful out-breath, the hands 'erupt' opening to the sides, like a volcano releasing smoke.</li></ol>
+      <div class="abox"><b>Why it works:</b> The wide movement gives a physical, visual outlet for the energy of anger, showing that intensity can be expressed safely and in a controlled way.</div>
+      <div class="abox"><b>Tip for tough days:</b> An excellent tool for the very start of an anger flare-up — it gives physical permission to 'erupt' in a way that hurts no one.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 18/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 3 · Releasing Energy Safely</div><h2>Day 18 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">We close the third week reaching for opposite targets, walking like an inchworm, rocking like a seesaw in pairs, and expanding a breathing ball with both hands.</div>
+  <div class="progress"><i style="width:60%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Reaching Opposite Targets</h3>
+      <div class="ameta"><span><b>Age:</b> 4–8 years</span><span><b>Duration:</b> 5 minutes</span></div>
+      <div class="adesc">Targets are stuck or drawn on the opposite side of the body from the hand used; the child touches each target with a cotton swab or a finger.</div>
+      <ol><li>Stick small targets (dots, stars) on the left side of the child's body.</li><li>Have them touch each target using the right hand, crossing the center.</li><li>Move the targets to the right side and use the left hand.</li></ol>
+      <div class="abox"><b>Why it works:</b> Precision plus crossing trains fine motor coordination and hemisphere communication at the same time.</div>
+      <div class="abox"><b>Tip for tough days:</b> Gradually increase the distance of the targets — starting easy avoids frustration in children with low tolerance for mistakes.</div>
+      <div class="afoot"><span>Materials: A cotton swab, stickers or a finger, and drawn targets</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Inchworm</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 2 to 3 minutes</span></div>
+      <div class="adesc">With legs straight, the hands 'walk' forward into a plank position, and then the feet take small steps to catch up to the hands.</div>
+      <ol><li>Have the child stand and bend forward to touch the floor with their hands.</li><li>The hands walk forward until they form a plank.</li><li>Then the feet take small steps until they get close to the hands again, repeating the cycle.</li></ol>
+      <div class="abox"><b>Why it works:</b> Stretches the posterior chain and strengthens arms and core, a complete heavy-work exercise that helps organize the body before focus-demanding tasks.</div>
+      <div class="abox"><b>Tip for tough days:</b> Demonstrate it slowly first — the movement has several steps, and children with motor-planning difficulties need to see it before trying.</div>
+      <div class="afoot"><span>Materials: Open space</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Paired Seesaw</h3>
+      <div class="ameta"><span><b>Age:</b> 3–6 years</span><span><b>Duration:</b> 3 minutes</span></div>
+      <div class="adesc">Sitting facing each other, holding hands, both participants rock back and forth alternately, like a seesaw.</div>
+      <ol><li>Sit on the floor facing the child, legs slightly apart, feet touching.</li><li>Hold hands and rock the body back and forth alternately, like a seesaw.</li><li>Repeat the rhythmic movement for 1 to 2 minutes, with laughter.</li></ol>
+      <div class="abox"><b>Why it works:</b> The rhythmic movement and constant eye contact strengthen the bond between adult and child while offering gentle vestibular stimulation.</div>
+      <div class="abox"><b>Tip for tough days:</b> A great reconnection moment right after a conflict — the safe touch and laughter help 'repair' the relationship after a meltdown.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Breathing Ball (Hoberman Sphere)</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 2 to 3 minutes</span></div>
+      <div class="adesc">The child expands the sphere while breathing in and contracts it while breathing out, visually following their own breathing rhythm.</div>
+      <ol><li>Hold the closed sphere in the child's hands (or together with them).</li><li>On the in-breath, expand the sphere together, opening it slowly.</li><li>On the out-breath, close the sphere slowly, repeating the cycle a few times.</li></ol>
+      <div class="abox"><b>Why it works:</b> The concrete, three-dimensional visual support makes it much easier to understand breathing rhythm for young children or those who struggle with abstraction.</div>
+      <div class="abox"><b>Tip for tough days:</b> If you don't have the sphere, a party balloon (not fully inflated) can be used as a similar alternative.</div>
+      <div class="afoot"><span>Materials: A Hoberman-style expandable sphere</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page weekpage" data-pg="week 4">
+  <div class="weeknum">Week 4</div>
+  <h2>Naming Feelings</h2>
+  <div class="sub">Days 19 to 24 — Emotional awareness and executive functions</div>
+  <img class="weekbanner" src="ginastica-cerebral-imagens/img-semana-4.jpg" alt="Naming Feelings">
+  <div class="msg">This week has a more explicit focus on emotional vocabulary and self-control: naming what you feel, waiting your turn, following a rule even when it's hard. These are exactly the skills that tend to be missing in children with chronic defiance — and they're built through repeated practice, not lectures.</div>
+  <div class="weekdays"><div class="weekday-chip"><b>Day 19</b>Large Easel Painting · Wheelbarrow Walk · 5-4-3-2-1 (Five Senses) · Follow the Thumb (H Pattern)</div><div class="weekday-chip"><b>Day 20</b>Imaginary Steering Wheel · Carrying Bags or Books · Calm-Down Jar (Glitter Jar) · Pencil Push-Ups</div><div class="weekday-chip"><b>Day 21</b>Simple Clapping · Pushing the Laundry Basket · Name It to Tame It · Follow the Bubble</div><div class="weekday-chip"><b>Day 22</b>Hand-Clapping Rhyme (Miss Mary Mack style) · Tug of War · Breathing Together (Co-Regulation) · Flashlight on the Ceiling</div><div class="weekday-chip"><b>Day 23</b>Clap-Thighs-Snap · Squeezing Firm Dough · Emotion Thermometer · Ball in the Gutter</div><div class="weekday-chip"><b>Day 24</b>Clap, Snap, Tap · Thick Drink Through a Straw · Senses Safari · Cards Around the 8</div></div>
+</section>
+<section class="page daypage" data-pg="day 19/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 4 · Naming Feelings</div><h2>Day 19 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">Painting in wide strokes frees the body, the wheelbarrow walk strengthens the arms, the five senses anchor us in the present, and the thumb guides the eyes slowly.</div>
+  <div class="progress"><i style="width:63%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Large Easel Painting</h3>
+      <div class="ameta"><span><b>Age:</b> 4–8 years</span><span><b>Duration:</b> 8 to 10 minutes</span></div>
+      <div class="adesc">Painting on a large sheet fixed to a wall or an easel, the child reaches opposite corners with the same hand, crossing the body widely.</div>
+      <ol><li>Fix a large sheet of paper to the wall at a comfortable height for the child.</li><li>Have them paint strokes that go from one corner of the sheet to the other using the same hand.</li><li>Encourage wide movements, without switching hands mid-stroke.</li></ol>
+      <div class="abox"><b>Why it works:</b> Painting vertically widens the midline crossing and strengthens shoulder muscles, which matters for future handwriting.</div>
+      <div class="abox"><b>Tip for tough days:</b> A great release valve on days with a lot of built-up anger: big, free strokes help 'get it out' without judgment.</div>
+      <div class="afoot"><span>Materials: Large paper, paint or crayons, a vertical surface</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Wheelbarrow Walk</h3>
+      <div class="ameta"><span><b>Age:</b> 4–10 years</span><span><b>Duration:</b> 1 to 2 minutes</span></div>
+      <div class="adesc">The adult holds the child's feet (or ankles) while the child walks supported only on their hands.</div>
+      <ol><li>Have the child rest their hands on the floor while the adult holds their ankles, lifting the legs.</li><li>The child walks forward using only the arms, while the adult follows holding the legs.</li><li>Do a short 2 to 3 meter route and rest.</li></ol>
+      <div class="abox"><b>Why it works:</b> One of the most intense heavy-work exercises for the arms, very effective for organizing extremely agitated children in a short time.</div>
+      <div class="abox"><b>Tip for tough days:</b> Start with very short routes — young children's arm strength is limited, and getting frustrated quickly reduces interest in repeating it.</div>
+      <div class="afoot"><span>Materials: Open space</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>5-4-3-2-1 (Five Senses)</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 3 to 5 minutes</span></div>
+      <div class="adesc">The child names, out loud or silently, 5 things they see, 4 they feel in their body, 3 they hear, 2 they smell and 1 they taste.</div>
+      <ol><li>Have the child sit comfortably and take one deep breath.</li><li>Guide them slowly: 'tell me 5 things you see,' then 4 they feel in their body, 3 they hear, 2 they smell and 1 they taste.</li><li>Don't correct the answers — the goal is just to notice, not to get it 'right.'</li></ol>
+      <div class="abox"><b>Why it works:</b> A classic sensory-anchoring technique that brings the child's attention back to the present moment, interrupting the thought cycle that feeds anger or anxiety.</div>
+      <div class="abox"><b>Tip for tough days:</b> Use it right at the start of an anger outburst, before it escalates — the earlier, the easier it still is to break the cycle.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Follow the Thumb (H Pattern)</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 2 to 3 minutes</span></div>
+      <div class="adesc">The child moves their own thumb tracing an H, circles and diagonals in the air, with the eyes following the movement and the head still.</div>
+      <ol><li>Have the child extend an arm forward with the thumb up.</li><li>They move the thumb slowly tracing an H in the air (up, down, sideways), keeping the head still.</li><li>Repeat tracing circles and then diagonals, always following only with the eyes.</li></ol>
+      <div class="abox"><b>Why it works:</b> Trains smooth eye tracking isolated from head movement, an important foundational visual skill for following lines of text while reading.</div>
+      <div class="abox"><b>Tip for tough days:</b> If the child moves their head along with it, gently remind them 'only your eyes move' — a few reminders are usually needed at first.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 20/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 4 · Naming Feelings</div><h2>Day 20 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">The imaginary steering wheel crosses the hands, carrying real bags really helps, the glitter jar shows thoughts settling down, and a pencil trains close-up focus.</div>
+  <div class="progress"><i style="width:66%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Imaginary Steering Wheel</h3>
+      <div class="ameta"><span><b>Age:</b> 3–6 years</span><span><b>Duration:</b> 2 to 3 minutes</span></div>
+      <div class="adesc">The child 'drives' a large imaginary steering wheel, crossing the hands alternately over the center of the body.</div>
+      <ol><li>Have the child hold an imaginary steering wheel (or a paper plate) in front of the body.</li><li>They turn the wheel left and right, crossing their hands in the process.</li><li>Play at 'driving' along an imaginary road full of curves.</li></ol>
+      <div class="abox"><b>Why it works:</b> A simple, playful way for young children to practice crossing, fitting perfectly into pretend play.</div>
+      <div class="abox"><b>Tip for tough days:</b> Use this before getting in the car/bus — the game readies the body and distracts from last-minute meltdowns.</div>
+      <div class="afoot"><span>Materials: No materials needed (optional: a paper plate)</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Carrying Bags or Books</h3>
+      <div class="ameta"><span><b>Age:</b> 3–10 years</span><span><b>Duration:</b> 3 to 5 minutes</span></div>
+      <div class="adesc">The child helps carry shopping bags or a stack of books from one place to another, an everyday task with a calming effect.</div>
+      <ol><li>Choose a bag or stack of an appropriate weight for the child's age and strength.</li><li>Have them carry the object from one room to another, genuinely helping with a real task.</li><li>Thank them for the real help, reinforcing their sense of contribution.</li></ol>
+      <div class="abox"><b>Why it works:</b> The heavy work embedded in real tasks organizes the nervous system and also builds a sense of competence and belonging within the family.</div>
+      <div class="abox"><b>Tip for tough days:</b> Ask for genuine help (not just as 'exercise') whenever possible — feeling useful reduces oppositional behavior in many children.</div>
+      <div class="afoot"><span>Materials: Shopping bags or a stack of books</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Calm-Down Jar (Glitter Jar)</h3>
+      <div class="ameta"><span><b>Age:</b> 3–10 years</span><span><b>Duration:</b> 2 to 3 minutes</span></div>
+      <div class="adesc">The child shakes a jar filled with glitter and water and watches the glitter slowly settle while breathing, using the jar as a visual anchor.</div>
+      <ol><li>Prepare ahead of time a clear jar with water, a bit of glue and glitter (the glue makes the glitter settle more slowly).</li><li>When the child is agitated, invite them to shake the jar hard.</li><li>Watch together as the glitter slowly settles, breathing deeply while it happens.</li></ol>
+      <div class="abox"><b>Why it works:</b> The settling glitter works as a concrete visual metaphor for how thoughts and feelings calm down over time — something too abstract to explain with words alone.</div>
+      <div class="abox"><b>Tip for tough days:</b> Keep the jar always visible and accessible in the calm-down corner, so the child can use it alone whenever they need it.</div>
+      <div class="afoot"><span>Materials: A clear jar with water, glitter and glue</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Pencil Push-Ups</h3>
+      <div class="ameta"><span><b>Age:</b> 6–10 years</span><span><b>Duration:</b> 2 minutes</span></div>
+      <div class="adesc">The child slowly brings a pencil toward their own nose, keeping visual focus on it until it almost doubles in image.</div>
+      <ol><li>Have the child hold a pencil with the arm stretched out in front of their face.</li><li>They slowly bring the pencil toward the nose, keeping their eyes focused on it the whole time.</li><li>When the image starts to double, they move the pencil back out, repeating the movement a few times.</li></ol>
+      <div class="abox"><b>Why it works:</b> Trains eye convergence (the two eyes working together up close), a visual skill linked to reading and sustained attention.</div>
+      <div class="abox"><b>Tip for tough days:</b> If the child feels discomfort or a headache, stop and try again another time with fewer reps.</div>
+      <div class="afoot"><span>Materials: A pencil</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 21/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 4 · Naming Feelings</div><h2>Day 21 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">Simple claps mark the beat, pushing the laundry basket is heavy work disguised as helping, naming the feeling comes before any correction, and the eyes follow a bubble through the air.</div>
+  <div class="progress"><i style="width:70%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Simple Clapping</h3>
+      <div class="ameta"><span><b>Age:</b> 3–6 years</span><span><b>Duration:</b> 2 minutes</span></div>
+      <div class="adesc">The child claps along to the beat of a song, in the simplest possible way.</div>
+      <ol><li>Pick a song with a clear, not-too-fast beat.</li><li>Clap together with the child, following the beat of the song.</li><li>Gradually increase the speed as they gain confidence.</li></ol>
+      <div class="abox"><b>Why it works:</b> Clapping to the beat trains basic motor synchronization, one of the earliest self-regulation skills through the body.</div>
+      <div class="abox"><b>Tip for tough days:</b> Use it as a 'sound cue' for transitions: clapping together before switching activities helps the child prepare for the change.</div>
+      <div class="afoot"><span>Materials: No materials needed (optional: music)</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Pushing the Laundry Basket</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 2 to 3 minutes</span></div>
+      <div class="adesc">The child pushes a laundry basket or box with light to moderate weight across the floor from one place to another.</div>
+      <ol><li>Put some clothes or light objects inside a basket or box.</li><li>Have the child push the basket across the floor to an agreed point.</li><li>Repeat the route back and forth, adjusting the weight to their strength.</li></ol>
+      <div class="abox"><b>Why it works:</b> Pushing against resistance is one of the simplest forms of everyday heavy work, with an almost immediate organizing effect.</div>
+      <div class="abox"><b>Tip for tough days:</b> Make use of real household chores (like tidying a room) to build in this kind of effort without it feeling like 'exercise.'</div>
+      <div class="afoot"><span>Materials: A basket or box with some weight</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Name It to Tame It</h3>
+      <div class="ameta"><span><b>Age:</b> 3–10 years</span><span><b>Duration:</b> 2 to 5 minutes</span></div>
+      <div class="adesc">The adult helps the child put into words the emotion they're feeling, validating it before trying to fix anything.</div>
+      <ol><li>Notice the signs in the child's body (clenched fists, red face, crying) and name it calmly: 'it looks like you're really angry right now.'</li><li>Wait for the child to confirm or correct the name of the feeling.</li><li>Only after it's named and validated, talk about what to do next.</li></ol>
+      <div class="abox"><b>Why it works:</b> According to psychiatrist Daniel Siegel, putting an intense emotion into words activates brain areas that help regulate it — 'name it to tame it.'</div>
+      <div class="abox"><b>Tip for tough days:</b> Name the feeling before any attempt to correct behavior; trying to teach during the meltdown itself rarely works.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Follow the Bubble</h3>
+      <div class="ameta"><span><b>Age:</b> 3–6 years</span><span><b>Duration:</b> 3 minutes</span></div>
+      <div class="adesc">The child follows soap bubbles with only their eyes, without turning their head, until they pop or reach the ground.</div>
+      <ol><li>Blow a bubble slowly.</li><li>Have the child follow the bubble with only their eyes, keeping their head still.</li><li>Repeat a few times, varying the direction of the bubbles.</li></ol>
+      <div class="abox"><b>Why it works:</b> A playful, effortless-feeling way to train smooth visual tracking in young children, without it feeling like a formal exercise.</div>
+      <div class="abox"><b>Tip for tough days:</b> Blow the bubbles at different heights and speeds to vary the visual challenge.</div>
+      <div class="afoot"><span>Materials: A bottle of bubble solution</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 22/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 4 · Naming Feelings</div><h2>Day 22 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">The paired clapping game combines rhythm and memory, tug of war measures strength safely, breathing together teaches by example, and a flashlight guides the eyes in the dark.</div>
+  <div class="progress"><i style="width:73%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Hand-Clapping Rhyme (Miss Mary Mack style)</h3>
+      <div class="ameta"><span><b>Age:</b> 6–10 years</span><span><b>Duration:</b> 5 minutes</span></div>
+      <div class="adesc">A traditional two-person hand-clapping game with a sung sequence, combining rhythm, memory and midline crossing.</div>
+      <ol><li>Teach the basic sequence: clap own hands, clap partner's right hand, clap own hands, clap partner's left hand.</li><li>Add a simple rhyme in the same rhythm as the sequence.</li><li>Repeat until the pair can keep the rhythm without missing, gradually speeding up.</li></ol>
+      <div class="abox"><b>Why it works:</b> Combines crossing, sequence memory and social connection — an excellent integrated workout for children who struggle with both focus and regulating emotions in a group.</div>
+      <div class="abox"><b>Tip for tough days:</b> If the child gets frustrated by mistakes, start with just the hands (no rhyme) and add complexity gradually.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Tug of War</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 2 to 3 minutes</span></div>
+      <div class="adesc">The child pulls a rope or towel against resistance offered by the adult, in a small tug of war.</div>
+      <ol><li>Hold the two ends of a towel or rope, with the child holding the other end.</li><li>Have them pull with force while you offer controlled resistance.</li><li>Alternate between pulling and releasing in small effort-and-rest cycles.</li></ol>
+      <div class="abox"><b>Why it works:</b> Sustained muscular effort against resistance is highly organizing for the proprioceptive system, great before difficult transitions.</div>
+      <div class="abox"><b>Tip for tough days:</b> Always adjust the resistance so the child 'wins' sometimes — the sense of strength and capability builds self-esteem.</div>
+      <div class="afoot"><span>Materials: A rope or sturdy towel</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Breathing Together (Co-Regulation)</h3>
+      <div class="ameta"><span><b>Age:</b> 3–10 years</span><span><b>Duration:</b> 1 to 3 minutes</span></div>
+      <div class="adesc">The adult sits next to the agitated child with a calm voice and breathes slowly and visibly, without requiring them to copy right away.</div>
+      <ol><li>Approach the child in crisis keeping your own body relaxed and your voice low.</li><li>Breathe slowly and visibly, without asking them to do the same right away.</li><li>Stay present and available until their body starts naturally following your rhythm.</li></ol>
+      <div class="abox"><b>Why it works:</b> A child's nervous system regulates largely through contact with the calm nervous system of a trusted adult — this is the basis of co-regulation.</div>
+      <div class="abox"><b>Tip for tough days:</b> Remember: your calm is the most powerful tool you have during a crisis, more than any word or punishment.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Flashlight on the Ceiling</h3>
+      <div class="ameta"><span><b>Age:</b> 4–8 years</span><span><b>Duration:</b> 2 to 3 minutes</span></div>
+      <div class="adesc">In a dimly lit room, the child follows the flashlight's dot of light on the ceiling or wall with their eyes.</div>
+      <ol><li>Dim the room a bit and turn on a flashlight.</li><li>Move the beam of light slowly across the ceiling or wall, in straight lines and then curves.</li><li>Have the child follow the dot of light with only their eyes, without pointing or getting up.</li></ol>
+      <div class="abox"><b>Why it works:</b> A calm, engaging way to train visual tracking, especially effective at night as part of a wind-down routine before bed.</div>
+      <div class="abox"><b>Tip for tough days:</b> Use it as part of the bedtime routine, right before lying down, to help the transition from an agitated day to sleep.</div>
+      <div class="afoot"><span>Materials: A flashlight and a dim room</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 23/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 4 · Naming Feelings</div><h2>Day 23 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">Claps, thigh-taps and snaps form a sequence, firm dough works out the hands, the emotion thermometer names the intensity, and a small ball rolls slowly down the gutter.</div>
+  <div class="progress"><i style="width:76%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Clap-Thighs-Snap</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 3 minutes</span></div>
+      <div class="adesc">A repeated rhythmic sequence: clap hands, slap thighs, snap fingers, repeat in cycles.</div>
+      <ol><li>Teach the sequence: 1 clap, 1 thigh slap, 1 finger snap.</li><li>Repeat the sequence slowly until the child memorizes it.</li><li>Gradually increase speed, keeping the rhythm steady.</li></ol>
+      <div class="abox"><b>Why it works:</b> Sequencing three different movements in a fixed order trains working memory and impulse inhibition at the same time.</div>
+      <div class="abox"><b>Tip for tough days:</b> If finger snapping is hard, swap it for a chest tap — what matters is keeping the three distinct beats.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Squeezing Firm Dough</h3>
+      <div class="ameta"><span><b>Age:</b> 3–10 years</span><span><b>Duration:</b> 3 to 5 minutes</span></div>
+      <div class="adesc">The child repeatedly squeezes and stretches a very firm piece of dough, exercising hand strength.</div>
+      <ol><li>Give the child a ball of firm dough (or theraputty).</li><li>Have them squeeze hard with a closed hand, then open the fingers, stretching the dough.</li><li>Repeat the squeeze-and-stretch cycle for a few minutes, switching hands.</li></ol>
+      <div class="abox"><b>Why it works:</b> A discreet, portable heavy-work exercise for the hands, great for moments of waiting or anxiety away from home.</div>
+      <div class="abox"><b>Tip for tough days:</b> Keep a small container of dough in a bag or school backpack as an always-available self-regulation tool.</div>
+      <div class="afoot"><span>Materials: Firm modeling dough or theraputty</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Emotion Thermometer</h3>
+      <div class="ameta"><span><b>Age:</b> 4–10 years</span><span><b>Duration:</b> 2 minutes</span></div>
+      <div class="adesc">The child points to a color-coded thermometer, from calm to explosive, showing how they feel in that moment.</div>
+      <ol><li>Draw (or print) a thermometer with colored zones: green (calm), yellow (agitated), orange (very agitated) and red (explosion).</li><li>Ask the child a few times a day which color they're at.</li><li>Use the answer to decide together which regulation strategy to use at that moment.</li></ol>
+      <div class="abox"><b>Why it works:</b> Gives the child a visual, concrete vocabulary to identify their own emotional intensity before losing control — the first step of self-regulation.</div>
+      <div class="abox"><b>Tip for tough days:</b> Use the thermometer during calm moments too, not just crises, so the child gets familiar with the tool before really needing it.</div>
+      <div class="afoot"><span>Materials: A thermometer drawn on paper</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Ball in the Gutter</h3>
+      <div class="ameta"><span><b>Age:</b> 4–8 years</span><span><b>Duration:</b> 3 minutes</span></div>
+      <div class="adesc">The child rolls a small ball along a gutter (made from a pool noodle cut in half) and follows it with their eyes to the end.</div>
+      <ol><li>Cut a pool noodle in half lengthwise, forming a gutter.</li><li>Tilt the gutter slightly and release a small ball at one end.</li><li>Have the child follow the ball with their eyes until it reaches the end.</li></ol>
+      <div class="abox"><b>Why it works:</b> The predictable, steady movement of the ball is ideal for training smooth visual tracking in a calm, repetitive way.</div>
+      <div class="abox"><b>Tip for tough days:</b> Let the child release their own ball and time it — the sense of control boosts engagement in the activity.</div>
+      <div class="afoot"><span>Materials: A pool-noodle half cut lengthwise and a small ball</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 24/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 4 · Naming Feelings</div><h2>Day 24 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">The clap-snap-tap sequence speeds up bit by bit, a thick drink works out the mouth, a mindful walk notices every detail, and cards follow the path of the 8.</div>
+  <div class="progress"><i style="width:80%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Clap, Snap, Tap</h3>
+      <div class="ameta"><span><b>Age:</b> 6–10 years</span><span><b>Duration:</b> 3 to 4 minutes</span></div>
+      <div class="adesc">A rhythmic sequence of clapping hands, snapping fingers and tapping the table (or the body), which gets faster with each round.</div>
+      <ol><li>Teach the sequence: clap hands, snap fingers, tap the table with both hands.</li><li>Repeat a few times at a steady, relaxed pace.</li><li>With each full round, speed it up a little, like a 'who can keep up' game.</li></ol>
+      <div class="abox"><b>Why it works:</b> The progressive speed increase demands sustained attention and playfully builds tolerance for frustration when the rhythm breaks down.</div>
+      <div class="abox"><b>Tip for tough days:</b> Laughing at your own mistakes along with the child models that making mistakes is part of the process — important for kids with low frustration tolerance.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Thick Drink Through a Straw</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 3 to 5 minutes</span></div>
+      <div class="adesc">The child sucks a thick drink, like a yogurt smoothie, through a straw, requiring more oral effort than usual.</div>
+      <ol><li>Prepare a thick smoothie or drinkable yogurt in a cup with a straw.</li><li>Have the child sip it slowly, feeling the effort in their mouth.</li><li>Use the moment to chat calmly while they drink.</li></ol>
+      <div class="abox"><b>Why it works:</b> The sucking effort provides proprioceptive input through the mouth muscles, with a calming effect recognized in occupational therapy for agitated children.</div>
+      <div class="abox"><b>Tip for tough days:</b> A great calming snack before homework or another task that requires concentration.</div>
+      <div class="afoot"><span>Materials: A thick drink (yogurt, smoothie) and a straw</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Senses Safari</h3>
+      <div class="ameta"><span><b>Age:</b> 4–10 years</span><span><b>Duration:</b> 10 to 15 minutes</span></div>
+      <div class="adesc">An outdoor walk where the child is invited to notice as many details, sounds and small creatures around them as possible.</div>
+      <ol><li>Choose a safe outdoor space, like a backyard, square or park.</li><li>Invite the child to walk slowly, noticing different colors, textures, sounds and smells.</li><li>Ask every now and then: 'what are you noticing right now?'</li></ol>
+      <div class="abox"><b>Why it works:</b> Walking mindfully in nature reduces stress levels and improves focus, with documented effects even from short walks.</div>
+      <div class="abox"><b>Tip for tough days:</b> Resist the urge to rush the walk — the value lies precisely in the slowness and attention to detail.</div>
+      <div class="afoot"><span>Materials: Outdoor space (backyard, square, park)</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Cards Around the 8</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 3 minutes</span></div>
+      <div class="adesc">The child moves playing cards along the path of a drawn lazy 8, following them with their eyes.</div>
+      <ol><li>Draw a large lazy 8 on a sheet of paper or on the floor with chalk.</li><li>Have the child slowly move a card following the outline of the 8.</li><li>The eyes follow the card the whole time, without turning the head abruptly.</li></ol>
+      <div class="abox"><b>Why it works:</b> Combines midline crossing with visual-tracking practice, reinforcing two skills at once in a single activity.</div>
+      <div class="abox"><b>Tip for tough days:</b> Have the child name the card's suit or number at specific points along the 8, adding an attention challenge.</div>
+      <div class="afoot"><span>Materials: A large lazy 8 drawn on paper and a few playing cards</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page weekpage" data-pg="week 5">
+  <div class="weeknum">Week 5</div>
+  <h2>Harvesting Calm</h2>
+  <div class="sub">Days 25 to 30 — Consolidating what's been practiced</div>
+  <img class="weekbanner" src="ginastica-cerebral-imagens/img-semana-5.jpg" alt="Harvesting Calm">
+  <div class="msg">In this final week, many of the tools practiced over the last 24 days start showing up on their own, without you having to ask. Keep offering the activities with the same consistency — a child's emotional regulation isn't a straight line, and some days will feel like starting over. That's part of the process too.</div>
+  <div class="weekdays"><div class="weekday-chip"><b>Day 25</b>Mirroring · Squeezing a Stress Ball · Emotion Charades · Breathing + Eye Movement</div><div class="weekday-chip"><b>Day 26</b>Jump Rope · Holding a Plank · Calm-Down Corner · Simon Memory (Color Sequence)</div><div class="weekday-chip"><b>Day 27</b>Hopscotch · Vacuuming or Mopping · Active Listening ('I'm Here') · 'I Went to the Market and Bought...'</div><div class="weekday-chip"><b>Day 28</b>Jumping Jacks · Snake Crawl · Feeling the Heartbeat · Simon Says</div><div class="weekday-chip"><b>Day 29</b>Cross-Country Jumping Jacks · Chair Push-Up · Pressing Feet into the Ground (Grounding) · Magic Cup</div><div class="weekday-chip"><b>Day 30</b>Two-Handed Drumming · Blanket Burrito Roll · Bare Feet on Grass · Telephone Game</div></div>
+</section>
+<section class="page daypage" data-pg="day 25/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 5 · Harvesting Calm</div><h2>Day 25 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">We close the fourth week with mirroring, a stress ball always within reach, emotion charades with the whole body, and breathing paired with the eyes moving side to side.</div>
+  <div class="progress"><i style="width:83%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Mirroring</h3>
+      <div class="ameta"><span><b>Age:</b> 4–10 years</span><span><b>Duration:</b> 5 minutes</span></div>
+      <div class="adesc">One participant leads slow movements while the other copies as if being a mirror, then they switch roles.</div>
+      <ol><li>Stand facing each other, an arm's length apart.</li><li>One leads with slow movements (raising an arm, turning the head, crouching) while the other mirrors them.</li><li>After 1 to 2 minutes, switch the leader and mirror roles.</li></ol>
+      <div class="abox"><b>Why it works:</b> Demands full attention to the partner and precise motor imitation, strengthening both focus and the emotional connection between adult and child.</div>
+      <div class="abox"><b>Tip for tough days:</b> A great connection moment before a difficult conversation — the game builds closeness and reduces the child's defensiveness.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Squeezing a Stress Ball</h3>
+      <div class="ameta"><span><b>Age:</b> 3–10 years</span><span><b>Duration:</b> 2 to 5 minutes</span></div>
+      <div class="adesc">The child repeatedly squeezes a soft ball with their hand, in a simple, repetitive movement.</div>
+      <ol><li>Give the child a stress ball (or a balloon filled with flour, as a homemade alternative).</li><li>Have them squeeze it hard and release, repeating the movement.</li><li>Let them use it freely whenever they feel the need, without strict time rules.</li></ol>
+      <div class="abox"><b>Why it works:</b> A simple, always-available self-regulation resource through the hands, useful in any setting, including school.</div>
+      <div class="abox"><b>Tip for tough days:</b> Keep one ball in the backpack and another at home — constant availability is what makes the tool work at the right moments.</div>
+      <div class="afoot"><span>Materials: A stress ball or similar soft item</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Emotion Charades</h3>
+      <div class="ameta"><span><b>Age:</b> 4–10 years</span><span><b>Duration:</b> 5 to 10 minutes</span></div>
+      <div class="adesc">One participant acts out an emotion using only body and face, without speaking, and the other tries to guess which one it is.</div>
+      <ol><li>Write down a few emotions on slips of paper (joy, anger, fear, sadness, surprise).</li><li>One participant draws a slip and acts out the emotion with just body and facial expression, no talking.</li><li>The other tries to guess; then they switch roles.</li></ol>
+      <div class="abox"><b>Why it works:</b> Recognizing emotions in someone else's body language broadens the child's emotional vocabulary and their ability to put themselves in someone else's shoes.</div>
+      <div class="abox"><b>Tip for tough days:</b> Include subtler emotions (frustration, embarrassment, pride) as the child grows — this expands the repertoire beyond the basics.</div>
+      <div class="afoot"><span>Materials: Cards with emotion names (optional)</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Breathing + Eye Movement</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 2 minutes</span></div>
+      <div class="adesc">The child breathes in looking to one side and breathes out looking to the opposite side, combining breathing and smooth tracking.</div>
+      <ol><li>Have the child look left while breathing in slowly.</li><li>They look right while breathing out slowly.</li><li>Repeat the cycle 5 to 6 times, keeping the head still, only the eyes moving.</li></ol>
+      <div class="abox"><b>Why it works:</b> Combines two regulating resources in one practice — the calm of breathing and the visual organization of tracking — boosting the effect of both.</div>
+      <div class="abox"><b>Tip for tough days:</b> Go very slowly at first; if the child feels dizzy, reduce the range of eye movement.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 26/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 5 · Harvesting Calm</div><h2>Day 26 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">Jump rope releases plenty of physical energy, the plank organizes the body in seconds, the calm-down corner welcomes whenever it's needed, and a memory game challenges with colors.</div>
+  <div class="progress"><i style="width:86%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Jump Rope</h3>
+      <div class="ameta"><span><b>Age:</b> 6–10 years</span><span><b>Duration:</b> 5 to 8 minutes</span></div>
+      <div class="adesc">Jumping rope coordinates arms and legs in a steady rhythm, requiring whole-body synchronization.</div>
+      <ol><li>Help the child find the right rope length for their height.</li><li>Start without jumping, just swinging the rope back and stepping over it.</li><li>Once they get the hang of it, move on to continuous jumping, counting the jumps out loud.</li></ol>
+      <div class="abox"><b>Why it works:</b> The rhythmic whole-body coordination releases a lot of physical energy, making it one of the most effective activities for discharging built-up restlessness.</div>
+      <div class="abox"><b>Tip for tough days:</b> Use it as a 'release valve' right after a moment of frustration — the intense physical effort helps metabolize the emotion before talking about it.</div>
+      <div class="afoot"><span>Materials: A jump rope</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Holding a Plank</h3>
+      <div class="ameta"><span><b>Age:</b> 6–10 years</span><span><b>Duration:</b> 20 to 30 seconds</span></div>
+      <div class="adesc">The child supports themselves on forearms and toes, keeping the body straight in a plank position for a few seconds.</div>
+      <ol><li>Have the child rest on their forearms and the balls of their feet, body straight like a board.</li><li>Help keep the hips aligned, neither too high nor sagging.</li><li>Hold the position for 10 to 20 seconds, rest and repeat 2 to 3 times.</li></ol>
+      <div class="abox"><b>Why it works:</b> Sustained weight-bearing through the joints intensely organizes the proprioceptive system in a short time, great before focus-demanding tasks.</div>
+      <div class="abox"><b>Tip for tough days:</b> Turn it into a challenge by counting out loud together — counting gives predictability and helps sustain the effort to the end.</div>
+      <div class="afoot"><span>Materials: A mat</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Calm-Down Corner</h3>
+      <div class="ameta"><span><b>Age:</b> 3–10 years</span><span><b>Duration:</b> Open-ended, as needed</span></div>
+      <div class="adesc">A fixed spot at home, with low light, cushions and comfort objects, where the child can go to regulate whenever they need to.</div>
+      <ol><li>Pick a quiet corner of the house and set it up with cushions, a soft blanket and a few comfort objects (stuffed animal, calm-down jar, book).</li><li>Introduce the space during a calm moment, explaining that it's for calming down, not a punishment.</li><li>Invite the child to use it whenever they feel the need, alone or with company.</li></ol>
+      <div class="abox"><b>Why it works:</b> Having a fixed, predictable physical space dedicated to self-regulation teaches that feeling strong emotions is normal and that there's a safe place to move through them.</div>
+      <div class="abox"><b>Tip for tough days:</b> Never use the calm-down corner as punishment ('go to your room and think about what you did') — that destroys the space's regulating function.</div>
+      <div class="afoot"><span>Materials: A space with cushions, low light and comfort objects</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Simon Memory (Color Sequence)</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 5 to 10 minutes</span></div>
+      <div class="adesc">The child must repeat growing sequences of colors or sounds, directly training working memory.</div>
+      <ol><li>Use an electronic Simon-style game, or create a homemade version with 4 colored cards.</li><li>Show a short sequence of colors (or tap the cards in an order) and have the child repeat it.</li><li>Increase the sequence by one color each successful round.</li></ol>
+      <div class="abox"><b>Why it works:</b> Repeating ever-longer sequences is one of the most direct ways to train working memory, a core executive function for following multi-step instructions.</div>
+      <div class="abox"><b>Tip for tough days:</b> If the child makes a mistake, go back to the previous sequence length before trying to increase it again — steady success keeps motivation up.</div>
+      <div class="afoot"><span>Materials: A Simon-style electronic game or colored cards</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 27/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 5 · Harvesting Calm</div><h2>Day 27 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">Hopscotch combines jumping and number sequencing, real chores build strength, listening with full attention strengthens the bond, and a growing list challenges memory.</div>
+  <div class="progress"><i style="width:90%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Hopscotch</h3>
+      <div class="ameta"><span><b>Age:</b> 4–10 years</span><span><b>Duration:</b> 5 to 8 minutes</span></div>
+      <div class="adesc">The child hops with feet together or apart following the numbered sequence drawn on the ground.</div>
+      <ol><li>Draw a traditional hopscotch grid on the ground with chalk or tape.</li><li>Explain the sequence: single foot on solo numbers, both feet on paired numbers.</li><li>Let the child hop the sequence, helping count out loud.</li></ol>
+      <div class="abox"><b>Why it works:</b> A classic game that naturally combines bilateral coordination, balance and number sequencing in an enjoyable way.</div>
+      <div class="abox"><b>Tip for tough days:</b> Draw the hopscotch together with the child — creating the game together already reduces resistance to playing it.</div>
+      <div class="afoot"><span>Materials: Chalk to draw on the ground (or tape)</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Vacuuming or Mopping</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 5 minutes</span></div>
+      <div class="adesc">The child takes part in resistance-based household chores, like vacuuming or mopping the floor, pushing the equipment with force.</div>
+      <ol><li>Choose a small, safe area for the child to clean.</li><li>Show them how to hold and push the vacuum or the mop firmly.</li><li>Let them do the task for real, even if it doesn't come out perfect.</li></ol>
+      <div class="abox"><b>Why it works:</b> Resistance-based chores are heavy work disguised as real contribution, combining sensory regulation with a sense of responsibility.</div>
+      <div class="abox"><b>Tip for tough days:</b> Avoid correcting the result in front of the child — the value is in the effort and participation, not a perfect job.</div>
+      <div class="afoot"><span>Materials: A vacuum cleaner or floor mop</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Active Listening ('I'm Here')</h3>
+      <div class="ameta"><span><b>Age:</b> 3–10 years</span><span><b>Duration:</b> 2 to 5 minutes</span></div>
+      <div class="adesc">The adult crouches down to the child's eye level and clearly says they're there to listen, without interrupting or correcting right away.</div>
+      <ol><li>Crouch down physically to the child's eye level.</li><li>Say calmly: 'I'm here, I want to listen to you.'</li><li>Listen without interrupting, correcting or trying to fix things before they finish talking.</li></ol>
+      <div class="abox"><b>Why it works:</b> The physical posture of equality and listening without immediate judgment communicates relational safety, the central ingredient of emotional co-regulation.</div>
+      <div class="abox"><b>Tip for tough days:</b> Resist the urge to correct the behavior in that same moment — connect first, guide afterward.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>'I Went to the Market and Bought...'</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 5 to 10 minutes</span></div>
+      <div class="adesc">A game where each participant repeats the list of items already named and adds a new one at the end, in a growing cycle.</div>
+      <ol><li>Start by saying: 'I went to the market and bought an apple.'</li><li>The next player repeats the previous item and adds a new one: 'I went to the market and bought an apple and a banana.'</li><li>Continue the round, each person repeating the whole list and adding one more item.</li></ol>
+      <div class="abox"><b>Why it works:</b> A classic verbal memory game that can be played anywhere (in line, in the car, at the dinner table) with no materials needed.</div>
+      <div class="abox"><b>Tip for tough days:</b> Adapt the theme to the child's interests ('I went to the zoo and saw...') to keep engagement up over the 30 days.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 28/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 5 · Harvesting Calm</div><h2>Day 28 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">Jumping jacks quickly regulate the nervous system, crawling like a snake offers contact with the ground, feeling your own heartbeat teaches you to notice internal signals, and 'Simon Says' trains waiting before acting.</div>
+  <div class="progress"><i style="width:93%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Jumping Jacks</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 2 to 3 minutes</span></div>
+      <div class="adesc">Arms and legs open and close together in repeated jumps, a classic PE warm-up.</div>
+      <ol><li>Have the child stand with arms at their sides.</li><li>On the jump, they open both legs and arms at the same time.</li><li>On the next jump, they close everything back, repeating 10 to 15 times.</li></ol>
+      <div class="abox"><b>Why it works:</b> A symmetrical, high-energy movement that helps quickly regulate the nervous system before tasks that require calm, like homework.</div>
+      <div class="abox"><b>Tip for tough days:</b> Use it as a 1-minute 'reset' whenever you notice the child's energy climbing before it turns into a meltdown.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Snake Crawl</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 2 minutes</span></div>
+      <div class="adesc">The child slides across the floor face-down, using the arms and a twisting motion to propel themselves like a snake.</div>
+      <ol><li>Have the child lie face-down on the floor.</li><li>They use their arms and a twisting motion of the body to push themselves forward, like a snake.</li><li>Do a short course, encouraging the sinuous body movement.</li></ol>
+      <div class="abox"><b>Why it works:</b> The friction of the body against the floor provides tactile and proprioceptive input at the same time, with an organizing effect on the sensory system.</div>
+      <div class="abox"><b>Tip for tough days:</b> A great 'hide-and-seek while crawling' game to make the exercise even more engaging.</div>
+      <div class="afoot"><span>Materials: Open floor space</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Feeling the Heartbeat</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 2 minutes</span></div>
+      <div class="adesc">After running in place for 1 minute, the child places a hand on their chest and pays attention to their own heartbeat.</div>
+      <ol><li>Have the child run in place for about 1 minute, with energy.</li><li>Stop and have them place a hand on their chest.</li><li>Stay quiet together for a few seconds, feeling the heart beat and gradually slow down.</li></ol>
+      <div class="abox"><b>Why it works:</b> Consciously noticing internal body sensations (interoception) is a key skill for identifying emotions before they turn into meltdowns.</div>
+      <div class="abox"><b>Tip for tough days:</b> Compare before and after with the child: 'your heart was racing, and now?' — this builds the vocabulary of self-awareness.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Simon Says</h3>
+      <div class="ameta"><span><b>Age:</b> 3–10 years</span><span><b>Duration:</b> 5 to 8 minutes</span></div>
+      <div class="adesc">The child should only follow the adult's commands when they start with the phrase 'Simon says'; commands without that phrase should be ignored.</div>
+      <ol><li>Explain the rule: only follow the command if it starts with 'Simon says.'</li><li>Give commands alternating with and without the magic phrase: 'Simon says touch your nose' / 'jump.'</li><li>Whoever follows a command without 'Simon says' learns with a laugh, no punishment, and the game continues.</li></ol>
+      <div class="abox"><b>Why it works:</b> Trains attentive listening, remembering the rule, and above all, inhibiting an automatic response — the skill most often missing in children with chronic defiance.</div>
+      <div class="abox"><b>Tip for tough days:</b> Play this regularly as preventive practice, not as a test — the goal is practicing the pause before acting, not catching the child out.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 29/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 5 · Harvesting Calm</div><h2>Day 29 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">The cross-country jumping jack challenges motor planning, pushing the body up on a chair strengthens the arms, feeling your feet on the ground anchors you in the present, and a hidden cup challenges attention.</div>
+  <div class="progress"><i style="width:96%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Cross-Country Jumping Jacks</h3>
+      <div class="ameta"><span><b>Age:</b> 7–10 years</span><span><b>Duration:</b> 3 minutes</span></div>
+      <div class="adesc">A jumping-jack variation where the arm and leg on the same side move forward together, then switch.</div>
+      <ol><li>Have the child jump, bringing the right arm and left leg forward at the same time.</li><li>On the next jump, switch to the left arm and right leg.</li><li>Repeat alternating for 10 to 12 jumps, keeping the rhythm.</li></ol>
+      <div class="abox"><b>Why it works:</b> Demands more motor planning than the regular jumping jack, making it a good challenge for older children who already master the simple version.</div>
+      <div class="abox"><b>Tip for tough days:</b> If the child keeps getting tangled up, start in slow motion before speeding up — the motor pattern needs to be learned before gaining speed.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Chair Push-Up</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 1 to 2 minutes</span></div>
+      <div class="adesc">Seated, the child rests their hands on the seat beside their body and lifts themselves up, bearing weight on the arms.</div>
+      <ol><li>Seat the child on a sturdy chair, with hands resting on the seat beside their legs.</li><li>Have them push with their arms, lifting the body a few centimeters off the seat.</li><li>Hold for 3 to 5 seconds and lower with control, repeating a few times.</li></ol>
+      <div class="abox"><b>Why it works:</b> A heavy-work exercise that can be done seated at a desk, great for quick breaks during schoolwork.</div>
+      <div class="abox"><b>Tip for tough days:</b> Use it as a 30-second 'active pause' in the middle of homework whenever you notice signs of restlessness.</div>
+      <div class="afoot"><span>Materials: A sturdy chair</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Pressing Feet into the Ground (Grounding)</h3>
+      <div class="ameta"><span><b>Age:</b> 4–10 years</span><span><b>Duration:</b> 1 to 2 minutes</span></div>
+      <div class="adesc">The child stands or sits and feels their feet pressed firmly onto the ground, imagining roots growing from them.</div>
+      <ol><li>Have the child stand or sit with feet firmly resting on the floor.</li><li>Have them press their feet firmly against the ground, as if roots were growing from them.</li><li>Stay together for a few seconds feeling this sense of being 'planted' and steady.</li></ol>
+      <div class="abox"><b>Why it works:</b> Grounding uses the physical sensation of stability to help the mind feel safe, effective even in small spaces like a classroom.</div>
+      <div class="abox"><b>Tip for tough days:</b> Teach this as a discreet technique to use at school, without anyone else noticing what's happening.</div>
+      <div class="afoot"><span>Materials: No materials needed</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Magic Cup</h3>
+      <div class="ameta"><span><b>Age:</b> 4–8 years</span><span><b>Duration:</b> 5 minutes</span></div>
+      <div class="adesc">The adult shuffles three upside-down cups, one of them hiding a small ball, and the child tries to guess where it is.</div>
+      <ol><li>Place a small ball under one of three upside-down cups.</li><li>Shuffle the cups slowly, swapping their positions a few times.</li><li>Have the child point to where they think the ball is.</li></ol>
+      <div class="abox"><b>Why it works:</b> Visually tracking a moving object among distractors trains sustained attention and visual tracking in a competitive, fun way.</div>
+      <div class="abox"><b>Tip for tough days:</b> Start by shuffling very slowly and only a few times, increasing the difficulty only as the child gains confidence.</div>
+      <div class="afoot"><span>Materials: Three opaque cups and a small ball</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page daypage" data-pg="day 30/30">
+  <div class="dayhead">
+    <div><div class="dtag">Week 5 · Harvesting Calm</div><h2>Day 30 <span style="color:var(--ink-soft);font-size:14px;font-weight:600">of 30</span></h2></div>
+  </div>
+  <div class="dayintro">On the last day, we drum with both hands nice and quietly, wrap ourselves snugly in a blanket, feel the grass barefoot, and pass along a whispered message — closing the 30 days with lightness and connection.</div>
+  <div class="progress"><i style="width:100%"></i></div>
+  <div class="acards"><div class="acard" style="--accent:#2f8f7a;--accent-soft:#e2f5ef">
+      <div class="ahead"><span class="aicon">🔀</span><span class="acat">Coordination</span></div>
+      <h3>Two-Handed Drumming</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 3 minutes</span></div>
+      <div class="adesc">The child taps out a rhythm on a surface alternating hands, like a little drum.</div>
+      <ol><li>Seat the child at a table and show a simple rhythm alternating hands (left-right-left-right).</li><li>Have them repeat the same rhythm.</li><li>Vary the rhythm (faster, slower, with pauses) and have them imitate it.</li></ol>
+      <div class="abox"><b>Why it works:</b> A discreet, quiet-enough way to practice bilateral coordination, useful even in settings like the classroom or the car.</div>
+      <div class="abox"><b>Tip for tough days:</b> Teach this as a 'secret strategy' for moments of anxiety away from home — it can be done under the table without drawing attention.</div>
+      <div class="afoot"><span>Materials: A table or surface to drum on</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#c1611a;--accent-soft:#fdead9">
+      <div class="ahead"><span class="aicon">💪</span><span class="acat">Strength & Proprioception</span></div>
+      <h3>Blanket Burrito Roll</h3>
+      <div class="ameta"><span><b>Age:</b> 3–8 years</span><span><b>Duration:</b> 3 to 5 minutes</span></div>
+      <div class="adesc">The child lies at one end of the blanket and is rolled up snugly like a burrito, then unrolls slowly.</div>
+      <ol><li>Spread a blanket on the floor and have the child lie at one end, arms close to the body.</li><li>Roll the blanket around them firmly (never over the face), like a burrito.</li><li>Let them feel the pressure for a few seconds and then unroll slowly, or help unroll it.</li></ol>
+      <div class="abox"><b>Why it works:</b> The deep, steady pressure of the blanket has a calming effect comparable to a tight hug, very useful before bed or after a meltdown.</div>
+      <div class="abox"><b>Tip for tough days:</b> Always ask first and watch for signs of discomfort — the child should be able to get out of the roll whenever they want.</div>
+      <div class="afoot"><span>Materials: A large blanket or towel</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#b23b6b;--accent-soft:#fbe4ee">
+      <div class="ahead"><span class="aicon">🎈</span><span class="acat">Emotional Regulation</span></div>
+      <h3>Bare Feet on Grass</h3>
+      <div class="ameta"><span><b>Age:</b> 3–10 years</span><span><b>Duration:</b> 5 to 10 minutes</span></div>
+      <div class="adesc">The child walks barefoot on the grass, feeling the different textures of the ground as a form of sensory grounding.</div>
+      <ol><li>Choose a safe outdoor area with clean grass and no hazards.</li><li>Have the child take off their shoes and walk slowly on the grass.</li><li>Ask what they're feeling under their feet, encouraging attention to the textures.</li></ol>
+      <div class="abox"><b>Why it works:</b> Direct contact of the feet with nature is a simple, free form of sensory grounding, linked to stress reduction.</div>
+      <div class="abox"><b>Tip for tough days:</b> Combine with the 'Senses Safari' activity for an even richer outdoor sensory experience.</div>
+      <div class="afoot"><span>Materials: A lawn or safe outdoor area</span><label><input type="checkbox"/> Done</label></div>
+    </div><div class="acard" style="--accent:#2e6fb0;--accent-soft:#e3eefb">
+      <div class="ahead"><span class="aicon">🌬️</span><span class="acat">Breathing & Focus</span></div>
+      <h3>Telephone Game</h3>
+      <div class="ameta"><span><b>Age:</b> 5–10 years</span><span><b>Duration:</b> 5 to 10 minutes</span></div>
+      <div class="adesc">A message is whispered from person to person along a line or circle, until it reaches the last person, who says out loud what they heard.</div>
+      <ol><li>Form a line or circle with at least 3 people.</li><li>The first person whispers a short sentence into the next person's ear, who passes it on the same way.</li><li>The last person says out loud what they heard, and you compare it with the original sentence.</li></ol>
+      <div class="abox"><b>Why it works:</b> Demands full auditory attention to a stimulus heard only once in a whisper, training active listening and short-term memory in a fun way.</div>
+      <div class="abox"><b>Tip for tough days:</b> Use shorter sentences for younger children and gradually increase the complexity as the group's age and skill grow.</div>
+      <div class="afoot"><span>Materials: No materials needed (works best in a group)</span><label><input type="checkbox"/> Done</label></div>
+    </div></div>
+  <div class="brandfoot">Brain Gym for Kids · 30 Days</div>
+</section>
+<section class="page closepage" data-pg="end">
+  <div class="inner">
+    <div class="cover-eyebrow" style="color:#fff">Congratulations on the journey!</div>
+    <h2>30 days, 120 activities, a stronger body and mind.</h2>
+    <p>Regulating emotions is a skill that's built gradually, through repetition and patience — just like any other. If some days were easier than others, that's part of the process too, for your child and for you.</p>
+    <p><strong>What now?</strong> Start the cycle again from the beginning, choosing your family's favorite activities to repeat more often. Keep the calm-down corner, the glitter jar and the favorite breathing exercises close at hand — they keep working long after day 30.</p>
+    <div style="display:flex;gap:14px;justify-content:center;margin-top:26px;flex-wrap:wrap"><div style="background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);border-radius:14px;padding:14px 22px">
+        <div style="font-family:var(--round);font-size:26px">30</div><div style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase">days practiced</div>
+      </div><div style="background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);border-radius:14px;padding:14px 22px">
+        <div style="font-family:var(--round);font-size:26px">120</div><div style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase">activities</div>
+      </div><div style="background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);border-radius:14px;padding:14px 22px">
+        <div style="font-family:var(--round);font-size:26px">4</div><div style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase">categories</div>
+      </div></div>
+    <p style="margin-top:26px;font-size:11px;opacity:.9">Made with care for families doing their best, every single day. 💛</p>
+  </div>
+</section>
+</body>
+</html>

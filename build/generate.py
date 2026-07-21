@@ -1,18 +1,35 @@
 # -*- coding: utf-8 -*-
-import sys, os
+import sys, os, importlib
 sys.path.insert(0, os.path.dirname(__file__))
-from block1 import BLOCK1, BLOCK1_META
-from block2 import BLOCK2, BLOCK2_META
-from block3 import BLOCK3, BLOCK3_META
-from block4 import BLOCK4, BLOCK4_META
-from weeks import WEEKS, DAY_INTROS
+from ui_strings import UI
+
+LANG = sys.argv[1] if len(sys.argv) > 1 else "pt"
+SUFFIX = "" if LANG == "pt" else f"_{LANG}"
+T = UI[LANG]
+
+def mod(name):
+    return importlib.import_module(f"{name}{SUFFIX}")
+
+b1 = mod("block1"); b2 = mod("block2"); b3 = mod("block3"); b4 = mod("block4")
+wk = mod("weeks")
+
+BLOCK1, BLOCK1_META = b1.BLOCK1, b1.BLOCK1_META
+BLOCK2, BLOCK2_META = b2.BLOCK2, b2.BLOCK2_META
+BLOCK3, BLOCK3_META = b3.BLOCK3, b3.BLOCK3_META
+BLOCK4, BLOCK4_META = b4.BLOCK4, b4.BLOCK4_META
+WEEKS, DAY_INTROS = wk.WEEKS, wk.DAY_INTROS
 
 METAS = [BLOCK1_META, BLOCK2_META, BLOCK3_META, BLOCK4_META]
 BLOCKS = [BLOCK1, BLOCK2, BLOCK3, BLOCK4]
 
 assert len(BLOCK1) == 30 and len(BLOCK2) == 30 and len(BLOCK3) == 30 and len(BLOCK4) == 30
 
-OUT_PATH = os.path.join(os.path.dirname(__file__), "..", "ginastica-cerebral-30-dias.html")
+OUT_NAMES = {
+    "pt": "ginastica-cerebral-30-dias.html",
+    "en": "brain-gym-kids-30-days.html",
+    "es": "gimnasia-cerebral-ninos-30-dias.html",
+}
+OUT_PATH = os.path.join(os.path.dirname(__file__), "..", OUT_NAMES[LANG])
 
 # ----------------------------------------------------------------------------
 CSS = """
@@ -172,98 +189,66 @@ table.overview tr:nth-child(even) td{background:#faf7ee}
 """
 
 # ----------------------------------------------------------------------------
-def imgph(h_mm, label, caption, id_):
-    return f"""<div class="imgph" style="height:{h_mm}mm">
-      <div class="ico">🖼️</div>
-      <div class="lbl">Placeholder de imagem · {id_}</div>
-      <div class="cap">{caption}</div>
-    </div>"""
+def li(items):
+    return "".join(f"<li>{x}</li>" for x in items)
 
 def page_cover():
     cats = "".join(f'<span class="catpill">{m["icone"]} {m["nome_curto"]}</span>' for m in METAS)
     return f"""
-<section class="page cover" data-pg="capa">
+<section class="page cover" data-pg="{T['pg_capa']}">
   <div class="deco">
     <div class="blob" style="width:260px;height:260px;top:-60px;left:-70px"></div>
     <div class="blob" style="width:180px;height:180px;bottom:-40px;right:-50px"></div>
     <div class="blob" style="width:120px;height:120px;bottom:120px;left:-40px;opacity:.10"></div>
   </div>
   <div class="cover-inner">
-    <div class="cover-eyebrow">Guia Completo · 30 Dias de Rotina</div>
-    <h1>Ginástica Cerebral <span class="accent">para Crianças</span></h1>
-    <div class="sub">120 atividades de coordenação, força, equilíbrio e respiração organizadas em uma rotina diária de 4 exercícios — para pais e mães de crianças de 3 a 10 anos que enfrentam explosões de raiva, agitação, dificuldade de foco, birras frequentes e desobediência.</div>
+    <div class="cover-eyebrow">{T['cover_eyebrow']}</div>
+    <h1>{T['cover_title_1']} <span class="accent">{T['cover_title_2']}</span></h1>
+    <div class="sub">{T['cover_sub']}</div>
     <div class="catrow">{cats}</div>
-    <img class="coverimg" src="ginastica-cerebral-imagens/img-capa.jpg" alt="Crianças brincando alegremente no quintal">
-    <div class="foot">7 minutos por dia · sem telas · sem equipamentos caros</div>
+    <img class="coverimg" src="ginastica-cerebral-imagens/img-capa.jpg" alt="{T['cover_img_alt']}">
+    <div class="foot">{T['cover_foot']}</div>
   </div>
 </section>"""
 
 def page_como_usar():
     return f"""
-<section class="page" data-pg="introdução">
-  <div class="eyebrow">Antes de começar</div>
-  <div class="title-blk"><h2>Como usar este guia</h2>
+<section class="page" data-pg="{T['pg_intro']}">
+  <div class="eyebrow">{T['cu_eyebrow']}</div>
+  <div class="title-blk"><h2>{T['cu_title']}</h2>
   <div class="hr"></div>
-  <p class="lead">Este guia reúne 120 atividades organizadas em uma rotina de 30 dias. Todo dia, seu filho ou filha vai praticar <strong>4 atividades curtas</strong> — uma de cada categoria — em cerca de <strong>7 a 15 minutos</strong> no total. Não é preciso equipamento especial nem experiência prévia: qualquer adulto pode conduzir.</p></div>
+  <p class="lead">{T['cu_lead']}</p></div>
 
   <div class="grid2" style="margin-bottom:12px">
     <div class="card">
-      <h3 style="font-size:13.5px;margin-bottom:6px">📅 Estrutura do programa</h3>
-      <ul class="clean">
-        <li>30 dias, organizados em 5 semanas de 6 dias.</li>
-        <li>4 atividades por dia — uma de cada uma das 4 categorias.</li>
-        <li>Cada atividade leva entre 1 e 10 minutos.</li>
-        <li>Pode ser feito em qualquer ordem ao longo do dia.</li>
-      </ul>
+      <h3 style="font-size:13.5px;margin-bottom:6px">{T['cu_box1_title']}</h3>
+      <ul class="clean">{li(T['cu_box1_items'])}</ul>
     </div>
     <div class="card">
-      <h3 style="font-size:13.5px;margin-bottom:6px">⏰ Quando praticar</h3>
-      <ul class="clean">
-        <li>Escolha um horário fixo — de preferência fora de momentos de crise.</li>
-        <li>Bons momentos: ao acordar, após a escola, antes do dever de casa.</li>
-        <li>Evite praticar como punição ou logo após uma birra.</li>
-        <li>Um horário previsível ajuda mais do que a atividade perfeita.</li>
-      </ul>
+      <h3 style="font-size:13.5px;margin-bottom:6px">{T['cu_box2_title']}</h3>
+      <ul class="clean">{li(T['cu_box2_items'])}</ul>
     </div>
   </div>
 
   <div class="grid2" style="margin-bottom:12px">
     <div class="card">
-      <h3 style="font-size:13.5px;margin-bottom:6px">🧩 Se a criança recusar</h3>
-      <ul class="clean">
-        <li>Não force — ofereça, convide, demonstre você primeiro.</li>
-        <li>Troque a ordem: comece pela atividade que ela mais gosta.</li>
-        <li>Tudo bem pular um dia; retome no dia seguinte sem culpa.</li>
-        <li>Transforme em brincadeira, não em tarefa obrigatória.</li>
-      </ul>
+      <h3 style="font-size:13.5px;margin-bottom:6px">{T['cu_box3_title']}</h3>
+      <ul class="clean">{li(T['cu_box3_items'])}</ul>
     </div>
     <div class="card">
-      <h3 style="font-size:13.5px;margin-bottom:6px">✅ Cada atividade traz</h3>
-      <ul class="clean">
-        <li>Faixa etária, duração e materiais necessários.</li>
-        <li>Passo a passo simples de como conduzir.</li>
-        <li>Por que funciona — a lógica por trás do exercício.</li>
-        <li>Uma dica extra para dias mais difíceis.</li>
-      </ul>
+      <h3 style="font-size:13.5px;margin-bottom:6px">{T['cu_box4_title']}</h3>
+      <ul class="clean">{li(T['cu_box4_items'])}</ul>
     </div>
   </div>
 
-  <div class="note" style="margin-bottom:12px"><strong>Um aviso importante:</strong> este guia é um complemento lúdico à rotina familiar e não substitui avaliação, diagnóstico ou acompanhamento de profissionais de saúde. Se as explosões de raiva, a agitação ou a desobediência forem muito intensas, frequentes ou estiverem prejudicando a rotina escolar e familiar, procure apoio de um pediatra, psicólogo infantil ou terapeuta ocupacional.</div>
+  <div class="note" style="margin-bottom:12px">{T['cu_note']}</div>
 
   <div class="card">
-    <h3 style="font-size:13.5px;margin-bottom:8px">🧺 Kit básico sugerido (opcional)</h3>
-    <p class="small" style="margin-bottom:8px">A grande maioria das atividades não exige nada além do corpo. Estes poucos itens, se disponíveis em casa, deixam alguns dias ainda mais ricos:</p>
+    <h3 style="font-size:13.5px;margin-bottom:8px">{T['cu_kit_title']}</h3>
+    <p class="small" style="margin-bottom:8px">{T['cu_kit_lead']}</p>
     <div class="grid2" style="gap:6px 18px">
-      <ul class="clean" style="margin:0">
-        <li>Bola de sabão para bolhas</li>
-        <li>Massinha de modelar (uma firme, tipo theraputty)</li>
-        <li>Bola de meia ou bolinha macia</li>
-      </ul>
-      <ul class="clean" style="margin:0">
-        <li>Cobertor ou almofada pesada</li>
-        <li>Fita adesiva ou giz para desenhar linhas no chão</li>
-        <li>Pote transparente, água, cola e glitter (pote da calma)</li>
-      </ul>
+      <ul class="clean" style="margin:0">{li(T['cu_kit_col1'])}</ul>
+      <ul class="clean" style="margin:0">{li(T['cu_kit_col2'])}</ul>
     </div>
   </div>
 </section>"""
@@ -277,32 +262,31 @@ def page_categorias():
           <p>{m['resumo']}</p>
         </div>"""
     return f"""
-<section class="page" data-pg="categorias">
-  <div class="eyebrow">As 4 categorias</div>
-  <div class="title-blk"><h2>De onde vêm as atividades</h2><div class="hr"></div>
-  <p class="lead">As 120 atividades foram organizadas em 4 categorias que se complementam. Todo dia da rotina inclui uma atividade de cada uma delas, formando um pacote completo para o corpo e para as emoções.</p></div>
+<section class="page" data-pg="{T['pg_categorias']}">
+  <div class="eyebrow">{T['cat_eyebrow']}</div>
+  <div class="title-blk"><h2>{T['cat_title']}</h2><div class="hr"></div>
+  <p class="lead">{T['cat_lead']}</p></div>
   <div class="grid2" style="gap:14px">{cards}</div>
-  <div class="note" style="margin-top:14px"><strong>Sobre as fontes:</strong> as atividades se inspiram em práticas amplamente usadas em Terapia Ocupacional, Integração Sensorial (Ayres), educação psicomotora, mindfulness infantil, ioga para crianças e nos movimentos populares do método Brain Gym® (Dennison) — usados aqui como exercícios de coordenação e cruzamento de linha média, sem qualquer promessa de efeito neurológico específico. Também trazem ideias de autores como Daniel Siegel & Tina Payne Bryson ("Name it to tame it") e Bruce Perry sobre regulação emocional através do corpo.</div>
+  <div class="note" style="margin-top:14px">{T['cat_note']}</div>
 </section>"""
 
 def page_visao_geral():
     rows = ""
     for w in WEEKS:
         d0, d1 = w["dias"]
-        rows += f"""<tr><td><strong>Semana {w['num']}</strong></td><td>Dias {d0}–{d1}</td><td>{w['titulo']}</td><td>{w['subtitulo'].split('—')[-1].strip()}</td></tr>"""
+        rows += f"""<tr><td><strong>{T['semana_word']} {w['num']}</strong></td><td>{T['dias_word']} {d0}–{d1}</td><td>{w['titulo']}</td><td>{w['foco']}</td></tr>"""
+    th = "".join(f"<th>{x}</th>" for x in T['vg_th'])
     return f"""
-<section class="page" data-pg="visão geral">
-  <div class="eyebrow">Mapa do programa</div>
-  <div class="title-blk"><h2>Visão geral das 5 semanas</h2><div class="hr"></div>
-  <p class="lead">Um resumo rápido de para onde a rotina caminha ao longo dos 30 dias — útil para acompanhar o progresso ou retomar de onde parou.</p></div>
+<section class="page" data-pg="{T['pg_visao']}">
+  <div class="eyebrow">{T['vg_eyebrow']}</div>
+  <div class="title-blk"><h2>{T['vg_title']}</h2><div class="hr"></div>
+  <p class="lead">{T['vg_lead']}</p></div>
   <table class="overview">
-    <thead><tr><th>Semana</th><th>Dias</th><th>Tema</th><th>Foco</th></tr></thead>
+    <thead><tr>{th}</tr></thead>
     <tbody>{rows}</tbody>
   </table>
-  <div class="note" style="margin-top:16px"><strong>Dica de acompanhamento:</strong> use as caixinhas "Feito" em cada atividade para marcar o progresso diário junto com a criança. Ver os dias se acumulando costuma ser motivador tanto para os pais quanto para os pequenos.</div>
+  <div class="note" style="margin-top:16px">{T['vg_note']}</div>
 </section>"""
-
-WEEKDAY_LABEL = lambda n: f"Dia {n}"
 
 def page_week_divider(w):
     d0, d1 = w["dias"]
@@ -310,10 +294,10 @@ def page_week_divider(w):
     for d in range(d0, d1 + 1):
         i = d - 1
         names = [BLOCK1[i]["nome"], BLOCK2[i]["nome"], BLOCK3[i]["nome"], BLOCK4[i]["nome"]]
-        chips += f"""<div class="weekday-chip"><b>Dia {d}</b>{" · ".join(names)}</div>"""
+        chips += f"""<div class="weekday-chip"><b>{T['dia_word']} {d}</b>{" · ".join(names)}</div>"""
     return f"""
-<section class="page weekpage" data-pg="semana {w['num']}">
-  <div class="weeknum">Semana {w['num']}</div>
+<section class="page weekpage" data-pg="{T['semana_word'].lower()} {w['num']}">
+  <div class="weeknum">{T['semana_word']} {w['num']}</div>
   <h2>{w['titulo']}</h2>
   <div class="sub">{w['subtitulo']}</div>
   <img class="weekbanner" src="ginastica-cerebral-imagens/img-semana-{w['num']}.jpg" alt="{w['titulo']}">
@@ -326,12 +310,12 @@ def render_card(a, meta):
     return f"""<div class="acard" style="--accent:{meta['cor']};--accent-soft:{meta['cor_soft']}">
       <div class="ahead"><span class="aicon">{meta['icone']}</span><span class="acat">{meta['nome_curto']}</span></div>
       <h3>{a['nome']}</h3>
-      <div class="ameta"><span><b>Idade:</b> {a['idade']}</span><span><b>Duração:</b> {a['duracao']}</span></div>
+      <div class="ameta"><span><b>{T['card_idade']}</b> {a['idade']}</span><span><b>{T['card_duracao']}</b> {a['duracao']}</span></div>
       <div class="adesc">{a['descricao']}</div>
       <ol>{steps}</ol>
-      <div class="abox"><b>Por que funciona:</b> {a['beneficio']}</div>
-      <div class="abox"><b>Dica p/ dias difíceis:</b> {a['dica']}</div>
-      <div class="afoot"><span>Materiais: {a['materiais']}</span><label><input type="checkbox"/> Feito</label></div>
+      <div class="abox"><b>{T['card_beneficio']}</b> {a['beneficio']}</div>
+      <div class="abox"><b>{T['card_dica']}</b> {a['dica']}</div>
+      <div class="afoot"><span>{T['card_materiais']} {a['materiais']}</span><label><input type="checkbox"/> {T['card_feito']}</label></div>
     </div>"""
 
 def page_day(day_num, week):
@@ -341,36 +325,32 @@ def page_day(day_num, week):
     pct = int(day_num / 30 * 100)
     intro = DAY_INTROS[i]
     return f"""
-<section class="page daypage" data-pg="dia {day_num}/30">
+<section class="page daypage" data-pg="{T['dia_word'].lower()} {day_num}/30">
   <div class="dayhead">
-    <div><div class="dtag">Semana {week['num']} · {week['titulo']}</div><h2>Dia {day_num} <span style="color:var(--ink-soft);font-size:14px;font-weight:600">de 30</span></h2></div>
+    <div><div class="dtag">{T['semana_word']} {week['num']} · {week['titulo']}</div><h2>{T['dia_word']} {day_num} <span style="color:var(--ink-soft);font-size:14px;font-weight:600">{T['de_30']}</span></h2></div>
   </div>
   <div class="dayintro">{intro}</div>
   <div class="progress"><i style="width:{pct}%"></i></div>
   <div class="acards">{cards}</div>
-  <div class="brandfoot">Ginástica Cerebral · 30 Dias</div>
+  <div class="brandfoot">{T['brand']}</div>
 </section>"""
 
 def page_closing():
+    stats = ["30", "120", "4"]
+    stat_html = ""
+    for num, lbl in zip(stats, T['cl_stat_labels']):
+        stat_html += f"""<div style="background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);border-radius:14px;padding:14px 22px">
+        <div style="font-family:var(--round);font-size:26px">{num}</div><div style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase">{lbl}</div>
+      </div>"""
     return f"""
-<section class="page closepage" data-pg="fim">
+<section class="page closepage" data-pg="{T['pg_fim']}">
   <div class="inner">
-    <div class="cover-eyebrow" style="color:#fff">Parabéns pela jornada!</div>
-    <h2>30 dias, 120 atividades, um corpo e uma mente mais fortes.</h2>
-    <p>Regular emoções é uma habilidade que se constrói aos poucos, com repetição e paciência — assim como qualquer outra. Se alguns dias foram mais fáceis que outros, isso também faz parte do processo, tanto para a criança quanto para você.</p>
-    <p><strong>E agora?</strong> Recomece o ciclo do início, escolhendo as atividades favoritas da família para repetir com mais frequência. Mantenha o cantinho da calma, o pote da glitter e as respirações favoritas sempre à mão — elas continuam funcionando muito depois do dia 30.</p>
-    <div style="display:flex;gap:14px;justify-content:center;margin-top:26px;flex-wrap:wrap">
-      <div style="background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);border-radius:14px;padding:14px 22px">
-        <div style="font-family:var(--round);font-size:26px">30</div><div style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase">dias praticados</div>
-      </div>
-      <div style="background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);border-radius:14px;padding:14px 22px">
-        <div style="font-family:var(--round);font-size:26px">120</div><div style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase">atividades</div>
-      </div>
-      <div style="background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);border-radius:14px;padding:14px 22px">
-        <div style="font-family:var(--round);font-size:26px">4</div><div style="font-size:9.5px;letter-spacing:.1em;text-transform:uppercase">categorias</div>
-      </div>
-    </div>
-    <p style="margin-top:26px;font-size:11px;opacity:.9">Feito com carinho para famílias que fazem o melhor que podem, todos os dias. 💛</p>
+    <div class="cover-eyebrow" style="color:#fff">{T['cl_eyebrow']}</div>
+    <h2>{T['cl_title']}</h2>
+    <p>{T['cl_p1']}</p>
+    <p>{T['cl_p2']}</p>
+    <div style="display:flex;gap:14px;justify-content:center;margin-top:26px;flex-wrap:wrap">{stat_html}</div>
+    <p style="margin-top:26px;font-size:11px;opacity:.9">{T['cl_final']}</p>
   </div>
 </section>"""
 
@@ -385,11 +365,11 @@ def build():
     parts.append(page_closing())
 
     html = f"""<!doctype html>
-<html lang="pt-BR">
+<html lang="{T['html_lang']}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ginástica Cerebral para Crianças · Guia de 30 Dias</title>
+<title>{T['doc_title']}</title>
 <style>{CSS}</style>
 </head>
 <body>
