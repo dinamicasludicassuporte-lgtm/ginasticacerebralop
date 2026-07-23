@@ -1,0 +1,753 @@
+<title>Kit de Mapas Mentais: Como Estudar Sem Decorar</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --ink:#2a2a1f;           /* texto principal — verde-musgo profundo */
+    --ink-soft:#5c5648;      /* texto secundário */
+    --forest:#2f4a3d;        /* verde-floresta profundo */
+    --forest-2:#3f6350;      /* verde médio */
+    --sand:#f6efdd;          /* areia muito clara (fundos de bloco) */
+    --sand-2:#eee0bf;        /* areia média */
+    --amber:#e2933f;         /* acento identidade — criatividade */
+    --amber-2:#c17324;
+    --amber-soft:#fbeada;
+    --gold:#f4c04f;          /* dourado destaque */
+    --mint:#8fd6c2;          /* verde suave (certo/fazer) */
+    --mint-soft:#e2f5ef;
+    --rose:#f2a5b8;          /* rosa (erro/não fazer) */
+    --rose-soft:#fde6ec;
+    --cream:#fbf9f2;         /* fundo creme */
+    --line:#e8e0cc;
+    --white:#ffffff;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:#d8dcc9;
+    -webkit-print-color-adjust:exact;
+    print-color-adjust:exact;
+    line-height:1.5;
+  }
+
+  /* ---------- Página A4 ---------- */
+  .page{
+    width:210mm;
+    min-height:297mm;
+    padding:16mm 15mm 14mm;
+    margin:10mm auto;
+    background:var(--cream);
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 6px 30px rgba(47,74,61,.18);
+    display:flex;
+    flex-direction:column;
+  }
+  .page::after{
+    content:attr(data-pg);
+    position:absolute;
+    bottom:7mm; right:15mm;
+    font-size:9px; letter-spacing:.18em;
+    color:var(--ink-soft); opacity:.7;
+    font-weight:600;
+  }
+  .brandfoot{
+    position:absolute;
+    bottom:7mm; left:15mm;
+    font-size:9px; letter-spacing:.16em;
+    color:var(--ink-soft); opacity:.7;
+    text-transform:uppercase; font-weight:700;
+  }
+
+  @media print{
+    html,body{margin:0;padding:0;background:#fff;width:210mm}
+    .page{
+      margin:0; box-shadow:none;
+      width:210mm; height:297mm; min-height:297mm;
+      overflow:hidden;
+      page-break-after:always;
+      break-after:page;
+      break-inside:avoid;
+    }
+    .page:last-child{page-break-after:auto;break-after:auto;height:297mm}
+  }
+  @page{ size:210mm 297mm; margin:0; }
+
+  /* ---------- Tipografia ---------- */
+  h1,h2,h3{font-family:var(--serif);margin:0;color:var(--forest)}
+  .eyebrow{
+    font-family:var(--sans);
+    text-transform:uppercase;
+    letter-spacing:.22em;
+    font-size:11px;
+    font-weight:800;
+    color:var(--amber-2);
+    margin:0 0 10px;
+  }
+  h2.title{font-size:29px;line-height:1.14;margin:0 0 6px;font-weight:700}
+  .lead{font-size:13.5px;color:var(--ink-soft);max-width:62ch;margin:0 0 18px}
+  p{margin:0 0 10px}
+  strong{color:var(--forest)}
+  .small{font-size:11.5px;color:var(--ink-soft)}
+
+  .hr{height:2px;background:linear-gradient(90deg,var(--amber),transparent);border-radius:2px;margin:2px 0 18px;width:70px}
+
+  /* ---------- Componentes ---------- */
+  .card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:16px 18px;
+  }
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+
+  .tag{
+    display:inline-block;
+    font-size:10.5px;font-weight:800;letter-spacing:.05em;
+    padding:3px 10px;border-radius:999px;
+    background:var(--sand-2);color:var(--forest-2);
+  }
+
+  ul.clean{list-style:none;margin:0;padding:0}
+  ul.clean li{position:relative;padding-left:22px;margin-bottom:8px;font-size:12.5px}
+  ul.clean li::before{content:"";position:absolute;left:0;top:6px;width:9px;height:9px;border-radius:50%;background:var(--amber)}
+  ul.check li::before{content:"✓";background:none;color:var(--amber-2);font-weight:900;top:0;font-size:13px}
+</style>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 1 — CAPA                                                -->
+<!-- ============================================================= -->
+<section class="page" data-pg="" style="background:linear-gradient(165deg,#3f6350 0%,#2f4a3d 55%,#1f3128 100%);color:#fff;padding:0;justify-content:center;align-items:center;text-align:center">
+  <svg style="position:absolute;inset:0;width:100%;height:100%" aria-hidden="true">
+    <g fill="#e2933f" opacity="0.45">
+      <circle cx="70" cy="120" r="2"/><circle cx="150" cy="200" r="1.4"/>
+      <circle cx="650" cy="90" r="1.8"/><circle cx="710" cy="170" r="1.2"/>
+      <circle cx="100" cy="720" r="1.6"/><circle cx="700" cy="790" r="1.8"/>
+      <circle cx="60" cy="440" r="1.3"/><circle cx="760" cy="460" r="1.4"/>
+    </g>
+    <g fill="#f4c04f" opacity="0.5">
+      <circle cx="300" cy="100" r="1.3"/><circle cx="500" cy="70" r="1.5"/>
+      <circle cx="190" cy="900" r="1.3"/><circle cx="600" cy="940" r="1.4"/>
+    </g>
+  </svg>
+
+  <!-- mini mapa mental decorativo -->
+  <div style="position:absolute;top:66px;right:66px;width:170px;height:150px">
+    <svg style="position:absolute;inset:0;width:100%;height:100%" aria-hidden="true">
+      <line x1="85" y1="80" x2="13" y2="13" stroke="#e2933f" stroke-width="1.5" opacity="0.65"/>
+      <line x1="85" y1="80" x2="150" y2="24" stroke="#e2933f" stroke-width="1.5" opacity="0.65"/>
+      <line x1="85" y1="80" x2="40" y2="140" stroke="#e2933f" stroke-width="1.5" opacity="0.65"/>
+      <line x1="85" y1="80" x2="150" y2="120" stroke="#e2933f" stroke-width="1.5" opacity="0.65"/>
+    </svg>
+    <div style="position:absolute;top:60px;left:65px;width:42px;height:42px;border-radius:50%;background:#e2933f;box-shadow:0 0 40px rgba(226,147,63,.45)"></div>
+    <div style="position:absolute;top:0;left:0;width:26px;height:26px;border-radius:50%;background:#3f6350;border:2px solid #e2933f"></div>
+    <div style="position:absolute;top:8px;right:0;width:22px;height:22px;border-radius:50%;background:#3f6350;border:2px solid #f4c04f"></div>
+    <div style="position:absolute;bottom:0;left:26px;width:20px;height:20px;border-radius:50%;background:#3f6350;border:2px solid #e2933f"></div>
+    <div style="position:absolute;bottom:16px;right:6px;width:18px;height:18px;border-radius:50%;background:#3f6350;border:2px solid #f4c04f"></div>
+  </div>
+
+  <div style="position:relative;padding:0 42px;max-width:155mm">
+    <div style="font-size:13px;letter-spacing:.4em;text-transform:uppercase;color:var(--amber);font-weight:800;margin-bottom:26px">Ginástica Cerebral · Guia Complementar</div>
+
+    <div style="font-size:50px;margin-bottom:18px;line-height:1">🧠</div>
+
+    <h1 style="font-family:var(--serif);color:#fff;font-size:40px;line-height:1.08;font-weight:700;margin-bottom:16px">
+      Kit de Mapas Mentais
+    </h1>
+    <div style="width:90px;height:3px;background:var(--amber);margin:0 auto 20px;border-radius:3px"></div>
+    <h2 style="font-family:var(--serif);color:#f3e3c4;font-size:22px;font-weight:600;margin-bottom:30px;font-style:italic">
+      Como Estudar Sem Decorar
+    </h2>
+
+    <p style="font-size:15px;line-height:1.65;color:#e7ecdf;max-width:52ch;margin:0 auto">
+      Seu filho já sabe a matéria — só não sabe <strong style="color:#fff">organizar</strong> o que sabe.
+      O mapa mental transforma aquele emaranhado de informação num desenho que faz sentido, que gruda
+      na memória e que ele mesmo constrói, do jeito dele — sem decoreba, sem choro na véspera da prova.
+    </p>
+
+    <div style="margin-top:44px;display:inline-flex;gap:10px;align-items:center;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#8fd6c2">
+      <span>Para famílias com crianças no fundamental 1 e 2</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 2 — POR QUE O MAPA MENTAL É DIFERENTE                   -->
+<!-- ============================================================= -->
+<section class="page" data-pg="02">
+  <span class="brandfoot">Kit de Mapas Mentais</span>
+  <p class="eyebrow">Entendendo antes de agir</p>
+  <h2 class="title">Por que o mapa mental é diferente<br>de estudar decorando</h2>
+  <div class="hr"></div>
+  <p class="lead">Se seu filho lê o texto, grifa tudo e mesmo assim esquece na prova, o problema não é preguiça nem falta de esforço. É o método. Entender como o cérebro guarda informação muda a forma de estudar — e o resultado.</p>
+
+  <div class="card" style="background:var(--amber-soft);border:none;margin-bottom:16px">
+    <div style="display:flex;gap:16px;align-items:flex-start">
+      <div style="font-size:28px;line-height:1">🧵</div>
+      <div>
+        <h3 style="font-size:17px;margin-bottom:8px">Decorar é guardar um fio; entender é guardar uma rede</h3>
+        <p class="small" style="margin:0">Quando ele decora uma sequência de frases, o cérebro guarda um <strong>fio único e frágil</strong> — se esquece um ponto no meio, perde o resto. Quando ele organiza o conteúdo num mapa, o cérebro guarda uma <strong>rede de conexões</strong>: mesmo esquecendo um caminho, chega à resposta por outro. É por isso que "estudou tanto e esqueceu tudo" acontece tanto com quem só decora.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid2" style="gap:16px;margin-bottom:16px">
+    <div class="card" style="background:var(--white)">
+      <div style="font-size:24px;margin-bottom:8px">📖</div>
+      <h3 style="font-size:16px;margin-bottom:8px">O que é estudo tradicional</h3>
+      <p class="small" style="margin:0">Ler e reler, grifar tudo, copiar trechos num resumo linear. A informação fica na ordem em que o livro escreveu — não na ordem em que o cérebro dele entende.</p>
+    </div>
+    <div class="card" style="background:var(--white)">
+      <div style="font-size:24px;margin-bottom:8px">🗺️</div>
+      <h3 style="font-size:16px;margin-bottom:8px">O que é mapa mental</h3>
+      <p class="small" style="margin:0">Parte do tema no centro e ramifica em galhos com palavras-chave, cores e desenhos. Cada galho é uma pergunta que puxa a próxima — a ordem é a que faz sentido pra ele.</p>
+    </div>
+  </div>
+
+  <div class="card" style="background:linear-gradient(135deg,var(--forest),var(--forest-2));color:#fff;border:none">
+    <div style="display:flex;gap:16px;align-items:flex-start">
+      <div style="font-size:30px;line-height:1">🔗</div>
+      <div>
+        <h3 style="color:#fff;font-size:17px;margin-bottom:8px">O encontro que faz a diferença</h3>
+        <p class="small" style="margin:0;color:#e7ecdf">Não é abandonar o jeito tradicional de estudar — é somar. Primeiro ele <strong style="color:#fff">lê o conteúdo uma vez</strong>, para entender. Depois <strong style="color:#fff">desenha o mapa</strong>, para organizar e fixar. Um sem o outro fica pela metade: só ler esquece rápido, e só desenhar sem ter lido antes vira mapa vazio. Este kit ensina o segundo passo — o que costuma faltar em casa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 3 — OS 4 ERROS                                          -->
+<!-- ============================================================= -->
+<section class="page" data-pg="03">
+  <span class="brandfoot">Kit de Mapas Mentais</span>
+  <p class="eyebrow">Sem culpa, só consciência</p>
+  <h2 class="title">Os 4 erros que quase toda mãe<br>comete ao ensinar mapas mentais</h2>
+  <div class="hr"></div>
+  <p class="lead">Todos vêm da vontade de ajudar — nunca de fazer errado por querer. E cada um tem uma troca simples que devolve o mapa mental para as mãos do seu filho.</p>
+
+  <div class="card" style="margin-bottom:12px;display:flex;gap:16px;align-items:flex-start">
+    <div style="flex:0 0 46px;height:46px;border-radius:12px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;font-size:22px">🖊️</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+        <span class="tag" style="background:var(--rose-soft);color:#c04a68">ERRO 1</span>
+        <h3 style="font-size:16px">Fazer o mapa pelo filho</h3>
+      </div>
+      <p class="small" style="margin-bottom:6px">Quando a mãe decide as ramificações e o filho só copia, ele não processa a informação — e o mapa não gruda, porque não foi ele quem organizou.</p>
+      <p class="small" style="margin:0;color:var(--amber-2)"><strong>No lugar:</strong> pergunte, não dite: "O que você acha que é o mais importante desse parágrafo?" Deixe ele escolher, mesmo que erre a ordem.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:12px;display:flex;gap:16px;align-items:flex-start">
+    <div style="flex:0 0 46px;height:46px;border-radius:12px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;font-size:22px">🎨</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+        <span class="tag" style="background:var(--rose-soft);color:#c04a68">ERRO 2</span>
+        <h3 style="font-size:16px">Exigir que fique bonito e perfeito</h3>
+      </div>
+      <p class="small" style="margin-bottom:6px">Cobrar letra caprichada, cores certas e desenho bonito faz o foco virar estética — ele trava, apaga, refaz e perde o interesse antes de terminar o conteúdo.</p>
+      <p class="small" style="margin:0;color:var(--amber-2)"><strong>No lugar:</strong> valorize a lógica antes da estética: "As ideias estão certas, isso é o que importa. Bonito é o segundo passo, se sobrar tempo."</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:12px;display:flex;gap:16px;align-items:flex-start">
+    <div style="flex:0 0 46px;height:46px;border-radius:12px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;font-size:22px">📚</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+        <span class="tag" style="background:var(--rose-soft);color:#c04a68">ERRO 3</span>
+        <h3 style="font-size:16px">Usar para qualquer conteúdo, sem critério</h3>
+      </div>
+      <p class="small" style="margin-bottom:6px">Transformar uma lista simples de datas ou a tabuada num mapa mental não ajuda — o método rende mais em conteúdo com relação de causa, categoria ou processo.</p>
+      <p class="small" style="margin:0;color:var(--amber-2)"><strong>No lugar:</strong> escolha o conteúdo certo — histórias, ciências, conceitos que se conectam (veja o guia por matéria, p. 9). Para listas soltas, outra técnica funciona melhor.</p>
+    </div>
+  </div>
+
+  <div class="card" style="display:flex;gap:16px;align-items:flex-start">
+    <div style="flex:0 0 46px;height:46px;border-radius:12px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;font-size:22px">🚪</div>
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+        <span class="tag" style="background:var(--rose-soft);color:#c04a68">ERRO 4</span>
+        <h3 style="font-size:16px">Abandonar depois da primeira tentativa que não deu certo</h3>
+      </div>
+      <p class="small" style="margin-bottom:6px">O primeiro mapa costuma sair confuso, cheio demais ou vazio. Se a mãe conclui "ele não gosta, não funciona" e desiste, perde a técnica que mais rende com prática.</p>
+      <p class="small" style="margin:0;color:var(--amber-2)"><strong>No lugar:</strong> trate o primeiro mapa como rascunho, não como resultado. "Esse foi o treino. O próximo já vai ficar mais fácil."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 4 — ANTES DE COMEÇAR: PREPARAÇÃO                        -->
+<!-- ============================================================= -->
+<section class="page" data-pg="04">
+  <span class="brandfoot">Kit de Mapas Mentais</span>
+  <p class="eyebrow">Metade do mapa se ganha antes</p>
+  <h2 class="title">Antes de Começar: Preparação</h2>
+  <div class="hr"></div>
+  <p class="lead">Assim como em qualquer tarefa nova, quem chega preparado estuda com mais calma. Separe o material certo e escolha bem o primeiro tema — isso evita a maior parte da resistência.</p>
+
+  <div class="grid2" style="gap:16px;align-items:start;margin-bottom:16px">
+    <div class="card" style="background:var(--amber-soft);border:none">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><div style="font-size:24px">🎒</div><h3 style="font-size:16px">O que separar</h3></div>
+      <ul class="clean check">
+        <li><strong>Folha em branco</strong>, sem pauta, de preferência na horizontal.</li>
+        <li><strong>Canetinhas ou lápis de cor</strong>, no mínimo 3 cores diferentes.</li>
+        <li><strong>O conteúdo já lido uma vez antes</strong> — o mapa é para organizar, não para aprender do zero.</li>
+        <li><strong>Um espaço na mesa sem tela</strong> por perto, nem para "só dar uma olhada".</li>
+        <li><strong>Um tempo sem pressa</strong>: 15 a 25 minutos, sem a próxima tarefa espiando no relógio.</li>
+      </ul>
+    </div>
+
+    <div class="card" style="background:var(--white)">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><div style="font-size:24px">🎯</div><h3 style="font-size:16px">Como escolher o primeiro tema</h3></div>
+      <p class="small" style="margin:0 0 10px">Comece por algo que ele já entende bem — não pela matéria mais difícil. O primeiro mapa é para aprender o <strong>método</strong>, não para salvar a nota da semana.</p>
+      <ul class="clean">
+        <li style="font-size:12px"><strong>Prefira:</strong> um conteúdo com várias partes conectadas (ciclo da água, capítulos de uma história, tipos de animais).</li>
+        <li style="font-size:12px"><strong>Evite no início:</strong> listas soltas como datas isoladas ou tabuada — rendem menos em formato de mapa.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="background:var(--white);border:none;padding:0;overflow:hidden">
+    <div style="background:var(--forest);color:#fff;padding:10px 16px;font-weight:700;font-size:13px">📋 Modelo de organização — antes de desenhar</div>
+    <div style="padding:6px 16px 14px">
+      <div style="display:grid;grid-template-columns:1fr 1.6fr 1fr;gap:0;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);padding:8px 0;border-bottom:1px solid var(--line)">
+        <div>Tema central</div><div>Subtemas (galhos)</div><div>1 palavra-chave por galho</div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1.6fr 1fr;gap:0;font-size:11px;padding:9px 0;border-bottom:1px dotted var(--sand-2)"><div style="font-weight:700">Ciclo da água</div><div>Evaporação, condensação, precipitação</div><div>Sol · nuvem · chuva</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1.6fr 1fr;gap:0;font-size:11px;padding:9px 0"><div style="color:var(--ink-soft)">___________</div><div style="color:var(--ink-soft)">________________________</div><div style="color:var(--ink-soft)">______________</div></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px;background:var(--mint-soft);border:none">
+    <p class="small" style="margin:0"><strong>💡 Por que isso muda tudo:</strong> quando ele já conhece o conteúdo e só precisa organizá-lo, o mapa vira ferramenta de memória — não um segundo momento de "aprender do zero" que cansa e desanima antes de começar.</p>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 5 — O ROTEIRO (parte 1: passos 1–3)                     -->
+<!-- ============================================================= -->
+<section class="page" data-pg="05">
+  <span class="brandfoot">Kit de Mapas Mentais</span>
+  <p class="eyebrow">O coração do kit</p>
+  <h2 class="title">O Roteiro de Como Fazer um Mapa Mental</h2>
+  <div class="hr"></div>
+  <p class="lead">Seis passos simples que transformam um texto num desenho que faz sentido. Aqui os passos 1 a 3 — os outros na próxima página.</p>
+
+  <div class="card" style="margin-bottom:14px">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--forest);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">1</div>
+      <h3 style="font-size:18px">Escolher a ideia central &nbsp;<span style="font-size:20px">🎯</span></h3>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--amber-2)">✓ O que fazer:</strong> escreva ou desenhe o tema principal bem no meio da folha, dentro de um círculo.</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--forest-2)">Por que funciona:</strong> dar ao cérebro um ponto de partida único facilita organizar tudo ao redor dele.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> começar pelo primeiro detalhe do texto, sem definir o tema central antes.</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--amber)">Se ele travar:</strong> pergunte "do que esse texto fala, em uma palavra?"</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--forest);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">2</div>
+      <h3 style="font-size:18px">Criar os galhos principais &nbsp;<span style="font-size:20px">🌿</span></h3>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--amber-2)">✓ O que fazer:</strong> puxe de 3 a 5 linhas saindo do centro, uma para cada subtema grande do conteúdo.</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--forest-2)">Por que funciona:</strong> os galhos viram as "gavetas" onde tudo mais vai se encaixar depois.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> criar galhos demais de uma vez (mais de 6), o que confunde em vez de organizar.</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--amber)">Dica:</strong> se o texto tem títulos ou parágrafos, cada um costuma virar um galho.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--forest);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">3</div>
+      <h3 style="font-size:18px">Usar palavras-chave, não frases &nbsp;<span style="font-size:20px">🔑</span></h3>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--amber-2)">✓ O que fazer:</strong> em cada galho, escreva só a palavra ou expressão que resume a ideia — nunca a frase inteira do livro.</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--forest-2)">Por que funciona:</strong> resumir em uma palavra obriga o cérebro a processar o sentido, não só copiar.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> copiar frases inteiras do material — vira cópia disfarçada, não estudo.</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--amber)">Dica:</strong> pergunte "se você pudesse usar só uma palavra aqui, qual seria?"</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 6 — O ROTEIRO (parte 2: passos 4–6)                     -->
+<!-- ============================================================= -->
+<section class="page" data-pg="06">
+  <span class="brandfoot">Kit de Mapas Mentais</span>
+  <p class="eyebrow">O coração do kit · continuação</p>
+  <h2 class="title">O Roteiro de Como Fazer um Mapa Mental</h2>
+  <div class="hr"></div>
+
+  <div class="card" style="margin-bottom:14px">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--forest);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">4</div>
+      <h3 style="font-size:18px">Adicionar cores e desenhos &nbsp;<span style="font-size:20px">🎨</span></h3>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--amber-2)">✓ O que fazer:</strong> use uma cor por galho principal e deixe ele desenhar pequenos ícones ao lado das palavras-chave.</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--forest-2)">Por que funciona:</strong> cor e imagem ativam uma parte diferente da memória — um mapa colorido gruda mais que texto em preto e branco.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> exigir desenho bonito — o que importa é uma cor por galho, não a perfeição.</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--amber)">Sem lápis de cor:</strong> use símbolos diferentes (bolinha, seta, estrela) para cada galho.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--forest);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">5</div>
+      <h3 style="font-size:18px">Conectar as ideias relacionadas &nbsp;<span style="font-size:20px">🔗</span></h3>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--amber-2)">✓ O que fazer:</strong> se um detalhe de um galho tem a ver com outro galho, ligue os dois com uma linha pontilhada.</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--forest-2)">Por que funciona:</strong> essas conexões extras transformam o mapa numa rede de verdade — o que ajuda em provas com perguntas cruzadas.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> pular esse passo achando que é enfeite — são essas linhas que geram o "ahh, é claro!" na prova.</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--amber)">Dica:</strong> pergunte "esse pedaço tem a ver com algo que você já desenhou?"</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px">
+    <div style="display:flex;gap:14px;align-items:center;margin-bottom:10px">
+      <div style="flex:0 0 42px;height:42px;border-radius:50%;background:var(--forest);color:#fff;font-family:var(--serif);font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center">6</div>
+      <h3 style="font-size:18px">Revisar contando em voz alta &nbsp;<span style="font-size:20px">🗣️</span></h3>
+    </div>
+    <div class="grid2" style="gap:14px">
+      <div><p class="small" style="margin:0"><strong style="color:var(--amber-2)">✓ O que fazer:</strong> peça para ele "explicar a matéria" apontando o mapa, do centro para as pontas, sem olhar o livro.</p></div>
+      <div><p class="small" style="margin:0"><strong style="color:var(--forest-2)">Por que funciona:</strong> se ele conseguir explicar olhando só pro mapa, o conteúdo já está na memória — não só no papel.</p></div>
+    </div>
+    <div style="display:flex;gap:14px;margin-top:8px">
+      <p class="small" style="margin:0;flex:1"><strong style="color:#c04a68">Erro comum:</strong> pular direto pro próximo conteúdo sem esse teste — sem revisão, o mapa vira só um desenho na gaveta.</p>
+      <p class="small" style="margin:0;flex:1"><strong style="color:var(--amber)">Dica:</strong> grave um vídeo curto dele explicando — rever depois vira revisão extra, de graça.</p>
+    </div>
+  </div>
+
+  <div class="card" style="background:linear-gradient(135deg,var(--forest),var(--forest-2));border:none;color:#fff">
+    <h3 style="color:#fff;font-size:16px;margin-bottom:10px">🧭 O roteiro em uma frase para cada passo</h3>
+    <div class="grid2" style="gap:8px 18px">
+      <p class="small" style="margin:0;color:#e7ecdf"><strong style="color:#fff">1. Centro:</strong> "Do que esse texto fala?"</p>
+      <p class="small" style="margin:0;color:#e7ecdf"><strong style="color:#fff">2. Galhos:</strong> "Quais são as partes principais?"</p>
+      <p class="small" style="margin:0;color:#e7ecdf"><strong style="color:#fff">3. Palavras:</strong> "Numa palavra só, qual seria?"</p>
+      <p class="small" style="margin:0;color:#e7ecdf"><strong style="color:#fff">4. Cores:</strong> "Uma cor por galho, sem perfeição."</p>
+      <p class="small" style="margin:0;color:#e7ecdf"><strong style="color:#fff">5. Conexões:</strong> "Isso tem a ver com o quê?"</p>
+      <p class="small" style="margin:0;color:#e7ecdf"><strong style="color:#fff">6. Revisão:</strong> "Explica pra mim olhando o mapa."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 7 — AS 2 TÉCNICAS PARA DESTRAVAR                        -->
+<!-- ============================================================= -->
+<section class="page" data-pg="07">
+  <span class="brandfoot">Kit de Mapas Mentais</span>
+  <p class="eyebrow">O passo que evita o bloqueio</p>
+  <h2 class="title">As 2 Técnicas<br>para Destravar Quando Ele Trava</h2>
+  <div class="hr"></div>
+  <p class="lead">Às vezes a folha fica em branco e ele trava, mesmo sabendo a matéria. Estas 2 técnicas dão o empurrão inicial — sem você fazer o mapa por ele.</p>
+
+  <div class="card" style="margin-bottom:12px;background:var(--amber-soft);border:none">
+    <div style="display:flex;gap:14px;align-items:flex-start">
+      <div style="flex:0 0 46px;height:46px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:24px">❓</div>
+      <div style="flex:1">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><h3 style="font-size:16px">1. Técnica da Pergunta</h3><span class="tag" style="background:#fff">⏱️ 2 min</span><span class="tag" style="background:#fff">desbloqueio inicial</span></div>
+        <p class="small" style="margin:6px 0 0"><strong>Para que serve:</strong> destravar quando ele não sabe por onde começar.</p>
+        <p class="small" style="margin:4px 0 0"><strong>Como fazer:</strong> em vez de sugerir o conteúdo, faça 3 perguntas: "do que fala o texto?" (vira o centro), "quais as partes principais?" (viram os galhos), "o que mais te chamou atenção em cada parte?" (viram os detalhes). Ele responde, você só escreve a primeira palavra de cada resposta no lugar certo — o resto ele continua sozinho.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:14px;background:var(--mint-soft);border:none">
+    <div style="display:flex;gap:14px;align-items:flex-start">
+      <div style="flex:0 0 46px;height:46px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:24px">🗒️</div>
+      <div style="flex:1">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><h3 style="font-size:16px">2. Técnica dos Post-its Soltos</h3><span class="tag" style="background:#fff">⏱️ 5 min</span><span class="tag" style="background:#fff">conteúdo grande demais</span></div>
+        <p class="small" style="margin:6px 0 0"><strong>Para que serve:</strong> quando o conteúdo é longo e ele não sabe o que é mais importante.</p>
+        <p class="small" style="margin:4px 0 0"><strong>Como fazer:</strong> peça para escrever cada ideia solta num post-it (um por vez, sem se preocupar com ordem). Depois, espalhe todos na mesa e peça para ele agrupar os que "conversam entre si". Cada grupo vira um galho do mapa — a organização emerge sozinha, sem ele precisar decidir tudo de uma vez.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="border:2px dashed var(--sand-2);border-radius:14px;padding:14px;display:flex;gap:12px;background:rgba(255,255,255,.5)">
+    <div style="flex:1;text-align:center"><div style="font-size:28px">❓</div><div class="small" style="font-weight:700">Pergunta</div><div class="small" style="font-size:10px">dá o primeiro passo</div></div>
+    <div style="flex:1;text-align:center"><div style="font-size:28px">🗒️</div><div class="small" style="font-weight:700">Post-its</div><div class="small" style="font-size:10px">organiza o excesso</div></div>
+  </div>
+  <p class="small" style="text-align:center;margin-top:10px"><strong>💡 Se as duas falharem:</strong> reduza a exigência para o menor pedaço possível — "vamos fazer só o centro e um galho hoje" já é progresso. O resto pode esperar amanhã.</p>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 8 — SCRIPT DE FRASES PRONTAS                            -->
+<!-- ============================================================= -->
+<section class="page" data-pg="08">
+  <span class="brandfoot">Kit de Mapas Mentais</span>
+  <p class="eyebrow">Nunca mais travar na hora H</p>
+  <h2 class="title">Script de Frases Prontas</h2>
+  <div class="hr"></div>
+  <p class="lead">Quando ele resiste ou trava, a gente costuma responder com pressa — e isso faz ele desistir mais rápido. Aqui, situação por situação: o que <em>não</em> falar e o que dizer no lugar.</p>
+
+  <div style="display:grid;grid-template-columns:1fr;gap:12px">
+    <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:0;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)">
+      <div style="padding:0 12px">Situação</div>
+      <div style="padding:0 12px;color:#c04a68">❌ Não fale</div>
+      <div style="padding:0 12px;color:var(--amber-2)">✓ Fale no lugar</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:0;border-radius:12px;overflow:hidden;border:1px solid var(--line)">
+      <div style="background:var(--sand);padding:12px;font-weight:700;font-size:12.5px">"Eu odeio fazer mapa mental"</div>
+      <div style="background:var(--rose-soft);padding:12px" class="small">"Você vai fazer porque eu disse."</div>
+      <div style="background:var(--amber-soft);padding:12px" class="small">"Entendo, no começo dá trabalho mesmo. Vamos fazer só o centro e um galho hoje, o resto a gente vê depois."</div>
+
+      <div style="background:var(--sand);padding:12px;font-weight:700;font-size:12.5px">"Não sei o que colocar"</div>
+      <div style="background:var(--rose-soft);padding:12px" class="small">"Como assim não sabe, você acabou de ler!"</div>
+      <div style="background:var(--amber-soft);padding:12px" class="small">"Sem problema. Me conta com suas palavras do que fala o texto — eu escrevo o que você falar."</div>
+
+      <div style="background:var(--sand);padding:12px;font-weight:700;font-size:12.5px">"Ficou feio, bagunçado"</div>
+      <div style="background:var(--rose-soft);padding:12px" class="small">"Refaz, assim não dá pra entender."</div>
+      <div style="background:var(--amber-soft);padding:12px" class="small">"As ideias estão todas aí, isso é o que importa. Quer deixar mais bonito depois, ou já tá bom pra estudar?"</div>
+
+      <div style="background:var(--sand);padding:12px;font-weight:700;font-size:12.5px">"Prefiro só decorar mesmo"</div>
+      <div style="background:var(--rose-soft);padding:12px" class="small">"Mapa mental é mais eficiente, faz assim."</div>
+      <div style="background:var(--amber-soft);padding:12px" class="small">"Pode ser que decorar funcione pra amanhã. Mas será que a gente testa o mapa numa matéria que não é pra já, só pra treinar?"</div>
+
+      <div style="background:var(--sand);padding:12px;font-weight:700;font-size:12.5px">"Demorei muito e nem estudei"</div>
+      <div style="background:var(--rose-soft);padding:12px" class="small">"Eu não disse? Perda de tempo."</div>
+      <div style="background:var(--amber-soft);padding:12px" class="small">"Fazer o mapa também é estudar — você já organizou tudo na cabeça. Agora é só revisar olhando ele."</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px;background:var(--white);border-left:5px solid var(--amber)">
+    <p class="small" style="margin:0"><strong>💡 O segredo de todas elas:</strong> reconhecer a dificuldade + oferecer um passo pequeno e concreto. Nunca compare com "o jeito certo" nem force terminar tudo de uma vez.</p>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 9 — GUIA POR MATÉRIA                                    -->
+<!-- ============================================================= -->
+<section class="page" data-pg="09">
+  <span class="brandfoot">Kit de Mapas Mentais</span>
+  <p class="eyebrow">Material para consultar toda semana</p>
+  <h2 class="title">Guia de Mapas Mentais<br>por Matéria</h2>
+  <div class="hr"></div>
+  <p class="lead">Nem toda matéria pede o mesmo tipo de mapa. Esta tabela mostra como estruturar o centro e os galhos conforme o conteúdo — e quando vale mais a pena usar outra técnica.</p>
+
+  <div class="card" style="padding:0;overflow:hidden;border:none">
+    <div style="display:grid;grid-template-columns:1fr 1.4fr 1.2fr;background:var(--forest);color:#fff;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em">
+      <div style="padding:11px 14px">Matéria</div>
+      <div style="padding:11px 14px;border-left:1px solid rgba(255,255,255,.15)">🗺️ Como estruturar o mapa</div>
+      <div style="padding:11px 14px;border-left:1px solid rgba(255,255,255,.15)">⏸️ Quando NÃO usar mapa</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1.4fr 1.2fr;font-size:11.5px;border-bottom:1px solid var(--line)">
+      <div style="padding:12px 14px;font-weight:700;background:var(--sand)">História</div>
+      <div style="padding:12px 14px">Centro = evento ou período. Galhos = causas, personagens, consequências, datas-chave.</div>
+      <div style="padding:12px 14px;background:#fafbf5">Para decorar uma data isolada, uma ficha curta já basta.</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1.4fr 1.2fr;font-size:11.5px;border-bottom:1px solid var(--line)">
+      <div style="padding:12px 14px;font-weight:700;background:var(--sand)">Ciências</div>
+      <div style="padding:12px 14px">Centro = processo ou sistema (ex.: ciclo da água). Galhos = etapas em ordem, com setas entre elas.</div>
+      <div style="padding:12px 14px;background:#fafbf5">Para nomes soltos de partes do corpo, uma lista simples resolve.</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1.4fr 1.2fr;font-size:11.5px;border-bottom:1px solid var(--line)">
+      <div style="padding:12px 14px;font-weight:700;background:var(--sand)">Português / Redação</div>
+      <div style="padding:12px 14px">Centro = tema da redação. Galhos = argumentos, exemplos, conclusão.</div>
+      <div style="padding:12px 14px;background:#fafbf5">Para regras de ortografia isoladas, fichas de revisão funcionam melhor.</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1.4fr 1.2fr;font-size:11.5px;border-bottom:1px solid var(--line)">
+      <div style="padding:12px 14px;font-weight:700;background:var(--sand)">Matemática</div>
+      <div style="padding:12px 14px">Centro = tipo de problema. Galhos = passo a passo da fórmula, com um exemplo resolvido.</div>
+      <div style="padding:12px 14px;background:#fafbf5">Para tabuada e cálculo mecânico, repetição funciona melhor que mapa.</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1.4fr 1.2fr;font-size:11.5px">
+      <div style="padding:12px 14px;font-weight:700;background:var(--sand)">Geografia</div>
+      <div style="padding:12px 14px">Centro = região ou tema. Galhos = clima, relevo, população, economia.</div>
+      <div style="padding:12px 14px;background:#fafbf5">Para nomes de capitais soltos, um jogo de memorização é mais rápido.</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px;background:var(--mint-soft);border:none">
+    <p class="small" style="margin:0"><strong>💡 Como usar:</strong> antes de começar, olhe a linha da matéria e mostre a ele o formato sugerido de centro e galhos. Isso evita o mapa "em branco" e já dá um rumo para começar.</p>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 10 — ADAPTANDO POR IDADE E FASE ESCOLAR                 -->
+<!-- ============================================================= -->
+<section class="page" data-pg="10">
+  <span class="brandfoot">Kit de Mapas Mentais</span>
+  <p class="eyebrow">Personalização</p>
+  <h2 class="title">Adaptando por Idade<br>e Fase Escolar</h2>
+  <div class="hr"></div>
+  <p class="lead">O roteiro é o mesmo, mas a proporção entre desenho e palavra, e a densidade do mapa, mudam conforme a fase. Ajuste a exigência ao que faz sentido para a idade.</p>
+
+  <div class="grid3" style="gap:14px;margin-bottom:16px;align-items:start">
+    <div class="card" style="background:var(--amber-soft);border:none">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><div style="font-size:24px">🧸</div><div><h3 style="font-size:15px">Educação Infantil</h3><span class="small" style="font-weight:700">5 a 6 anos</span></div></div>
+      <p class="small" style="margin:0 0 8px"><strong>Formato:</strong> quase só desenho, com poucas palavras (ou nenhuma) — cores livres, sem regra fixa.</p>
+      <p class="small" style="margin:0"><strong>Foco:</strong> identificar as partes de uma história ou conto ("quem", "onde", "o que aconteceu").</p>
+    </div>
+
+    <div class="card" style="background:var(--sand);border:none">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><div style="font-size:24px">🎒</div><div><h3 style="font-size:15px">Fundamental 1</h3><span class="small" style="font-weight:700">7 a 10 anos</span></div></div>
+      <p class="small" style="margin:0 0 8px"><strong>Formato:</strong> mistura de desenho e palavra-chave, com 3 a 5 galhos por mapa.</p>
+      <p class="small" style="margin:0"><strong>Foco:</strong> organizar o conteúdo de prova — o roteiro de 6 passos (p. 5-6) já pode ser aplicado por inteiro.</p>
+    </div>
+
+    <div class="card" style="background:var(--mint-soft);border:none">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px"><div style="font-size:24px">📘</div><div><h3 style="font-size:15px">Fundamental 2</h3><span class="small" style="font-weight:700">11 anos+</span></div></div>
+      <p class="small" style="margin:0 0 8px"><strong>Formato:</strong> mais texto e menos desenho, com subgalhos — mapas mais densos.</p>
+      <p class="small" style="margin:0"><strong>Foco:</strong> conectar causa e efeito entre matérias, e usar o mapa como base para redigir resumos.</p>
+    </div>
+  </div>
+
+  <div class="card" style="background:var(--white)">
+    <h3 style="font-size:15px;margin-bottom:8px">O que muda na prática, da infantil ao fundamental 2</h3>
+    <div class="grid3" style="gap:12px">
+      <div style="background:var(--mint-soft);border-radius:10px;padding:10px 12px"><strong style="font-size:12px">Do desenho à palavra</strong><p class="small" style="margin:3px 0 0">O mapa migra de "ilustrar" para "organizar conteúdo de prova".</p></div>
+      <div style="background:var(--amber-soft);border-radius:10px;padding:10px 12px"><strong style="font-size:12px">Mais autonomia esperada</strong><p class="small" style="margin:3px 0 0">Peça cada vez menos ajuda direta — ele decide sozinho o que é galho.</p></div>
+      <div style="background:var(--sand);border-radius:10px;padding:10px 12px"><strong style="font-size:12px">Mapas mais densos</strong><p class="small" style="margin:3px 0 0">Permita subgalhos: um detalhe pendurado numa palavra-chave.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 11 — QUANDO O MAPA NÃO FUNCIONA                         -->
+<!-- ============================================================= -->
+<section class="page" data-pg="11">
+  <span class="brandfoot">Kit de Mapas Mentais</span>
+  <p class="eyebrow">Quando a vida real complica</p>
+  <h2 class="title">Quando o Mapa<br>Não Funciona</h2>
+  <div class="hr"></div>
+  <p class="lead">Nenhum roteiro funciona 100% dos dias — e tudo bem. Aqui estão os cenários mais comuns e o ajuste certo para cada um. Consistência ao longo das semanas vale mais que um mapa perfeito.</p>
+
+  <div style="display:flex;flex-direction:column;gap:14px">
+    <div class="card" style="display:flex;gap:16px;align-items:flex-start">
+      <div style="flex:0 0 48px;height:48px;border-radius:12px;background:var(--amber-soft);display:flex;align-items:center;justify-content:center;font-size:24px">✏️</div>
+      <div>
+        <h3 style="font-size:15px;margin-bottom:5px">"Ele diz que não sabe desenhar"</h3>
+        <p class="small" style="margin:0">Não é sobre desenho artístico — são símbolos simples (bolinha, seta, quadrado, estrela). <strong>Mostre que garranchos servem</strong>, o importante é ele reconhecer o que quis dizer depois, na hora de revisar.</p>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;gap:16px;align-items:flex-start">
+      <div style="flex:0 0 48px;height:48px;border-radius:12px;background:var(--sand);display:flex;align-items:center;justify-content:center;font-size:24px">⏰</div>
+      <div>
+        <h3 style="font-size:15px;margin-bottom:5px">"A prova é amanhã e não deu tempo de terminar"</h3>
+        <p class="small" style="margin:0">Faça um <strong>mapa relâmpago</strong>: só o centro e os galhos principais, sem preencher todos os detalhes. Um mapa incompleto que organiza o essencial já vale mais do que nenhum mapa.</p>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;gap:16px;align-items:flex-start">
+      <div style="flex:0 0 48px;height:48px;border-radius:12px;background:var(--mint-soft);display:flex;align-items:center;justify-content:center;font-size:24px">📝</div>
+      <div>
+        <h3 style="font-size:15px;margin-bottom:5px">"Ele prefere fazer resumo tradicional"</h3>
+        <p class="small" style="margin:0">Tudo bem, não é briga de método. <strong>Sugira usar os dois</strong>: o resumo para ler com calma, o mapa para revisar rápido na véspera da prova.</p>
+      </div>
+    </div>
+
+    <div class="card" style="display:flex;gap:16px;align-items:flex-start">
+      <div style="flex:0 0 48px;height:48px;border-radius:12px;background:#fdf3d9;display:flex;align-items:center;justify-content:center;font-size:24px">🌀</div>
+      <div>
+        <h3 style="font-size:15px;margin-bottom:5px">"O mapa saiu confuso, cheio de rabiscos"</h3>
+        <p class="small" style="margin:0">Normal no início. Chame de <strong>rascunho</strong> e proponha uma versão limpa só dos galhos principais — sem redesenhar tudo, só o essencial de novo.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px;background:var(--forest);border:none;color:#fff">
+    <p class="small" style="margin:0;color:#e7ecdf"><strong style="color:#fff">Regra de ouro:</strong> quando algo não sai como o esperado, não abandone o método — ajuste a dose. Um mapa pequeno e feito é melhor que um mapa perfeito que nunca termina.</p>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 12 — SEMANA DE ACOMPANHAMENTO                           -->
+<!-- ============================================================= -->
+<section class="page" data-pg="12">
+  <span class="brandfoot">Kit de Mapas Mentais</span>
+  <p class="eyebrow">Sua prova de resultado</p>
+  <h2 class="title">Semana de Acompanhamento</h2>
+  <div class="hr"></div>
+  <p class="lead">Por 7 dias, marque como foi o mapa mental daquele dia. Não é cobrança — é para você <em>ver</em> o progresso acontecer. Escolha o emoji que representa o dia.</p>
+
+  <div class="card" style="background:#fff;margin-bottom:14px">
+    <div style="display:flex;justify-content:space-around;text-align:center;gap:10px">
+      <div><div style="font-size:30px">😊</div><div class="small" style="font-weight:700;margin-top:2px">Fez sozinho</div><div class="small" style="font-size:10px">Só perguntas de apoio</div></div>
+      <div style="width:1px;background:var(--line)"></div>
+      <div><div style="font-size:30px">😐</div><div class="small" style="font-weight:700;margin-top:2px">Fez com ajuda</div><div class="small" style="font-size:10px">Precisou de mais direção</div></div>
+      <div style="width:1px;background:var(--line)"></div>
+      <div><div style="font-size:30px">😕</div><div class="small" style="font-weight:700;margin-top:2px">Não fez</div><div class="small" style="font-size:10px">Ficou só na conversa</div></div>
+    </div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:9px">
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);padding:0 6px">
+      <div>Dia</div><div>Como foi</div><div>Matéria do mapa</div>
+    </div>
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--sand);text-align:center;font-weight:700;font-size:12px">Dia 1</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😊 😐 😕</div><div style="border-bottom:2px dotted var(--sand-2);height:22px"></div></div>
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--sand);text-align:center;font-weight:700;font-size:12px">Dia 2</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😊 😐 😕</div><div style="border-bottom:2px dotted var(--sand-2);height:22px"></div></div>
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--sand);text-align:center;font-weight:700;font-size:12px">Dia 3</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😊 😐 😕</div><div style="border-bottom:2px dotted var(--sand-2);height:22px"></div></div>
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--sand);text-align:center;font-weight:700;font-size:12px">Dia 4</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😊 😐 😕</div><div style="border-bottom:2px dotted var(--sand-2);height:22px"></div></div>
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--sand);text-align:center;font-weight:700;font-size:12px">Dia 5</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😊 😐 😕</div><div style="border-bottom:2px dotted var(--sand-2);height:22px"></div></div>
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--sand);text-align:center;font-weight:700;font-size:12px">Dia 6</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😊 😐 😕</div><div style="border-bottom:2px dotted var(--sand-2);height:22px"></div></div>
+    <div style="display:grid;grid-template-columns:96px 150px 1fr;gap:10px;align-items:center"><div class="card" style="padding:10px 12px;background:var(--amber-soft);text-align:center;font-weight:700;font-size:12px">Dia 7 🎉</div><div style="display:flex;gap:12px;justify-content:center;font-size:22px">😊 😐 😕</div><div style="border-bottom:2px dotted var(--sand-2);height:22px"></div></div>
+  </div>
+
+  <div class="card" style="margin-top:14px;background:var(--mint-soft);border:none">
+    <p class="small" style="margin:0"><strong>No fim da semana, olhe para trás.</strong> Quantos 😊 a mais que no primeiro dia? Esse é o seu resultado — construído por ele, um mapa de cada vez.</p>
+  </div>
+</section>
+
+<!-- ============================================================= -->
+<!-- PÁGINA 13 — FECHAMENTO                                         -->
+<!-- ============================================================= -->
+<section class="page" data-pg="" style="background:linear-gradient(165deg,#3f6350 0%,#2f4a3d 55%,#1f3128 100%);color:#fff;justify-content:center;align-items:center;text-align:center">
+  <svg style="position:absolute;inset:0;width:100%;height:100%" aria-hidden="true">
+    <g fill="#e2933f" opacity="0.5">
+      <circle cx="80" cy="120" r="1.8"/><circle cx="660" cy="90" r="1.5"/>
+      <circle cx="120" cy="880" r="1.6"/><circle cx="700" cy="820" r="1.8"/>
+      <circle cx="720" cy="220" r="1.2"/><circle cx="60" cy="520" r="1.3"/>
+    </g>
+  </svg>
+  <div style="position:relative;max-width:135mm;padding:0 30px">
+    <div style="font-size:44px;margin-bottom:20px">🧠✨</div>
+    <p class="eyebrow" style="color:var(--amber);justify-content:center">Você chegou até aqui</p>
+    <h2 style="font-family:var(--serif);color:#fff;font-size:33px;line-height:1.16;font-weight:700;margin-bottom:20px">
+      Estudar virou um desenho<br>que ele entende
+    </h2>
+    <div style="width:70px;height:3px;background:var(--amber);margin:0 auto 24px;border-radius:3px"></div>
+    <p style="font-size:15px;line-height:1.7;color:#e7ecdf;margin-bottom:16px">
+      Você não precisa que o primeiro mapa saia perfeito — e ele não vai sair. O que transforma
+      a relação dele com o estudo não é o mapa bonito, é a <strong style="color:#fff">repetição tranquila</strong> do
+      roteiro. Cada vez que ele organiza um conteúdo com as próprias palavras, o cérebro aprende
+      a fazer isso sozinho — em qualquer matéria, para o resto da vida escolar.
+    </p>
+    <p style="font-size:15px;line-height:1.7;color:#e7ecdf;margin-bottom:30px">
+      Comece com um tema pequeno, hoje. Amanhã, mais um. Em algumas semanas, "vou estudar"
+      vai parecer uma tarefa bem diferente — mais leve, mais dele.
+    </p>
+
+    <div style="display:inline-block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:18px 26px">
+      <p style="font-family:var(--serif);font-style:italic;font-size:17px;color:#f3e3c4;margin:0">
+        "Quem aprende a organizar o próprio pensamento<br>não decora mais matéria —<br>entende o mundo com mais clareza."
+      </p>
+    </div>
+
+    <div style="margin-top:36px;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:#8fd6c2;font-weight:700">
+      Ginástica Cerebral · Continue com a gente 💙
+    </div>
+  </div>
+</section>
